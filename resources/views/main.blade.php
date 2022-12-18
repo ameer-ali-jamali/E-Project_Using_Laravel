@@ -13,6 +13,7 @@
     <div>
         <h1>Hello @yield('content')</h1>
     </div>
+
 </body>
 
 </html>

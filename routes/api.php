@@ -1,10 +1,7 @@
 <?php
 
-use GuzzleHttp\Psr7\Query;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\Routing\Exception\RouteNotFoundException;
 
 /*
 |--------------------------------------------------------------------------
