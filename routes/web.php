@@ -23,17 +23,40 @@ Route::any('/{about}', function ($name) {
     return view('about')->with($data);
 });
 
-Route::any('/{details}', function ($name) {
-    $data = compact('name');
-    return view('details')->with($data);
-});
-
-Route::any('/{contact_us}', function ($name) {
-    $data = compact('name');
-    return view('contavt_us')->with($data);
-});
-
 Route::any('/{admin}', function ($name) {
     $data = compact('name');
     return view('admin')->with($data);
+});
+
+Route::any('/{contact}', function ($name) {
+    $data = compact('name');
+    return view('contact')->with($data);
+});
+
+Route::any('/{blog}', function ($name) {
+    $data = compact('name');
+    return view('blog')->with($data);
+});
+Route::any('/{shop}', function ($name) {
+    $data = compact('name');
+    return view('shop')->with($data);
+});
+Route::any('/{single_post}', function ($name) {
+    $data = compact('name');
+    return view('single_post')->with($data);
+});
+
+Route::any('/{single_product}', function ($name) {
+    $data = compact('name');
+    return view('single_product')->with($data);
+});
+
+Route::any('/{styles}', function ($name) {
+    $data = compact('name');
+    return view('styles')->with($data);
+});
+
+Route::any('/{thankyou}', function ($name) {
+    $data = compact('name');
+    return view('thankyou')->with($data);
 });

@@ -1,9 +1,8 @@
 @extends('main')
 @push('title')
-<title>About</title>
+<title>contact_us</title>
 @endpush
-@section('About_Content')
-
+@section('Contact_Us_Content')
 <div id="header-wrap">
 
     <div class="top-content">
@@ -115,175 +114,127 @@
 </div>
 <!--header-wrap-->
 
-<div class="site-banner">
-    <div class="banner-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="colored">
-                        <h1 class="page-title">About Us</h1>
-                        <div class="breadcum-items">
-                            <span class="item"><a href="index.html">Home /</a></span>
-                            <span class="item colored">About Us</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--site-banner-->
-
-<section class="chief-detail padding-large">
+<section>
     <div class="container">
-        <div class="row">
-            <div class="single-image col-md-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus leo vel orci malesuada, id sodales
-                    em volutpat. Vivamus sagittis pulvinar dignissim. Mauris tempus a lacus eu aliquet. Mauris gravida
-                    at ectus quis venenatis. Aenean quis feugiat turpis. Etiam lacinia interdum nibh, non convallis
-                    magna lementum vel. Phasellus varius quam ligula, in lobortis risus porttitor ut. Praesent ipsum
-                    elit, lobortis n tincidunt a, dapibus et lorem. Praesent eget dui a est fringilla rutrum sit amet in
-                    eros. Vestibulum ut ros sed enim feugiat lobortis. Suspendisse fermentum nunc in est mattis
-                    molestie. Mauris ut placerat isus. Aenean mollis neque libero, ut pellentesque arcu dapibus vel.</p>
-                <p>Praesent nec nisl euismod, lacinia tellus eget, bibendum ex. Maecenas imperdiet gravida pulvinar.
-                    aecenas feugiat id tellus sed sodales. Praesent maximus ultricies elit eget accumsan. Proin tortor
-                    ante, ltrices a aliquet a, facilisis quis sapien. Donec eu turpis at velit scelerisque faucibus id
-                    eget dolor. tiam lobortis ante ipsum, sed venenatis ligula facilisis quis. Fusce blandit commodo
-                    mauris, sed fringilla isi congue et. Nunc eu eros ex.</p>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="our-team bg-sand padding-large">
-    <div class="container">
-        <div class="row">
-
-            <div class="col-md-12">
-                <h2 class="section-title text-center mb-4">Our Team</h2>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-3">
-
-                <div class="team-member text-center">
-
-                    <figure>
-                        <a href="#"><img src="images/team-member2.jpg" alt="post" class="member-image"></a>
-                    </figure>
-
-                    <div class="member-details text-center">
-                        <h4>Mrs. Nocole Sara</h4>
-                        <div class="designation colored">CEO-Founder</div>
-                        <div class="social-links color-primary ">
-                            <a href="#" class="icon icon-facebook pr-10"></a>
-                            <a href="#" class="icon icon-twitter pr-10"></a>
-                            <a href="#" class="icon icon-pinterest-p"></a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-            <!--col-md-3-->
-
-            <div class="col-md-3 text-center">
-
-                <div class="team-member text-center">
-                    <figure>
-                        <img src="images/team-member5.jpg" alt="post" class="member-image">
-                    </figure>
-                    <div class="member-details text-center">
-                        <h4>Ms Sienna Jolie</h4>
-                        <div class="designation colored">General Manager</div>
-                        <div class="social-links color-primary">
-                            <a href="#" class="icon icon-facebook pr-10"></a>
-                            <a href="#" class="icon icon-twitter pr-10"></a>
-                            <a href="#" class="icon icon-pinterest-p"></a>
-                        </div>
-                    </div>
-                    <!--text-content-->
-                </div>
-
-            </div>
-            <!--col-md-3-->
-
-            <div class="col-md-3 text-center">
-
-                <div class="team-member text-center">
-                    <figure>
-                        <img src="images/team-member7.jpg" alt="post" class="member-image">
-                    </figure>
-                    <div class="member-details text-center">
-                        <h4>Ms Jenny Blacksmith</h4>
-                        <div class="designation colored">Assistant Manager</div>
-                        <div class="social-links color-primary">
-                            <a href="#" class="icon icon-facebook pr-10"></a>
-                            <a href="#" class="icon icon-twitter pr-10"></a>
-                            <a href="#" class="icon icon-pinterest-p"></a>
-                        </div>
-                    </div>
-                    <!--text-content-->
-                </div>
-
-            </div>
-            <!--col-md-3-->
-
-            <div class="col-md-3 text-center">
-
-                <div class="team-member text-center">
-                    <figure>
-                        <img src="images/team-member3.jpg" alt="post" class="member-image">
-                    </figure>
-                    <div class="member-details text-center">
-                        <h4>Mrs Lora Inn</h4>
-                        <div class="designation colored">Staff</div>
-                        <div class="social-links color-primary">
-                            <a href="#" class="icon icon-facebook pr-10"></a>
-                            <a href="#" class="icon icon-twitter pr-10"></a>
-                            <a href="#" class="icon icon-pinterest-p"></a>
-                        </div>
-                    </div>
-                    <!--text-content-->
-                </div>
-
-            </div>
-            <!--col-md-3-->
-
-        </div>
-    </div>
-</section>
-
-<section class="padding-large">
-    <div class="container">
-        <h2 class="section-title text-center mt-5">Our Mission</h2>
         <div class="row">
             <div class="col-md-12">
-                <img src="images/post-img3.jpg" alt="book-authors" class="align-right">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.
-                </p>
+                <h1 class="page-title">Contact us</h1>
+                <div class="breadcrumbs">
+                    <span class="item"><a href="index.html">Home /</a></span>
+                    <span class="item">Contact us</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-information padding-large mt-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 p-0 mb-3">
+
+                <h2>Get in Touch</h2>
+
+                <div class="contact-detail d-flex flex-wrap mt-4">
+                    <div class="detail mr-6 mb-4">
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.</p>
+                        <ul class="list-unstyled list-icon">
+                            <li><i class="icon icon-phone"></i>+1650-243-0000</li>
+                            <li><i class="icon icon-envelope-o"></i><a
+                                    href="mailto:info@yourcompany.com">info@yourcompany.com</a></li>
+                            <li><i class="icon icon-location2"></i>North Melbourne VIC 3051, Australia</li>
+                        </ul>
+                    </div>
+                    <!--detail-->
+                    <div class="detail mb-4">
+                        <h3>Social Links</h3>
+                        <div class="social-links flex-container">
+                            <a href="#" class="icon icon-facebook"></a>
+                            <a href="#" class="icon icon-twitter"></a>
+                            <a href="#" class="icon icon-pinterest-p"></a>
+                            <a href="#" class="icon icon-youtube"></a>
+                            <a href="#" class="icon icon-linkedin"></a>
+                        </div>
+                        <!--social-links-->
+                    </div>
+                    <!--detail-->
+
+                </div>
+                <!--contact-detail-->
+            </div>
+            <!--col-md-6-->
+
+            <div class="col-md-6 p-0">
+
+                <div class="contact-information">
+                    <h2>Send A Message</h2>
+                    <form name="contactform" action="contact.php" method="post"
+                        class="contact-form d-flex flex-wrap mt-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" minlength="2" name="name" placeholder="Name" class="u-full-width"
+                                    required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" name="email" placeholder="E-mail" class="u-full-width" required>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <textarea class="u-full-width" name="message" placeholder="Message"
+                                    style="height: 150px;" required></textarea>
+
+                                <label>
+                                    <input type="checkbox" required>
+                                    <span class="label-body">I agree all the <a href="#">terms and conditions</a></span>
+                                </label>
+
+                                <button type="submit" name="submit" class="btn btn-full btn-rounded">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+                <!--contact-information-->
 
             </div>
+            <!--col-md-6-->
 
         </div>
     </div>
 </section>
+
+<section class="google-map">
+    <div class="mapouter">
+        <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                href="https://getasearch.com/fmovies"></a><br>
+            <style>
+                .mapouter {
+                    position: relative;
+                    text-align: right;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+            <style>
+                .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    height: 500px;
+                    width: 100%;
+                }
+            </style>
+        </div>
+    </div>
+</section>
+
+
 
 <footer id="footer">
     <div class="container">

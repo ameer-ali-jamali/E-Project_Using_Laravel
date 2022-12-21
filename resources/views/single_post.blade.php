@@ -1,9 +1,3 @@
-@extends('main')
-@push('title')
-<title>About</title>
-@endpush
-@section('About_Content')
-
 <div id="header-wrap">
 
     <div class="top-content">
@@ -115,175 +109,144 @@
 </div>
 <!--header-wrap-->
 
-<div class="site-banner">
-    <div class="banner-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="colored">
-                        <h1 class="page-title">About Us</h1>
-                        <div class="breadcum-items">
-                            <span class="item"><a href="index.html">Home /</a></span>
-                            <span class="item colored">About Us</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--site-banner-->
-
-<section class="chief-detail padding-large">
+<section>
     <div class="container">
         <div class="row">
-            <div class="single-image col-md-12">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus leo vel orci malesuada, id sodales
-                    em volutpat. Vivamus sagittis pulvinar dignissim. Mauris tempus a lacus eu aliquet. Mauris gravida
-                    at ectus quis venenatis. Aenean quis feugiat turpis. Etiam lacinia interdum nibh, non convallis
-                    magna lementum vel. Phasellus varius quam ligula, in lobortis risus porttitor ut. Praesent ipsum
-                    elit, lobortis n tincidunt a, dapibus et lorem. Praesent eget dui a est fringilla rutrum sit amet in
-                    eros. Vestibulum ut ros sed enim feugiat lobortis. Suspendisse fermentum nunc in est mattis
-                    molestie. Mauris ut placerat isus. Aenean mollis neque libero, ut pellentesque arcu dapibus vel.</p>
-                <p>Praesent nec nisl euismod, lacinia tellus eget, bibendum ex. Maecenas imperdiet gravida pulvinar.
-                    aecenas feugiat id tellus sed sodales. Praesent maximus ultricies elit eget accumsan. Proin tortor
-                    ante, ltrices a aliquet a, facilisis quis sapien. Donec eu turpis at velit scelerisque faucibus id
-                    eget dolor. tiam lobortis ante ipsum, sed venenatis ligula facilisis quis. Fusce blandit commodo
-                    mauris, sed fringilla isi congue et. Nunc eu eros ex.</p>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="our-team bg-sand padding-large">
-    <div class="container">
-        <div class="row">
-
             <div class="col-md-12">
-                <h2 class="section-title text-center mb-4">Our Team</h2>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-3">
-
-                <div class="team-member text-center">
-
-                    <figure>
-                        <a href="#"><img src="images/team-member2.jpg" alt="post" class="member-image"></a>
-                    </figure>
-
-                    <div class="member-details text-center">
-                        <h4>Mrs. Nocole Sara</h4>
-                        <div class="designation colored">CEO-Founder</div>
-                        <div class="social-links color-primary ">
-                            <a href="#" class="icon icon-facebook pr-10"></a>
-                            <a href="#" class="icon icon-twitter pr-10"></a>
-                            <a href="#" class="icon icon-pinterest-p"></a>
-                        </div>
-                    </div>
-
+                <h1 class="page-title">Why Do We Need An Architect Before Building a House?</h1>
+                <div class="breadcrumbs">
+                    <span class="item"><a href="index.html">Home /</a></span>
+                    <span class="item">Construction Tips</span>
                 </div>
-
             </div>
-            <!--col-md-3-->
-
-            <div class="col-md-3 text-center">
-
-                <div class="team-member text-center">
-                    <figure>
-                        <img src="images/team-member5.jpg" alt="post" class="member-image">
-                    </figure>
-                    <div class="member-details text-center">
-                        <h4>Ms Sienna Jolie</h4>
-                        <div class="designation colored">General Manager</div>
-                        <div class="social-links color-primary">
-                            <a href="#" class="icon icon-facebook pr-10"></a>
-                            <a href="#" class="icon icon-twitter pr-10"></a>
-                            <a href="#" class="icon icon-pinterest-p"></a>
-                        </div>
-                    </div>
-                    <!--text-content-->
-                </div>
-
-            </div>
-            <!--col-md-3-->
-
-            <div class="col-md-3 text-center">
-
-                <div class="team-member text-center">
-                    <figure>
-                        <img src="images/team-member7.jpg" alt="post" class="member-image">
-                    </figure>
-                    <div class="member-details text-center">
-                        <h4>Ms Jenny Blacksmith</h4>
-                        <div class="designation colored">Assistant Manager</div>
-                        <div class="social-links color-primary">
-                            <a href="#" class="icon icon-facebook pr-10"></a>
-                            <a href="#" class="icon icon-twitter pr-10"></a>
-                            <a href="#" class="icon icon-pinterest-p"></a>
-                        </div>
-                    </div>
-                    <!--text-content-->
-                </div>
-
-            </div>
-            <!--col-md-3-->
-
-            <div class="col-md-3 text-center">
-
-                <div class="team-member text-center">
-                    <figure>
-                        <img src="images/team-member3.jpg" alt="post" class="member-image">
-                    </figure>
-                    <div class="member-details text-center">
-                        <h4>Mrs Lora Inn</h4>
-                        <div class="designation colored">Staff</div>
-                        <div class="social-links color-primary">
-                            <a href="#" class="icon icon-facebook pr-10"></a>
-                            <a href="#" class="icon icon-twitter pr-10"></a>
-                            <a href="#" class="icon icon-pinterest-p"></a>
-                        </div>
-                    </div>
-                    <!--text-content-->
-                </div>
-
-            </div>
-            <!--col-md-3-->
-
         </div>
     </div>
 </section>
 
 <section class="padding-large">
     <div class="container">
-        <h2 class="section-title text-center mt-5">Our Mission</h2>
         <div class="row">
+
             <div class="col-md-12">
-                <img src="images/post-img3.jpg" alt="book-authors" class="align-right">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                    culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.
-                </p>
+
+                <div class="post-content">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eisusmod tempor incidunt ut elit
+                        et.Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eisusmod tempor incidunt ut
+                        elit et.</p>
+                    <blockquote>This is blockquote consectetur adipisicing elit sed do eisusmod tempor incidunt ut elit
+                        et.</blockquote>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eisusmod tempor incidunt ut elit
+                        et.Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eisusmod tempor incidunt ut
+                        elit et.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                        non proident, sunt in culpa qui officia eserunt mollit anim id est laborum.</p>
+
+                </div>
+                <!--post-content-->
 
             </div>
 
         </div>
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <section class="comments-wrap mb-4">
+                    <h3>Comments</h3>
+                    <div class="comment-list mt-4">
+
+                        <article class="flex-container d-flex mb-3">
+                            <img src="images/default.png" alt="default" class="commentorImg">
+                            <div class="author-post">
+                                <div class="comment-meta d-flex">
+                                    <h4>Michael Watson</h4>
+                                    <span class="meta-date">Dec 2,2020</span>
+                                    <small class="comments-reply"><a href="#"><i
+                                                class="icon icon-mail-reply"></i>Reply</a></small>
+                                </div>
+                                <!--meta-tags-->
+
+                                <p>Tristique tempis condimentum diam done ullancomroer sit element henddg sit he
+                                    consequert.Tristique tempis condimentum diam done ullancomroer sit element henddg
+                                    sit he consequert.</p>
+                            </div>
+
+                        </article>
+                        <!--flex-container-->
+
+                        <div class="child-comments">
+                            <article class="flex-container d-flex">
+                                <img src="images/default.png" alt="sara" class="commentorImg">
+                                <div class="author-post">
+                                    <div class="comment-meta d-flex">
+                                        <h4>Chris Gyale</h4>
+                                        <span class="meta-date">Dec 3,2020</span>
+                                        <small class="comments-reply"><a href="#"><i
+                                                    class="icon icon-mail-reply"></i>Reply</a></small>
+                                    </div>
+                                    <!--meta-tags-->
+
+                                    <p>Lorem diam done ullancomroer sit element henddg sit he consequert.Tristique
+                                        tempis condimentum diam done ullancomroer sit element henddg sit he consequert.
+                                    </p>
+                                </div>
+
+                            </article>
+                            <!--flex-container-->
+                        </div>
+                        <!--child-comments-->
+
+                    </div>
+                    <!--comment-list-->
+
+                </section>
+
+                <section class="comment-respond  mb-5">
+                    <h3>Leave a Comment</h3>
+                    <form method="post" class="form-group mt-3">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input class="u-full-width" type="text" name="author" id="author"
+                                    class="form-control mb-4 mr-4" placeholder="Your full name">
+                            </div>
+                            <div class="col-md-6">
+                                <input class="u-full-width" type="email" name="email" id="email"
+                                    class="form-control mb-4" placeholder="E-mail Address">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea class="u-full-width" id="comment" class="form-control mb-4" name="comment"
+                                    placeholder="Write your comment here" rows="20"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="example-send-yourself-copy">
+                                    <input type="checkbox">
+                                    <span class="label-body">Save my name, email, and website in this browser for the
+                                        next time I comment.</span>
+                                </label>
+                            </div>
+                            <div class="col-md-12">
+                                <input class="btn btn-rounded btn-large btn-full" type="submit" value="Submit">
+                            </div>
+                        </div>
+
+                    </form>
+                </section>
+
+            </div>
+        </div>
+
     </div>
 </section>
+
 
 <footer id="footer">
     <div class="container">
@@ -440,5 +403,3 @@
         </div>
     </div>
 </div>
-
-@endsection
