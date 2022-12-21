@@ -14,9 +14,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::any('/', function () {
-    return view('index');
+Route::any('/{home}', function ($name) {
+    $data = compact('name');
+    return view('home')->with($data);
 });
-Route::any('/about', function () {
-    return view('about');
+Route::any('/{about}', function ($name) {
+    $data = compact('name');
+    return view('about')->with($data);
+});
+
+Route::any('/{details}', function ($name) {
+    $data = compact('name');
+    return view('details')->with($data);
+});
+
+Route::any('/{contact_us}', function ($name) {
+    $data = compact('name');
+    return view('contavt_us')->with($data);
+});
+
+Route::any('/{admin}', function ($name) {
+    $data = compact('name');
+    return view('admin')->with($data);
 });
