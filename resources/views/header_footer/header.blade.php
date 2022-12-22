@@ -1,111 +1,41 @@
-<div id="header-wrap">
 
-    <div class="top-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="social-links">
-                        <ul>
-                            <li>
-                                <a href="#"><i class="icon icon-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="icon icon-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="icon icon-youtube-play"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="icon icon-behance-square"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--social-links-->
-                </div>
-                <div class="col-md-6">
-                    <div class="right-element">
-                        <a href="#" class="user-account for-buy"><i class="icon icon-user"></i><span>Account</span></a>
-                        <a href="#" class="cart for-buy"><i class="icon icon-clipboard"></i><span>Cart:(0
-                                $)</span></a>
-
-                        <div class="action-menu">
-
-                            <div class="search-bar">
-                                <a href="#" class="search-button search-toggle" data-selector="#header-wrap">
-                                    <i class="icon icon-search"></i>
-                                </a>
-                                <form role="search" method="get" class="search-box">
-                                    <input class="search-field text search-input" placeholder="Search" type="search">
-                                </form>
-                            </div>
-                        </div>
-
-                    </div>
-                    <!--top-right-->
-                </div>
-
-            </div>
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">E Books</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
         </div>
     </div>
-    <!--top-content-->
-
-    <header id="header">
-        <div class="container">
-            <div class="row">
-
-                <div class="col-md-2">
-                    <div class="main-logo">
-                        <a href="index.html"><img src="images/main-logo.png" alt="logo"></a>
-                    </div>
-
-                </div>
-
-                <div class="col-md-10">
-
-                    <nav id="navbar">
-                        <div class="main-menu stellarnav">
-                            <ul class="menu-list">
-                                <li class="menu-item active"><a href="#home" data-effect="Home">Home</a></li>
-                                <li class="menu-item"><a href="#about" class="nav-link" data-effect="About">About</a>
-                                </li>
-                                <li class="menu-item has-sub">
-                                    <a href="#pages" class="nav-link" data-effect="Pages">Pages</a>
-
-                                    <ul>
-                                        <li class="active"><a href="index.html">Home</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="styles.html">Styles</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="single-post.html">Post Single</a></li>
-                                        <li><a href="shop.html">Our Store</a></li>
-                                        <li><a href="single-product.html">Product Single</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
-                                        <li><a href="thank-you.html">Thank You</a></li>
-                                    </ul>
-
-                                </li>
-                                <li class="menu-item"><a href="#popular-books" class="nav-link"
-                                        data-effect="Shop">Shop</a></li>
-                                <li class="menu-item"><a href="#latest-blog" class="nav-link"
-                                        data-effect="Articles">Articles</a></li>
-                                <li class="menu-item"><a href="#contact" class="nav-link"
-                                        data-effect="Contact">Contact</a></li>
-                            </ul>
-
-                            <div class="hamburger">
-                                <span class="bar"></span>
-                                <span class="bar"></span>
-                                <span class="bar"></span>
-                            </div>
-
-                        </div>
-                    </nav>
-
-                </div>
-
-            </div>
-        </div>
-    </header>
-
-</div>
-<!--header-wrap-->
+</nav>

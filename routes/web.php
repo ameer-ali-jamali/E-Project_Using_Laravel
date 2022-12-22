@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\controller1;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,49 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::any('/{home}', function ($name) {
-    $data = compact('name');
-    return view('home')->with($data);
+Route::get('/admin', function () {
+    return view('admin');
 });
-Route::any('/{about}', function ($name) {
-    $data = compact('name');
-    return view('about')->with($data);
+Route::get('/', function () {
+    return view('index');
 });
-
-Route::any('/{admin}', function ($name) {
-    $data = compact('name');
-    return view('admin')->with($data);
-});
-
-Route::any('/{contact}', function ($name) {
-    $data = compact('name');
-    return view('contact')->with($data);
-});
-
-Route::any('/{blog}', function ($name) {
-    $data = compact('name');
-    return view('blog')->with($data);
-});
-Route::any('/{shop}', function ($name) {
-    $data = compact('name');
-    return view('shop')->with($data);
-});
-Route::any('/{single_post}', function ($name) {
-    $data = compact('name');
-    return view('single_post')->with($data);
-});
-
-Route::any('/{single_product}', function ($name) {
-    $data = compact('name');
-    return view('single_product')->with($data);
-});
-
-Route::any('/{styles}', function ($name) {
-    $data = compact('name');
-    return view('styles')->with($data);
-});
-
-Route::any('/{thankyou}', function ($name) {
-    $data = compact('name');
-    return view('thankyou')->with($data);
-});
+Route::any('/user', [controller1::class, 'list']);
