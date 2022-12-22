@@ -9,35 +9,19 @@
 </head>
 
 <body>
-    <div class="table-responsive">
-        <table class="table table-striped
-        table-borderless
-        table-primary
-        align-middle">
-            <thead class="table-light">
-                <caption>Table Name</caption>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Details</th>
-                    <th>Image</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                <tr class="table-primary">
-                    @foreach ($data as $value )
-                    <td scope="row">{{ $value->id }}</td>
-                    <td>{{ $value->name }}</td>
-                    <td>{{ $value->deatils }}</td>
-                    <td>{{ $value->img }}</td>
-                    @endforeach
-                </tr>
-            </tbody>
-            <tfoot>
-
-            </tfoot>
-        </table>
+    @foreach ( $data as $value)
+    <div class="card" style="width:18rem;">
+        <h1>{{ $value->id }}</h1>
+        <img src="{{ $value->img }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ $value->name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted ">{{ $value->details }}</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            b5
+        </div>
     </div>
+    @endforeach
 
 </body>
 

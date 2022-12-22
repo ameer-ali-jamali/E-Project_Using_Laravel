@@ -16,8 +16,7 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
     @include('Css_Js_php.css.bootstrap')
-    <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -55,11 +54,11 @@
                             <button class="btn btn-outline-secondary" type="submit" name="signup"
                                 id="signup">Signup</button>
                             <button class="btn btn-outline-primary" type="submit" name="login" id="login">Login</button>
+                            <form class="d-flex gap-2">
+                                <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
                         </div>
-                        <form class="d-flex gap-2">
-                            <input class="form-control mr-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
                     </div>
                 </div>
             </div>
