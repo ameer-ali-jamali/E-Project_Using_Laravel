@@ -34,5 +34,8 @@ Route::get('/login', function () {
 Route::get('/upload_books', function () {
     return view('upload_books');
 });
+Route::get('/data_submited', function () {
+    return view('thankyou');
+});
 Route::any('/submit', [controller1::class, 'list']);
 Route::any('/registration_done', [controller1::class, 'register']);

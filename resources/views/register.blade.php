@@ -26,48 +26,6 @@
 
     <!-- Section: Design Block -->
     <section class="background-radial-gradient overflow-hidden">
-        <style>
-            .background-radial-gradient {
-                background-color: hsl(218, 41%, 15%);
-                background-image: radial-gradient(650px circle at 0% 0%,
-                        hsl(218, 41%, 35%) 15%,
-                        hsl(218, 41%, 30%) 35%,
-                        hsl(218, 41%, 20%) 75%,
-                        hsl(218, 41%, 19%) 80%,
-                        transparent 100%),
-                    radial-gradient(1250px circle at 100% 100%,
-                        hsl(218, 41%, 45%) 15%,
-                        hsl(218, 41%, 30%) 35%,
-                        hsl(218, 41%, 20%) 75%,
-                        hsl(218, 41%, 19%) 80%,
-                        transparent 100%);
-            }
-
-            #radius-shape-1 {
-                height: 220px;
-                width: 220px;
-                top: -60px;
-                left: -130px;
-                background: radial-gradient(#44006b, #ad1fff);
-                overflow: hidden;
-            }
-
-            #radius-shape-2 {
-                border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
-                bottom: -60px;
-                right: -110px;
-                width: 300px;
-                height: 300px;
-                background: radial-gradient(#44006b, #ad1fff);
-                overflow: hidden;
-            }
-
-            .bg-glass {
-                background-color: hsla(0, 0%, 100%, 0.9) !important;
-                backdrop-filter: saturate(200%) blur(25px);
-            }
-        </style>
-
         <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
             <div class="row gx-lg-5 align-items-center mb-5">
                 <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
@@ -82,11 +40,9 @@
                         ab ipsum nisi dolorem modi. Quos?
                     </p>
                 </div>
-
                 <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
                     <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
-
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
                             <form action="{{URL::to('/registration_done')}}" method="post">
@@ -96,40 +52,60 @@
                                         <div class="form-outline">
                                             <label class="fname" for="form3Example1">First name</label>
                                             <input type="name" name="fname" id="fname" class="form-control" />
+                                            <span class="text-danger">
+                                                @error('fname')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="lname" for="form3Example2">Last name</label>
                                             <input type="text" name="lname" id="lname" class="form-control" />
+                                            <span class="text-danger">
+                                                @error('lname')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="email">Email address</label>
                                     <input type="email" name="email" id="email" class="form-control" />
+                                    <span class="text-danger">
+                                        @error('email')
+                                        {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="pass">Password</label>
-                                    <input type="password" name="pass" id="pass" class="form-control" />
+                                    <input type="password" name="password" id="password" class="form-control" />
+                                    <span class="text-danger">
+                                        @error('password')
+                                        {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
-
-                                <!-- Checkbox -->
-                                <div class="form-check d-flex justify-content-center mb-4">
-                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33"
-                                        checked />
-                                    <label class="form-check-label" for="form2Example33">
-                                        Subscribe to our newsletter
-                                    </label>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="pass">Conform Password</label>
+                                    <input type="password" name="password_confirmation" id="password_confirmation"
+                                        class="form-control" />
+                                    <span class="text-danger">
+                                        @error('password_confirmation')
+                                        {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
-
-                                <!-- Submit button -->
-                                <input type="submit" class="btn btn-primary btn-block mb-4" name="submit" id=""
-                                    value="Signup">
-
                                 <!-- Register buttons -->
                                 <div class="text-center">
-                                    <p>or sign up with:</p>
+                                    <div>
+                                        <input type="submit" class="btn btn-primary btn-block mb-4" name="submit" id=""
+                                            value="Signup">
+                                    </div>
+                                    <p>Register With Social Accounts</p>
                                     <button type="button" class="btn btn-link btn-floating mx-1">
                                         <i class="fab fa-facebook-f"></i>
                                     </button>
@@ -145,8 +121,15 @@
                                     <button type="button" class="btn btn-link btn-floating mx-1">
                                         <i class="fab fa-github"></i>
                                     </button>
-
                                 </div>
+                                <!-- Submit button -->
+
+                                <div class="text-center text-lg-start mt-4 pt-2">
+                                    <p class="small fw-bold mt-2 pt-1 mb-0">Already Have Account <a href="/login"
+                                            class="link-danger">Login</a></p>
+                                </div>
+
+
                             </form>
                         </div>
                     </div>
