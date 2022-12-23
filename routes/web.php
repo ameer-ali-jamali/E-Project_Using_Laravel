@@ -16,10 +16,23 @@ use App\Http\Controllers\controller1;
 |
 */
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 Route::get('/', function () {
     return view('index');
 });
-Route::any('/user', [controller1::class, 'list']);
+Route::get('/admin', function () {
+    return view('admin');
+});
+Route::get('/upload', function () {
+    return view('upload');
+});
+Route::get('/register', function () {
+    return view('register');
+});
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/upload_books', function () {
+    return view('upload_books');
+});
+Route::any('/submit', [controller1::class, 'list']);
+Route::any('/registration_done', [controller1::class, 'register']);
