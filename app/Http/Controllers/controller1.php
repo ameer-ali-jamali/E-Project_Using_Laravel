@@ -45,7 +45,7 @@ class controller1 extends Controller
                 'author_name' => 'required',
                 'author_email' => 'required|email',
                 'book_description' => 'required',
-                'book_img' => 'required', 'mimes:jpeg,bmp,png',
+                'book_img' => 'required'
 
             ]
         );
@@ -57,12 +57,11 @@ class controller1 extends Controller
             $books->author_name = $obj->author_name;
             $books->author_email = $obj->author_email;
             $books->book_description = $obj->book_description;
-            $books->book_img = $obj->file('book_img', 'tmp_name');
+            $img_name = $obj->file('book_img')->getClientOriginalName();
+            $obj->file('book_img')->store('public/books_images');
+            $books->book_img = $img_name;
             $books->save();
-            // return view('success');
-            echo $books::all();
         } else {
-
             echo "hello";
         }
     }
