@@ -62,4 +62,21 @@
         backdrop-filter: saturate(200%) blur(25px);
         margin-top: -3rem !important;
     }
+
+
+    /* admin books upload form css */
+    .rounded-t-5 {
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    @media (min-width: 992px) {
+        .rounded-tr-lg-0 {
+            border-top-right-radius: 0;
+        }
+
+        .rounded-bl-lg-5 {
+            border-bottom-left-radius: 0.5rem;
+        }
+    }
 </style>

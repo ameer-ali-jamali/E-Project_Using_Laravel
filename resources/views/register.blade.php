@@ -81,7 +81,7 @@
                                     </span>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="pass">Password</label>
+                                    <label class="form-label" for="password">Password</label>
                                     <input type="password" name="password" id="password" class="form-control" />
                                     <span class="text-danger">
                                         @error('password')

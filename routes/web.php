@@ -39,3 +39,4 @@ Route::get('/data_submited', function () {
 });
 Route::any('/submit', [controller1::class, 'list']);
 Route::any('/registration_done', [controller1::class, 'register']);
+Route::any('/upload', [controller1::class, 'upload_books']);

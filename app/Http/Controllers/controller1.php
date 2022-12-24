@@ -28,7 +28,7 @@ class controller1 extends Controller
             $user->first_name = $obj->fname;
             $user->last_name = $obj->lname;
             $user->email = $obj->email;
-            $user->pass = $obj->pass;
+            $user->pass = $obj->password;
             $user->save();
             return view('registration_done');
         } else {
@@ -36,10 +36,34 @@ class controller1 extends Controller
             print_r($obj);
         }
     }
-
-    public function list()
+    public function upload_books(Request $obj)
     {
-        $data = books::all();
-        return view('index', compact('data'));
+        $obj->validate(
+            [
+                'book_name' => 'required',
+                'book_issue_date' => 'required|date',
+                'author_name' => 'required',
+                'author_email' => 'required|email',
+                'book_description' => 'required',
+                'book_img' => 'required', 'mimes:jpeg,bmp,png',
+
+            ]
+        );
+
+        if ($obj == true) {
+            $books = new books();
+            $books->book_name = $obj->book_name;
+            $books->book_issue_date = $obj->book_issue_date;
+            $books->author_name = $obj->author_name;
+            $books->author_email = $obj->author_email;
+            $books->book_description = $obj->book_description;
+            $books->book_img = $obj->file('book_img', 'tmp_name');
+            $books->save();
+            // return view('success');
+            echo $books::all();
+        } else {
+
+            echo "hello";
+        }
     }
-};
+}

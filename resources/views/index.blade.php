@@ -38,7 +38,7 @@
                     <div class="container">
                         <ul class="navbar-nav mr-auto mb-2 mb-md-0 justify-content-around">
                             <li class="nav-item active">
-                                <a class="nav-link" aria-current="page" href="#">Home</a>
+                                <a class="nav-link" aria-current="page" href="/">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">All Books</a>

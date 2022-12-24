@@ -15,6 +15,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
+    {{-- sweet alert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- Font Awosome CDN-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
     @include('Css_Js_php.css.form_css')
@@ -24,28 +26,10 @@
 
 <body>
 
-
-
     <!-- Section: Design Block -->
     <section class=" text-center text-lg-start">
-        <style>
-            .rounded-t-5 {
-                border-top-left-radius: 0.5rem;
-                border-top-right-radius: 0.5rem;
-            }
-
-            @media (min-width: 992px) {
-                .rounded-tr-lg-0 {
-                    border-top-right-radius: 0;
-                }
-
-                .rounded-bl-lg-5 {
-                    border-bottom-left-radius: 0.5rem;
-                }
-            }
-        </style>
         <div class="card mb-3">
-            <div class="row g-0 d-flex align-items-center">
+            <div class="row g-0 d-flex">
                 <div class="col-lg-4 d-none d-lg-flex">
                     <img src="https://mdbootstrap.com/img/new/ecommerce/vertical/004.jpg" alt="Trendy Pants and Shoes"
                         class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
@@ -53,47 +37,92 @@
                 <div class="col-lg-8">
                     <div class="card-body py-5 px-md-5">
 
-                        <form>
-                            <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <input type="email" id="form2Example1" class="form-control" />
-                                <label class="form-label" for="form2Example1">Email address</label>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <input type="email" id="form2Example1" class="form-control" />
-                                <label class="form-label" for="form2Example1">Email address</label>
-                            </div>
-                            <!-- Password input -->
-                            <div class="form-outline mb-4">
-                                <input type="password" id="form2Example2" class="form-control" />
-                                <label class="form-label" for="form2Example2">Password</label>
-                            </div>
+                        <form action="{{ URL::to('/upload') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
 
-                            <!-- 2 column grid layout for inline styling -->
-                            <div class="row mb-4">
-                                <div class="col d-flex justify-content-center">
-                                    <!-- Checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="form2Example31"
-                                            checked />
-                                        <label class="form-check-label" for="form2Example31"> Remember me </label>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="book_name">Book_Name</label>
+                                        <input type="text" name="book_name" id="book_name" class="form-control" />
+                                        <span class="text-danger">
+                                            @error('book_name')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="book_issue_date">Book Issue Date</label>
+                                        <input type="datetime-local" name="book_issue_date" id="book_issue_date"
+                                            class="form-control" />
+                                        <span class="text-danger">
+                                            @error('book_issue_date')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
                                     </div>
                                 </div>
 
-                                <div class="col">
-                                    <!-- Simple link -->
-                                    <a href="#!">Forgot password?</a>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="author_name">Author_Name</label>
+                                        <input type="text" name="author_name" id="author_name" class="form-control" />
+                                        <span class="text-danger">
+                                            @error('author_name')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="author_email">Author_Email</label>
+                                        <input type="email" name="author_email" id="author_email"
+                                            class="form-control" />
+                                        <span class="text-danger">
+                                            @error('author_email')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="row">
 
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="book_description">Book Description</label>
+                                        <input type="text" name="book_description" id="book_description"
+                                            class="form-control" />
+                                        <span class="text-danger">
+                                            @error('book_description')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label" for="book_price">Book Image :</label>
+                                <input type="file" name="book_img" id="book_img" class="form-control" />
+                                <span class="text-danger">
+                                    @error('book_img')
+                                    {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
                             <!-- Submit button -->
-                            <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
-
+                            <input type="submit" class="btn btn-primary btn-dark btn-lg mb-4" name="submit" id="submit"
+                                value="Submit">
                         </form>
-
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- Section: Design Block -->

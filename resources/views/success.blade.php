@@ -9,7 +9,10 @@
 </head>
 
 <body>
-    <h1>Your data submited successfully</h1>
+    <li class="nav-item active">
+        <a class="nav-link" aria-current="page" href="/">Home</a>
+    </li>
+    <h1>Successs</h1>
 </body>
 
 </html>
