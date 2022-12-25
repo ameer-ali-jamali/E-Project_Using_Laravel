@@ -45,15 +45,15 @@
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form action="{{URL::to('/registration_done')}}" method="post">
+                            <form action="{{URL::to('/registerUser')}}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="fname" for="form3Example1">First name</label>
-                                            <input type="name" name="fname" id="fname" class="form-control" />
+                                            <label class="form-label" for="firstName">First name</label>
+                                            <input type="text" name="firstName" id="firstName" class="form-control" />
                                             <span class="text-danger">
-                                                @error('fname')
+                                                @error('firstName')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
@@ -61,10 +61,10 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="lname" for="form3Example2">Last name</label>
-                                            <input type="text" name="lname" id="lname" class="form-control" />
+                                            <label class="form-label" for="lastName">Last name</label>
+                                            <input type="text" name="lastName" id="lastName" class="form-control" />
                                             <span class="text-danger">
-                                                @error('lname')
+                                                @error('lastName')
                                                 {{ $message }}
                                                 @enderror
                                             </span>

@@ -45,13 +45,13 @@
             </tr>
             </thead>
             <tbody>
-                @foreach ($data as $books )
+                @foreach ($user as $user )
                 <tr>
-                    <th>{{ $books->id}}</th>
-                    <th>{{ $books->first_name}}</th>
-                    <th>{{ $books->last_name}}</th>
-                    <th>{{ $books->email}}</th>
-                    <th>{{ $books->created_at}}</th>
+                    <th>{{ $user->id}}</th>
+                    <th>{{ $user->firstName}}</th>
+                    <th>{{ $user->lastName}}</th>
+                    <th>{{ $user->email}}</th>
+                    <th>{{ $user->created_at}}</th>
                     </th>
                 </tr>
                 @endforeach

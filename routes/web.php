@@ -1,8 +1,10 @@
 <?php
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\BooksController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\controller1;
+
 
 
 /*
@@ -19,26 +21,21 @@ use App\Http\Controllers\controller1;
 Route::get('/', function () {
     return view('index');
 });
-Route::get('/admin', function () {
-    return view('admin');
-});
-Route::get('/upload', function () {
-    return view('upload');
-});
 Route::get('/register', function () {
     return view('register');
 });
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/upload_books', function () {
-    return view('upload_books');
+Route::get('/upload', function () {
+    return view('uploadBook');
 });
-Route::get('/success', function () {
-    return view('success');
+Route::get('/admin', function () {
+    return view('admin');
 });
-Route::any('/', [controller1::class, 'select']);
-Route::any('/books', [controller1::class, 'books_info']);
-Route::any('/all_users', [controller1::class, 'users_info']);
-Route::any('/registration_done', [controller1::class, 'register']);
-Route::any('/upload', [controller1::class, 'upload_books']);
+Route::any('/', [BooksController::class, 'all_books_home_page']);
+Route::any('/books', [BooksController::class, 'get_all_books']);
+Route::any('/users', [UsersController::class, 'get_all_users']);
+Route::any('/registerUser', [UsersController::class, 'registerUser']);
+Route::any('/uploadBook', [BooksController::class, 'upload_book']);
+Route::any('/download{filepath}', [IndexController::class, 'downloadBook']);

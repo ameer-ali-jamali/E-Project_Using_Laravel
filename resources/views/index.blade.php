@@ -16,7 +16,9 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
     <!-- Font Awosome CDN-->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    {{--
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"> --}}
+    <script src="https://kit.fontawesome.com/4ff6f407d4.js" crossorigin="anonymous"></script>
     @include('Css_Js_php.css.bootstrap')
     @include('Css_Js_php.css.style')
 
@@ -114,16 +116,21 @@
         <!-- Wrap the rest of the page in another container to center all the content. -->
 
         <div class="container marketing">
-            <div class="container d-grid">
+            <div class="container d-grid mt-">
                 <div class="row">
-                    @foreach ( $data as $sql)
+                    @foreach ($book as $book)
                     <div class="col-3 col-md-3">
-                        <div class="card"><img class="cardimg" src="{{ $sql->image }}" alt="" srcset="">
-                            <div class="img-tittle">{{ $sql->name }}
-                                <div class="rs">{{ $sql->description }}</div>
-                                <button type="button" class="mybtn" onclick="addTocard()">
-                                    <i class="fa fa-shopping-cart"></i> Add to Cart
-                                </button>
+                        <div class="card"><img class="cardimg" src="{{ $book->img }}" alt="" srcset="">
+                            <div class="img-tittle">{{ $book->name }}
+                                <div class="rs">{{ $book->description }}</div>
+                                <a href="/readbook" class="btn btn-primary btn-sm"><i
+                                        class="fas fa-book-reader"></i>&nbsp; Read
+                                </a>
+                                <a href="/download/{{ $book->book_pdf }}" class="btn btn-danger
+                                    btn-sm">
+                                    <i class="fa fa-file-pdf-o fa-lg" aria-hidden="true"></i>&nbsp; Download
+                                </a>
+
                             </div>
                         </div>
                     </div>

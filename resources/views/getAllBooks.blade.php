@@ -39,25 +39,27 @@
             <tr>
                 <th scope='col'>Id</th>
                 <th scope='col'>Name</th>
-                <th scope='col'>Issue_Date</th>
-                <th scope='col'>Author_Name</th>
-                <th scope='col'>Author_Email</th>
+                <th scope='col'>IssueDate</th>
+                <th scope='col'>AuthorName</th>
+                <th scope='col'>AuthorEmail</th>
                 <th scope='col'>Description</th>
-                <th scope='col'>Crated_At</th>
+                <th scope='col'>CratedAt</th>
+                <th scope='col'>Book File</th>
                 <th scope='col'>Image</th>
             </tr>
             </thead>
             <tbody>
-                @foreach ($data as $books )
+                @foreach ($book as $book )
                 <tr>
-                    <th>{{ $books->id}}</th>
-                    <th>{{ $books->name}}</th>
-                    <th>{{ $books->issue_date}}</th>
-                    <th>{{ $books->author_name}}</th>
-                    <th>{{ $books->author_email}}</th>
-                    <th>{{ $books->description}}</th>
-                    <th>{{ $books->created_at}}</th>
-                    <th class="d-grid justify-center img_td"><img class="img_width" src="{{ $books->image }}" alt="">
+                    <th>{{ $book->id}}</th>
+                    <th>{{ $book->name}}</th>
+                    <th>{{ $book->issueDate}}</th>
+                    <th>{{ $book->authorName}}</th>
+                    <th>{{ $book->authorEmail}}</th>
+                    <th>{{ $book->description}}</th>
+                    <th>{{ $book->created_at}}</th>
+                    <th class="d-grid justify-center img_td"><img class="img_width" src="{{ $book->image }}" alt="">
+                    <th>{{ $book->file}}</th>
                     </th>
                 </tr>
                 @endforeach

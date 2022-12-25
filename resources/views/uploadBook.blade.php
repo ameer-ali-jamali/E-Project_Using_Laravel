@@ -37,16 +37,15 @@
                 <div class="col-lg-8">
                     <div class="card-body py-5 px-md-5">
 
-                        <form action="{{ URL::to('/upload') }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ URL::to('/uploadBook') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="Name">Book_Name :</label>
-                                        <input type="text" name="Name" id="Name" class="form-control" />
+                                        <label class="form-label" for="name">Book Name :</label>
+                                        <input type="text" name="name" id="name" class="form-control" />
                                         <span class="text-danger">
-                                            @error('Name')
+                                            @error('name')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -54,11 +53,11 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="Issue_Date">Book Issue Date :</label>
-                                        <input type="datetime-local" name="Issue_Date" id="Issue_Date"
+                                        <label class="form-label" for="issueDate">Book Issue Date :</label>
+                                        <input type="datetime-local" name="issueDate" id="issueDate"
                                             class="form-control" />
                                         <span class="text-danger">
-                                            @error('Issue_Date')
+                                            @error('issueDate')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -69,10 +68,10 @@
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="Author_Name">Author_Name :</label>
-                                        <input type="text" name="Author_Name" id="Author_Name" class="form-control" />
+                                        <label class="form-label" for="authorName">Author Name :</label>
+                                        <input type="text" name="authorName" id="authorName" class="form-control" />
                                         <span class="text-danger">
-                                            @error('Author_Name')
+                                            @error('authorName')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -80,11 +79,10 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="Author_Email">Author_Email :</label>
-                                        <input type="email" name="Author_Email" id="author_email"
-                                            class="form-control" />
+                                        <label class="form-label" for="authorEmail">Author Email :</label>
+                                        <input type="email" name="authorEmail" id="authorEmail" class="form-control" />
                                         <span class="text-danger">
-                                            @error('Author_Email')
+                                            @error('authorEmail')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -92,13 +90,23 @@
                                 </div>
                             </div>
                             <div class="row">
-
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="Description">Book Description :</label>
-                                        <input type="text" name="Description" id="Description" class="form-control" />
+                                        <label class="form-label" for="description">Book Description :</label>
+                                        <input type="text" name="description" id="description" class="form-control" />
                                         <span class="text-danger">
-                                            @error('Description')
+                                            @error('description')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="file">Book File :</label>
+                                        <input type="file" name="file" id="file" class="form-control" />
+                                        <span class="text-danger">
+                                            @error('file')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -106,10 +114,10 @@
                                 </div>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="Image">Book Image :</label>
-                                <input type="file" name="Image" id="Image" class="form-control" />
+                                <label class="form-label" for="img">Book Image :</label>
+                                <input type="file" name="img" id="Img" class="form-control" />
                                 <span class="text-danger">
-                                    @error('Image')
+                                    @error('img')
                                     {{ $message }}
                                     @enderror
                                 </span>
