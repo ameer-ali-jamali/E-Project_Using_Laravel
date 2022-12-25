@@ -43,10 +43,10 @@
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="book_name">Book_Name</label>
-                                        <input type="text" name="book_name" id="book_name" class="form-control" />
+                                        <label class="form-label" for="Name">Book_Name :</label>
+                                        <input type="text" name="Name" id="Name" class="form-control" />
                                         <span class="text-danger">
-                                            @error('book_name')
+                                            @error('Name')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -54,11 +54,11 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="book_issue_date">Book Issue Date</label>
-                                        <input type="datetime-local" name="book_issue_date" id="book_issue_date"
+                                        <label class="form-label" for="Issue_Date">Book Issue Date :</label>
+                                        <input type="datetime-local" name="Issue_Date" id="Issue_Date"
                                             class="form-control" />
                                         <span class="text-danger">
-                                            @error('book_issue_date')
+                                            @error('Issue_Date')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -69,10 +69,10 @@
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="author_name">Author_Name</label>
-                                        <input type="text" name="author_name" id="author_name" class="form-control" />
+                                        <label class="form-label" for="Author_Name">Author_Name :</label>
+                                        <input type="text" name="Author_Name" id="Author_Name" class="form-control" />
                                         <span class="text-danger">
-                                            @error('author_name')
+                                            @error('Author_Name')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -80,11 +80,11 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="author_email">Author_Email</label>
-                                        <input type="email" name="author_email" id="author_email"
+                                        <label class="form-label" for="Author_Email">Author_Email :</label>
+                                        <input type="email" name="Author_Email" id="author_email"
                                             class="form-control" />
                                         <span class="text-danger">
-                                            @error('author_email')
+                                            @error('Author_Email')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -95,11 +95,10 @@
 
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="book_description">Book Description</label>
-                                        <input type="text" name="book_description" id="book_description"
-                                            class="form-control" />
+                                        <label class="form-label" for="Description">Book Description :</label>
+                                        <input type="text" name="Description" id="Description" class="form-control" />
                                         <span class="text-danger">
-                                            @error('book_description')
+                                            @error('Description')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -107,10 +106,10 @@
                                 </div>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="book_price">Book Image :</label>
-                                <input type="file" name="book_img" id="book_img" class="form-control" />
+                                <label class="form-label" for="Image">Book Image :</label>
+                                <input type="file" name="Image" id="Image" class="form-control" />
                                 <span class="text-danger">
-                                    @error('book_img')
+                                    @error('Image')
                                     {{ $message }}
                                     @enderror
                                 </span>

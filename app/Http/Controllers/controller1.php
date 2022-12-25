@@ -7,10 +7,17 @@ use App\Models\users;
 use Illuminate\Cache\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Contracts\Service\Attribute\Required;
 
 class controller1 extends Controller
 {
+    public function select()
+    {
+        $data = books::all();
+        return view('index', ['data' => $data]);
+    }
+
     public function register(Request $obj)
     {
         $obj->validate(
@@ -40,29 +47,28 @@ class controller1 extends Controller
     {
         $obj->validate(
             [
-                'book_name' => 'required',
-                'book_issue_date' => 'required|date',
-                'author_name' => 'required',
-                'author_email' => 'required|email',
-                'book_description' => 'required',
-                'book_img' => 'required'
+                'Name' => 'required',
+                'Issue_Date' => 'required|date',
+                'Author_Name' => 'required',
+                'Author_Email' => 'required|email',
+                'Description' => 'required',
+                'Image' => 'required'
 
             ]
         );
 
         if ($obj == true) {
             $books = new books();
-            $books->book_name = $obj->book_name;
-            $books->book_issue_date = $obj->book_issue_date;
-            $books->author_name = $obj->author_name;
-            $books->author_email = $obj->author_email;
-            $books->book_description = $obj->book_description;
-            $img_name = $obj->file('book_img')->getClientOriginalName();
-            $obj->file('book_img')->store('public/books_images');
-            $books->book_img = $img_name;
+            $books->name = $obj->Name;
+            $books->issue_date = $obj->Issue_Date;
+            $books->author_name = $obj->Author_Name;
+            $books->author_email = $obj->Author_Email;
+            $books->description = $obj->Description;
+            $img_name = $obj->file('Image')->getClientOriginalName();
+            $obj->file('Image')->move(public_path('Images/books'), $img_name);
+            $books->image =  'Images/books/' . $img_name;
             $books->save();
-        } else {
-            echo "hello";
+            return redirect('/upload_books');
         }
     }
 }
