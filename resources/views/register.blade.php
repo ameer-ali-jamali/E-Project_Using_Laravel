@@ -90,7 +90,7 @@
                                     </span>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label" for="pass">Conform Password</label>
+                                    <label class="form-label" for="password_confirmation">Conform Password</label>
                                     <input type="password" name="password_confirmation" id="password_confirmation"
                                         class="form-control" />
                                     <span class="text-danger">

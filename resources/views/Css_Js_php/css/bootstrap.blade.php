@@ -7,10 +7,11 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-
-    .mright {
-        margin-right: 10px
+    .hm-gradient {
+        background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
     }
+
+
 
     :root {
         --bs-blue: #0d6efd;
@@ -12695,6 +12696,7 @@
         left: 0;
         min-width: 100%;
         height: 32rem;
+        margin-top: 60px
     }
 
 

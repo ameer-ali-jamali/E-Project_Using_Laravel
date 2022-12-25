@@ -84,44 +84,18 @@
                 <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                <div class="carousel-item active" data-bs-interval="2000">
                     <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt=""
                         width="100%" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
-                    <div class="container">
-                        <div class="carousel-caption text-left">
-                            <h1>Example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget
-                                metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-                        </div>
-                    </div>
                 </div>
-                <div class="carousel-item">
-                    <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt=""
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home_carouserl.jpeg" alt=""
                         width="100%" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
-                    <div class="container">
-                        <div class="carousel-caption">
-                            <h1>Another example headline.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget
-                                metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                        </div>
-                    </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item" data-bs-interval="2000">
                     <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt=""
                         width="100%" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
-                    <div class="container">
-                        <div class="carousel-caption text-right">
-                            <h1>One more for good measure.</h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                                gravida at eget
-                                metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
@@ -142,11 +116,11 @@
         <div class="container marketing">
             <div class="container d-grid">
                 <div class="row">
-                    @foreach ( $data as $value)
+                    @foreach ( $data as $sql)
                     <div class="col-3 col-md-3">
-                        <div class="card"><img class="cardimg" src="{{  }}" alt="" srcset="">
-                            <div class="img-tittle">Black T-Shirt (2-16 Yrs)
-                                <div class="rs">From £18.00</div>
+                        <div class="card"><img class="cardimg" src="{{ $sql->image }}" alt="" srcset="">
+                            <div class="img-tittle">{{ $sql->name }}
+                                <div class="rs">{{ $sql->description }}</div>
                                 <button type="button" class="mybtn" onclick="addTocard()">
                                     <i class="fa fa-shopping-cart"></i> Add to Cart
                                 </button>
@@ -158,60 +132,6 @@
             </div>
 
             <!-- START THE FEATURETTES -->
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It’ll blow
-                            your
-                            mind.</span>
-                    </h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
-                        felis
-                        euismod
-                        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus
-                        ac cursus
-                        commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: 500x500"
-                        preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                            dy=".3em">500x500</text>
-                    </svg>
-
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="text-muted">See for
-                            yourself.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
-                        felis
-                        euismod
-                        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus
-                        ac cursus
-                        commodo.</p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: 500x500"
-                        preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa"
-                            dy=".3em">500x500</text>
-                    </svg>
-
-                </div>
-            </div>
 
             <hr class="featurette-divider">
 
@@ -242,7 +162,7 @@
             <hr class="featurette-divider">
 
             <!-- /END THE FEATURETTES -->
-
+        </div>
         </div><!-- /.container -->
 
 
@@ -255,12 +175,19 @@
 
 
     <!-- Scroll Top -->
-
-
     <button type="button" class="btn btn-floating" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
-
-
     <!-- Scroll Top Attach Files -->
+
+    <div class="fab">
+        <a href="https://api.whatsapp.com/send?text=Hi&amp;phone=+923404889886" target="_blank"
+            class="things things1"><img class="img11" style="height: 47px; width:47px;"
+                src="https://www.libertybooks.com/floatingchaticons/whats.png" alt="WhatsApp"></a>
+    </div>
+
+
+
+
+
 
 
     @include('Css_Js_php.js.helper')

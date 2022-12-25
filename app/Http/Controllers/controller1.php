@@ -15,7 +15,7 @@ class controller1 extends Controller
     public function select()
     {
         $data = books::all();
-        return view('index', ['data' => $data]);
+        return view('index', compact('data'));
     }
 
     public function register(Request $obj)
@@ -25,8 +25,8 @@ class controller1 extends Controller
                 'fname' => 'required',
                 'lname' => 'required',
                 'email' => 'required|email',
-                'password' => 'required',
-                'password_confirmation' => 'required|confirmed'
+                'password' => 'required|confirmed',
+                'password_confirmation' => 'required'
             ]
         );
 
@@ -37,7 +37,7 @@ class controller1 extends Controller
             $user->email = $obj->email;
             $user->pass = $obj->password;
             $user->save();
-            return view('registration_done');
+            return redirect('/register');
         } else {
             echo "<pre>";
             print_r($obj);
@@ -70,5 +70,15 @@ class controller1 extends Controller
             $books->save();
             return redirect('/upload_books');
         }
+    }
+    public function books_info()
+    {
+        $data = books::all();
+        return view('books', compact('data'));
+    }
+    public function users_info()
+    {
+        $data = users::all();
+        return view('all_users', compact('data'));
     }
 }
