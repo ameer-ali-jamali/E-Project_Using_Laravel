@@ -10,12 +10,12 @@ class BooksController extends Controller
 
     public function all_books_home_page()
     {
-        $book = Books::all();
+        $book = books::all();
         return view('index', compact('book'));
     }
     public function get_all_books()
     {
-        $book = Books::all();
+        $book = books::all();
         return view('getAllBooks', compact('book'));
     }
     public function upload_book(Request $formData)
@@ -27,25 +27,25 @@ class BooksController extends Controller
                 'authorName' => 'required',
                 'authorEmail' => 'required|email',
                 'description' => 'required',
-                'img' => 'required',
-                'file' => 'required'
+                'file' => 'required',
+                'img' => 'required'
 
             ]
         );
 
-        $table = new Books();
+        $table = new books();
         $table->name = $formData->name;
-        $table->issuedate  = $formData->issueDate;
-        $table->authorname  = $formData->authorName;
-        $table->authoremail  = $formData->authorEmail;
+        $table->issueDate  = $formData->issueDate;
+        $table->authorName  = $formData->authorName;
+        $table->authorEmail  = $formData->authorEmail;
         $table->description  = $formData->description;
         $file  = $formData->file('file')->getClientOriginalName();
-        $formData->file('file')->move(public_path('assests/'), $file);
-        $table->file =  'assests/' . $file;
+        $formData->file('file')->move(public_path('assests/booksPdf/'), $file);
+        $table->file =  'assests/booksPdf/' . $file;
         $img_name  = $formData->file('img')->getClientOriginalName();
-        $formData->file('img')->move(public_path('images/books'), $img_name);
-        $table->image =  'images/books/' . $img_name;
+        $formData->file('img')->move(public_path('book/images/'), $img_name);
+        $table->image =  'book/images/' . $img_name;
         $table->save();
-        echo "hello";
+        return redirect()->back();
     }
 }

@@ -85,7 +85,7 @@
 
     .img_width {
         object-fit: cover;
-        width: 40%;
+        width: 50%;
         height: 100%;
     }
 

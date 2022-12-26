@@ -34,7 +34,7 @@ Route::get('/admin', function () {
     return view('admin');
 });
 Route::any('/', [BooksController::class, 'all_books_home_page']);
-Route::any('/books', [BooksController::class, 'get_all_books']);
+Route::get('/books', [BooksController::class, 'get_all_books']);
 Route::any('/users', [UsersController::class, 'get_all_users']);
 Route::any('/registerUser', [UsersController::class, 'registerUser']);
 Route::any('/uploadBook', [BooksController::class, 'upload_book']);

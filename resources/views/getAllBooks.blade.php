@@ -58,8 +58,8 @@
                     <th>{{ $book->authorEmail}}</th>
                     <th>{{ $book->description}}</th>
                     <th>{{ $book->created_at}}</th>
+                    <th><a href="/downlaod">Downlaod</a></th>
                     <th class="d-grid justify-center img_td"><img class="img_width" src="{{ $book->image }}" alt="">
-                    <th>{{ $book->file}}</th>
                     </th>
                 </tr>
                 @endforeach
