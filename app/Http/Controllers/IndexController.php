@@ -11,4 +11,11 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class IndexController extends Controller
 {
+    public function delete_user($id)
+    {
+        $isSuccess = Users::find($id);
+        // $isSuccess->delete();
+        // return redirect('/users');
+        echo $isSuccess;
+    }
 }

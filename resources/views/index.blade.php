@@ -120,7 +120,7 @@
                 <div class="row">
                     @foreach ($book as $book)
                     <div class="col-3 col-md-3">
-                        <div class="card"><img class="cardimg" src="{{ $book->img }}" alt="" srcset="">
+                        <div class="card"><img class="cardimg" src="{{ $book->image }}" alt="" srcset="">
                             <div class="img-tittle">{{ $book->name }}
                                 <div class="rs">{{ $book->description }}</div>
                                 <a href="/readbook" class="btn btn-primary btn-sm"><i
