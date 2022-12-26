@@ -39,4 +39,5 @@ Route::get('/users', [UsersController::class, 'get_all_users']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);
 Route::post('/uploadBook', [BooksController::class, 'upload_book']);
 Route::any('/download{filepath}', [IndexController::class, 'downloadBook']);
-Route::get('/delete/{id}', [IndexController::class, 'delete_user']);
+Route::get('/deleteBook/{id}', [BooksController::class, 'delete_book']);
+Route::get('/deleteUser/{id}', [UsersController::class, 'delete_user']);

@@ -29,7 +29,7 @@
     <a href="/" class="btn btn-primary">Home Page</a>
     <a href="/admin" class="btn btn-dark">Dashboard</a>
 
-    <div class="container mt-4">
+    <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-md-12">
                 <h2 class="py-3 text-center font-bold font-up blue-text">All Books Info</h2>
@@ -46,6 +46,8 @@
                 <th scope='col'>CratedAt</th>
                 <th scope='col'>Book File</th>
                 <th scope='col'>Image</th>
+                <th scope='col'>Update</th>
+                <th scope='col'>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -60,6 +62,12 @@
                     <th>{{ $book->created_at}}</th>
                     <th><a href="/downlaod">Downlaod</a></th>
                     <th class="d-grid justify-center img_td"><img class="img_width" src="{{ $book->image }}" alt="">
+                    </th>
+                    <th><a href="{{" /updateBook/$book->id" }}" class=" btn btn-success btn-sm">Update</a>
+                    </th>
+                    </th>
+                    <th><a href="{{" /deleteBook/$book->id" }}" class=" btn btn-danger btn-sm">Delete</a>
+                    </th>
                     </th>
                 </tr>
                 @endforeach

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Users;
+use App\Models\UserModel;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -20,18 +20,24 @@ class UsersController extends Controller
             ]
         );
 
-        $table = new Users();
-        $table->firstName = $signupUser->firstName;
-        $table->lastName = $signupUser->lastName;
-        $table->email = $signupUser->email;
-        $table->pass = $signupUser->password;
-        $table->save();
+        $userModel = new UserModel();
+        $userModel->firstName = $signupUser->firstName;
+        $userModel->lastName = $signupUser->lastName;
+        $userModel->email = $signupUser->email;
+        $userModel->pass = $signupUser->password;
+        $userModel->save();
         return redirect()->back();
     }
 
     public function get_all_users()
     {
-        $user = Users::all();
+        $user = UserModel::all();
         return view('getAllUsers', compact('user'));
+    }
+    public function delete_user($id)
+    {
+        $user = UserModel::find($id);
+        $user->delete();
+        return redirect('/users');
     }
 }

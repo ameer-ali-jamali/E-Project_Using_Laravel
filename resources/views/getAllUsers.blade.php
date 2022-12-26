@@ -42,6 +42,7 @@
                 <th scope='col'>Last Name</th>
                 <th scope='col'>Email</th>
                 <th scope='col'>Created_At</th>
+                <th scope='col'>Update</th>
                 <th scope='col'>Delete</th>
             </tr>
             </thead>
@@ -53,7 +54,11 @@
                     <th>{{ $user->lastName}}</th>
                     <th>{{ $user->email}}</th>
                     <th>{{ $user->created_at}}</th>
-                    <th><a href="{{" /delete/$user->id" }}" class=" btn btn-danger btn-sm">Delete</a></th>
+                    <th><a href="{{" /updateUser/$user->id" }}" class=" btn btn-success btn-sm">Update</a>
+                    </th>
+                    </th>
+                    <th><a href="{{" /deleteUser/$user->id" }}" class=" btn btn-danger btn-sm">Delete</a>
+                    </th>
                     </th>
                 </tr>
                 @endforeach
