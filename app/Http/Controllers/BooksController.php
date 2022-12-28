@@ -53,4 +53,44 @@ class BooksController extends Controller
         $book->delete();
         return redirect('/books');
     }
+    public function get_book_info_by_id($id)
+    {
+        $book = Book::find($id);
+        if ($book) {
+            return response()->json([
+                "status" => 200,
+                "getBookData" => $book,
+            ]);
+        } else {
+            return response()->json([
+                "status" => 404,
+                "book" => "Book Record Not Found",
+            ]);
+        }
+    }
+    public function update_book(Request $request)
+
+    {
+        $request->validate(
+            [
+                'name' => 'required',
+                'issueDate' => 'required|date',
+                'authorName' => 'required',
+                'authorEmail' => 'required|email',
+                'description' => 'required'
+
+            ]
+        );
+        $bookId = $request->bookIdForUpdate;
+        $book = Book::find($bookId);
+        if ($book == true) {
+            $book->name = $request->name;
+            $book->issueDate  = $request->issueDate;
+            $book->authorName  = $request->authorName;
+            $book->authorEmail  = $request->authorEmail;
+            $book->description  = $request->description;
+            $book->update();
+            return redirect()->back();
+        }
+    }
 }

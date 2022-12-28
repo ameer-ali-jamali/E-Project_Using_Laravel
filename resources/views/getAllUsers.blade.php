@@ -17,10 +17,9 @@
     </script>
     <!-- Font Awosome CDN-->
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('Css_Js_php.css.bootstrap')
     @include('Css_Js_php.css.style')
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
 
 </head>
@@ -33,12 +32,16 @@
     <div class="container mt-0">
         <div class="row">
             <div class="col-md-12">
-
                 <h2 class="py-3 text-center font-bold font-up blue-text"><i
                         class="fa-solid fa-album-circle-user fa-lg"></i> &nbsp; Users</h2>
             </div>
         </div>
         <table class="table table-hover table-responsive mb-0">
+            <div class="d-grid justify-content-end">
+
+                <button class="btn btn-dark mb-3" data-toggle="modal" data-target="#registerNewUser">&nbsp;<i class="fad fa-user-plus"></i> Register</button>
+
+            </div>
             <tr>
                 <th scope='col'>Id</th>
                 <th scope='col'>Fist Name</th>
@@ -61,9 +64,8 @@
                             <td>{{ $userRecord->created_at }}</td>
                             <td>{{ $userRecord->updated_at }}</td>
                             <td>
-                                <button type="submit" class="btn btn-dark getUserId" value="{{ $userRecord->id }}"
-                                    data-toggle="modal" data-target="#exampleModalLong"><i
-                                        class="fas fa-edit"></i></button>
+                                <button type="submit" class="btn btn-primary getUserId btn-sm" value="{{ $userRecord->id }}"
+                                    data-toggle="modal" data-target="#updateModel"><i class="fas fa-edit"></i></button>
                             </td>
                             <td>
                                 <a href="{{ " /deleteUser/$userRecord->id" }}" class=" btn btn-danger btn-sm"><i
@@ -86,15 +88,12 @@
     <hr class="my-4">
 
 
+    {{-- Update User Model --}}
 
 
-    {{--
-        /////////////////////////////////
-        Update Model
-       ////////////////////////////////
-        --}}
 
-    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
+
+    <div class="modal fade" id="updateModel" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -105,7 +104,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{ URL::to('/updateUser') }}" method="POST" id="form">
+                <form action="{{ URL::to('/updateUser') }}" method="POST">
                     <div class="modal-body">
                         @csrf
                         <div class="mb-0 container-fluid model-container">
@@ -149,11 +148,108 @@
     </div>
 
 
-    {{--
-        /////////////////////////////////
-        End
-       ////////////////////////////////
-    --}}
+    {{-- Update User Model --}}
+
+
+
+
+
+
+
+    {{-- Register New User Model --}}
+
+
+
+    <div class="modal fade" id="registerNewUser" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p id="error_message"></p>
+                    <h5 class="modal-title" id="ModalLongTitle">Register</h5>
+                    <button type="button" class="close btn btn-danger bnt-sm" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="{{ URL::to('/registerUser') }}" method="post">
+                    @csrf
+                    <div class="container mt-2 mb-1">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="form-outline">
+                                    <label class="form-label font-bold" for="firstName">First name</label>
+                                    <input type="text" name="firstName" id="firstName" class="form-control" />
+                                    <span class="text-danger">
+                                        @error('firstName')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="form-outline">
+                                    <label class="form-label" for="lastName">Last name</label>
+                                    <input type="text" name="lastName" id="lastName" class="form-control" />
+                                    <span class="text-danger">
+                                        @error('lastName')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" name="email" id="email" class="form-control" />
+                            <span class="text-danger">
+                                @error('email')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" />
+                            <span class="text-danger">
+                                @error('password')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
+                        <div class="form-outline mb-3">
+                            <label class="form-label" for="password_confirmation">Conform Password</label>
+                            <input type="password" name="password_confirmation" id="password_confirmation"
+                                class="form-control" />
+                            <span class="text-danger">
+                                @error('password_confirmation')
+                                    {{ $message }}
+                                @enderror
+                            </span>
+                        </div>
+
+                    </div>
+                    <!-- Model Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Signup">
+                    </div>
+                    <p class="alert alert-success" id="successMessage"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    {{-- Register New User Model End --}}
+
+
+
+
+
+
+
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -164,7 +260,7 @@
                 var userId = $(this).val();
                 $.ajax({
                     type: "get",
-                    url: "/getById/" + userId,
+                    url: "/getUserInfoById/" + userId,
                     datatype: "josn",
                     success: function(response) {
                         if (response == 404) {

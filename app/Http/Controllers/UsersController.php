@@ -40,7 +40,7 @@ class UsersController extends Controller
         $user->delete();
         return redirect('/users');
     }
-    public function get_by_id($id)
+    public function get_user_info_by_id($id)
     {
         $user = UserModel::find($id);
         if ($user) {
