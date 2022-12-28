@@ -292,4 +292,45 @@
     .chatbox a {
         min-height: 0 !important;
     }
+
+
+    /*
+    //////////////////////////////
+    Update  Model css
+    /////////////////////////////////
+    */
+    .model-container {
+        display: flex;
+        justify-content: space-around;
+        width: 60%;
+        height: 24px;
+        max-height: 24px;
+        background-color: aliceblue;
+
+    }
+
+    .model-p {
+        display: inline;
+        font-weight: 900;
+    }
+
+    .model-user-id {
+        object-fit: contain;
+        width: 10%;
+        background-color: #ec3d4e;
+        font-weight: 900;
+        color: white;
+        height: auto;
+        text-align: center;
+    }
+    .font-family{
+        font-weight: bolder;
+    }
+    .user-table{
+    text-align: center;
+    font-weight: bold;
+    color: aliceblue;
+    font-size: large;
+    width:auto;
+}
 </style>

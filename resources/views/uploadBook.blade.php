@@ -103,25 +103,27 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="file">Book File :</label>
-                                        <input type="file" name="file" id="file" class="form-control" />
+                                        <label class="form-label" for="img">Book Image :</label>
+                                        <input type="file" name="img" id="Img" class="form-control" />
                                         <span class="text-danger">
-                                            @error('file')
+                                            @error('img')
                                             {{ $message }}
                                             @enderror
                                         </span>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="img">Book Image :</label>
-                                <input type="file" name="img" id="Img" class="form-control" />
+                                <label class="form-label" for="file">Book File :</label>
+                                <input type="file" name="file" id="file" class="form-control" />
                                 <span class="text-danger">
-                                    @error('img')
+                                    @error('file')
                                     {{ $message }}
                                     @enderror
                                 </span>
                             </div>
+
                             <!-- Submit button -->
                             <input type="submit" class="btn btn-primary btn-dark btn-lg mb-4" name="submit" id="submit"
                                 value="Submit">

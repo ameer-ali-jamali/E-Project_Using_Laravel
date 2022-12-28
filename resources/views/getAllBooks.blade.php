@@ -21,18 +21,17 @@
     @include('Css_Js_php.css.bootstrap')
     @include('Css_Js_php.css.style')
 
-
 </head>
 
 <body class="hm-gradient">
+    <a href="/" class="btn btn-info"><i class="fa-solid fa-house"></i> &nbsp; Home</a>
+    <a href="/admin" class="btn btn-dark"><i class="fa-duotone fa-user"></i>&nbsp; Dashboard</a>
 
-    <a href="/" class="btn btn-primary">Home Page</a>
-    <a href="/admin" class="btn btn-dark">Dashboard</a>
-
-    <div class="container-fluid mt-4">
+    <div class="container-fluid mt-0">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="py-3 text-center font-bold font-up blue-text">All Books Info</h2>
+                <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fa-duotone fa-books fa-lg"></i>
+                    &nbsp;Books Info</h2>
             </div>
         </div>
         <table class="table table-hover table-responsive mb-0">
@@ -43,33 +42,39 @@
                 <th scope='col'>AuthorName</th>
                 <th scope='col'>AuthorEmail</th>
                 <th scope='col'>Description</th>
-                <th scope='col'>CratedAt</th>
-                <th scope='col'>Book File</th>
+                <th scope='col'>File</th>
                 <th scope='col'>Image</th>
+                <th scope='col'>Created_at</th>
+                <th scope='col'>Updated_at</th>
                 <th scope='col'>Update</th>
                 <th scope='col'>Delete</th>
             </tr>
             </thead>
             <tbody>
-                @foreach ($book as $book )
-                <tr>
-                    <th>{{ $book->id}}</th>
-                    <th>{{ $book->name}}</th>
-                    <th>{{ $book->issueDate}}</th>
-                    <th>{{ $book->authorName}}</th>
-                    <th>{{ $book->authorEmail}}</th>
-                    <th>{{ $book->description}}</th>
-                    <th>{{ $book->created_at}}</th>
-                    <th><a href="/downlaod">Downlaod</a></th>
-                    <th class="d-grid justify-center img_td"><img class="img_width" src="{{ $book->image }}" alt="">
-                    </th>
-                    <th><a href="{{" /updateBook/$book->id" }}" class=" btn btn-success btn-sm">Update</a>
-                    </th>
-                    </th>
-                    <th><a href="{{" /deleteBook/$book->id" }}" class=" btn btn-danger btn-sm">Delete</a>
-                    </th>
-                    </th>
-                </tr>
+                @foreach ($book as $bookRecord)
+                    <tr>
+                        <th>{{ $bookRecord->id }}</th>
+                        <th>{{ $bookRecord->name }}</th>
+                        <th>{{ $bookRecord->issueDate }}</th>
+                        <th>{{ $bookRecord->authorName }}</th>
+                        <th>{{ $bookRecord->authorEmail }}</th>
+                        <th>{{ $bookRecord->description }}</th>
+                        <th><a href="/downlaod">Downlaod</a></th>
+                        <th class="d-grid justify-center img_td"><img class="img_width" src="{{ $bookRecord->image }}"
+                                alt="">
+                        </th>
+                        <th>{{ $bookRecord->created_at }}</th>
+                        <th>{{ $bookRecord->updated_at }}</th>
+                        <th>
+                            <a value="{{ $bookRecord->id }}" class="btn btn-info btn-sm updateBook" id="updateBook"><i
+                                class="fas fa-edit fa-lg"></i></a>
+                        </th>
+                        <th><a href=" {{ "/deleteBook/$bookRecord->id" }}"class=" btn btn-danger btn-sm"><i
+                                    class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                        </th>
+
+
+                    </tr>
                 @endforeach
             </tbody>
         </table>
@@ -89,11 +94,10 @@
 
 
 
-
-
-    @include('Css_Js_php.js.helper')
     @include('Css_Js_php.js.jquery_min')
-
+    @include('Css_Js_php.js.style_jquery')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -40,4 +40,38 @@ class UsersController extends Controller
         $user->delete();
         return redirect('/users');
     }
+    public function get_by_id($id)
+    {
+        $user = UserModel::find($id);
+        if ($user) {
+            return response()->json([
+                "status" => 200,
+                "user" => $user,
+            ]);
+        } else {
+            return response()->json([
+                "status" => 404,
+                "user" => "User NOt Found",
+            ]);
+        }
+    }
+    public function update_user(Request $request)
+    {
+        $request->validate(
+            [
+                'firstName' => 'required',
+                'lastName' => 'required'
+            ]
+        );
+        $userid = $request->userIdForUpdate;
+        $updateUser = UserModel::find($userid);
+        if ($updateUser == true) {
+            $updateUser->firstName = $request->firstName;
+            $updateUser->lastName = $request->lastName;
+            $updateUser->update();
+            return redirect()->back();
+        } else {
+            echo "data not found";
+        }
+    }
 }

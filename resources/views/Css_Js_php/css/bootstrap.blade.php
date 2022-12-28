@@ -6074,7 +6074,8 @@
     }
 
     .modal.show .modal-dialog {
-        transform: none
+        transform: none;
+        /* width: max-content; */
     }
 
     .modal.modal-static .modal-dialog {
@@ -6153,7 +6154,8 @@
 
     .modal-title {
         margin-bottom: 0;
-        line-height: var(--bs-modal-title-line-height)
+        line-height: var(--bs-modal-title-line-height);
+        font-family: fantasy;
     }
 
     .modal-body {

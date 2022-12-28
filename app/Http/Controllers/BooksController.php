@@ -16,8 +16,8 @@ class BooksController extends Controller
                 'authorName' => 'required',
                 'authorEmail' => 'required|email',
                 'description' => 'required',
-                'file' => 'required',
-                'img' => 'required'
+                'img' => 'required',
+                'file' => 'required'
 
             ]
         );
@@ -28,12 +28,12 @@ class BooksController extends Controller
         $book->authorName  = $formData->authorName;
         $book->authorEmail  = $formData->authorEmail;
         $book->description  = $formData->description;
-        $file  = $formData->file('file')->getClientOriginalName();
-        $formData->file('file')->move(public_path('assests/booksPdf/'), $file);
-        $book->file =  'assests/booksPdf/' . $file;
         $img_name  = $formData->file('img')->getClientOriginalName();
         $formData->file('img')->move(public_path('book/images/'), $img_name);
         $book->image =  'book/images/' . $img_name;
+        $file  = $formData->file('file')->getClientOriginalName();
+        $formData->file('file')->move(public_path('assests/booksPdf/'), $file);
+        $book->file =  'assests/booksPdf/' . $file;
         $book->save();
         return redirect()->back();
     }
