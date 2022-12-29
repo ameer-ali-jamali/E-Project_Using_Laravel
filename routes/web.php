@@ -37,7 +37,7 @@ Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/books', [BooksController::class, 'get_all_books']);
 Route::get('/users', [UsersController::class, 'get_all_users']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);
-// Route::post('/uploadBook', [BooksController::class, 'upload_book']);
+Route::post('/uploadBook', [BooksController::class, 'upload_book']);
 Route::get('/deleteBook/{id}', [BooksController::class, 'delete_book']);
 Route::get('/deleteUser/{id}', [UsersController::class, 'delete_user']);
 Route::get('/getUserInfoById/{id}', [UsersController::class, 'get_user_info_by_id']);

@@ -39,11 +39,11 @@
         <table class="table table-hover table-responsive mb-0">
             <div class="d-grid justify-content-end">
 
-                <button class="btn btn-dark mb-3" data-toggle="modal" data-target="#registerNewUser">&nbsp;<i class="fad fa-user-plus"></i> Register</button>
+                <button class="btn btn-success mb-3" data-toggle="modal" data-target="#registerNewUser">Register &nbsp;<i class="fad fa-user-plus"></i></button>
 
             </div>
             <tr>
-                <th scope='col'>Id</th>
+                <th scope='col'>#</th>
                 <th scope='col'>Fist Name</th>
                 <th scope='col'>Last Name</th>
                 <th scope='col'>Email</th>
@@ -113,7 +113,7 @@
                         </div>
                         <div class="mb-1">
                             <label for="firstName" class="form-label font-family">First Name</label>
-                            <input type="text" class="form-control" name="firstName" id="firstName">
+                            <input type="text" class="form-control" name="firstName" id="fName">
                             <span class="text-danger">
                                 @error('firstName')
                                     {{ $message }}
@@ -122,7 +122,7 @@
                         </div>
                         <div class="mb-1">
                             <label for="lastName" class="form-label font-family">Last Name</label>
-                            <input type="text" class="form-control" name="lastName" id="lastName">
+                            <input type="text" class="form-control" name="lastName" id="lName">
                             <span class="text-danger">
                                 @error('lastName')
                                     {{ $message }}
@@ -131,7 +131,7 @@
                         </div>
                         <div class="mb-1">
                             <label for="email" class="form-label font-family">Email address</label>
-                            <input type="email" disabled class="form-control" name="email" id="email">
+                            <input type="email" disabled class="form-control" name="email" id="updateEmail">
                         </div>
                         <input type="text" aria-disabled="true" hidden name="userIdForUpdate"
                             id="userIdForUpdate">
@@ -178,7 +178,7 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                 <div class="form-outline">
-                                    <label class="form-label font-bold" for="firstName">First name</label>
+                                    <label class="form-label" for="firstName">First name</label>
                                     <input type="text" name="firstName" id="firstName" class="form-control" />
                                     <span class="text-danger">
                                         @error('firstName')
@@ -234,7 +234,6 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-success btn-block" name="submit" value="Signup">
                     </div>
-                    <p class="alert alert-success" id="successMessage"></p>
                 </form>
             </div>
         </div>
@@ -270,9 +269,9 @@
                         } else {
                             $('#userId').val(response.user.id)
                             $('#userIdForUpdate').val(response.user.id)
-                            $('#firstName').val(response.user.firstName)
-                            $('#lastName').val(response.user.lastName)
-                            $('#email').val(response.user.email)
+                            $('#fName').val(response.user.firstName)
+                            $('#lName').val(response.user.lastName)
+                            $('#updateEmail').val(response.user.email)
                         }
                     }
                 })
