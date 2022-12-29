@@ -20,7 +20,9 @@
     @include('Css_Js_php.css.bootstrap')
     @include('Css_Js_php.css.style')
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"
+        integrity="sha512-MqEDqB7me8klOYxXXQlB4LaNf9V9S0+sG1i8LtPOYmHqICuEZ9ZLbyV3qIfADg2UJcLyCm4fawNiFvnYbcBJ1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -39,7 +41,8 @@
         <table class="table table-hover table-responsive mb-0">
             <div class="d-grid justify-content-end">
 
-                <button class="btn btn-success mb-3" data-toggle="modal" data-target="#registerNewUser">Register &nbsp;<i class="fad fa-user-plus"></i></button>
+                <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#registerNewUser">Register
+                    &nbsp;<i class="fad fa-user-plus"></i></button>
 
             </div>
             <tr>
@@ -64,13 +67,14 @@
                             <td>{{ $userRecord->created_at }}</td>
                             <td>{{ $userRecord->updated_at }}</td>
                             <td>
-                                <button type="submit" class="btn btn-primary getUserId btn-sm" value="{{ $userRecord->id }}"
+                                <button class="btn btn-primary getUserId btn-sm" value="{{ $userRecord->id }}"
                                     data-toggle="modal" data-target="#updateModel"><i class="fas fa-edit"></i></button>
                             </td>
                             <td>
-                                <a href="{{ " /deleteUser/$userRecord->id" }}" class=" btn btn-danger btn-sm"><i
-                                        class="fa fa-trash " aria-hidden="true"></i></a>
+                             <a href=" {{ "/deleteUser/$userRecord->id" }}" class=" btn btn-danger btn-sm"><i
+                                        class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                             </td>
+
                         </tr>
                     @endforeach
                 @else
@@ -90,15 +94,12 @@
 
     {{-- Update User Model --}}
 
-
-
-
     <div class="modal fade" id="updateModel" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p id="error_message"></p>
+                    <p id="updateFormErrorMessage"></p>
                     <h5 class="modal-title" id="ModalLongTitle">Update User</h5>
                     <button type="button" class="close btn btn-danger bnt-sm" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -147,25 +148,18 @@
         </div>
     </div>
 
-
     {{-- Update User Model --}}
-
-
-
 
 
 
 
     {{-- Register New User Model --}}
 
-
-
     <div class="modal fade" id="registerNewUser" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p id="error_message"></p>
                     <h5 class="modal-title" id="ModalLongTitle">Register</h5>
                     <button type="button" class="close btn btn-danger bnt-sm" data-dismiss="modal"
                         aria-label="Close">
@@ -239,45 +233,9 @@
         </div>
     </div>
 
-
     {{-- Register New User Model End --}}
 
-
-
-
-
-
-
-
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#successMessage').hide();
-            $('.getUserId').click(function() {
-                var userId = $(this).val();
-                $.ajax({
-                    type: "get",
-                    url: "/getUserInfoById/" + userId,
-                    datatype: "josn",
-                    success: function(response) {
-                        if (response == 404) {
-                            $('#error_message').html("Server Error Data Not Found");
-                            $('#error_message').addClass("alert alert-danger");
-                            $('#error_message').text(response.message);
-                        } else {
-                            $('#userId').val(response.user.id)
-                            $('#userIdForUpdate').val(response.user.id)
-                            $('#fName').val(response.user.firstName)
-                            $('#lName').val(response.user.lastName)
-                            $('#updateEmail').val(response.user.email)
-                        }
-                    }
-                })
-            })
-        })
-    </script>
+    @include('Css_Js_php.js.helper')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>

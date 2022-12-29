@@ -36,7 +36,7 @@
         <table class="table table-hover table-responsive mb-0">
             <div class="d-grid justify-content-end">
 
-                <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadBook">Upload Book &nbsp;<i
+                <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadBookModel">Upload Book &nbsp;<i
                         class="fa-duotone fa-book"></i></button>
             </div>
             <tr>
@@ -82,14 +82,12 @@
                     @endforeach
                 @else
                     <tr>
-                        <td colspan="8" class="bg-danger user-table">No Book Found</td>
+                        <td colspan="12" class="bg-danger user-table">No Book Found</td>
                     </tr>
 
                 @endif
             </tbody>
         </table>
-
-
     </div>
 
     <hr class="my-4">
@@ -97,13 +95,12 @@
 
     {{-- Update Book Model --}}
 
-
     <div class="modal fade" id="updateBookModal" tabindex="-1" role="dialog" aria-labelledby="updateBookInfoTittle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p id="error_message"></p>
+                    <p id="booksErrorMessage"></p>
                     <h5 class="modal-title" id="updateBookInfoTittle">Update Book Information</h5>
                     <button type="button" class="close btn btn-danger bnt-sm" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -197,7 +194,7 @@
             </div>
         </div>
     </div>
-    </div>
+
 
 
     {{--  Model End --}}
@@ -206,17 +203,15 @@
 
 
 
-
-
     {{-- Upload New Book Model --}}
 
-    <div class="modal fade" id="uploadBook" tabindex="-1" role="dialog" aria-labelledby="uploadBooktittle"
+    <div class="modal fade"  id="uploadBookModel" tabindex="-1" role="dialog" aria-labelledby="modelTittle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <p id="error_message"></p>
-                    <h5 class="modal-title" id="uploadBookTittle">Update Book Information</h5>
+                    <p id="booksErrorMessage"></p>
+                    <h5 class="modal-title" id="modelTittle">Submit Book Information</h5>
                     <button type="button" class="close btn btn-danger bnt-sm" data-dismiss="modal"
                         aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -325,7 +320,6 @@
             </div>
         </div>
     </div>
-    </div>
 
     {{-- Model End --}}
 
@@ -338,40 +332,8 @@
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#successMessage').hide();
-            $('.getBookId').click(function() {
-                var bookId = $(this).val();
-                $.ajax({
-                    type: "get",
-                    url: "/getBookInfoById/" + bookId,
-                    datatype: "josn",
-                    success: function(response) {
-                        if (response == 404) {
-                            $('#error_message').html("Server Error Data Not Found");
-                            $('#error_message').addClass("alert alert-danger");
-                            $('#error_message').text(response.message);
-                        } else {
-                            $('#bookId').val(response.getBookData.id)
-                            $('#bookIdForUpdate').val(response.getBookData.id)
-                            $('#name').val(response.getBookData.name)
-                            $('#issueDate').val(response.getBookData.issueDate)
-                            $('#authorName').val(response.getBookData.authorName)
-                            $('#authorEmail').val(response.getBookData.authorEmail)
-                            $('#description').val(response.getBookData.description)
-                            $('#bookImg').val(response.getBookData.image)
-                            $('#bookPdfFile').val(response.getBookData.file)
+    @include('Css_Js_php.js.helper')
 
-                        }
-                    }
-                })
-
-            })
-
-        })
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>

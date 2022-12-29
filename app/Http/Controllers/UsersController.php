@@ -34,11 +34,12 @@ class UsersController extends Controller
         $user = UserModel::all();
         return view('getAllUsers', compact('user'));
     }
-    public function delete_user($id)
+    public function delete_user_by_id($id)
     {
-        $user = UserModel::find($id);
-        $user->delete();
-        return redirect('/users');
+         $user = UserModel::find($id);
+         $user->delete();
+         return redirect('/users');
+
     }
     public function get_user_info_by_id($id)
     {

@@ -45,6 +45,10 @@ class BooksController extends Controller
     public function get_all_books()
     {
         $book = Book::all();
+        return view('admin', compact('book'));
+    } public function get_books()
+    {
+        $book = Book::all();
         return view('getAllBooks', compact('book'));
     }
     public function delete_book($id)
