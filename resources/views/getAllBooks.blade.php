@@ -15,11 +15,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    <!-- Font Awosome CDN-->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <script src="https://kit.fontawesome.com/4ff6f407d4.js" crossorigin="anonymous"></script>
     @include('Css_Js_php.css.bootstrap')
     @include('Css_Js_php.css.style')
-
 
 </head>
 
@@ -36,8 +34,8 @@
         <table class="table table-hover table-responsive mb-0">
             <div class="d-grid justify-content-end">
 
-                <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadBookModel">Upload Book &nbsp;<i
-                        class="fa-duotone fa-book"></i></button>
+                <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#uploadBookModel">Upload Book
+                    &nbsp;<i class="fa-duotone fa-book"></i></button>
             </div>
             <tr>
                 <th scope='col'>#</th>
@@ -205,7 +203,7 @@
 
     {{-- Upload New Book Model --}}
 
-    <div class="modal fade"  id="uploadBookModel" tabindex="-1" role="dialog" aria-labelledby="modelTittle"
+    <div class="modal fade" id="uploadBookModel" tabindex="-1" role="dialog" aria-labelledby="modelTittle"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -325,30 +323,17 @@
 
 
 
-
-
-
-
-
-
-
+    @include('Css_Js_php.js.jquery_min')
     @include('Css_Js_php.js.helper')
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-DBjhmceckmzwrnMMrjI7BvG2FmRuxQVaTfFYHgfnrdfqMhxKt445b7j3KBQLolRl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"
+        integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha384-i+dHPTzZw7YVZOx9lbH5l6lP74sLRtMtwN2XjVqjf3uAGAREAF4LMIUDTWEVs4LI" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-</thead>
-<tbody>

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.72.0">
-    <title>Form</title>
+    <title>Home</title>
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
@@ -15,8 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
     </script>
-    <!-- Font Awosome CDN-->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <script src="https://kit.fontawesome.com/4ff6f407d4.js" crossorigin="anonymous"></script>
     @include('Css_Js_php.css.form_css')
     @include('Css_Js_php.css.bootstrap')
 
@@ -45,16 +44,17 @@
                     <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
                     <div class="card bg-glass">
                         <div class="card-body px-4 py-5 px-md-5">
-                            <form action="{{URL::to('/registerUser')}}" method="post">
+                            <form action="{{ URL::to('/registerUser') }}" method="post">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label" for="firstName">First name</label>
-                                            <input type="text" name="firstName" id="firstName" class="form-control" />
+                                            <input type="text" name="firstName" id="firstName"
+                                                class="form-control" />
                                             <span class="text-danger">
                                                 @error('firstName')
-                                                {{ $message }}
+                                                    {{ $message }}
                                                 @enderror
                                             </span>
                                         </div>
@@ -65,7 +65,7 @@
                                             <input type="text" name="lastName" id="lastName" class="form-control" />
                                             <span class="text-danger">
                                                 @error('lastName')
-                                                {{ $message }}
+                                                    {{ $message }}
                                                 @enderror
                                             </span>
                                         </div>
@@ -76,7 +76,7 @@
                                     <input type="email" name="email" id="email" class="form-control" />
                                     <span class="text-danger">
                                         @error('email')
-                                        {{ $message }}
+                                            {{ $message }}
                                         @enderror
                                     </span>
                                 </div>
@@ -85,7 +85,7 @@
                                     <input type="password" name="password" id="password" class="form-control" />
                                     <span class="text-danger">
                                         @error('password')
-                                        {{ $message }}
+                                            {{ $message }}
                                         @enderror
                                     </span>
                                 </div>
@@ -95,15 +95,15 @@
                                         class="form-control" />
                                     <span class="text-danger">
                                         @error('password_confirmation')
-                                        {{ $message }}
+                                            {{ $message }}
                                         @enderror
                                     </span>
                                 </div>
                                 <!-- Register buttons -->
                                 <div class="text-center">
                                     <div>
-                                        <input type="submit" class="btn btn-primary btn-block mb-4" name="submit" id=""
-                                            value="Signup">
+                                        <input type="submit" class="btn btn-primary btn-block mb-4" name="submit"
+                                            id="" value="Signup">
                                     </div>
                                     <p>Register With Social Accounts</p>
                                     <button type="button" class="btn btn-link btn-floating mx-1">
@@ -168,6 +168,15 @@
 
     @include('Css_Js_php.js.helper')
     @include('Css_Js_php.js.jquery_min')
+    <script src="/docs/5.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-DBjhmceckmzwrnMMrjI7BvG2FmRuxQVaTfFYHgfnrdfqMhxKt445b7j3KBQLolRl" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"
+        integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha384-i+dHPTzZw7YVZOx9lbH5l6lP74sLRtMtwN2XjVqjf3uAGAREAF4LMIUDTWEVs4LI" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

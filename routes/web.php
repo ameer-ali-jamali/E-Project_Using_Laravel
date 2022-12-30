@@ -34,8 +34,7 @@ Route::get('/admin', function () {
     return view('admin');
 });
 Route::any('/', [BooksController::class, 'all_books_home_page']);
-Route::get('/books', [BooksController::class, 'get_books']);
-Route::get('/users', [UsersController::class, 'get_all_users']);
+Route::get('/admin', [indexController::class, 'get_books_users']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);
 Route::post('/uploadBook', [BooksController::class, 'upload_book']);
 Route::get('/deleteBook/{id}', [BooksController::class, 'delete_book']);
@@ -44,4 +43,3 @@ Route::get('/getUserInfoById/{id}', [UsersController::class, 'get_user_info_by_i
 Route::get('/getBookInfoById/{id}', [BooksController::class, 'get_book_info_by_id']);
 Route::post('/updateUser', [UsersController::class, 'update_user']);
 Route::post('/updateBook', [BooksController::class, 'update_book']);
-Route::get('/admin', [BooksController::class, 'get_all_books']);

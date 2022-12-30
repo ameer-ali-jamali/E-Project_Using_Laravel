@@ -21,41 +21,35 @@ class BooksController extends Controller
 
             ]
         );
-
-        $book = new Book();
-        $book->name = $formData->name;
-        $book->issueDate  = $formData->issueDate;
-        $book->authorName  = $formData->authorName;
-        $book->authorEmail  = $formData->authorEmail;
-        $book->description  = $formData->description;
-        $img_name  = $formData->file('img')->getClientOriginalName();
-        $formData->file('img')->move(public_path('book/images/'), $img_name);
-        $book->image =  'book/images/' . $img_name;
-        $file  = $formData->file('file')->getClientOriginalName();
-        $formData->file('file')->move(public_path('assests/booksPdf/'), $file);
-        $book->file =  'assests/booksPdf/' . $file;
-        $book->save();
-        return redirect()->back();
+        if ($formData == true) {
+            $book = new Book();
+            $book->name = $formData->name;
+            $book->issueDate  = $formData->issueDate;
+            $book->authorName  = $formData->authorName;
+            $book->authorEmail  = $formData->authorEmail;
+            $book->description  = $formData->description;
+            $img_name  = $formData->file('img')->getClientOriginalName();
+            $formData->file('img')->move(public_path('book/images/'), $img_name);
+            $book->image =  'book/images/' . $img_name;
+            $file  = $formData->file('file')->getClientOriginalName();
+            $formData->file('file')->move(public_path('assests/booksPdf/'), $file);
+            $book->file =  'assests/booksPdf/' . $file;
+            $book->save();
+            return redirect()->back();
+        } else {
+            return redirect()->back();
+        }
     }
     public function all_books_home_page()
     {
         $book = Book::all();
         return view('index', compact('book'));
     }
-    public function get_all_books()
-    {
-        $book = Book::all();
-        return view('admin', compact('book'));
-    } public function get_books()
-    {
-        $book = Book::all();
-        return view('getAllBooks', compact('book'));
-    }
     public function delete_book($id)
     {
         $book = Book::find($id);
         $book->delete();
-        return redirect('/books');
+        return redirect()->back();
     }
     public function get_book_info_by_id($id)
     {

@@ -28,17 +28,11 @@ class UsersController extends Controller
         $userModel->save();
         return redirect()->back();
     }
-
-    public function get_all_users()
-    {
-        $user = UserModel::all();
-        return view('getAllUsers', compact('user'));
-    }
     public function delete_user_by_id($id)
     {
          $user = UserModel::find($id);
          $user->delete();
-         return redirect('/users');
+         return redirect()->back();
 
     }
     public function get_user_info_by_id($id)
