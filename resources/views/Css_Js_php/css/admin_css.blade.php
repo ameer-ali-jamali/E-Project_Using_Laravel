@@ -5594,35 +5594,35 @@
         border-color: #1b1e21
     }
 
-    .close {
+    /* .close {
         font-size: calc(1.275rem + .3vw);
         font-weight: 700;
         line-height: 1;
         color: #000;
         text-shadow: 0 1px 0 #fff;
         opacity: .5
-    }
-
+    } */
+/*
     @media (min-width:1200px) {
         .close {
             font-size: 1.5rem
         }
-    }
+    } */
 
-    .close:hover {
+    /* .close:hover {
         color: #000;
         text-decoration: none
-    }
-
+    } */
+/*
     .close:focus,
     .close:hover {
         opacity: .75
-    }
+    } */
 
-    .close.disabled,
+    /* .close.disabled,
     .close:disabled {
         pointer-events: none
-    }
+    } */
 
 
     .toast {

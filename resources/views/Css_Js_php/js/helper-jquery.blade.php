@@ -13,8 +13,8 @@
                         $('#updateFormErrorMessage').addClass("alert alert-danger");
                         $('#updateFormErrorMessage').text(response.message);
                     } else {
-                        $('#updateFormUserId').val(response.user.id)
                         $('#userIdForUpdate').val(response.user.id)
+                        $('#updateFormUserId').val(response.user.id)
                         $('#updateUserFirstName').val(response.user.firstName)
                         $('#updateUserLastName').val(response.user.lastName)
                         $('#updateUserEmail').val(response.user.email)
@@ -46,7 +46,8 @@
             })
 
         })
-
+        $('#updateUserSuccessMessage').hide('fast')
+        $('#updateBookSuccessMessage').hide('fast')
         $('#usersListModel').hide("fast")
         $('#booksListModel').hide("fast")
         $('#booksList').click(function() {

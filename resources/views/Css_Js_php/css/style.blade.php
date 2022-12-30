@@ -77,11 +77,11 @@
         transition: 0.3s transform cubic-bezier(0.075, 0.82, 0.165, 1);
     }
 
-    .mybtn:hover {
+    /* .mybtn:hover {
         transform: scale(1.05);
         border: 5px solid gold;
         box-shadow: 0 10px 20px rgb(174, 178, 225), 0 4px 8px rgb(83, 76, 101);
-    }
+    } */
 
     .img_width {
         object-fit: cover;
@@ -89,20 +89,20 @@
         height: 100%;
     }
 
-    .img_td {
+    /* .img_td {
         width: 100%;
         height: 100%;
         max-width: 100%;
         max-height: 100%;
-    }
+    } */
+    .img_td:hover{
+        /* transform: scale(2.5); */
+        transition: 2s;
+    transform: scale3d(1.5, 1.5, 1.5);
+}
 
 
     /* Home page cards css */
-
-    * {
-        margin: 0;
-        padding: 0;
-    }
 
     .fab {
         position: fixed;
@@ -300,37 +300,44 @@
     /////////////////////////////////
     */
     .model-container {
-        display: flex;
-        justify-content: space-around;
-        width: 60%;
-        height: 24px;
-        max-height: 24px;
-        background-color: aliceblue;
-
+        display: flex !important;
+        justify-content: space-around !important;
+        width: 60% !important;
+        height: 24px !important;
+        max-height: 24px !important;
+background-color: aliceblue;
     }
 
     .model-p {
-        display: inline;
-        font-weight: 900;
+        display: inline !important;
+        font-weight: 900 !important;
     }
 
     .model-user-id {
-        object-fit: contain;
-        width: 10%;
-        background-color: #ec3d4e;
-        font-weight: 900;
-        color: white;
-        height: auto;
-        text-align: center;
+        object-fit: contain !important;
+        width: 10% !important;
+        background-color: #ec3d4e !important;
+        font-weight: 900 !important;
+        color: white !important;
+        height: auto !important;
+        text-align: center !important;
     }
     .font-family{
-        font-weight: bolder;
+        font-weight: bolder !important;
     }
     .user-table{
-    text-align: center;
-    font-weight: bold;
-    color: aliceblue;
-    font-size: large;
-    width:auto;
+    text-align: center !important;
+    font-weight: bold !important;
+    color: aliceblue !important;
+    font-size: large !important;
+    width:auto !important;
 }
+.data-table-container{
+    display: grid;
+    object-fit: cover;
+    width: 100% ;
+    height: 100% ;
+    font-size: smaller;
+}
+
 </style>
