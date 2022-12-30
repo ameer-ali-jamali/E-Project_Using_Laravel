@@ -34,7 +34,7 @@ Route::get('/admin', function () {
     return view('admin');
 });
 Route::any('/', [BooksController::class, 'all_books_home_page']);
-Route::get('/admin', [indexController::class, 'get_books_users']);
+Route::get('/admin', [indexController::class, 'get_all']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);
 Route::post('/uploadBook', [BooksController::class, 'upload_book']);
 Route::get('/deleteBook/{id}', [BooksController::class, 'delete_book']);

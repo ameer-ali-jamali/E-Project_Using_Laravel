@@ -41,27 +41,33 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="booksList">
-                                <span data-feather="shopping-cart"></span>
-                                All Books
+                            <a class="nav-link" href="/admin">
+                                <span data-feather="bar-chart-2"></span>
+                                Profile
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="usersList">
-                                <span data-feather="users"></span>
-                                All Users
+                            <a class="nav-link" href="/">
+                                <span data-feather="layers"></span>
+                                Home Page
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="bar-chart-2"></span>
-                                Reports
+                                Account Setting
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="layers"></span>
-                                Integrations
+                                Change Email
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="layers"></span>
+                                Change Password
                             </a>
                         </li>
                     </ul>
@@ -77,43 +83,38 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text"></span>
-                                Current month
+                                Current Users
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text"></span>
-                                Last quarter
+                                Last Month Users
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text"></span>
-                                Social engagement
+                                Visitor
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span data-feather="file-text"></span>
-                                Year-end sale
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </nav>
         </div>
     </div>
 
-    {{-- Register New User Model End --}}
+
+    {{-- Books List Loop  --}}
+
+    <div class="container-fluid position-absolute" id="usersBooksListConatiner">
 
 
 
-    <div class="container-fluid" id="usersBooksListConatiner">
+        <div class="position-relative" id="booksListModel">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
 
-        {{-- Books List Loop Start --}}
-
-        <div class="" id="booksListModel">
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <div class="data-table-container">
                     <div class="row">
                         <h2 class="py-3 text-center font-bold font-up blue-text"><i
@@ -121,11 +122,17 @@
                             &nbsp;Books Info</h2>
                     </div>
                     <table class="table table-hover table-responsive mb-0">
-                        <div class="d-grid justify-content-end">
-                            <button class="btn btn-primary mb-3" data-bs-toggle="modal"
-                                data-bs-target="#uploadBookModal">Upload
-                                Book &nbsp;<i class="fa-duotone fa-book"></i>
-                            </button>
+                        <div class="d-flex justify-content-between">
+                            <span>
+                                <a href="/admin" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                        class="fas fa-user"></i></a>
+                            </span>
+                            <span>
+                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                    data-bs-target="#uploadBookModal">Upload
+                                    Book &nbsp;<i class="fa-duotone fa-book"></i>
+                                </button>
+                            </span>
                         </div>
                         <tr>
                             <th scope='col'>#</th>
@@ -143,29 +150,28 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @if ($book->count())
-                                @foreach ($book as $bookRecord)
+                            @if ($books->count())
+                                @foreach ($books as $book)
                                     <tr @if ($loop->even) class="bg-info" @endif>
                                         <td>{{ $loop->index + 1 }}</td>
-                                        <td>{{ $bookRecord->name }}</td>
-                                        <td>{{ $bookRecord->issueDate }}</td>
-                                        <td>{{ $bookRecord->authorName }}</td>
-                                        <td>{{ $bookRecord->authorEmail }}</td>
-                                        <td>{{ $bookRecord->description }}</td>
+                                        <td>{{ $book->name }}</td>
+                                        <td>{{ $book->issueDate }}</td>
+                                        <td>{{ $book->authorName }}</td>
+                                        <td>{{ $book->authorEmail }}</td>
+                                        <td>{{ $book->description }}</td>
                                         <td><a href="/downlaod">
                                                 <i class="fa-solid fa-download fa-lg text-danger"></i></a></td>
                                         <td class="d-grid justify-center img_td"><img class="img_width"
-                                                src="{{ $bookRecord->image }}">
+                                                src="{{ $book->image }}">
                                         </td>
-                                        <td>{{ $bookRecord->created_at }}</td>
-                                        <td>{{ $bookRecord->updated_at }}</td>
+                                        <td>{{ $book->created_at }}</td>
+                                        <td>{{ $book->updated_at }}</td>
                                         <td>
                                             <button type="submit" class="btn btn-primary btn-sm getBookId"
-                                                value="{{ $bookRecord->id }}" data-bs-toggle="modal"
+                                                value="{{ $book->id }}" data-bs-toggle="modal"
                                                 data-bs-target="#updateBookModel"><i class="fas fa-edit"></i></button>
                                         </td>
-                                        <td><a
-                                                href=" {{ " /deleteBook/$bookRecord->id" }}"class=" btn btn-danger btn-sm"><i
+                                        <td><a href=" {{ " /deleteBook/$book->id" }}"class=" btn btn-danger btn-sm"><i
                                                     class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                                     </tr>
                                 @endforeach
@@ -178,7 +184,7 @@
                         </tbody>
                     </table>
                 </div>
-            </main>
+            </div>
 
         </div>
 
@@ -188,8 +194,8 @@
 
         {{-- Users List Model Start --}}
 
-        <div class="" id="usersListModel">
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="position-relative " id="usersListModel">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <div class="data-table-container">
                     <div class="row">
                         <div class="col-md-12">
@@ -198,41 +204,45 @@
                         </div>
                     </div>
                     <table class="table table-hover table-responsive mb-0">
-                        <div class="d-grid justify-content-end">
+                        <div class="d-flex justify-content-between">
+                            <span>
+                                <a href="/admin" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                        class="fas fa-user"></i></a>
+                            </span>
+                            <span>
+                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                    data-bs-target="#registerNewUser">Register
+                                    &nbsp;<i class="fas fa-user-plus"></i></button>
 
-                            <button class="btn btn-primary mb-3" data-bs-toggle="modal"
-                                data-bs-target="#registerNewUser">Register
-                                &nbsp;<i class="fad fa-user-plus"></i></button>
-
+                            </span>
                         </div>
+
                         <tr>
                             <th scope='col'>#</th>
                             <th scope='col'>Fist Name</th>
                             <th scope='col'>Last Name</th>
                             <th scope='col'>Email</th>
                             <th scope='col'>Created_At</th>
-                            <th scope='col'>Updated_At</th>
                             <th scope='col'>Update</th>
                             <th scope='col'>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
-                            @if ($user->count())
-                                @foreach ($user as $userRecord)
+                            @if ($users->count())
+                                @foreach ($users as $user)
                                     <tr @if ($loop->even) class="bg-info" @endif>
                                         <td>{{ $loop->index + 1 }}</td>
-                                        <td>{{ $userRecord->firstName }}</td>
-                                        <td>{{ $userRecord->lastName }}</td>
-                                        <td>{{ $userRecord->email }}</td>
-                                        <td>{{ $userRecord->created_at }}</td>
-                                        <td>{{ $userRecord->updated_at }}</td>
+                                        <td>{{ $user->firstName }}</td>
+                                        <td>{{ $user->lastName }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->created_at }}</td>
                                         <td>
                                             <button class="btn btn-primary getUserId btn-sm"
-                                                value="{{ $userRecord->id }}" data-bs-toggle="modal"
+                                                value="{{ $user->id }}" data-bs-toggle="modal"
                                                 data-bs-target="#userUpdateModal"><i class="fas fa-edit"></i></button>
                                         </td>
                                         <td>
-                                            <a href=" {{ "/deleteUser/$userRecord->id" }}"
+                                            <a href=" {{ "/deleteUser/$user->id" }}"
                                                 class=" btn btn-danger btn-sm"><i class="fa fa-trash fa-lg"
                                                     aria-hidden="true"></i></a>
                                         </td>
@@ -249,17 +259,92 @@
                     </table>
 
                 </div>
-            </main>
+            </div>
         </div>
 
     </div>
 
-    </div>
 
     {{-- Loop End --}}
 
 
-    {{-- Update Book Model --}}
+    <div class="position-absolute container-fluid">
+
+        <div class="container-fluid position-relative">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+                <div class="row row-cols-1 row-cols-md-2 g-4 object-fit mt-5">
+
+                    <div class="" id="userCountById">
+                        @php
+                            $userCount = 0;
+                        @endphp
+                        @foreach ($users as $userRecord)
+                            <p hidden disabled>{{ $userRecord->id }}</p>
+                            @php
+                                $userCount++;
+                            @endphp
+                        @endforeach
+                        <div class="col ">
+                            <div class="card card-item1">
+                                <div class="card-body">
+                                    <h3 class="card-title">Registered Users</h3>
+                                    <h1 class="card-text"><i class="fa fa-user"
+                                            aria-hidden="true"></i>&nbsp;{{ $userCount }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="bookCountById">
+                        @php
+                            $bookCount = 0;
+                        @endphp
+                        @foreach ($books as $bookRecord)
+                            <p hidden disabled>{{ $bookRecord->id }}</p>
+                            @php
+                                $bookCount++;
+                            @endphp
+                        @endforeach
+                        <div class="col ">
+                            <div class="card card-item1">
+                                <div class="card-body">
+                                    <h3 class="card-title">Books Available</h3>
+                                    <h1 class="card-text"><i
+                                            class="fa-duotone fa-book "></i>&nbsp;{{ $bookCount }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="visitorsCard">
+                        <div class="col ">
+                            <div class="card card-item1">
+                                <div class="card-body">
+                                    <h3 class="card-title">Visitors</h3>
+                                    <h1 class="card-text"><i class="fas fa-globe "></i>&nbsp; 34</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="booksdownloads">
+                        <div class="col ">
+                            <div class="card card-item1">
+                                <div class="card-body">
+                                    <h3 class="card-title">Downloads</h3>
+                                    <h1 class="card-text"><i class="fas fa-download "></i>&nbsp; 2999</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    {{-- Book Update Model --}}
 
     <div class="modal fade" id="updateBookModel" tabindex="-1" role="dialog"
         aria-labelledby="updateBookInfoTittle" aria-hidden="true">
@@ -368,7 +453,7 @@
     {{--  Model End --}}
 
 
-    {{-- Upload New Book Model --}}
+    {{-- New Book Upload Model --}}
 
     <div class="modal fade" id="uploadBookModal" tabindex="-1" role="dialog" aria-labelledby="uploadBookTittle"
         aria-hidden="true">
@@ -389,7 +474,7 @@
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="uploadBookName">Book Name :</label>
+                                        <label class="form-label font-family" for="uploadBookName">Book Name :</label>
                                         <input type="text" name="name" id="uploadBookName"
                                             class="form-control" />
                                         <span class="text-danger">
@@ -401,7 +486,8 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="uploadBookIssueDate">Book Issue Date :</label>
+                                        <label class="form-label font-family" for="uploadBookIssueDate">Book Issue
+                                            Date :</label>
                                         <input type="datetime-local" name="issueDate" id="uploadBookIssueDate"
                                             class="form-control" />
                                         <span class="text-danger">
@@ -416,7 +502,8 @@
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="uploadBookAuthorName">Author Name :</label>
+                                        <label class="form-label font-family" for="uploadBookAuthorName">Author Name
+                                            :</label>
                                         <input type="text" name="authorName" id="uploadBookAuthorName"
                                             class="form-control" />
                                         <span class="text-danger">
@@ -428,7 +515,8 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="uploadBookAuthorEmail">Author Email :</label>
+                                        <label class="form-label font-family" for="uploadBookAuthorEmail">Author Email
+                                            :</label>
                                         <input type="email" name="authorEmail" id="uploadBookAuthorEmail"
                                             class="form-control" />
                                         <span class="text-danger">
@@ -442,7 +530,8 @@
                             <div class="row">
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="uploadBookDescription">Book Description
+                                        <label class="form-label font-family" for="uploadBookDescription">Book
+                                            Description
                                             :</label>
                                         <input type="text" name="description" id="uploadBookDescription"
                                             class="form-control" />
@@ -455,7 +544,8 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
-                                        <label class="form-label" for="uploadBookimage">Book Image :</label>
+                                        <label class="form-label font-family" for="uploadBookimage">Book Image
+                                            :</label>
                                         <input type="file" name="img" id="uploadBookimage"
                                             class="form-control" />
                                         <span class="text-danger">
@@ -468,7 +558,7 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label" for="uploadBookFile">Book File :</label>
+                                <label class="form-label font-family" for="uploadBookFile">Book File :</label>
                                 <input type="file" name="file" id="uploadBookFile" class="form-control" />
                                 <span class="text-danger">
                                     @error('file')
@@ -493,7 +583,7 @@
 
 
 
-    {{-- Update User Model --}}
+    {{-- User Update Model Form --}}
 
     <div class="modal fade" id="userUpdateModal" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
         aria-hidden="true">
@@ -561,11 +651,12 @@
     {{-- Register New User Model --}}
 
     <div class="modal fade" id="registerNewUser" tabindex="-1" role="dialog"
-        aria-labelledby="register-modal-tittle" aria-hidden="true">
+        aria-labelledby="register-modal-title" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="register-modal-tittle">Register</h5>
+                    <p id="updateFormErrorMessage"></p>
+                    <h5 class="modal-title" id="register-modal-title">Update User</h5>
                     <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                         aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -578,7 +669,7 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="form-outline">
-                                        <label class="form-label" for="firstName">First name</label>
+                                        <label class="form-label font-family" for="firstName">First name</label>
                                         <input type="text" name="firstName" class="form-control" />
                                         <span class="text-danger">
                                             @error('firstName')
@@ -589,7 +680,7 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="form-outline">
-                                        <label class="form-label" for="lastName">Last name</label>
+                                        <label class="form-label font-family" for="lastName">Last name</label>
                                         <input type="text" name="lastName" class="form-control" />
                                         <span class="text-danger">
                                             @error('lastName')
@@ -600,7 +691,7 @@
                                 </div>
                             </div>
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="email">Email</label>
+                                <label class="form-label font-family" for="email">Email</label>
                                 <input type="email" name="email" class="form-control" />
                                 <span class="text-danger">
                                     @error('email')
@@ -609,7 +700,7 @@
                                 </span>
                             </div>
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="password">Password</label>
+                                <label class="form-label font-family" for="password">Password</label>
                                 <input type="password" name="password" class="form-control" />
                                 <span class="text-danger">
                                     @error('password')
@@ -618,7 +709,8 @@
                                 </span>
                             </div>
                             <div class="form-outline mb-3">
-                                <label class="form-label" for="password_confirmation">Conform Password</label>
+                                <label class="form-label font-family" for="password_confirmation">Conform
+                                    Password</label>
                                 <input type="password" name="password_confirmation" id="password_confirmation"
                                     class="form-control" />
                                 <span class="text-danger">
@@ -640,7 +732,6 @@
             </div>
         </div>
     </div>
-
 
 
 

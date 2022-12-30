@@ -55,8 +55,12 @@
     }
 
     .sidebar .nav-link {
-        font-weight: 500;
-        color: #333;
+        font-weight: bolder;
+        color:black;
+    }
+
+    .nav-link-item1{
+    background-color: darkgrey;
     }
 
     .sidebar .nav-link .feather {
@@ -4708,6 +4712,9 @@
         border: 1px solid rgba(0, 0, 0, .125);
         border-radius: .25rem
     }
+    .card-item1{
+        border-radius: 100px !important;
+    }
 
     .card>hr {
         margin-right: 0;
@@ -4738,7 +4745,9 @@
 
     .card-body {
         flex: 1 1 auto;
-        padding: 1rem 1rem
+        padding: 1rem 1rem;
+        background-colour: cadetblue;
+    position: relative;
     }
 
     .card-title {

@@ -4861,16 +4861,21 @@
     }
 
     .card-title {
-        margin-bottom: var(--bs-card-title-spacer-y)
+    margin-bottom: var(--bs-card-title-spacer-y);
+    text-align: center;
+    font-size: x-large;
+    font-weight: 600;
+    color: cadetblue;
     }
-
     .card-subtitle {
         margin-top: calc(-.5 * var(--bs-card-title-spacer-y));
-        margin-bottom: 0
+        margin-bottom: 0;
     }
 
     .card-text:last-child {
-        margin-bottom: 0
+        margin-bottom: 0;
+        text-align: center;
+        margin-top: 45px;
     }
 
     .card-link+.card-link {
@@ -4904,7 +4909,7 @@
         margin-right: calc(-.5 * var(--bs-card-cap-padding-x));
         margin-bottom: calc(-1 * var(--bs-card-cap-padding-y));
         margin-left: calc(-.5 * var(--bs-card-cap-padding-x));
-        border-bottom: 0
+        border-bottom: 0;
     }
 
     .card-header-tabs .nav-link.active {
@@ -4930,7 +4935,7 @@
     .card-img,
     .card-img-bottom,
     .card-img-top {
-        width: 100%
+        width: 100%;
     }
 
     .card-img,

@@ -11,11 +11,11 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class IndexController extends Controller
 {
-    public function get_books_users()
+    public function get_all()
     {
-        $user = UserModel::all();
-        $book = Book::all();
-        return view('admin',compact('user'),compact('book'));
+        $users = UserModel::all();
+        $books = Book::all();
+        return view('admin',compact('users'),compact('books'));
 
     }
 }

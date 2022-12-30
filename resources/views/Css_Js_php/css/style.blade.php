@@ -340,4 +340,14 @@ background-color: aliceblue;
     font-size: smaller;
 }
 
+.object-fit{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.display-grid{
+    display: grid;
+    place-items: center;
+}
+
 </style>

@@ -58,7 +58,20 @@
             $('#booksListModel').hide('fast')
             $('#usersListModel').toggle('fast')
         });
-
+        $('#userCountById').click(function() {
+            $('#userCountById').hide('fast')
+            $('#bookCountById').hide('fast')
+            $('#visitorsCard').hide("fast")
+            $('#booksdownloads').hide("fast")
+            $('#usersListModel').show("fast")
+        })
+        $('#bookCountById').click(function() {
+            $('#userCountById').hide('fast')
+            $('#bookCountById').hide('fast')
+            $('#visitorsCard').hide("fast")
+            $('#booksdownloads').hide("fast")
+            $('#booksListModel').toggle("fast")
+        })
 
     })
 </script>
