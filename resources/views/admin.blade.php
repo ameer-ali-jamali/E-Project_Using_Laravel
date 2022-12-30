@@ -2,24 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.72.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Admin</title>
-    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/dashboard/">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
+    {{-- Jquery with Ajax cdn --}}
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.24.1/feather.min.js"
+        integrity="sha384-EbSscX4STvYAC/DxHse8z5gEDaNiKAIGW+EpfzYTfQrgIlHywXXrM9SUIZ0BlyfF" crossorigin="anonymous">
     </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+        integrity="sha384-i+dHPTzZw7YVZOx9lbH5l6lP74sLRtMtwN2XjVqjf3uAGAREAF4LMIUDTWEVs4LI" crossorigin="anonymous">
     </script>
-    <!-- Font Awosome CDN-->
+    {{-- Bootsrtap cdn --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
+    </script>
+    {{-- Font Awosome --}}
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
-    @include('Css_Js_php.css.admin_css')
-    @include('Css_Js_php.css.bootstrap')
     @include('Css_Js_php.css.style')
+    @include('Css_Js_php.css.admin_css')
+    @include('Css_Js_php.js.helper-js')
 
 </head>
 
@@ -111,7 +122,7 @@
 
     <div class="container-fluid" id="usersBooksListConatiner">
 
-        {{-- Loop Start --}}
+        {{-- Books List Loop Start --}}
 
         <div class="" id="booksListModel">
             <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
@@ -184,6 +195,10 @@
 
         {{-- Loop end --}}
 
+
+
+        {{-- Users List Model Start --}}
+
         <div class="" id="usersListModel">
             <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <div class="container mt-0">
@@ -250,11 +265,9 @@
             </main>
         </div>
 
-
-
-
     </div>
 
+    {{-- Loop End --}}
 
 
     {{-- Update Book Model --}}
@@ -283,7 +296,8 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <label class="form-label font-family" for="name">Book Name :</label>
-                                        <input type="text" name="name" id="name" class="form-control" />
+                                        <input type="text" name="name" id="updateBookName"
+                                            class="form-control" />
                                         <span class="text-danger">
                                             @error('name')
                                                 {{ $message }}
@@ -295,7 +309,7 @@
                                     <div class="form-outline">
                                         <label class="form-label font-family" for="issueDate">Book Issue Date
                                             :</label>
-                                        <input type="datetime-local" name="issueDate" id="issueDate"
+                                        <input type="datetime-local" name="issueDate" id="updateBookIssueDate"
                                             class="form-control" />
                                         <span class="text-danger">
                                             @error('issueDate')
@@ -311,7 +325,7 @@
                                     <div class="form-outline">
                                         <label class="form-label font-family" for="authorName">Author Name
                                             :</label>
-                                        <input type="text" name="authorName" id="authorName"
+                                        <input type="text" name="authorName" id="updateBookAuthorName"
                                             class="form-control" />
                                         <span class="text-danger">
                                             @error('authorName')
@@ -324,7 +338,7 @@
                                     <div class="form-outline">
                                         <label class="form-label font-family" for="authorEmail">Author Email
                                             :</label>
-                                        <input type="email" name="authorEmail" id="authorEmail"
+                                        <input type="email" name="authorEmail" id="updateBookAuthorEmail"
                                             class="form-control" />
                                         <span class="text-danger">
                                             @error('authorEmail')
@@ -338,7 +352,7 @@
                                 <div class="form-outline">
                                     <label class="form-label font-family" for="description">Book Description
                                         :</label>
-                                    <input type="text" name="description" id="description"
+                                    <input type="text" name="description" id="updateBookDescription"
                                         class="form-control" />
                                     <span class="text-danger">
                                         @error('description')
@@ -388,7 +402,8 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <label class="form-label" for="name">Book Name :</label>
-                                        <input type="text" name="name" id="bookName" class="form-control" />
+                                        <input type="text" name="name" id="uploadBookName"
+                                            class="form-control" />
                                         <span class="text-danger">
                                             @error('name')
                                                 {{ $message }}
@@ -399,7 +414,7 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <label class="form-label" for="issueDate">Book Issue Date :</label>
-                                        <input type="datetime-local" name="issueDate" id="bookIssueDate"
+                                        <input type="datetime-local" name="issueDate" id="uploadBookIssueDate"
                                             class="form-control" />
                                         <span class="text-danger">
                                             @error('issueDate')
@@ -414,7 +429,7 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <label class="form-label" for="authorName">Author Name :</label>
-                                        <input type="text" name="authorName" id="bookAuthorName"
+                                        <input type="text" name="authorName" id="uploadBookAuthorName"
                                             class="form-control" />
                                         <span class="text-danger">
                                             @error('authorName')
@@ -426,7 +441,7 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <label class="form-label" for="authorEmail">Author Email :</label>
-                                        <input type="email" name="authorEmail" id="bookAuthorName"
+                                        <input type="email" name="authorEmail" id="uploadBookAuthorEmail"
                                             class="form-control" />
                                         <span class="text-danger">
                                             @error('authorEmail')
@@ -440,7 +455,7 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <label class="form-label" for="description">Book Description :</label>
-                                        <input type="text" name="description" id="bookDescription"
+                                        <input type="text" name="description" id="uploadBookDescription"
                                             class="form-control" />
                                         <span class="text-danger">
                                             @error('description')
@@ -452,7 +467,8 @@
                                 <div class="col-md-6 mb-4">
                                     <div class="form-outline">
                                         <label class="form-label" for="img">Book Image :</label>
-                                        <input type="file" name="img" id="bookImage" class="form-control" />
+                                        <input type="file" name="img" id="uploadBookimage"
+                                            class="form-control" />
                                         <span class="text-danger">
                                             @error('img')
                                                 {{ $message }}
@@ -464,7 +480,7 @@
 
                             <div class="form-outline mb-4">
                                 <label class="form-label" for="file">Book File :</label>
-                                <input type="file" name="file" id="bookfile" class="form-control" />
+                                <input type="file" name="file" id="uploadBookFile" class="form-control" />
                                 <span class="text-danger">
                                     @error('file')
                                         {{ $message }}
@@ -511,7 +527,7 @@
                         </div>
                         <div class="mb-1">
                             <label for="firstName" class="form-label font-family">First Name</label>
-                            <input type="text" class="form-control" name="firstName" id="fName">
+                            <input type="text" class="form-control" name="firstName" id="updateUserFirstName">
                             <span class="text-danger">
                                 @error('firstName')
                                     {{ $message }}
@@ -520,7 +536,7 @@
                         </div>
                         <div class="mb-1">
                             <label for="lastName" class="form-label font-family">Last Name</label>
-                            <input type="text" class="form-control" name="lastName" id="lName">
+                            <input type="text" class="form-control" name="lastName" id="updateUserLastName">
                             <span class="text-danger">
                                 @error('lastName')
                                     {{ $message }}
@@ -529,7 +545,7 @@
                         </div>
                         <div class="mb-1">
                             <label for="email" class="form-label font-family">Email address</label>
-                            <input type="email" disabled class="form-control" name="email" id="updateEmail">
+                            <input type="email" disabled class="form-control" name="email" id="updateUserEmail">
                         </div>
                         <input type="text" aria-disabled="true" hidden name="userIdForUpdate"
                             id="userIdForUpdate">
@@ -553,11 +569,11 @@
     {{-- Register New User Model --}}
 
     <div class="modal fade" id="registerNewUser" tabindex="-1" role="dialog"
-        aria-labelledby="registerModalLongTitle" aria-hidden="true">
+        aria-labelledby="register-modal-tittle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="registerModalLongTitle">Register</h5>
+                    <h5 class="modal-title" id="register-modal-tittle">Register</h5>
                     <button type="button" class="close btn btn-danger bnt-sm" data-dismiss="modal"
                         aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -570,7 +586,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-outline">
                                     <label class="form-label" for="firstName">First name</label>
-                                    <input type="text" name="firstName" id="firstName" class="form-control" />
+                                    <input type="text" name="firstName" class="form-control" />
                                     <span class="text-danger">
                                         @error('firstName')
                                             {{ $message }}
@@ -581,7 +597,7 @@
                             <div class="col-md-6 mb-3">
                                 <div class="form-outline">
                                     <label class="form-label" for="lastName">Last name</label>
-                                    <input type="text" name="lastName" id="lastName" class="form-control" />
+                                    <input type="text" name="lastName" class="form-control" />
                                     <span class="text-danger">
                                         @error('lastName')
                                             {{ $message }}
@@ -592,7 +608,7 @@
                         </div>
                         <div class="form-outline mb-3">
                             <label class="form-label" for="email">Email</label>
-                            <input type="email" name="email" id="email" class="form-control" />
+                            <input type="email" name="email" class="form-control" />
                             <span class="text-danger">
                                 @error('email')
                                     {{ $message }}
@@ -601,7 +617,7 @@
                         </div>
                         <div class="form-outline mb-3">
                             <label class="form-label" for="password">Password</label>
-                            <input type="password" name="password" id="password" class="form-control" />
+                            <input type="password" name="password" class="form-control" />
                             <span class="text-danger">
                                 @error('password')
                                     {{ $message }}
@@ -631,28 +647,6 @@
     </div>
 
     {{-- Register New User Model End --}}
-
-
-
-
-
-
-
-    @include('Css_Js_php.js.helper')
-    <script>
-        $(document).ready(function() {
-            $('#usersListModel').hide("fast")
-            $('#booksListModel').hide("fast")
-            $('#booksList').click(function() {
-                $('#booksListModel').toggle('fast')
-            });
-            $('#usersList').click(function() {
-                $('#usersListModel').toggle('fast')
-            });
-        });
-    </script>
-
-
 
 
 </body>
