@@ -11,12 +11,11 @@
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
     @include('Css_Js_php.css.bootstrap_min_css')
-    @include('Css_Js_php.css.style')
     @include('Css_Js_php.js.bootstrap_bundle_js')
-    @include('Css_Js_php.js.jquery_min')
     @include('Css_Js_php.js.jqueryAjax_feather-icons_lib')
     @include('Css_Js_php.js.jqueryAjax_chart_min_js')
-    @include('Css_Js_php.js.helper-javascript')
+    @include('Css_Js_php.css.style')
+
 </head>
 
 <body>
@@ -26,7 +25,7 @@
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">E Books </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -66,132 +65,67 @@
                     </div>
                 </div>
             </div>
-            <!-- Progress Bar -->
 
-            <div class="scroll-line"></div>
 
         </nav>
     </header>
 
-    <main>
 
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="2000">
-                    <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt=""
-                        width="100%" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home_carouserl.jpeg"
-                        alt="" width="100%" preserveAspectRatio="xMidYMid slice" role="img"
-                        focusable="false">
-                </div>
-                <div class="carousel-item" data-bs-interval="2000">
-                    <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg"
-                        alt="" width="100%" preserveAspectRatio="xMidYMid slice" role="img"
-                        focusable="false">
-
-                </div>
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        {{-- <ol class="carousel-indicators">
+            <li data-bs-target="#myCarousel" data-ba-slide-to="0" class="active"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+        </ol> --}}
+        <div class="carousel-inner active">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt=""
+                    width="100%" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
             </div>
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home_carouserl.jpeg"
+                    alt="" width="100%" preserveAspectRatio="xMidYMid slice" role="img"
+                    focusable="false">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg"
+                    alt="" width="100%" preserveAspectRatio="xMidYMid slice" role="img"
+                    focusable="false">
+
+            </div>
         </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
 
-        <!-- Marketing messaging and featurettes
-  ================================================== -->
-        <!-- Wrap the rest of the page in another container to center all the content. -->
-
-        <div class="container marketing">
-            <div class="container d-grid mt-">
-                <div class="row">
-                    @foreach ($book as $book)
-                        <div class="col-3 col-md-3">
-                            <div class="card"><img class="cardimg" src="{{ $book->image }}" alt=""
-                                    srcset="">
-                                <div class="img-tittle">{{ $book->name }}
-                                    <div class="rs">{{ $book->description }}</div>
-                                    <a href="/readbook" class="btn btn-primary btn-sm"><i
-                                            class="fas fa-book-reader fa-lg"></i>&nbsp; Read
-                                    </a>
-                                    <a href="/download/{{ $book->book_pdf }}"
-                                        class="btn btn-danger
-                                    btn-sm">
-                                    <i class="fas fa-file-pdf fa-lg"></i>&nbsp; Download
-                                    </a>
-
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-
-            <!-- START THE FEATURETTES -->
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span>
-                    </h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
-                        felis
-                        euismod
-                        semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus,
-                        tellus
-                        ac cursus
-                        commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
-                        width="500" height="500" xmlns="http://www.w3.org/2000/svg"
-                        aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" role="img"
-                        focusable="false">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%"
-                            fill="#aaa" dy=".3em">500x500</text>
-                    </svg>
-
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <!-- /END THE FEATURETTES -->
-        </div>
-        </div><!-- /.container -->
+    <!-- Marketing messaging and featurettes
+             ========================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
 
 
-        <!-- FOOTER -->
-        <footer class="container">
-            <p class="float-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a
-                    href="#">Terms</a></p>
-        </footer>
-    </main>
 
 
-    <!-- Scroll Top -->
-    <button type="button" class="btn btn-floating" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
-    <!-- Scroll Top Attach Files -->
+
+
+
+
+
+
+
 
     <div class="fab">
         <a href="https://api.whatsapp.com/send?text=Hi&amp;phone=+923404889886" target="_blank"
             class="things things1"><img class="img11" style="height: 47px; width:47px;"
                 src="https://www.libertybooks.com/floatingchaticons/whats.png" alt="WhatsApp"></a>
     </div>
+
 
 
 

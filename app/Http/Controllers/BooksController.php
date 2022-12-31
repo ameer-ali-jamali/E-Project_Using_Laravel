@@ -42,8 +42,8 @@ class BooksController extends Controller
     }
     public function all_books_home_page()
     {
-        $book = Book::all();
-        return view('index', compact('book'));
+        $books = Book::all();
+        return view('index', compact('books'));
     }
     public function delete_book($id)
     {
