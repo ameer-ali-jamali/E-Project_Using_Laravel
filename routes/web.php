@@ -33,6 +33,9 @@ Route::get('/upload', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
+Route::get('/topAuthors', function () {
+    return view('topAuthors');
+});
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/admin', [indexController::class, 'get_all']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);

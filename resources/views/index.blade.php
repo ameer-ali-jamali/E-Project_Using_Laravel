@@ -44,7 +44,7 @@
                                 <a class="nav-link" href="#">New Bookss</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Conatact Us</a>
+                                <a class="nav-link" href="/topAuthors">Top Authors</a>
                             </li>
                         </ul>
                     </div>
