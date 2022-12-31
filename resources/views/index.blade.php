@@ -66,31 +66,30 @@
                 </div>
             </div>
 
-
         </nav>
     </header>
 
 
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-        {{-- <ol class="carousel-indicators">
+    {{-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel"> --}}
+
+    {{-- <ol class="carousel-indicators">
             <li data-bs-target="#myCarousel" data-ba-slide-to="0" class="active"></li>
             <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
             <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
         </ol> --}}
-        <div class="carousel-inner active">
+
+    {{-- <div class="carousel-inner active">
             <div class="carousel-item active" data-bs-interval="10000">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt=""
+                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt="" width="100%"
+                    preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home_carouserl.jpeg" alt=""
                     width="100%" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home_carouserl.jpeg"
-                    alt="" width="100%" preserveAspectRatio="xMidYMid slice" role="img"
-                    focusable="false">
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg"
-                    alt="" width="100%" preserveAspectRatio="xMidYMid slice" role="img"
-                    focusable="false">
+                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt="" width="100%"
+                    preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
 
             </div>
         </div>
@@ -102,12 +101,18 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-    </div>
+    </div> --}}
 
 
     <!-- Marketing messaging and featurettes
              ========================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
+
+
+
+
+
+
 
 
 
