@@ -172,8 +172,15 @@
                                                 value="{{ $book->id }}" data-bs-toggle="modal"
                                                 data-bs-target="#updateBookModel"><i class="fas fa-edit"></i></button>
                                         </td>
-                                        <td><a href=" {{ " /deleteBook/$book->id" }}"class=" btn btn-danger btn-sm"><i
+                                        <td>
+                                            <a class="btn btn-danger btn-sm deleteBookConfirm"><i
                                                     class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                                            <form action="{{ URL::to('/deleteBook') }}" hidden>
+                                                <input type="text" name="bookId" value="{{ $book->id }}">
+                                                <input type="submit" name="submit" class="deleteBookByadmin">
+                                            </form>
+                                        </td>
+
                                     </tr>
                                 @endforeach
                             @else
@@ -243,9 +250,12 @@
                                                 data-bs-target="#userUpdateModal"><i class="fas fa-edit"></i></button>
                                         </td>
                                         <td>
-                                            <a href=" {{ "/deleteUser/$user->id" }}"
-                                                class=" btn btn-danger btn-sm"><i class="fa fa-trash fa-lg"
-                                                    aria-hidden="true"></i></a>
+                                            <a class=" btn btn-danger btn-sm deleteUserConfirm"><i
+                                                    class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                                            <form action="{{ URL::to('/deleteUser') }}" hidden>
+                                                <input type="text" name="userId" value="{{ $user->id }}">
+                                                <input type="submit" name="submit" class="deleteUserByadmin">
+                                            </form>
                                         </td>
 
                                     </tr>

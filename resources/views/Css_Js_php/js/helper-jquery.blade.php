@@ -73,5 +73,58 @@
             $('#booksListModel').toggle("fast")
         })
 
+        $('.deleteUserConfirm').click(function() {
+            swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file !",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("User Data Deleted SuccessFully", {
+                            icon: "success",
+                        }).then((willdelete) => {
+                            if (willdelete) {
+                                $('.deleteUserByadmin').click();
+                            }
+                        })
+                    } else {
+                        swal("User Data Is Safe");
+                    }
+                });
+        });
+
+        $('.deleteBookConfirm').click(function() {
+            swal({
+                    title: "Are you sure?",
+                    text: "Once deleted, you will not be able to recover this imaginary file !",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Book Deleted SuccessFully", {
+                            icon: "success",
+                        }).then((willdelete) => {
+                            if (willdelete) {
+                                $('.deleteBookByadmin').click();
+                            }
+                        })
+                    } else {
+                        swal("Your imaginary file is safe!");
+                    }
+                });
+        });
+
+
+
+
+
+
+
+
     })
 </script>

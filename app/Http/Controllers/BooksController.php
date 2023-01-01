@@ -45,10 +45,11 @@ class BooksController extends Controller
         $books = Book::all();
         return view('index', compact('books'));
     }
-    public function delete_book($id)
+    public function delete_book(Request $request)
     {
-        $book = Book::find($id);
-        $book->delete();
+        $getId = $request->bookId;
+        $bookData = Book::find($getId);
+        $bookData->delete();
         return redirect()->back();
     }
     public function get_book_info_by_id($id)

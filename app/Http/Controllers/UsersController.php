@@ -32,10 +32,11 @@ class UsersController extends Controller
         }
         return "<script>alert('Your Data Submited Successfully')</script>" . redirect()->back();
     }
-    public function delete_user_by_id($id)
+    public function delete_user(Request $request)
     {
-        $user = Users::find($id);
-        $user->delete();
+        $getId = $request->userId;
+        $userId = Users::find($getId);
+        $userId->delete();
         return redirect()->back();
     }
     public function get_user_info_by_id($id)
