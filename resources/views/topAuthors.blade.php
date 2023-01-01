@@ -10,6 +10,7 @@
     <title>Auhtors</title>
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @include('Css_Js_php.js.bootstrap_bundle_js')
     @include('Css_Js_php.js.jqueryAjax_feather-icons_lib')
     @include('Css_Js_php.js.jqueryAjax_chart_min_js')
@@ -37,8 +38,7 @@
             <div class="container container-width mt-4">
 
                 <section class="object-fit">
-                    <div class="category"><a
-                            href="#">Historical
+                    <div class="category"><a href="#">Historical
                             Fiction</a></div>
 
                     <h1 class="heading-font">20 Amazing Authors and Their Books To Read in 2020</h1>
@@ -69,7 +69,8 @@
 
                 <div class="post-content">
 
-                    <p class="margin-top font-larger">2020 means a new year, a new decade, and new chances to read amazing books by some of our
+                    <p class="margin-top font-larger">2020 means a new year, a new decade, and new chances to read
+                        amazing books by some of our
                         favorite
                         authors. Several of the talented writers we plan on reading this year have published
                         numerous
@@ -94,7 +95,8 @@
                         <div class="book-cover">
                             <a id="Book_36427" data-open="Book_36427_modal" aria-controls="Book_36427_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501187933/the-daughters-tale-9781501187933_xlg.jpg"
+                                <img class="img-hover"
+                                    src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501187933/the-daughters-tale-9781501187933_xlg.jpg"
                                     alt="The Daughter's Tale" title="The Daughter's Tale">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36427" class="bookshelf-add-link"
@@ -187,7 +189,8 @@
                         <div class="book-cover">
                             <a id="Book_24832" data-open="Book_24832_modal" aria-controls="Book_24832_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2017/10/Himself.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2017/10/Himself.jpg"
                                     alt="Himself" title="Himself">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_24832" class="bookshelf-add-link"
@@ -280,7 +283,8 @@
                         <div class="book-cover">
                             <a id="Book_36668" data-open="Book_36668_modal" aria-controls="Book_36668_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/Goergeous-Lies.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/Goergeous-Lies.jpg"
                                     alt="Gorgeous Lies" title="Gorgeous Lies">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36668" class="bookshelf-add-link"
@@ -341,7 +345,8 @@
                         <div class="book-cover">
                             <a id="Book_19892" data-open="Book_19892_modal" aria-controls="Book_19892_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2017/03/All-the-Missing-Girls.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2017/03/All-the-Missing-Girls.jpg"
                                     alt="All the Missing Girls" title="All the Missing Girls">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_19892" class="bookshelf-add-link"
@@ -437,7 +442,8 @@
                         <div class="book-cover">
                             <a id="Book_34688" data-open="Book_34688_modal" aria-controls="Book_34688_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/07/The-Beautiful-Bureaucrat.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/07/The-Beautiful-Bureaucrat.jpg"
                                     alt="The Beautiful Bureaucrat" title="The Beautiful Bureaucrat">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_34688" class="bookshelf-add-link"
@@ -523,7 +529,8 @@
                         <div class="book-cover">
                             <a id="Book_35519" data-open="Book_35519_modal" aria-controls="Book_35519_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982112301/the-winemakers-wife-9781982112301_xlg.jpg"
+                                <img class="img-hover"
+                                    src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982112301/the-winemakers-wife-9781982112301_xlg.jpg"
                                     alt="The Winemaker's Wife" title="The Winemaker's Wife">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_35519" class="bookshelf-add-link"
@@ -623,7 +630,8 @@
                         <div class="book-cover">
                             <a id="Book_36671" data-open="Book_36671_modal" aria-controls="Book_36671_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982122300/love-story-9781982122300_xlg.jpg"
+                                <img class="img-hover"
+                                    src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781982122300/love-story-9781982122300_xlg.jpg"
                                     alt="Love Story" title="Love Story">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36671" class="bookshelf-add-link"
@@ -713,7 +721,8 @@
                         <div class="book-cover">
                             <a id="Book_36672" data-open="Book_36672_modal" aria-controls="Book_36672_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/The-Dinner-List.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/The-Dinner-List.jpg"
                                     alt="The Dinner List" title="The Dinner List">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36672" class="bookshelf-add-link"
@@ -807,7 +816,8 @@
                         <div class="book-cover">
                             <a id="Book_36674" data-open="Book_36674_modal" aria-controls="Book_36674_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/Normal-People.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/Normal-People.jpg"
                                     alt="Normal People" title="Normal People">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36674" class="bookshelf-add-link"
@@ -895,7 +905,8 @@
                         <div class="book-cover">
                             <a id="Book_36107" data-open="Book_36107_modal" aria-controls="Book_36107_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501190100/the-family-upstairs-9781501190100_xlg.jpg"
+                                <img class="img-hover"
+                                    src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781501190100/the-family-upstairs-9781501190100_xlg.jpg"
                                     alt="The Family Upstairs" title="The Family Upstairs">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36107" class="bookshelf-add-link"
@@ -990,7 +1001,8 @@
                         <div class="book-cover">
                             <a id="Book_2720" data-open="Book_2720_modal" aria-controls="Book_2720_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2016/01/www.randomhouse.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2016/01/www.randomhouse.jpg"
                                     alt="Kafka on the Shore" title="Kafka on the Shore">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_2720" class="bookshelf-add-link"
@@ -1081,7 +1093,8 @@
                         <div class="book-cover">
                             <a id="Book_36676" data-open="Book_36676_modal" aria-controls="Book_36676_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/Such-a-fun-age.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/Such-a-fun-age.jpg"
                                     alt="Such a Fun Age" title="Such a Fun Age">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36676" class="bookshelf-add-link"
@@ -1163,7 +1176,8 @@
                         <div class="book-cover">
                             <a id="Book_19615" data-open="Book_19615_modal" aria-controls="Book_19615_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2017/02/behold-the-dreamers.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2017/02/behold-the-dreamers.jpg"
                                     alt="Behold the Dreamers" title="Behold the Dreamers">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_19615" class="bookshelf-add-link"
@@ -1253,7 +1267,8 @@
                         <div class="book-cover">
                             <a id="Book_36680" data-open="Book_36680_modal" aria-controls="Book_36680_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/How-Stella-GOt-Her-Grove-Back.jpeg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/How-Stella-GOt-Her-Grove-Back.jpeg"
                                     alt="How Stella Got Her Groove Back" title="How Stella Got Her Groove Back">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36680" class="bookshelf-add-link"
@@ -1344,7 +1359,8 @@
                         <div class="book-cover">
                             <a id="Book_13635" data-open="Book_13635_modal" aria-controls="Book_13635_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2016/03/The-Good-Girl.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2016/03/The-Good-Girl.jpg"
                                     alt="The Good Girl" title="The Good Girl">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_13635" class="bookshelf-add-link"
@@ -1433,7 +1449,8 @@
                         <div class="book-cover">
                             <a id="Book_36682" data-open="Book_36682_modal" aria-controls="Book_36682_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/Befoer-I-go-.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2019/12/Befoer-I-go-.jpg"
                                     alt="Before I Go" title="Before I Go">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36682" class="bookshelf-add-link"
@@ -1523,7 +1540,8 @@
                         <div class="book-cover">
                             <a id="Book_36720" data-open="Book_36720_modal" aria-controls="Book_36720_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="ttps://b9r8e6p9.stackpathcdn.com/app/uploads/2020/01/mongrels.jpg"
+                                <img class="img-hover"
+                                    src="ttps://b9r8e6p9.stackpathcdn.com/app/uploads/2020/01/mongrels.jpg"
                                     alt="Mongrels" title="Mongrels">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36720" class="bookshelf-add-link"
@@ -1614,7 +1632,8 @@
                         <div class="book-cover">
                             <a id="Book_36724" data-open="Book_36724_modal" aria-controls="Book_36724_modal"
                                 aria-haspopup="true" tabindex="0">
-                                <img class="img-hover" src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2020/01/the-outside-boy.jpg"
+                                <img class="img-hover"
+                                    src="https://b9r8e6p9.stackpathcdn.com/app/uploads/2020/01/the-outside-boy.jpg"
                                     alt="The Outside Boy" title="The Outside Boy">
                             </a><br>
                             <a data-open="login-add-to-shelf" id="bookshelf_36724" class="bookshelf-add-link"

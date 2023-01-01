@@ -4,6 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+Schema::defaultStringLength(191);
+
+
 return new class extends Migration
 {
     /**
@@ -13,13 +16,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Users', function (Blueprint $table) {
-            $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+        Schema::create('books', function (Blueprint $table) {
+            $table->id()->autoIncrement()->unique();
+            $table->string('name');
+            $table->string('issueDate');
+            $table->string('authorName');
+            $table->string('authorEmail');
+            $table->string('description');
+            $table->string('file');
+            $table->string('image');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -32,6 +37,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('books');
     }
 };

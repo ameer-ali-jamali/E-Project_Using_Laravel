@@ -81,14 +81,16 @@ class BooksController extends Controller
         );
         $bookId = $request->bookIdForUpdate;
         $book = Book::find($bookId);
-        if ($book == true) {
-            $book->name = $request->name;
-            $book->issueDate  = $request->issueDate;
-            $book->authorName  = $request->authorName;
-            $book->authorEmail  = $request->authorEmail;
-            $book->description  = $request->description;
+        $book->name = $request->name;
+        $book->issueDate  = $request->issueDate;
+        $book->authorName  = $request->authorName;
+        $book->authorEmail  = $request->authorEmail;
+        $book->description  = $request->description;
+        try {
             $book->update();
-            return redirect()->back();
+        } catch (\Throwable $th) {
+            return "<script>alert('Something Missing')</script>" . redirect()->back();
         }
+        return "<script>alert('Your Data Updated Successfully')</script>" . redirect()->back();
     }
 }

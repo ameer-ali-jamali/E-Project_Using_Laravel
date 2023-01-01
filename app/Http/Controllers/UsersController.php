@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\UserModel;
+use App\Models\Users;
+use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -19,25 +20,27 @@ class UsersController extends Controller
                 'password_confirmation' => 'required'
             ]
         );
-
-        $userModel = new UserModel();
-        $userModel->firstName = $signupUser->firstName;
-        $userModel->lastName = $signupUser->lastName;
-        $userModel->email = $signupUser->email;
-        $userModel->pass = $signupUser->password;
-        $userModel->save();
-        return redirect()->back();
+        $user = new Users();
+        $user->firstName = $signupUser->firstName;
+        $user->lastName = $signupUser->lastName;
+        $user->email = $signupUser->email;
+        $user->pass = $signupUser->password;
+        try {
+            $user->save();
+        } catch (\Throwable $th) {
+            return "<script>alert('Something Missing')</script>" . redirect()->back();
+        }
+        return "<script>alert('Your Data Submited Successfully')</script>" . redirect()->back();
     }
     public function delete_user_by_id($id)
     {
-         $user = UserModel::find($id);
-         $user->delete();
-         return redirect()->back();
-
+        $user = Users::find($id);
+        $user->delete();
+        return redirect()->back();
     }
     public function get_user_info_by_id($id)
     {
-        $user = UserModel::find($id);
+        $user = Users::find($id);
         if ($user) {
             return response()->json([
                 "status" => 200,
@@ -58,15 +61,16 @@ class UsersController extends Controller
                 'lastName' => 'required'
             ]
         );
+
         $userid = $request->userIdForUpdate;
-        $updateUser = UserModel::find($userid);
-        if ($updateUser == true) {
-            $updateUser->firstName = $request->firstName;
-            $updateUser->lastName = $request->lastName;
+        $updateUser = Users::find($userid);
+        $updateUser->firstName = $request->firstName;
+        $updateUser->lastName = $request->lastName;
+        try {
             $updateUser->update();
-            return redirect()->back();
-        } else {
-            echo "data not found";
+        } catch (\Throwable $th) {
+            return "<script>alert('Please Insert Name Correctly')</script>" . redirect()->back();
         }
+        return "<script>alert('Your Data Updated Successfully')</script>" . redirect()->back();
     }
 }

@@ -10,6 +10,7 @@
     <title>Home</title>
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @include('Css_Js_php.css.bootstrap_min_css')
     @include('Css_Js_php.js.bootstrap_bundle_js')
     @include('Css_Js_php.js.jqueryAjax_feather-icons_lib')
@@ -70,6 +71,7 @@
     </header>
 
 
+
     {{-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel"> --}}
 
     {{-- <ol class="carousel-indicators">
@@ -104,20 +106,49 @@
     </div> --}}
 
 
+
     <!-- Marketing messaging and featurettes
              ========================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
+    <style>
+        .row-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-auto-flow: column;
+            grid-auto-rows: 307px;
+            margin-top: 69px;
+        }
+    </style>
 
 
 
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
 
+        <div class="carousel-inner active">
+            <div class="carousel-item active" data-bs-interval="10000">
 
+                <div class="d-grid">
+                    <div class="row">
+                        @foreach ($books as $book)
+                            <div class="col-4">
+                                <h1>{{ $loop->index + 1 }}</h1>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
 
-
-
-
-
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
 
 
 

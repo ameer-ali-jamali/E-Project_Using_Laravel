@@ -8,6 +8,7 @@
     <title>Admin</title>
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @include('Css_Js_php.css.admin_css')
     @include('Css_Js_php.css.style')
     @include('Css_Js_php.js.bootstrap_bundle_js')
