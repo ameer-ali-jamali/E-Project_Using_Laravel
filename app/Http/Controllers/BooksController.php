@@ -21,25 +21,26 @@ class BooksController extends Controller
 
             ]
         );
-        if ($formData == true) {
-            $book = new Book();
-            $book->name = $formData->name;
-            $book->issueDate  = $formData->issueDate;
-            $book->authorName  = $formData->authorName;
-            $book->authorEmail  = $formData->authorEmail;
-            $book->description  = $formData->description;
-            $img_name  = $formData->file('img')->getClientOriginalName();
-            $formData->file('img')->move(public_path('book/images/'), $img_name);
-            $book->image =  'book/images/' . $img_name;
-            $file  = $formData->file('file')->getClientOriginalName();
-            $formData->file('file')->move(public_path('assests/booksPdf/'), $file);
-            $book->file =  'assests/booksPdf/' . $file;
+        $book = new Book();
+        $book->name = $formData->name;
+        $book->issueDate  = $formData->issueDate;
+        $book->authorName  = $formData->authorName;
+        $book->authorEmail  = $formData->authorEmail;
+        $book->description  = $formData->description;
+        $img_name  = $formData->file('img')->getClientOriginalName();
+        $formData->file('img')->move(public_path('book/images/'), $img_name);
+        $book->image =  'book/images/' . $img_name;
+        $file  = $formData->file('file')->getClientOriginalName();
+        $formData->file('file')->move(public_path('assests/booksPdf/'), $file);
+        $book->file =  'assests/booksPdf/' . $file;
+        try {
             $book->save();
-            return redirect()->back();
-        } else {
-            return redirect()->back();
+        } catch (\Throwable $th) {
+            return "<script>alert('Something Missing')</script>" . redirect()->back();
         }
+        return "<script>alert('Your Data Submited Successfully')</script>" . redirect()->back();
     }
+
     public function all_books_home_page()
     {
         $books = Book::all();
@@ -92,6 +93,6 @@ class BooksController extends Controller
         } catch (\Throwable $th) {
             return "<script>alert('Something Missing')</script>" . redirect()->back();
         }
-        return "<script>alert('Your Data Updated Successfully')</script>" . redirect()->back();
+        return "<script>alert('Book Updated Successfully')</script>" . redirect()->back();
     }
 }

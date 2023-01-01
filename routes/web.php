@@ -36,6 +36,7 @@ Route::get('/admin', function () {
 Route::get('/topAuthors', function () {
     return view('topAuthors');
 });
+
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/admin', [indexController::class, 'get_all']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);
