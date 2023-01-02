@@ -214,7 +214,7 @@ body {
 }
 
 .banner1 {
-    background: #0e0548f1;
+    background: black;
     color: whitesmoke;
     font-weight: bold;
     font-size: 0.7rem;
@@ -222,7 +222,7 @@ body {
 
 .banner2 {
     background: whitesmoke;
-    color: #0e0548f1;
+    color: black;
     font-weight: bold;
     font-size: 0.7rem;
 }
@@ -244,7 +244,7 @@ a:hover {
 }
 
 .navbar {
-    background-color: #0e0548f1;
+    background-color: #222;
 }
 
 .navbar-nav {
