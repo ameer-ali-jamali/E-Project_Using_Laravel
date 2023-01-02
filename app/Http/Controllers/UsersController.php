@@ -28,9 +28,9 @@ class UsersController extends Controller
         try {
             $user->save();
         } catch (\Throwable $th) {
-            return "<script>alert('Something Missing')</script>" . redirect()->back();
+            return "<script>alert('Email Already Exist Please Change Email')</script>" . redirect()->back();
         }
-        return "<script>alert('Your Data Submited Successfully')</script>" . redirect()->back();
+        return  "<script>alert('Your Data Submited')</script>" . redirect()->back();
     }
     public function delete_user(Request $request)
     {

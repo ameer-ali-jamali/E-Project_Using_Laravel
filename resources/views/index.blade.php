@@ -11,99 +11,124 @@
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    @include('Css_Js_php.css.bootstrap_min_css')
-    @include('Css_Js_php.js.bootstrap_bundle_js')
-    @include('Css_Js_php.js.jqueryAjax_feather-icons_lib')
-    @include('Css_Js_php.js.jqueryAjax_chart_min_js')
-    @include('Css_Js_php.css.style')
+    <link rel="stylesheet" href="css/bootstrap_min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/progress bar.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="images/client-image3.png">
 
 </head>
 
 <body>
 
+    <!-- Header-->
+
     <header>
 
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">E Books </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="banner2 d-flex justify-content-around p-2">
+            <span><i class="fas fa-envelope"></i> &nbsp;E_books*3423@gmial.com</span>
+            <span> <i class="fas fa-phone"></i> &nbsp;+92487985745909</span>
+        </div>
 
-                    <div class="container">
-                        <ul class="navbar-nav mr-auto mb-2 mb-md-0 justify-content-around">
-                            <li class="nav-item active">
-                                <a class="nav-link" aria-current="page" href="/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">All Books</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">New Bookss</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/topAuthors">Top Authors</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="container d-flex justify-content-end">
-                        <div class="d-flex justify-content-around gap-2 mright">
-                            <a href="/admin" class="btn btn-outline-danger" type="submit" name="signup"
-                                id="signup">Admin</a>
-                            <a href="/register" class="btn btn-outline-secondary" type="submit" name="signup"
-                                id="signup">Register</a>
-                            <a href="/login" class="btn btn-outline-primary" type="submit" name="login"
-                                id="login">Login</a>
-                            <form class="d-flex gap-2">
-                                <input class="form-control mr-2" type="search" placeholder="Search"
-                                    aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </nav>
     </header>
 
 
+    <!--Navigation Bar-->
 
-    {{-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel"> --}}
-
-    {{-- <ol class="carousel-indicators">
-            <li data-bs-target="#myCarousel" data-ba-slide-to="0" class="active"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
-            <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
-        </ol> --}}
-
-    {{-- <div class="carousel-inner active">
-            <div class="carousel-item active" data-bs-interval="10000">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt="" width="100%"
-                    preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
+    <nav class="navbar navbar-expand-lg sticky-top" style="height: 50px">
+        <div class="container-fluid">
+            <div class="nav navbar-brand">
+                <li class="active"> <a class="nav-link" href="Index.html"><i class="fa-solid fa-book fa-sm"></i>
+                        &nbsp;
+                        Ebooks</a></li>
             </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home_carouserl.jpeg" alt=""
-                    width="100%" preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
-            </div>
-            <div class="carousel-item" data-bs-interval="2000">
-                <img class="bd-placeholder-img" width="100%" height="100%" src="./images/home.jpg" alt="" width="100%"
-                    preserveAspectRatio="xMidYMid slice" role="img" focusable="false">
+            <button class="navbar-toggler rounded" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span><i class="fa fa-bars" id="hamberg-icon"></i></span></button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav d-flex justify-content-between" style="gap: 28px">
+                    <li class="active"> <a class="nav-link" href="Index.html">
+                            <i class="fa-thin fa-house"></i>
+                            &nbsp;
+                            Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Products.html"><i class="fas fa-books"></i>
+                            &nbsp;Books</a></li>
 
+                    <li class="nav-item"><a class="nav-link" href="contact us.html"><i
+                                class="fa-solid fa-user"></i>&nbsp;&nbsp;Top Authors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="location.html"><i
+                                class="fas fa-book-reader"></i>&nbsp;&nbsp;Latest Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about us.html"><i
+                                class="fas fa-phone"></i>&nbsp;&nbsp;Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html"><i
+                                class="fas fa-comments"></i>&nbsp;&nbsp;Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="location.html"><i
+                                class="fas fa-info"></i>&nbsp;&nbsp;About Us</a></li>
+
+                </ul>
+                <span class="container-fluid d-flex justify-content-end " style="width: max-content; gap:20px">
+                    <a href="/login"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                        Register</a>
+
+                    <a href="/login"><i class="fas fa-sign-in"></i>&nbsp; Login</a>
+                </span>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div> --}}
+
+
+
+        <!-- Progress Bar -->
+
+        <div class="scroll-line"></div>
+
+
+    </nav>
+
+
+
+    {{-- Carousel --}}
+
+    <div id="homePageCarousel" class="carousel carousel-dark slide" style="margin-top:-60px;">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="images/carousel_images/image-1.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>FREE AND DISCOUNTED BESTSELLERS</h5>
+                    <p>Join 150,000+ fellow readers. Get free and discounted bestsellers straight to
+                        your inbox with the ManyBooks eBook deals newsletter. </p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/carousel_images/poster-image.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>The Ultimate Guide to Free eBooks</h5>
+                    <p>Not sure what to read next? Explore our catalog of public domain books with our
+                        editors. Some real gems are hidden in our library.</p>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <img src="images/carousel_images/image-3.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>LOTS OF EBOOKS. 100 % FREE</h5>
+                    <p>Welcome to your friendly neighborhood library. We have more than 50,000 free
+                        ebooks waiting to be discovered.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homePageCarousel"
+            data-bs-slide="prev">
+            <i class="fa-solid fa-backward fa-lg"></i>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homePageCarousel"
+            data-bs-slide="next">
+            <i class="fad fa-forward fa-lg"></i>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
 
 
 
@@ -111,48 +136,114 @@
              ========================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <style>
-        .row-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-auto-flow: column;
-            grid-auto-rows: 307px;
-            margin-top: 69px;
-        }
-    </style>
 
 
 
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-
-        <div class="carousel-inner active">
-            <div class="carousel-item active" data-bs-interval="10000">
-
-                <div class="d-grid">
-                    <div class="row">
-                        @foreach ($books as $book)
-                            <div class="col-4">
-                                <h1>{{ $loop->index + 1 }}</h1>
-                            </div>
-                        @endforeach
+    <footer class="nb-footer" id="dynamic-footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-sm-12">
+</div> -->
+                <div class="col-md-3 col-sm-6 txt-align-sm">
+                    <div class="footer-info-single">
+                        <h2 class="title">Help Center</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp; How
+                                    to Pay</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    FAQ's</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Sitemap</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Delivery Info</a></li>
+                        </ul>
                     </div>
                 </div>
 
+                <div class="col-md-3 col-sm-6 txt-align-sm">
+                    <div class="footer-info-single">
+                        <h2 class="title">Customer information</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    About Us</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    FAQ's</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Sell Your Items</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 txt-align-sm">
+                    <div class="footer-info-single">
+                        <h2 class="title">Security & privacy</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Terms Of Use</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Privacy Policy</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Return / Refund Policy</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Store Locations</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 txt-align-sm">
+                    <div class="footer-info-single">
+                        <h2 class="title">Contact Us</h2>
+
+                        <div class="about">
+                            <!-- <img src="#" class="img-responsive center-block" alt=""> -->
+
+                            <ul class="list-inline social-icons icon-circle icon-zoom list-unstyled">
+                                <li> <a target="_blank" href="https://web.facebook.com/?_rdc=1&_rdr"
+                                        title=""><i class="fa-brands fa-facebook fa-lg"></i></a>
+                                </li>
+                                <li> <a target="_blank" href="https://www.youtube.com/" title=""><i
+                                            class="fa-brands fa-youtube fa-lg"></i></a>
+                                </li>
+                                <li> <a target="_blank" href="https://twitter.com/" title=""><i
+                                            class="fa-brands fa-twitter fa-lg"></i></a>
+                                </li>
+                                <li> <a target="_blank"
+                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=ameer.ali.jamali886@gmail.com">
+                                        <i class="fa-brands fa-google-plus fa-lg"></i></a></li>
+                            </ul>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
             </div>
         </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+
+        <section class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>Copyright © 2022.&nbsp; E-Books &nbsp;<i class="fa-solid fa-book fa-sm"></i>&nbsp;
+                        </p>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+            </div>
+        </section>
+    </footer>
 
 
+    <!-- Scroll Top -->
 
 
+    <button type="button" class="btn btn-floating" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
+
+
+    <!-- Scroll Top Attach Files -->
 
 
 
@@ -164,7 +255,15 @@
 
 
 
-
+    <script src="js/helper-javascript.js"></script>
+    {{-- <script src="js/bootstrap_bundle.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+    <script src="js/jquery_min.js"></script>
+    <script src="js/helper-jquery.js"></script>
+    <script src="js/jqueryAjax_feather-icons_lib.js"></script>
+    <script src="js/jqueryAjax_chart_min.js"></script>
 
 </body>
 

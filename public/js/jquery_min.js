@@ -1,4 +1,4 @@
-<script>
+
     /*! jQuery v3.6.1 | (c) OpenJS Foundation and other contributors | jquery.org/license */ ! function(e, t) {
         "use strict";
         "object" == typeof module && "object" == typeof module.exports ? module.exports = e.document ? t(e, !0) :
@@ -3685,4 +3685,3 @@
             return C.$ === S && (C.$ = Qt), e && C.jQuery === S && (C.jQuery = Yt), S
         }, "undefined" == typeof e && (C.jQuery = C.$ = S), S
     });
-</script>

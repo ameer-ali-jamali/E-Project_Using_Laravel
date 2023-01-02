@@ -1,5 +1,3 @@
-<style>
-
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Raleway:wght@400;600&display=swap);
 
@@ -4886,27 +4884,31 @@ Modifications
     width: 90% !important;
 }
 
-.author-share-container{
+.author-share-container {
     display: flex !important;
     justify-content: space-between !important;
 }
-.margin-top{
+
+.margin-top {
     margin-top: 17px !important;
 }
-.font-larger{
+
+.font-larger {
     font-size: larger;
 }
-.heading-font{
+
+.heading-font {
     color: #2a338a !important;
     font-size: 2.125rem !important;
     line-height: 40px !important;
 }
-.object-fit{
+
+.object-fit {
     object-fit: cover;
     width: 100%;
 }
-.img-hover:hover{
+
+.img-hover:hover {
     transition-duration: 2s;
     transform: scale3d(1.8, 1.8, 1.8);
 }
-</style>
