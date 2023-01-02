@@ -13,8 +13,10 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap_min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header_navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <script src="js/progress bar.js"></script>
+    <link rel="stylesheet" href="css/scroll_up_down.css">
+    <link rel="stylesheet" href="css/gernal_classes.css">
     <!-- Favicon -->
     <link rel="icon" href="images/client-image3.png">
 
@@ -55,24 +57,32 @@
                     <li class="nav-item"><a class="nav-link" href="Products.html"><i class="fal fa-books"></i>
                             &nbsp;Books</a></li>
 
-                    <li class="nav-item"><a class="nav-link" href="contact us.html"><i
+                    <li class="nav-item"><a class="nav-link" href="/topAuthors"><i
                                 class="fal solid fa-user"></i>&nbsp;&nbsp;Top Authors</a></li>
                     <li class="nav-item"><a class="nav-link" href="location.html"><i
                                 class="fal fa-book-reader"></i>&nbsp;&nbsp;Latest Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about us.html"><i
-                                class="fal  fa-phone"></i>&nbsp;&nbsp;Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html"><i
                                 class="fal  fa-comments"></i>&nbsp;&nbsp;Feedback</a></li>
                     <li class="nav-item"><a class="nav-link" href="location.html"><i
                                 class="fal  fa-info"></i>&nbsp;&nbsp;About Us</a></li>
 
                 </ul>
-                <span class="container-fluid d-flex justify-content-end " style="width: max-content; gap:20px">
-                    <a href="/login"><i class="fa-solid fa-user-plus"></i>&nbsp;
-                        Register</a>
 
-                    <a href="/login"><i class="fas fa-sign-in"></i>&nbsp; Login</a>
-                </span>
+
+                @if (Auth::check())
+                    {
+                    <span>Muqadar user</span>
+                }@else{
+                    <span class="container-fluid d-flex justify-content-end " style="width: max-content; gap:20px">
+                        <a href="/login"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                            Register</a>
+
+                        <a href="/login"><i class="fas fa-sign-in"></i>&nbsp; Login</a>
+                    </span>
+                    }
+                @endif
+
+
             </div>
         </div>
 
@@ -137,7 +147,7 @@
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
 
-
+    {{-- footer --}}
 
     <footer class="nb-footer" id="dynamic-footer">
         <div class="container">
@@ -256,10 +266,7 @@
 
 
     <script src="js/helper-javascript.js"></script>
-    {{-- <script src="js/bootstrap_bundle.js"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
+    <script src="js/bootstrap_bundle.js"></script>
     <script src="js/jquery_min.js"></script>
     <script src="js/helper-jquery.js"></script>
     <script src="js/jqueryAjax_feather-icons_lib.js"></script>

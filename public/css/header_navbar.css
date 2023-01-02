@@ -1,0 +1,81 @@
+.banner1 {
+    background: black;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+.banner2 {
+    background: whitesmoke;
+    color: black;
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+.navbar {
+    background-color: #222;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: whitesmoke;
+    margin-top: 0px;
+    position: relative;
+}
+
+.navbar a:hover {
+    color: rgb(34, 193, 195);
+}
+
+.navbar a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #bcc6c8, #2dd6b2, #22c1c3);
+    z-index: 1;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.navbar a:hover::before {
+    transform: scaleX(1);
+}
+
+.dropdown-menu {
+    background-color: #0e0548f1;
+    color: whitesmoke;
+}
+
+@media all and (min-width: 979px) {
+    .navbar .nav-item .dropdown-menu {
+        display: inline;
+        visibility: hidden;
+        transition: 0.3s;
+        margin-top: 0;
+    }
+
+    .navbar .nav-item:hover .nav-link {
+        border-radius: 15px;
+    }
+
+    .navbar .dropdown-menu.fade-down {
+        top: 80%;
+        transform: rotateX(-75deg);
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transition: 0.5s;
+        opacity: 1;
+        visibility: visible;
+        top: 100%;
+        color: #ffe435;
+    }
+}

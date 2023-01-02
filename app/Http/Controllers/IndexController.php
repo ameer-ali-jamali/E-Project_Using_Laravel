@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use App\Models\Users;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class IndexController extends Controller
@@ -15,5 +17,22 @@ class IndexController extends Controller
         $users = Users::all();
         $books = Book::all();
         return view('admin', compact('users'), compact('books'));
+    }
+    public function login(Request $request)
+    {
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            return "done";
+        }
+
+        return redirect()->back();
+    }
+    public function regit(Request $request)
+    {
+        $user = User::create(request(['email', 'password']));
+
+        auth()->login($user);
+
+        return redirect()->to('/');
     }
 }
