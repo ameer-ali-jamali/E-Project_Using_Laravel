@@ -41,7 +41,7 @@
             <div class="nav navbar-brand">
                 <li class="active"> <a class="nav-link" href="Index.html"><i class="fa-solid fa-book fa-sm"></i>
                         &nbsp;
-                        Ebooks</a></li>
+                        E-books</a></li>
             </div>
             <button class="navbar-toggler rounded" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,19 +52,19 @@
                             <i class="fa-thin fa-house"></i>
                             &nbsp;
                             Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="Products.html"><i class="fas fa-books"></i>
+                    <li class="nav-item"><a class="nav-link" href="Products.html"><i class="fal fa-books"></i>
                             &nbsp;Books</a></li>
 
                     <li class="nav-item"><a class="nav-link" href="contact us.html"><i
-                                class="fa-solid fa-user"></i>&nbsp;&nbsp;Top Authors</a></li>
+                                class="fal solid fa-user"></i>&nbsp;&nbsp;Top Authors</a></li>
                     <li class="nav-item"><a class="nav-link" href="location.html"><i
-                                class="fas fa-book-reader"></i>&nbsp;&nbsp;Latest Books</a></li>
+                                class="fal fa-book-reader"></i>&nbsp;&nbsp;Latest Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="about us.html"><i
-                                class="fas fa-phone"></i>&nbsp;&nbsp;Contact Us</a></li>
+                                class="fal  fa-phone"></i>&nbsp;&nbsp;Contact Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html"><i
-                                class="fas fa-comments"></i>&nbsp;&nbsp;Feedback</a></li>
+                                class="fal  fa-comments"></i>&nbsp;&nbsp;Feedback</a></li>
                     <li class="nav-item"><a class="nav-link" href="location.html"><i
-                                class="fas fa-info"></i>&nbsp;&nbsp;About Us</a></li>
+                                class="fal  fa-info"></i>&nbsp;&nbsp;About Us</a></li>
 
                 </ul>
                 <span class="container-fluid d-flex justify-content-end " style="width: max-content; gap:20px">
