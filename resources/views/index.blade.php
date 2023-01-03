@@ -38,18 +38,18 @@
 
     <!--Navigation Bar-->
 
-    <nav class="navbar navbar-expand-lg sticky-top" style="height: 50px">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
             <div class="nav navbar-brand">
                 <li class="active"> <a class="nav-link" href="Index.html"><i class="fa-solid fa-book fa-sm"></i>
                         &nbsp;
-                        E-books</a></li>
+                        E-BOOKS</a></li>
             </div>
             <button class="navbar-toggler rounded" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span><i class="fa fa-bars" id="hamberg-icon"></i></span></button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav d-flex justify-content-between" style="gap: 28px">
+                <ul class="navbar-nav d-flex justify-content-between " style="margin-inline: auto; gap:50px;">
                     <li class="active"> <a class="nav-link" href="Index.html">
                             <i class="fa-thin fa-house"></i>
                             &nbsp;
@@ -58,35 +58,22 @@
                             &nbsp;Books</a></li>
 
                     <li class="nav-item"><a class="nav-link" href="/topAuthors"><i
-                                class="fal solid fa-user"></i>&nbsp;&nbsp;Top Authors</a></li>
+                                class="fal solid fa-user"></i>&nbsp;Top Authors</a></li>
                     <li class="nav-item"><a class="nav-link" href="location.html"><i
-                                class="fal fa-book-reader"></i>&nbsp;&nbsp;Latest Books</a></li>
+                                class="fal fa-book-reader"></i>&nbsp;Latest Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html"><i
-                                class="fal  fa-comments"></i>&nbsp;&nbsp;Feedback</a></li>
+                                class="fal  fa-comments"></i>&nbsp;Feedback</a></li>
                     <li class="nav-item"><a class="nav-link" href="location.html"><i
-                                class="fal  fa-info"></i>&nbsp;&nbsp;About Us</a></li>
-
+                                class="fal  fa-info"></i>&nbsp;About Us</a></li>
                 </ul>
-
-
-                @if (Auth::check())
-                    {
-                    <span>Muqadar user</span>
-                }@else{
-                    <span class="container-fluid d-flex justify-content-end " style="width: max-content; gap:20px">
-                        <a href="/login"><i class="fa-solid fa-user-plus"></i>&nbsp;
-                            Register</a>
-
-                        <a href="/login"><i class="fas fa-sign-in"></i>&nbsp; Login</a>
-                    </span>
-                    }
-                @endif
-
+                <span class="conainer login-btns">
+                    <a href="/login"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                        Register</a>
+                    <a href="/login"><i class="fas fa-sign-in"></i>&nbsp; Login</a>
+                </span>
 
             </div>
         </div>
-
-
 
         <!-- Progress Bar -->
 
@@ -103,7 +90,7 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="10000">
-                <img src="images/carousel_images/image-1.jpg" class="d-block w-100" alt="...">
+                <img src="images/carousel_images/image-1.jpg" class="d-block w-100 carousel-image" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>FREE AND DISCOUNTED BESTSELLERS</h5>
                     <p>Join 150,000+ fellow readers. Get free and discounted bestsellers straight to
@@ -111,7 +98,7 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/carousel_images/poster-image.jpg" class="d-block w-100" alt="...">
+                <img src="images/carousel_images/poster-image.jpg" class="d-block w-100 carousel-image" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>The Ultimate Guide to Free eBooks</h5>
                     <p>Not sure what to read next? Explore our catalog of public domain books with our
@@ -119,7 +106,7 @@
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="2000">
-                <img src="images/carousel_images/image-3.jpg" class="d-block w-100" alt="...">
+                <img src="images/carousel_images/image-3.jpg" class="d-block w-100 carousel-image" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                     <h5>LOTS OF EBOOKS. 100 % FREE</h5>
                     <p>Welcome to your friendly neighborhood library. We have more than 50,000 free

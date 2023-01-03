@@ -54,6 +54,23 @@
     color: whitesmoke;
 }
 
+.carousel-item {
+    position: relative;
+    height: 300px;
+}
+
+.carousel-control-prev {
+    height: auto;
+    margin-top: 60px;
+}
+
+.carousel-control-next {
+    height: auto;
+    margin-top: 60px;
+}
+
+
+
 @media all and (min-width: 979px) {
     .navbar .nav-item .dropdown-menu {
         display: inline;
@@ -77,5 +94,55 @@
         visibility: visible;
         top: 100%;
         color: #ffe435;
+    }
+}
+
+@media only screen and (max-width:991px) {
+    .fab img {
+        display: none;
+    }
+
+    .navbar-nav {
+        gap: 3px;
+        flex-direction: row;
+    }
+
+    .login-btns {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar-toggler {
+        color: azure;
+        background-color: black;
+    }
+
+
+    .carousel-item {
+        height: 250px;
+    }
+
+
+    .carousel-image {
+        object-fit: cover;
+        height: 100%;
+    }
+
+    .carousel-control-prev {
+        height: auto;
+        margin-top: 60px;
+    }
+
+    .carousel-control-next {
+        height: auto;
+        margin-top: 60px;
+    }
+
+
+}
+
+@media only screen and (min-width:991px) and (max-width:1130px) {
+    .navbar-nav {
+        gap: 15px !important;
     }
 }
