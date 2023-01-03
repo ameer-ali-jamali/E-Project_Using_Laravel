@@ -41,9 +41,18 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
             <div class="nav navbar-brand">
-                <li class="active"> <a class="nav-link" href="Index.html"><i class="fa-solid fa-book fa-sm"></i>
-                        &nbsp;
-                        E-BOOKS</a></li>
+                @auth
+                    <li class="active"> <a class="nav-link" href="/userProfile">
+                            &nbsp;
+                            {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a></li>
+                @endauth
+
+                @guest
+                    <li class="active"> <a class="nav-link" href="/"><i class="fa-solid fa-book fa-sm"></i>
+                            &nbsp;
+                            E-BOOKS</a></li>
+                @endguest
+
             </div>
             <button class="navbar-toggler rounded" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,14 +73,22 @@
                                 class="fal fa-book-reader"></i>&nbsp;Latest Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html"><i
                                 class="fal  fa-comments"></i>&nbsp;Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="location.html"><i
-                                class="fal  fa-info"></i>&nbsp;About
+                    <li class="nav-item"><a class="nav-link" href="location.html"><i class="fas fa-info"></i>&nbsp;About
                             Us</a></li>
                 </ul>
                 <span class="conainer login-btns">
-                    <a href="/login"><i class="fa-solid fa-user-plus"></i>&nbsp;
-                        Register</a>
-                    <a href="/login"><i class="fas fa-sign-in"></i>&nbsp; Login</a>
+                    @auth
+                        <a href="/userProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                            Profile</a>
+                        <a href="/logout"><i class="fas fa-sign-in"></i>&nbsp; Log out</a>
+                    @endauth
+
+                    @guest
+                        <a href="/login"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                            Register</a>
+                        <a href="/login"><i class="fas fa-sign-in"></i>&nbsp; Login</a>
+                    @endguest
+
                 </span>
 
             </div>

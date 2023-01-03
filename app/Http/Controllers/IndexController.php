@@ -22,7 +22,7 @@ class IndexController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect('/index');
+            return redirect('/');
         }
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }

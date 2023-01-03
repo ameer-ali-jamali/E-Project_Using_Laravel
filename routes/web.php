@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UsersController;
-use Illuminate\Support\Facades\Route;
 
 
 
@@ -18,7 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/index', function () {
+Route::get('/logout', function () {
+    \session_abort();
+    Auth::logout();
     return view('index');
 });
 Route::get('/', function () {
