@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Users;
-use Illuminate\Console\View\Components\Alert;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Console\View\Components\Alert;
 
 class UsersController extends Controller
 {
@@ -20,11 +20,11 @@ class UsersController extends Controller
                 'password_confirmation' => 'required'
             ]
         );
-        $user = new Users();
+        $user = new User();
         $user->firstName = $signupUser->firstName;
         $user->lastName = $signupUser->lastName;
         $user->email = $signupUser->email;
-        $user->pass = $signupUser->password;
+        $user->password = $signupUser->password;
         try {
             $user->save();
         } catch (\Throwable $th) {
@@ -35,13 +35,13 @@ class UsersController extends Controller
     public function delete_user(Request $request)
     {
         $getId = $request->userId;
-        $userId = Users::find($getId);
+        $userId = User::find($getId);
         $userId->delete();
         return redirect()->back();
     }
     public function get_user_info_by_id($id)
     {
-        $user = Users::find($id);
+        $user = User::find($id);
         if ($user) {
             return response()->json([
                 "status" => 200,
@@ -64,7 +64,7 @@ class UsersController extends Controller
         );
 
         $userid = $request->userIdForUpdate;
-        $updateUser = Users::find($userid);
+        $updateUser = User::find($userid);
         $updateUser->firstName = $request->firstName;
         $updateUser->lastName = $request->lastName;
         try {

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\Users;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,25 +13,17 @@ class IndexController extends Controller
 {
     public function get_all()
     {
-        $users = Users::all();
+        $users = User::all();
         $books = Book::all();
         return view('admin', compact('users'), compact('books'));
     }
     public function login(Request $request)
     {
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return "done";
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            return redirect('/index');
         }
-
-        return redirect()->back();
-    }
-    public function regit(Request $request)
-    {
-        $user = User::create(request(['email', 'password']));
-
-        auth()->login($user);
-
-        return redirect()->to('/');
+        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
 }

@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/index', function () {
+    return view('index');
+});
 Route::get('/', function () {
     return view('index');
 });
@@ -32,6 +35,9 @@ Route::get('/admin', function () {
 });
 Route::get('/topAuthors', function () {
     return view('topAuthors');
+});
+Route::get('/new', function () {
+    return view('new');
 });
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/admin', [indexController::class, 'get_all']);
