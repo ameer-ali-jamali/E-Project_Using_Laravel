@@ -276,6 +276,9 @@
     {{-- Loop End --}}
 
 
+
+
+
     <div class="position-absolute container-fluid">
 
         <div class="container-fluid position-relative">
@@ -351,6 +354,7 @@
 
 
     </div>
+
 
     {{-- Book Update Model --}}
 

@@ -20,6 +20,7 @@
     <!-- Favicon -->
     <link rel="icon" href="images/client-image3.png">
 
+
 </head>
 
 <body>
@@ -84,9 +85,12 @@
                     @endauth
 
                     @guest
-                        <a href="/login"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#userRegistrationModal"><i
+                                class="fa-solid fa-user-plus"></i>&nbsp;
                             Register</a>
-                        <a href="/login"><i class="fas fa-sign-in"></i>&nbsp; Login</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#userLoginModelForm"><i
+                                class="fas fa-sign-in"></i>&nbsp;
+                            Login</a>
                     @endguest
 
                 </span>
@@ -107,6 +111,166 @@
 
 
 
+    {{-- User Registration Model --}}
+
+    <!-- Modal -->
+    <div class="modal fade" id="userRegistrationModal" tabindex="-1" role="dialog"
+        aria-labelledby="registrationTittle" aria-hidden="true">
+        <div class="modal-dialog" style="width: auto;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 45px">
+                    <p id="userRegistraitonErroMessage"></p>
+                    <h5 class="modal-title" id="registrationTittle" style="font-size: large; color: cadetblue;">
+                        Registartion Form</h5>
+                    <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ URL::to('/registerUser') }}" method="post">
+                        @csrf
+                        <div class="container">
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label font-family" for="registerFirstName">First
+                                            name</label>
+                                        <input type="text" name="firstName" id="registerFirsttName"
+                                            class="form-control" />
+                                        <span class="text-danger">
+                                            @error('firstName')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label font-family" for="registerLastName">Last name</label>
+                                        <input type="text" name="lastName" id="registerLastName"
+                                            class="form-control" />
+                                        <span class="text-danger">
+                                            @error('lastName')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label font-family" for="registerEmail">Email address</label>
+                                <input type="email" name="email" id="registerEmail" class="form-control" />
+                                <span class="text-danger">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label font-family" for="registerPassword">Password</label>
+                                <input type="password" name="password" id="registerPassword" class="form-control" />
+                                <span class="text-danger">
+                                    @error('password')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label font-family" for="registerPasswordConfirmation">Conform
+                                    Password</label>
+                                <input type="password" name="password_confirmation" id="registerPasswordConfirmation"
+                                    class="form-control" />
+                                <span class="text-danger">
+                                    @error('password_confirmation')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {{-- Login form model --}}
+
+    <!-- Modal -->
+    <div class="modal fade" id="userLoginModelForm" tabindex="-1" role="dialog"
+        aria-labelledby="userLoginFormTittle" aria-hidden="true">
+        <div class="modal-dialog" style="width: auto;">
+            <div class="modal-content">
+                <div class="modal-header" style="height: 45px">
+                    <p id="userLoginErroMessage"></p>
+                    <h5 class="modal-title" id="userLoginFormTittle" style="font-size: large; color: cadetblue;">
+                        Login Form</h5>
+                    <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form action="{{ URL::to('/userLogin') }}" method="POST">
+                    @csrf
+                    <div class="modal-body">
+
+                        <div class="col mt-0">
+                            <div class="form-outline">
+                                <label class="form-label font-family" for="userEmail">Email</label>
+                                <input type="email" name="email" id="userEmail" class="form-control"
+                                    placeholder="Input Your Email" />
+                                <span class="text-danger">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col mt-3">
+                            <div class="form-outline">
+                                <label class="form-label font-family" for="userPasswrod">Password
+                                </label>
+                                <input type="password" name="password" id="userPassword" class="form-control"
+                                    placeholder="Input Your Password" />
+                                <span class="text-danger">
+                                    @error('password')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-success" name="submit" value="Login">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
 
 
 
@@ -122,6 +286,14 @@
     <script src="js/helper-jquery.js"></script>
     <script src="js/jqueryAjax_feather-icons_lib.js"></script>
     <script src="js/jqueryAjax_chart_min.js"></script>
+
+
+
+
+
+
+
+
 </body>
 
 </html>

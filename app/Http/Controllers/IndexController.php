@@ -19,11 +19,17 @@ class IndexController extends Controller
     }
     public function login(Request $request)
     {
-
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect('/');
+            $userEmail = $request->email;
+            $data = User::firstOrNew(['email' => $userEmail]);
+            $role = $data->Role;
+            if ($role == "admin") {
+                return redirect("/adminDashoboard");
+            } else {
+                return redirect("/");
+            }
         }
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return  "<script>alert('inCorrect Email Or  Password')</script>" . redirect()->back();
     }
 }
