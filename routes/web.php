@@ -35,7 +35,9 @@ Route::get('/adminlogout', function () {
 Route::get('/topAuthors', function () {
     return view('topAuthors');
 });
-
+Route::get('/contactus', function () {
+    return view('contactus');
+});
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/adminDashBoard', [indexController::class, 'get_all']);
 Route::post('/userLogin', [indexController::class, 'login']);

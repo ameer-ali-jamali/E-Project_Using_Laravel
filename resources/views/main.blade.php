@@ -76,7 +76,7 @@
                                 class="fal fa-book-reader"></i>&nbsp;Latest Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="feedback.html"><i
                                 class="fal  fa-comments"></i>&nbsp;Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="location.html"><i class="fas fa-info"></i>&nbsp;About
+                    <li class="nav-item"><a class="nav-link" href="/contactus"><i class="fas fa-info"></i>&nbsp;Contact
                             Us</a></li>
                 </ul>
                 <span class="conainer login-btns">
