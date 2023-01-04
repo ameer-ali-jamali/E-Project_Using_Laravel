@@ -37,7 +37,7 @@
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 @auth
-                    <a class="nav-link" href="/adminlogout"><i class="fas fa-sign-in"></i>&nbsp; Logout</a>
+                    <a class="nav-link" href="/adminlogout"><i class="fal fa-sign-in"></i>&nbsp; Logout</a>
                 @endauth
             </li>
         </ul>
@@ -121,7 +121,7 @@
 
 
 
-        <div class="position-relative" id="booksListModel">
+        <div class="position-relative" id="booksListModal">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
 
                 <div class="data-table-container">
@@ -178,7 +178,7 @@
                                         <td>
                                             <button type="submit" class="btn btn-primary btn-sm getBookId"
                                                 value="{{ $book->id }}" data-bs-toggle="modal"
-                                                data-bs-target="#updateBookModel"><i class="fas fa-edit"></i></button>
+                                                data-bs-target="#updateBookModal"><i class="fal fa-edit"></i></button>
                                         </td>
                                         <td>
                                             <a class="btn btn-danger btn-sm deleteBookConfirm"><i
@@ -210,7 +210,7 @@
 
         {{-- Users List loop --}}
 
-        <div class="position-relative " id="usersListModel">
+        <div class="position-relative " id="usersListModal">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <div class="data-table-container">
                     <div class="row">
@@ -255,7 +255,7 @@
                                         <td>
                                             <button class="btn btn-primary getUserId btn-sm"
                                                 value="{{ $user->id }}" data-bs-toggle="modal"
-                                                data-bs-target="#userUpdateModal"><i class="fas fa-edit"></i></button>
+                                                data-bs-target="#userUpdateModal"><i class="fal fa-edit"></i></button>
                                         </td>
                                         <td>
                                             <a class=" btn btn-danger btn-sm deleteUserConfirm"><i
@@ -289,96 +289,6 @@
 
 
 
-    {{-- Guest List --}}
-    {{--
-
-    <div class="position-relative " id="usersListModel">
-        <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-            <div class="data-table-container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="py-3 text-center font-bold font-up blue-text"><i
-                                class="fa-solid fa-album-circle-user fa-lg"></i> &nbsp; Users Info</h2>
-                    </div>
-                </div>
-                <table class="table table-hover table-responsive mb-0">
-                    <div class="d-flex justify-content-between">
-                        <span>
-                            <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
-                                    class="fas fa-user"></i></a>
-                        </span>
-                        <span>
-                            <button class="btn btn-primary mb-3" data-bs-toggle="modal"
-                                data-bs-target="#registerNewUser">Register
-                                &nbsp;<i class="fas fa-user-plus"></i></button>
-
-                        </span>
-                    </div>
-
-                    <tr>
-                        <th scope='col'>#</th>
-                        <th scope='col'>Fist Name</th>
-                        <th scope='col'>Last Name</th>
-                        <th scope='col'>Email</th>
-                        <th scope='col'>Created_At</th>
-                        <th scope='col'>Update</th>
-                        <th scope='col'>Delete</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        @if ($users->count())
-                            @foreach ($users as $user)
-                                <tr @if ($loop->even) class="bg-info" @endif>
-                                    <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $user->firstName }}</td>
-                                    <td>{{ $user->lastName }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
-                                    <td>
-                                        <button class="btn btn-primary getUserId btn-sm" value="{{ $user->id }}"
-                                            data-bs-toggle="modal" data-bs-target="#userUpdateModal"><i
-                                                class="fas fa-edit"></i></button>
-                                    </td>
-                                    <td>
-                                        <a class=" btn btn-danger btn-sm deleteUserConfirm"><i
-                                                class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
-                                        <form action="{{ URL::to('/deleteUser') }}" hidden>
-                                            <input type="text" name="userId" value="{{ $user->id }}">
-                                            <input type="submit" name="submit" class="deleteUserByadmin">
-                                        </form>
-                                    </td>
-
-                                </tr>
-                            @endforeach
-                        @else
-                            <tr>
-                                <td colspan="8" class="bg-danger user-table">No User Found</td>
-                            </tr>
-
-                        @endif
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
-    </div>
-
-    </div> --}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="position-absolute container-fluid">
 
         <div class="container-fluid position-relative" style="margin-top: -55px;">
@@ -399,7 +309,7 @@
                             <div class="card card-item1">
                                 <div class="card-body">
                                     <h3 class="card-title">Registered Users</h3>
-                                    <h1 class="card-text"><i class="fa fa-user"
+                                    <h1 class="card-text"><i class="fa-duotone fa-user"
                                             aria-hidden="true"></i>&nbsp;{{ $userCount }}</h1>
                                 </div>
                             </div>
@@ -426,12 +336,43 @@
                             </div>
                         </div>
                     </div>
+                    {{-- <div id="guestsList">
+                        @php
+                            $guestCount = 0;
+                        @endphp
+                        @foreach ($guests as $guest)
+                            <p hidden disabled>{{ $guest->id }}</p>
+                            @php
+                                $guestCount++;
+                            @endphp
+                        @endforeach
+                        <div class="col ">
+                            <div class="card card-item1">
+                                <div class="card-body">
+                                    <h3 class="card-title">Guest Accounts</h3>
+                                    <h1 class="card-text"><i
+                                            class="fa-duotone fa-book "></i>&nbsp;{{ $guestCount }}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div> --}}
+                    <div id="guestsList">
+                        <div class="col ">
+                            <div class="card card-item1">
+                                <div class="card-body">
+                                    <h3 class="card-title">Guests Accounts</h3>
+                                    <h1 class="card-text"><i class="fal fa-user"></i>&nbsp; 120</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div id="visitorsCard">
                         <div class="col ">
                             <div class="card card-item1">
                                 <div class="card-body">
                                     <h3 class="card-title">Visitors</h3>
-                                    <h1 class="card-text"><i class="fas fa-globe "></i>&nbsp; 34</h1>
+                                    <h1 class="card-text"><i class="fal fa-globe "></i>&nbsp; 34</h1>
                                 </div>
                             </div>
                         </div>
@@ -441,7 +382,7 @@
                             <div class="card card-item1">
                                 <div class="card-body">
                                     <h3 class="card-title">Downloads</h3>
-                                    <h1 class="card-text"><i class="fas fa-download "></i>&nbsp; 2999</h1>
+                                    <h1 class="card-text"><i class="fal fa-download "></i>&nbsp; 2999</h1>
                                 </div>
                             </div>
                         </div>
@@ -455,9 +396,9 @@
     </div>
 
 
-    {{-- Book Update Model --}}
+    {{-- Book Update Modal --}}
 
-    <div class="modal fade" id="updateBookModel" tabindex="-1" role="dialog"
+    <div class="modal fade" id="updateBookModal" tabindex="-1" role="dialog"
         aria-labelledby="updateBookInfoTittle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -473,8 +414,8 @@
                     <div class="modal-body">
                         @csrf
                         <div class="container">
-                            <div class="container-fluid model-container">
-                                <p class="model-p">Book Id</p>
+                            <div class="container-fluid modal-container">
+                                <p class="modal-p">Book Id</p>
                                 <input type="text" disabled name="bookId" id="bookId" class="model-user-id">
                             </div>
                             <div class="row mt-3">
@@ -550,7 +491,7 @@
                                 id="bookIdForUpdate">
                         </div>
                     </div>
-                    <!-- Model Footer -->
+                    <!-- Modal Footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-success" name="submit" value="Update">
@@ -561,10 +502,10 @@
         </div>
     </div>
 
-    {{--  Model End --}}
+    {{--  Modal End --}}
 
 
-    {{-- New Book Upload Model --}}
+    {{-- New Book Upload Modal --}}
 
     <div class="modal fade" id="uploadBookModal" tabindex="-1" role="dialog" aria-labelledby="uploadBookTittle"
         aria-hidden="true">
@@ -690,11 +631,11 @@
         </div>
     </div>
 
-    {{-- Model End --}}
+    {{-- Modal End --}}
 
 
 
-    {{-- User Update Model Form --}}
+    {{-- User Update Modal Form --}}
 
     <div class="modal fade" id="userUpdateModal" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
         aria-hidden="true">
@@ -711,10 +652,10 @@
                 <form action="{{ URL::to('/updateUser') }}" method="POST">
                     <div class="modal-body">
                         @csrf
-                        <div class="mb-0 container-fluid model-container">
+                        <div class="mb-0 container-fluid modal-container">
                             <p class="model-p">User Id</p>
                             <input type="text" disabled name="userId" id="updateFormUserId"
-                                class="model-user-id">
+                                class="modal-user-id">
                         </div>
                         <div class="mb-1">
                             <label for="firstName" class="form-label font-family">First Name</label>
@@ -754,12 +695,12 @@
     </div>
 
 
-    {{-- Update User Model --}}
+    {{-- Update User Modal --}}
 
 
 
 
-    {{-- Register New User Model --}}
+    {{-- Register New User Modal --}}
 
     <div class="modal fade" id="registerNewUser" tabindex="-1" role="dialog"
         aria-labelledby="register-modal-title" aria-hidden="true">
@@ -834,7 +775,7 @@
                         </div>
                     </div>
 
-                    <!-- Model Footer -->
+                    <!-- Modal Footer -->
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                         <input type="submit" class="btn btn-success btn-block" name="submit" value="Signup">

@@ -76,7 +76,7 @@ a:hover {
     /////////////////////////////////
     */
 
-.model-container {
+.modal-container {
     display: flex !important;
     justify-content: space-around !important;
     width: 60% !important;
@@ -85,7 +85,7 @@ a:hover {
     background-color: aliceblue;
 }
 
-.model-p {
+.modal-p {
     display: inline !important;
     font-weight: 900 !important;
 }

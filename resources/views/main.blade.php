@@ -100,7 +100,7 @@
                         <a href="#" data-bs-toggle="modal" data-bs-target="#userRegistrationModal"><i
                                 class="fa-solid fa-user-plus"></i>&nbsp;
                             Register</a>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#userLoginModelForm"><i
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#userLoginModalForm"><i
                                 class="fas fa-sign-in"></i>&nbsp;
                             Login</a>
                     @endguest
@@ -123,7 +123,7 @@
 
 
 
-    {{-- User Registration Model --}}
+    {{-- User Registration Modal --}}
 
     <!-- Modal -->
     <div class="modal fade" id="userRegistrationModal" tabindex="-1" role="dialog"
@@ -216,10 +216,10 @@
 
 
 
-    {{-- Login form model --}}
+    {{-- Login form Modal --}}
 
     <!-- Modal -->
-    <div class="modal fade" id="userLoginModelForm" tabindex="-1" role="dialog"
+    <div class="modal fade" id="userLoginModalForm" tabindex="-1" role="dialog"
         aria-labelledby="userLoginFormTittle" aria-hidden="true">
         <div class="modal-dialog modal-sm" style="width: auto;">
             <div class="modal-content">
@@ -450,12 +450,6 @@
     <script src="js/helper-jquery.js"></script>
     <script src="js/jqueryAjax_feather-icons_lib.js"></script>
     <script src="js/jqueryAjax_chart_min.js"></script>
-
-
-
-
-
-
 
 </body>
 

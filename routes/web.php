@@ -7,7 +7,6 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UsersController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

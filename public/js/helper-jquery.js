@@ -48,23 +48,33 @@ $(document).ready(function () {
     })
     $('#updateUserSuccessMessage').hide('fast')
     $('#updateBookSuccessMessage').hide('fast')
-    $('#usersListModel').hide("fast")
-    $('#booksListModel').hide("fast")
+    $('#usersListModal').hide("fast")
+    $('#booksListModal').hide("fast")
 
     $('#showUsersList').click(function () {
+        $('#guestsList').hide('fast')
         $('#showUsersList').hide('fast')
         $('#showBooksList').hide('fast')
         $('#visitorsCard').hide("fast")
         $('#booksdownloads').hide("fast")
-        $('#usersListModel').toggle("fast")
+        $('#usersListModal').toggle("fast")
     })
     $('#showBooksList').click(function () {
+        $('#guestsList').hide('fast')
         $('#showUsersList').hide('fast')
         $('#showBooksList').hide('fast')
         $('#visitorsCard').hide("fast")
         $('#booksdownloads').hide("fast")
-        $('#booksListModel').toggle("fast")
+        $('#booksListModal').toggle("fast")
     })
+    // $('#guestsList').click(function () {
+    //     $('#guestsList').hide('fast')
+    //     $('#showUsersList').hide('fast')
+    //     $('#showBooksList').hide('fast')
+    //     $('#visitorsCard').hide("fast")
+    //     $('#booksdownloads').hide("fast")
+    //     $('#guestsListModal').toggle("fast")
+    // })
 
     $('.deleteUserConfirm').click(function () {
         swal({
