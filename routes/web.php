@@ -32,6 +32,9 @@ Route::get('/adminlogout', function () {
     Auth::logout();
     return redirect()->back();
 });
+Route::get('/topAuthors', function () {
+    return view('topAuthors');
+});
 
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/adminDashBoard', [indexController::class, 'get_all']);
