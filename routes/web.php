@@ -30,7 +30,7 @@ Route::get('/userlogout', function () {
 Route::get('/adminlogout', function () {
     \session_abort();
     Auth::logout();
-    return view('index');
+    return redirect()->back();
 });
 
 Route::any('/', [BooksController::class, 'all_books_home_page']);

@@ -128,10 +128,10 @@
     <!-- Modal -->
     <div class="modal fade" id="userRegistrationModal" tabindex="-1" role="dialog"
         aria-labelledby="registrationTittle" aria-hidden="true">
-        <div class="modal-dialog modal-sm" style="width: auto;">
+        <div class="modal-dialog" style="width: auto;">
             <div class="modal-content">
                 <div class="modal-header" style="height: 45px">
-                    <h5 class="modal-title" id="registrationTittle" style="font-size: large; color: black;">
+                    <h5 class="modal-title font-family" id="registrationTittle">
                         Registartion Form</h5>
                     <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                         aria-label="Close">
@@ -200,10 +200,14 @@
                                 </span>
                             </div>
                         </div>
-
+                        <p style="color: black">Already Have Account <a href="#" data-bs-toggle="modal"
+                                data-bs-target="#userLoginModalForm" style="color: red;"><i
+                                    class="fas fa-sign-in"></i>&nbsp;
+                                Login</a></p>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                            <button type="button" class="btn btn-secondary btn-lg"
+                                data-bs-dismiss="modal">Close</button>
+                            <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-lg">
                         </div>
                     </form>
 
@@ -221,11 +225,11 @@
     <!-- Modal -->
     <div class="modal fade" id="userLoginModalForm" tabindex="-1" role="dialog"
         aria-labelledby="userLoginFormTittle" aria-hidden="true">
-        <div class="modal-dialog modal-sm" style="width: auto;">
+        <div class="modal-dialog" style="width: auto;">
             <div class="modal-content">
                 <div class="modal-header" style="height: 45px">
                     <p id="userLoginErroMessage"></p>
-                    <h5 class="modal-title" id="userLoginFormTittle" style="font-size: large; color: black;">
+                    <h5 class="modal-title" id="userLoginFormTittle">
                         Login Form</h5>
                     <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                         aria-label="Close">
@@ -264,10 +268,14 @@
                         </div>
 
                     </div>
-
+                    <p style="color: black; padding: 3px">Dont Have Account<a href="#" data-bs-toggle="modal"
+                            data-bs-target="#userRegistrationModal" style="color: red"><i
+                                class="fa-solid fa-user-plus"></i>&nbsp;
+                            Register Now</a>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" name="submit" value="Login">
+                        <button type="button" class="btn btn-secondary btn-lg"
+                            data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-success btn-lg" name="submit" value="Login">
                     </div>
                 </form>
             </div>
@@ -440,7 +448,8 @@
 
 
     <!-- Scroll Top -->
-    <button type="button" class="btn btn-floating" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
+    <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top"><i
+            class="fas fa-arrow-up"></i></button>
 
 
 

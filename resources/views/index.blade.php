@@ -47,8 +47,39 @@
 
 
     <!-- Marketing messaging and featurettes
-                                                                                                                                                                                                             ========================================== -->
+                                                                                                                                                                                                                                                                                 ========================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    {{-- <div class="container">
+        <div class="row-col-6">
+
+            @foreach ($books as $book)
+                <div class="col-3">
+                    <div class="card"><img class="cardimg" src="{{ $book->image }}" alt="" srcset="">
+                        <div class="img-tittle">2pk Boys Sport School Shorts (2-16 Yrs)
+                            <div class="rs"></div>
+                            <form action="{{ URL::to('/pdfDownload') }}" method="post">
+                                <input type="text" name="{{ $book->file }}" id="" value="">
+                                @auth
+                                    <a href="/pdfDownload" class="btn btn-danger" id="btn">Downlaod</a>
+                                    <input type="submit" name="submit" id="submit">
+                                @endauth
+                                @guest
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#userLoginModalForm"><i
+                                            class="fas fa-sign-in"></i>&nbsp;
+                                        Downlaod</a>
+                                    <input type="submit" name="submit" id="submit">
+                                @endguest
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+    </div> --}}
+
+
 
     <div class="container">
         <div class="row-col-6">
@@ -60,8 +91,16 @@
                             <div class="rs"></div>
                             <form action="{{ URL::to('/pdfDownload') }}" method="post">
                                 <input type="text" name="{{ $book->file }}" id="" value="">
-                                <a href="/pdfDownload" class="btn btn-danger" id="btn">Downlaod</a>
-                                <input type="submit" name="submit" id="submit">
+                                @auth
+                                    <a href="/pdfDownload" class="btn btn-danger" id="btn">Downlaod</a>
+                                    <input type="submit" name="submit" id="submit">
+                                @endauth
+                                @guest
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#userLoginModalForm"><i
+                                            class="fas fa-sign-in"></i>&nbsp;
+                                        Downlaod</a>
+                                    <input type="submit" name="submit" id="submit">
+                                @endguest
                             </form>
                         </div>
                     </div>
@@ -70,6 +109,67 @@
 
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+    <div id="homePageCarousel" class="carousel carousel-dark slide" style="margin-top:-60px;">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="images/carousel_images/image-1.jpg" class="d-block w-100 carousel-image" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>FREE AND DISCOUNTED BESTSELLERS</h5>
+                    <p>Join 150,000+ fellow readers. Get free and discounted bestsellers straight to
+                        your inbox with the ManyBooks eBook deals newsletter. </p>
+                </div>
+            </div>
+
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img src="images/carousel_images/image-1.jpg" class="d-block w-100 carousel-image" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>FREE AND DISCOUNTED BESTSELLERS</h5>
+                    <p>Join 150,000+ fellow readers. Get free and discounted bestsellers straight to
+                        your inbox with the ManyBooks eBook deals newsletter. </p>
+                </div>
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homePageCarousel" data-bs-slide="prev">
+            <i class="fa-solid fa-backward fa-lg"></i>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homePageCarousel" data-bs-slide="next">
+            <i class="fad fa-forward fa-lg"></i>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <script>
