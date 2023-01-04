@@ -26,7 +26,7 @@ class IndexController extends Controller
             $data = User::firstOrNew(['email' => $userEmail]);
             $role = $data->role;
             if ($role == "user") {
-                return redirect("/");
+                return redirect()->back();
             } else {
                 return redirect("/adminDashBoard");
             }
