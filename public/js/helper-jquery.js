@@ -50,24 +50,17 @@ $(document).ready(function () {
     $('#updateBookSuccessMessage').hide('fast')
     $('#usersListModel').hide("fast")
     $('#booksListModel').hide("fast")
-    $('#booksList').click(function () {
-        $('#usersListModel').hide("fast")
-        $('#booksListModel').toggle('fast')
-    });
-    $('#usersList').click(function () {
-        $('#booksListModel').hide('fast')
-        $('#usersListModel').toggle('fast')
-    });
-    $('#userCountById').click(function () {
-        $('#userCountById').hide('fast')
-        $('#bookCountById').hide('fast')
+
+    $('#showUsersList').click(function () {
+        $('#showUsersList').hide('fast')
+        $('#showBooksList').hide('fast')
         $('#visitorsCard').hide("fast")
         $('#booksdownloads').hide("fast")
-        $('#usersListModel').show("fast")
+        $('#usersListModel').toggle("fast")
     })
-    $('#bookCountById').click(function () {
-        $('#userCountById').hide('fast')
-        $('#bookCountById').hide('fast')
+    $('#showBooksList').click(function () {
+        $('#showUsersList').hide('fast')
+        $('#showBooksList').hide('fast')
         $('#visitorsCard').hide("fast")
         $('#booksdownloads').hide("fast")
         $('#booksListModel').toggle("fast")

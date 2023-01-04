@@ -10718,9 +10718,13 @@ fieldset:disabled .btn {
 /* Profile btn hover */
 
 .profile_btn_hover:hover {
-    box-shadow: -1px 3px 1px 1px darkseagreen;
+    box-shadow: -1px 3px 1px 1px grey;
     margin-top: 0px;
     margin-right: 1px;
-    color: white;
+    color: whitesmoke;
     font-weight: inherit;
+}
+
+.nav_bg {
+    background-color: #ecf6ff;
 }

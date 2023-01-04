@@ -31,7 +31,6 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        {{-- <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search"> --}}
         <span>
 
         </span>
@@ -46,7 +45,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block nav_bg sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item profile_btn_hover">
@@ -217,7 +216,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h2 class="py-3 text-center font-bold font-up blue-text"><i
-                                    class="fa-solid fa-album-circle-user fa-lg"></i> &nbsp; Users</h2>
+                                    class="fa-solid fa-album-circle-user fa-lg"></i> &nbsp; Users Info</h2>
                         </div>
                     </div>
                     <table class="table table-hover table-responsive mb-0">
@@ -290,15 +289,103 @@
 
 
 
+    {{-- Guest List --}}
+    {{--
+
+    <div class="position-relative " id="usersListModel">
+        <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div class="data-table-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="py-3 text-center font-bold font-up blue-text"><i
+                                class="fa-solid fa-album-circle-user fa-lg"></i> &nbsp; Users Info</h2>
+                    </div>
+                </div>
+                <table class="table table-hover table-responsive mb-0">
+                    <div class="d-flex justify-content-between">
+                        <span>
+                            <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                    class="fas fa-user"></i></a>
+                        </span>
+                        <span>
+                            <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                data-bs-target="#registerNewUser">Register
+                                &nbsp;<i class="fas fa-user-plus"></i></button>
+
+                        </span>
+                    </div>
+
+                    <tr>
+                        <th scope='col'>#</th>
+                        <th scope='col'>Fist Name</th>
+                        <th scope='col'>Last Name</th>
+                        <th scope='col'>Email</th>
+                        <th scope='col'>Created_At</th>
+                        <th scope='col'>Update</th>
+                        <th scope='col'>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @if ($users->count())
+                            @foreach ($users as $user)
+                                <tr @if ($loop->even) class="bg-info" @endif>
+                                    <td>{{ $loop->index + 1 }}</td>
+                                    <td>{{ $user->firstName }}</td>
+                                    <td>{{ $user->lastName }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                    <td>
+                                        <button class="btn btn-primary getUserId btn-sm" value="{{ $user->id }}"
+                                            data-bs-toggle="modal" data-bs-target="#userUpdateModal"><i
+                                                class="fas fa-edit"></i></button>
+                                    </td>
+                                    <td>
+                                        <a class=" btn btn-danger btn-sm deleteUserConfirm"><i
+                                                class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                                        <form action="{{ URL::to('/deleteUser') }}" hidden>
+                                            <input type="text" name="userId" value="{{ $user->id }}">
+                                            <input type="submit" name="submit" class="deleteUserByadmin">
+                                        </form>
+                                    </td>
+
+                                </tr>
+                            @endforeach
+                        @else
+                            <tr>
+                                <td colspan="8" class="bg-danger user-table">No User Found</td>
+                            </tr>
+
+                        @endif
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    </div> --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="position-absolute container-fluid">
 
-        <div class="container-fluid position-relative">
+        <div class="container-fluid position-relative" style="margin-top: -55px;">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
 
-                <div class="row row-cols-1 row-cols-md-2 g-4 object-fit mt-5">
-
-                    <div class="" id="userCountById">
+                <div class="row row-cols-3 row-cols-md-3 g-4 object-fit mt-5 col-sm-1">
+                    <div class="" id="showUsersList">
                         @php
                             $userCount = 0;
                         @endphp
@@ -319,7 +406,7 @@
                         </div>
                     </div>
 
-                    <div id="bookCountById">
+                    <div id="showBooksList">
                         @php
                             $bookCount = 0;
                         @endphp
@@ -756,166 +843,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-    {{-- Admin Profile Model --}}
-
-    <div class="modal fade" id="adminProfileModal" tabindex="-1" role="dialog"
-        aria-labelledby="adminProfileModelTitle" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p id="updateFormErrorMessage"></p>
-                    <h5 class="modal-title" id="adminProfileModelTitle">Profile</h5>
-                    <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
-                        aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-
-                    <form action="{{ URL::to('/uploadBook') }}" method="POST" enctype="multipart/form-data">
-                        <div class="modal-body">
-                            @csrf
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="uploadBookName">Book Name
-                                                :</label>
-                                            <input type="text" name="name" id="uploadBookName"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('name')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="uploadBookIssueDate">Book Issue
-                                                Date :</label>
-                                            <input type="datetime-local" name="issueDate" id="uploadBookIssueDate"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('issueDate')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="uploadBookAuthorName">Author
-                                                Name
-                                                :</label>
-                                            <input type="text" name="authorName" id="uploadBookAuthorName"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('authorName')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="uploadBookAuthorEmail">Author
-                                                Email
-                                                :</label>
-                                            <input type="email" name="authorEmail" id="uploadBookAuthorEmail"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('authorEmail')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="uploadBookDescription">Book
-                                                Description
-                                                :</label>
-                                            <input type="text" name="description" id="uploadBookDescription"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('description')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="uploadBookimage">Book Image
-                                                :</label>
-                                            <input type="file" name="img" id="uploadBookimage"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('img')
-                                                    {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="uploadBookFile">Book File :</label>
-                                    <input type="file" name="file" id="uploadBookFile" class="form-control" />
-                                    <span class="text-danger">
-                                        @error('file')
-                                            {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-success btn-block" name="submit" value="Upload">
-                        </div>
-                    </form>
-
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
