@@ -45,7 +45,8 @@
                 @auth
                     <li class="active"> <a class="nav-link" href="/userProfile">
                             &nbsp;
-                            {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a></li>
+                            {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}
+                        </a></li>
                 @endauth
 
                 @guest
@@ -79,9 +80,18 @@
                 </ul>
                 <span class="conainer login-btns">
                     @auth
-                        <a href="/userProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;
-                            Profile</a>
-                        <a href="/userlogout"><i class="fas fa-sign-in"></i>&nbsp; Log out</a>
+                        @if (Auth::user()->role == 'admin')
+                            {
+                            <a href="/adminDashBoard"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                                DashBoard</a>
+                            <a href="/adminProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                                Profile</a>
+                            }
+                        @else
+                            <a href="/userProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                                Profile</a>
+                            <a href="/userlogout"><i class="fas fa-sign-in"></i>&nbsp; Log out</a>
+                        @endif
                     @endauth
 
                     @guest

@@ -38,14 +38,14 @@ Route::get('/register', function () {
 Route::get('/login', function () {
     return view('login');
 });
-Route::get('/adminDashboard', function () {
+Route::get('/adminDashBoard', function () {
     return view('admin');
 });
 Route::get('/topAuthors', function () {
     return view('topAuthors');
 });
 Route::any('/', [BooksController::class, 'all_books_home_page']);
-Route::get('/adminDashboard', [indexController::class, 'get_all']);
+Route::get('/adminDashBoard', [indexController::class, 'get_all']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);
 Route::post('/uploadBook', [BooksController::class, 'upload_book']);
 Route::get('/deleteBook', [BooksController::class, 'delete_book']);

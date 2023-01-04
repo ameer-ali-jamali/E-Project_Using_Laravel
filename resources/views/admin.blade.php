@@ -49,7 +49,7 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="/adminDashboard">
+                            <a class="nav-link" href=" ">
                                 <span data-feather="bar-chart-2"></span>
                                 Profile
                             </a>
@@ -132,7 +132,7 @@
                     <table class="table table-hover table-responsive mb-0">
                         <div class="d-flex justify-content-between">
                             <span>
-                                <a href="/adminDashboard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
                                         class="fas fa-user"></i></a>
                             </span>
                             <span>
@@ -221,7 +221,7 @@
                     <table class="table table-hover table-responsive mb-0">
                         <div class="d-flex justify-content-between">
                             <span>
-                                <a href="/adminDashboard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
                                         class="fas fa-user"></i></a>
                             </span>
                             <span>
