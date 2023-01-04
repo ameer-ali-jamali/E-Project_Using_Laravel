@@ -86,6 +86,7 @@
                                 DashBoard</a>
                             <a href="/adminProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;
                                 Profile</a>
+                            <a href="/adminlogout"><i class="fas fa-sign-in"></i>&nbsp; Logout</a>
                             }
                         @else
                             <a href="/userProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;

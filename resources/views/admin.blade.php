@@ -37,7 +37,7 @@
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
                 @auth
-                    <a class="nav-link" href="/adminlogout">Sign out</a>
+                    <a class="nav-link" href="/adminlogout"><i class="fas fa-sign-in"></i>&nbsp; Logout</a>
                 @endauth
             </li>
         </ul>
