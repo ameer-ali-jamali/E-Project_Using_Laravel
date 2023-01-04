@@ -27,7 +27,7 @@ class IndexController extends Controller
             if ($role == "user") {
                 return redirect("/");
             } else {
-                return redirect("/adminDashoboard");
+                return redirect("/adminDashboard");
             }
         }
         return  "<script>alert('inCorrect Email Or  Password')</script>" . redirect()->back();

@@ -19,16 +19,26 @@
 <body>
 
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">E Books</a>
+        <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
+            @auth
+                &nbsp;
+                {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}
+            @endauth
+        </a>
         <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
             data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+        {{-- <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search"> --}}
+        <span>
+
+        </span>
         <ul class="navbar-nav px-3">
             <li class="nav-item text-nowrap">
-                <a class="nav-link" href="#">Sign out</a>
+                @auth
+                    <a class="nav-link" href="/adminlogout">Sign out</a>
+                @endauth
             </li>
         </ul>
     </nav>
@@ -39,7 +49,7 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href="/admin">
+                            <a class="nav-link" href="/adminDashboard">
                                 <span data-feather="bar-chart-2"></span>
                                 Profile
                             </a>
@@ -122,7 +132,7 @@
                     <table class="table table-hover table-responsive mb-0">
                         <div class="d-flex justify-content-between">
                             <span>
-                                <a href="/admin" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                <a href="/adminDashboard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
                                         class="fas fa-user"></i></a>
                             </span>
                             <span>
@@ -211,7 +221,7 @@
                     <table class="table table-hover table-responsive mb-0">
                         <div class="d-flex justify-content-between">
                             <span>
-                                <a href="/admin" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                <a href="/adminDashboard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
                                         class="fas fa-user"></i></a>
                             </span>
                             <span>
