@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 Schema::defaultStringLength(191);
 
-
 return new class extends Migration
 {
     /**

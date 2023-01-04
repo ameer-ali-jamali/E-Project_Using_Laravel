@@ -416,7 +416,7 @@
                         <div class="container">
                             <div class="container-fluid modal-container">
                                 <p class="modal-p">Book Id</p>
-                                <input type="text" disabled name="bookId" id="bookId" class="model-user-id">
+                                <input type="text" disabled name="bookId" id="bookId" class="modal-user-id">
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-6 mb-4">
@@ -653,7 +653,7 @@
                     <div class="modal-body">
                         @csrf
                         <div class="mb-0 container-fluid modal-container">
-                            <p class="model-p">User Id</p>
+                            <p class="modal-p">User Id</p>
                             <input type="text" disabled name="userId" id="updateFormUserId"
                                 class="modal-user-id">
                         </div>

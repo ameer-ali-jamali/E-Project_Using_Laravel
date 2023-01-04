@@ -9,18 +9,18 @@ class BooksController extends Controller
 {
     public function upload_book(Request $formData)
     {
-        $formData->validate(
-            [
-                'name' => 'required',
-                'issueDate' => 'required|date',
-                'authorName' => 'required',
-                'authorEmail' => 'required|email',
-                'description' => 'required',
-                'img' => 'required',
-                'file' => 'required'
+        // $formData->validate(
+        //     [
+        //         'name' => 'required',
+        //         'issueDate' => 'required|date',
+        //         'authorName' => 'required',
+        //         'authorEmail' => 'required|email',
+        //         'description' => 'required',
+        //         'img' => 'required',
+        //         'file' => 'required',
 
-            ]
-        );
+        //     ]
+        // );
         $book = new Book();
         $book->name = $formData->name;
         $book->issueDate  = $formData->issueDate;

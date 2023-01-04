@@ -10728,3 +10728,9 @@ fieldset:disabled .btn {
 .nav_bg {
     background-color: #ecf6ff;
 }
+
+.img_width {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
