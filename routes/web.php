@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PdfDownloader;
 use App\Http\Controllers\UsersController;
 
 
@@ -43,3 +44,4 @@ Route::get('/getUserInfoById/{id}', [UsersController::class, 'get_user_info_by_i
 Route::get('/getBookInfoById/{id}', [BooksController::class, 'get_book_info_by_id']);
 Route::post('/updateUser', [UsersController::class, 'update_user']);
 Route::post('/updateBook', [BooksController::class, 'update_book']);
+Route::get('/pdfDownload', [PdfDownloader::class, 'download']);

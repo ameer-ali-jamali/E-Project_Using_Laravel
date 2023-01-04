@@ -47,7 +47,35 @@
 
 
     <!-- Marketing messaging and featurettes
-                                                     ========================================== -->
+                                                                                                                                                                                                             ========================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container">
+        <div class="row-col-6">
+
+            @foreach ($books as $book)
+                <div class="col-3">
+                    <div class="card"><img class="cardimg" src="{{ $book->image }}" alt="" srcset="">
+                        <div class="img-tittle">2pk Boys Sport School Shorts (2-16 Yrs)
+                            <div class="rs"></div>
+                            <form action="{{ URL::to('/pdfDownload') }}" method="post">
+                                <input type="text" name="{{ $book->file }}" id="" value="">
+                                <a href="/pdfDownload" class="btn btn-danger" id="btn">Downlaod</a>
+                                <input type="submit" name="submit" id="submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+    </div>
+
+
+    <script>
+        $('#btn').click(function() {
+            $('#submit').click;
+        });
+    </script>
 
 @endsection
