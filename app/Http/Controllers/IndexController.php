@@ -19,6 +19,7 @@ class IndexController extends Controller
     }
     public function login(Request $request)
     {
+
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $userEmail = $request->email;
@@ -27,7 +28,7 @@ class IndexController extends Controller
             if ($role == "user") {
                 return redirect("/");
             } else {
-                return redirect("/adminDashboard");
+                return redirect("/adminDashBoard");
             }
         }
         return  "<script>alert('inCorrect Email Or  Password')</script>" . redirect()->back();

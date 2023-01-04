@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Admin</title>
+    <title>DashBoard</title>
     <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/carousel/">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap_min.css">
     <link rel="stylesheet" href="css/admin_page.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <!-- Favicon -->
+    <link rel="icon" href="images/item5.png">
 
 </head>
 
@@ -49,7 +50,8 @@
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link" href=" ">
+                            <a class="nav-link" href="#" data-bs-toggle="modal"
+                                data-bs-target="#adminProfileModal">
                                 <span data-feather="bar-chart-2"></span>
                                 Profile
                             </a>
@@ -754,6 +756,115 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+    {{-- Admin Profile Model --}}
+
+    <div class="modal fade" id="adminProfileModal" tabindex="-1" role="dialog"
+        aria-labelledby="adminProfileModelTitle" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-sm-down" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p id="updateFormErrorMessage"></p>
+                    <h5 class="modal-title" id="adminProfileModelTitle">Profile</h5>
+                    <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {{-- <form action="{{ URL::to('/registerUser') }}" method="post">
+                    <div class="modal-body">
+                        @csrf
+                        <div class="container mt-2 mb-1">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-outline">
+                                        <label class="form-label font-family" for="firstName">First name</label>
+                                        <input type="text" name="firstName" class="form-control" />
+                                        <span class="text-danger">
+                                            @error('firstName')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="form-outline">
+                                        <label class="form-label font-family" for="lastName">Last name</label>
+                                        <input type="text" name="lastName" class="form-control" />
+                                        <span class="text-danger">
+                                            @error('lastName')
+                                                {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label font-family" for="email">Email</label>
+                                <input type="email" name="email" class="form-control" />
+                                <span class="text-danger">
+                                    @error('email')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label font-family" for="password">Password</label>
+                                <input type="password" name="password" class="form-control" />
+                                <span class="text-danger">
+                                    @error('password')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                            <div class="form-outline mb-3">
+                                <label class="form-label font-family" for="password_confirmation">Conform
+                                    Password</label>
+                                <input type="password" name="password_confirmation" id="password_confirmation"
+                                    class="form-control" />
+                                <span class="text-danger">
+                                    @error('password_confirmation')
+                                        {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Model Footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Signup">
+                    </div>
+                </form> --}}
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

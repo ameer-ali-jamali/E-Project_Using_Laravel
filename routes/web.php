@@ -19,33 +19,25 @@ use App\Http\Controllers\UsersController;
 |
 */
 
+Route::get('/', function () {
+    return view('index');
+});
 Route::get('/userlogout', function () {
     \session_abort();
     Auth::logout();
-    return view('index');
+    return redirect()->back();
 });
 Route::get('/adminlogout', function () {
     \session_abort();
     Auth::logout();
-    return view('index');
+    return redirect()->back();
 });
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/register', function () {
-    return view('register');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/adminDashBoard', function () {
-    return view('admin');
-});
-Route::get('/topAuthors', function () {
-    return view('topAuthors');
-});
+
+
+
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/adminDashBoard', [indexController::class, 'get_all']);
+Route::post('/userLogin', [indexController::class, 'login']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);
 Route::post('/uploadBook', [BooksController::class, 'upload_book']);
 Route::get('/deleteBook', [BooksController::class, 'delete_book']);
@@ -54,4 +46,3 @@ Route::get('/getUserInfoById/{id}', [UsersController::class, 'get_user_info_by_i
 Route::get('/getBookInfoById/{id}', [BooksController::class, 'get_book_info_by_id']);
 Route::post('/updateUser', [UsersController::class, 'update_user']);
 Route::post('/updateBook', [BooksController::class, 'update_book']);
-Route::post('/userLogin', [indexController::class, 'login']);
