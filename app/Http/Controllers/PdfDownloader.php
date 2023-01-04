@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Storage;
 
 class PdfDownloader extends Controller
 {
-    public function download(Request $request)
+    public function download_pdf_funciton(Request $request)
     {
-        $file = "file1.jpg";
-        return response()->download(public_path('assests\booksPdf\book1.pdf'));
+        $get_file_path = $request->fileLocation;
+        return response()->download(public_path($get_file_path));
     }
 }
