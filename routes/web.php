@@ -33,8 +33,6 @@ Route::get('/adminlogout', function () {
     return redirect()->back();
 });
 
-
-
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/adminDashBoard', [indexController::class, 'get_all']);
 Route::post('/userLogin', [indexController::class, 'login']);

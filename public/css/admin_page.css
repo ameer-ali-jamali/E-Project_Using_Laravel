@@ -3133,9 +3133,8 @@ textarea.form-control.is-invalid {
 
 .btn {
     display: inline-block;
-    font-weight: 400;
+    font-weight: bolder;
     line-height: 1.5;
-    color: #212529;
     text-align: center;
     text-decoration: none;
     vertical-align: middle;
@@ -3144,7 +3143,7 @@ textarea.form-control.is-invalid {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: transparent;
+
     border: 1px solid transparent;
     padding: .375rem .75rem;
     font-size: 1rem;

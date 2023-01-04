@@ -127,11 +127,10 @@
     <!-- Modal -->
     <div class="modal fade" id="userRegistrationModal" tabindex="-1" role="dialog"
         aria-labelledby="registrationTittle" aria-hidden="true">
-        <div class="modal-dialog" style="width: auto;">
+        <div class="modal-dialog modal-sm" style="width: auto;">
             <div class="modal-content">
                 <div class="modal-header" style="height: 45px">
-                    <p id="userRegistraitonErroMessage"></p>
-                    <h5 class="modal-title" id="registrationTittle" style="font-size: large; color: cadetblue;">
+                    <h5 class="modal-title" id="registrationTittle" style="font-size: large; color: black;">
                         Registartion Form</h5>
                     <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                         aria-label="Close">
@@ -221,11 +220,11 @@
     <!-- Modal -->
     <div class="modal fade" id="userLoginModelForm" tabindex="-1" role="dialog"
         aria-labelledby="userLoginFormTittle" aria-hidden="true">
-        <div class="modal-dialog" style="width: auto;">
+        <div class="modal-dialog modal-sm" style="width: auto;">
             <div class="modal-content">
                 <div class="modal-header" style="height: 45px">
                     <p id="userLoginErroMessage"></p>
-                    <h5 class="modal-title" id="userLoginFormTittle" style="font-size: large; color: cadetblue;">
+                    <h5 class="modal-title" id="userLoginFormTittle" style="font-size: large; color: black;">
                         Login Form</h5>
                     <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                         aria-label="Close">
@@ -283,6 +282,124 @@
 
 
 
+
+
+
+
+
+
+    {{-- footer --}}
+
+    <footer class="nb-footer" id="dynamic-footer">
+        <div class="container">
+            <div class="row">
+                <!-- <div class="col-sm-12">
+                                    </div> -->
+                <div class="col-md-3 col-sm-6 txt-align-sm">
+                    <div class="footer-info-single">
+                        <h2 class="title">Help Center</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp; How
+                                    to Pay</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    FAQ's</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Sitemap</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Delivery Info</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 txt-align-sm">
+                    <div class="footer-info-single">
+                        <h2 class="title">Customer information</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    About Us</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    FAQ's</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Sell Your Items</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 txt-align-sm">
+                    <div class="footer-info-single">
+                        <h2 class="title">Security & privacy</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Terms Of Use</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Privacy Policy</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Return / Refund Policy</a></li>
+                            <li><a href="#" title=""><i class="fa-duotone fa-angles-right"></i>&nbsp;
+                                    Store Locations</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 txt-align-sm">
+                    <div class="footer-info-single">
+                        <h2 class="title">Contact Us</h2>
+
+
+                        <div class="about">
+                            <!-- <img src="#" class="img-responsive center-block" alt=""> -->
+
+                            <ul class="list-inline social-icons icon-circle icon-zoom list-unstyled">
+                                <li> <a target="_blank" href="https://web.facebook.com/?_rdc=1&_rdr"
+                                        title=""><i class="fa-brands fa-facebook fa-lg"></i></a>
+                                </li>
+                                <li> <a target="_blank" href="https://www.youtube.com/" title=""><i
+                                            class="fa-brands fa-youtube fa-lg"></i></a>
+                                </li>
+                                <li> <a target="_blank" href="https://twitter.com/" title=""><i
+                                            class="fa-brands fa-twitter fa-lg"></i></a>
+                                </li>
+                                <li> <a target="_blank"
+                                        href="https://mail.google.com/mail/?view=cm&fs=1&to=ameer.ali.jamali886@gmail.com">
+                                        <i class="fa-brands fa-google-plus fa-lg"></i></a></li>
+                            </ul>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>Copyright © 2022.&nbsp; E-Books &nbsp;<i class="fa-solid fa-book fa-sm"></i>&nbsp;
+                        </p>
+                    </div>
+                    <div class="col-sm-6"></div>
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+    <!-- Scroll Top Attach Files -->
+
+
+
+    <div class="fab">
+        <a href="https://api.whatsapp.com/send?text=Hi&amp;phone=+923404889886" target="_blank"
+            class="things things1"><img class="img11" style="height: 47px; width:47px;"
+                src="https://www.libertybooks.com/floatingchaticons/whats.png" alt="WhatsApp"></a>
+    </div>
 
 
 

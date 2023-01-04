@@ -209,7 +209,7 @@
 
 
 
-        {{-- Users List Model Start --}}
+        {{-- Users List loop --}}
 
         <div class="position-relative " id="usersListModel">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
@@ -765,7 +765,7 @@
 
     <div class="modal fade" id="adminProfileModal" tabindex="-1" role="dialog"
         aria-labelledby="adminProfileModelTitle" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen-sm-down" role="document">
+        <div class="modal-dialog modal-fullscreen">
             <div class="modal-content">
                 <div class="modal-header">
                     <p id="updateFormErrorMessage"></p>
@@ -775,73 +775,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                {{-- <form action="{{ URL::to('/registerUser') }}" method="post">
-                    <div class="modal-body">
-                        @csrf
-                        <div class="container mt-2 mb-1">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <div class="form-outline">
-                                        <label class="form-label font-family" for="firstName">First name</label>
-                                        <input type="text" name="firstName" class="form-control" />
-                                        <span class="text-danger">
-                                            @error('firstName')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <div class="form-outline">
-                                        <label class="form-label font-family" for="lastName">Last name</label>
-                                        <input type="text" name="lastName" class="form-control" />
-                                        <span class="text-danger">
-                                            @error('lastName')
-                                                {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-outline mb-3">
-                                <label class="form-label font-family" for="email">Email</label>
-                                <input type="email" name="email" class="form-control" />
-                                <span class="text-danger">
-                                    @error('email')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                            </div>
-                            <div class="form-outline mb-3">
-                                <label class="form-label font-family" for="password">Password</label>
-                                <input type="password" name="password" class="form-control" />
-                                <span class="text-danger">
-                                    @error('password')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                            </div>
-                            <div class="form-outline mb-3">
-                                <label class="form-label font-family" for="password_confirmation">Conform
-                                    Password</label>
-                                <input type="password" name="password_confirmation" id="password_confirmation"
-                                    class="form-control" />
-                                <span class="text-danger">
-                                    @error('password_confirmation')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                            </div>
 
-                        </div>
-                    </div>
-
-                    <!-- Model Footer -->
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success btn-block" name="submit" value="Signup">
-                    </div>
-                </form> --}}
+                <div class="modal-body">
+                    <h1>hell</h1>
+                </div>
             </div>
         </div>
     </div>
