@@ -23,11 +23,11 @@ class IndexController extends Controller
         if (Auth::attempt($credentials)) {
             $userEmail = $request->email;
             $data = User::firstOrNew(['email' => $userEmail]);
-            $role = $data->Role;
-            if ($role == "admin") {
-                return redirect("/adminDashoboard");
-            } else {
+            $role = $data->role;
+            if ($role == "user") {
                 return redirect("/");
+            } else {
+                return redirect("/adminDashoboard");
             }
         }
         return  "<script>alert('inCorrect Email Or  Password')</script>" . redirect()->back();

@@ -81,7 +81,7 @@
                     @auth
                         <a href="/userProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;
                             Profile</a>
-                        <a href="/logout"><i class="fas fa-sign-in"></i>&nbsp; Log out</a>
+                        <a href="/userlogout"><i class="fas fa-sign-in"></i>&nbsp; Log out</a>
                     @endauth
 
                     @guest
