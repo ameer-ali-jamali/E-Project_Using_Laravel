@@ -21,6 +21,7 @@
     <link rel="icon" href="images/client-image3.png">
 
 
+
 </head>
 
 <body>
@@ -288,6 +289,41 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {{-- footer --}}
 
     <footer class="nb-footer" id="dynamic-footer">
@@ -414,7 +450,6 @@
     <script src="js/helper-jquery.js"></script>
     <script src="js/jqueryAjax_feather-icons_lib.js"></script>
     <script src="js/jqueryAjax_chart_min.js"></script>
-
 
 
 

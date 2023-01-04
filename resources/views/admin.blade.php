@@ -49,32 +49,32 @@
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        <li class="nav-item">
+                        <li class="nav-item profile_btn_hover">
                             <a class="nav-link" href="#" data-bs-toggle="modal"
                                 data-bs-target="#adminProfileModal">
                                 <span data-feather="bar-chart-2"></span>
                                 Profile
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item profile_btn_hover ">
                             <a class="nav-link" href="/">
                                 <span data-feather="layers"></span>
                                 Home Page
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item profile_btn_hover">
                             <a class="nav-link" href="#">
                                 <span data-feather="bar-chart-2"></span>
                                 Account Setting
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item profile_btn_hover">
                             <a class="nav-link" href="#">
                                 <span data-feather="layers"></span>
                                 Change Email
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item profile_btn_hover">
                             <a class="nav-link" href="#">
                                 <span data-feather="layers"></span>
                                 Change Password
@@ -90,19 +90,19 @@
                         </a>
                     </h6>
                     <ul class="nav flex-column mb-2">
-                        <li class="nav-item">
+                        <li class="nav-item profile_btn_hover">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text"></span>
                                 Current Users
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item profile_btn_hover">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text"></span>
                                 Last Month Users
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item profile_btn_hover">
                             <a class="nav-link" href="#">
                                 <span data-feather="file-text"></span>
                                 Visitor
@@ -775,9 +775,125 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-
                 <div class="modal-body">
-                    <h1>hell</h1>
+
+
+                    <form action="{{ URL::to('/uploadBook') }}" method="POST" enctype="multipart/form-data">
+                        <div class="modal-body">
+                            @csrf
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="uploadBookName">Book Name
+                                                :</label>
+                                            <input type="text" name="name" id="uploadBookName"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('name')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="uploadBookIssueDate">Book Issue
+                                                Date :</label>
+                                            <input type="datetime-local" name="issueDate" id="uploadBookIssueDate"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('issueDate')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="uploadBookAuthorName">Author
+                                                Name
+                                                :</label>
+                                            <input type="text" name="authorName" id="uploadBookAuthorName"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('authorName')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="uploadBookAuthorEmail">Author
+                                                Email
+                                                :</label>
+                                            <input type="email" name="authorEmail" id="uploadBookAuthorEmail"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('authorEmail')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="uploadBookDescription">Book
+                                                Description
+                                                :</label>
+                                            <input type="text" name="description" id="uploadBookDescription"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('description')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="uploadBookimage">Book Image
+                                                :</label>
+                                            <input type="file" name="img" id="uploadBookimage"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('img')
+                                                    {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-outline mb-4">
+                                    <label class="form-label font-family" for="uploadBookFile">Book File :</label>
+                                    <input type="file" name="file" id="uploadBookFile" class="form-control" />
+                                    <span class="text-danger">
+                                        @error('file')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-success btn-block" name="submit" value="Upload">
+                        </div>
+                    </form>
+
+
+
+
+
                 </div>
             </div>
         </div>

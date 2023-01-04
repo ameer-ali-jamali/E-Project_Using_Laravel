@@ -10713,3 +10713,14 @@ fieldset:disabled .btn {
         display: inline-flex !important
     }
 }
+
+
+/* Profile btn hover */
+
+.profile_btn_hover:hover {
+    box-shadow: -1px 3px 1px 1px darkseagreen;
+    margin-top: 0px;
+    margin-right: 1px;
+    color: white;
+    font-weight: inherit;
+}
