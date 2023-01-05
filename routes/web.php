@@ -25,19 +25,17 @@ Route::get('/', function () {
 Route::get('/userlogout', function () {
     \session_abort();
     Auth::logout();
-    return redirect()->back();
+    return redirect('/');
 });
 Route::get('/adminlogout', function () {
     \session_abort();
     Auth::logout();
-    return redirect()->back();
+    return redirect('/');
 });
 Route::get('/topAuthors', function () {
     return view('topAuthors');
 });
-Route::get('/contactus', function () {
-    return view('contactus');
-});
+
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/adminDashBoard', [indexController::class, 'get_all']);
 Route::post('/userLogin', [indexController::class, 'login']);
@@ -50,3 +48,4 @@ Route::get('/getBookInfoById/{id}', [BooksController::class, 'get_book_info_by_i
 Route::post('/updateUser', [UsersController::class, 'update_user']);
 Route::post('/updateBook', [BooksController::class, 'update_book']);
 Route::post('/download_pdf', [PdfDownloader::class, 'download_pdf_funciton']);
+Route::post('/contactUs', [IndexController::class, 'contactUs']);

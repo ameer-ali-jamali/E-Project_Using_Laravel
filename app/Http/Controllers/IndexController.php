@@ -33,4 +33,8 @@ class IndexController extends Controller
         }
         return  "<script>alert('inCorrect Email Or  Password')</script>" . redirect()->back();
     }
+    public function contactUs(Request $request)
+    {
+        return $request;
+    }
 }
