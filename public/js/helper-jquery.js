@@ -77,6 +77,7 @@ $(document).ready(function () {
     //     $('#guestsListModal').toggle("fast")
     // })
 
+
     $('.deleteUserConfirm').click(function () {
         swal({
             title: "Are you sure?",

@@ -54,42 +54,72 @@
 
 
 
-<div class="d-grid mt-0">
 
-    <div class="container">
-        <div class="row row-cols-3">
-            @foreach ($books as $book)
-            <div class="col-2 col-lg-3 col-md-2 col-sm-4">
-                <div class="card" style="width:100%;">
-                    <img src="{{ $book->image }}">
-                    <div class="card-footer d-flex flex-row justify-content-between">
-                        <a href="/readBook" class="btn btn-primary"><i class="fas fa-book-reader"></i>&nbsp;
-                            Read
-                        </a>
-                        @auth
-                        <form action="{{ URL::to('/download_pdf') }}" method="post">
-                            @csrf
-                            <input type="text" hidden name="fileLocation" value="{{ $book->file }}">
-                            <button class="btn btn-danger trigger_btn" id="downloadTriggerBtn"><i
-                                    class="fa-light fa-download"></i>Download
-                            </button>
-                        </form>
-                        @endauth
-                        @guest
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#userRegistrationModal"
-                            class="btn btn-danger"><i class="fa-solid fa-download"></i>&nbsp;
-                            Download
-                        </a>
-                        @endguest
 
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
+<div class="container">
+    <div>
+        <h2>Latest Popular Books</h2>
     </div>
+    <div class="row row-cols-6">
+        @foreach ($books as $book)
+        <div class="col" id="btn-1">
+            <div class="card pdfDownload">
+                <img src="{{ $book->image }}" class="img-hover">
+                <div class="card-footer " style="display: contents;">
+                    @auth
+                    <form action="{{ URL::to('/download_pdf') }}" method="post">
+                        @csrf
+                        <input type="text" hidden name="fileLocation" value="{{ $book->file }}">
+
+                        <div class="container position-absolute ">
+                            <div class="position-relative">
+                                <button class="btn btn-danger" id="downloadTriggerBtn"><i class="fa fa-download"></i>
+                                    &nbsp; Download
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    @endauth
+                    @guest
+
+                    <span data-bs-toggle="modal" data-bs-target="#userRegistrationModal"
+                        class="btn btn-danger pdfDownload" id="btnover"><i class="fa fa-download"></i>&nbsp;
+                        Download
+                    </span>
+
+                </div>
+                @endguest
+
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
 
 </div>
+
+<style>
+    .img-hover:hover {
+        transition-duration: 2s;
+        transform: scale3d(1.3, 1.3, 1.3);
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @endsection

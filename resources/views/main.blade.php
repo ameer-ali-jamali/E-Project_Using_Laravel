@@ -43,20 +43,12 @@
         <nav class="navbar navbar-expand-lg sticky-top">
             <div class="container-fluid">
                 <div class="nav navbar-brand">
-                    <li class="active"> <a class="nav-link" href="/"><i class="fa-solid fa-book fa-sm"></i>
+                    <li class="active">
+                        <a class="nav-link" href="/">
+                            <i class="fa-solid fa-book fa-sm"></i>
                             &nbsp;
-                            E-BOOKS</a></li>
-
-                    @auth
-                    <li class="active"> <a class="nav-link" href="/userProfile">
-                            &nbsp;
-                        </a></li>
-                    @endauth
-
-                    @guest
-
-                    @endguest
-
+                            E-BOOKS</a>
+                    </li>
                 </div>
                 <button class="navbar-toggler rounded" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -220,7 +212,7 @@
 
 
 
-
+        <br><br>
         {{-- Login form Modal --}}
 
         <!-- Modal -->
