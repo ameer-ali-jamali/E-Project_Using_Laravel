@@ -2,7 +2,6 @@
 $(document).ready(function () {
     $('#usersListModal').hide("fast")
     $('#booksListModal').hide("fast")
-    $('#adminLogoutHiddenBtn').click('fast');
     $('#successMessage').hide();
     $('.getUserId').click(function () {
         var userId = $(this).val();

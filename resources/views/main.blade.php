@@ -73,17 +73,17 @@
                     </ul>
                     <span class="conainer login-btns">
                         @auth
-                        @if (Auth::user()->role == 'admin')
-                        {
+                        @if (Auth::user()->role == 'master_admin')
                         <a href="/adminDashBoard"><i class="fa-solid fa-user-plus"></i>&nbsp;
                             DashBoard</a>
                         <a href="/adminProfile">
                             {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a>
                         <a href="/adminlogout" style="color: red"><i class="fas fa-sign-in"></i>&nbsp; Logout</a>
-                        }
                         @else
                         <a href="/userProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;
                             Profile</a>
+                        <a href="/userProfile">
+                            {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a>
                         <a href="/userlogout" style="color: red"><i class="fas fa-sign-in"></i>&nbsp; Log out</a>
                         @endif
                         @endauth

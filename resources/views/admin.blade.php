@@ -1,5 +1,5 @@
 @auth
-
+@if (Auth::user()->role == 'master_admin')
 <!doctype html>
 <html lang="en">
 
@@ -471,7 +471,7 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <input type="submit" class="btn btn-success" name="submit" value="Update">
                         </div>
-                        <p class="alert alert-success" id="updateBookSuccessMessage"></p>
+
                     </form>
                 </div>
             </div>
@@ -773,6 +773,24 @@
 
 </html>
 
+@else
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1>403 Error Unusual Activety</h1>
+    </body>
+    <a href="/">Home</a>
+
+</html>
+@endif
 @endauth
 
 @guest
@@ -784,18 +802,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Logout Error</title>
+        <title>Logout</title>
     </head>
 
     <body>
         <center>
-            <h1>403 Error Please Login </h1>
+            <h1>403 Page Expired Please Login Again</h1>
         </center>
     </body>
 
 </html>
-
-<button class="nav-link" href="/adminlogout" id="adminLogoutHiddenBtn" hidden><i class="fal fa-sign-in"></i>&nbsp;
-    Logout</button>
 
 @endguest
