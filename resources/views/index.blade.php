@@ -71,7 +71,7 @@
                         @csrf
                         <input type="text" hidden name="fileLocation" value="{{ $book->file }}">
 
-                        <button class="btn btn-danger doneloadBtn" id="downloadTriggerBtn"><i
+                        <button class="btn btn-danger doneloadBtn object-width-fit" id="downloadTriggerBtn"><i
                                 class="fa fa-download"></i>
                             &nbsp; Download
                         </button>
@@ -80,21 +80,17 @@
                     @endauth
                 </div>
                 @guest
-                <div style="display: contents">
-
-                    <span data-bs-toggle="modal" data-bs-target="#userRegistrationModal" class="btn btn-danger"><i
-                            class="fa fa-download"></i>&nbsp;
+                <div class="card-footer ">
+                    <button class="btn btn-danger object-width-fit" data-bs-toggle="modal"
+                        data-bs-target="#userRegistrationModal"><i class="fa fa-download"></i>&nbsp;
                         Download
-                    </span>
+                    </button>
                 </div>
                 @endguest
-
-
             </div>
         </div>
         @endforeach
     </div>
-</div>
 
 </div>
 
@@ -102,6 +98,12 @@
     .img-hover:hover {
         transition-duration: 2s;
         transform: scale3d(1.3, 1.3, 1.3);
+    }
+
+    .object-width-fit {
+        object-fit: contain;
+        width: 100%;
+        font-size: smaller;
     }
 </style>
 
