@@ -46,12 +46,35 @@ $(document).ready(function () {
         })
 
     })
-    $('#updateUserSuccessMessage').hide('fast')
-    $('#updateBookSuccessMessage').hide('fast')
+
     $('#usersListModal').hide("fast")
     $('#booksListModal').hide("fast")
+    $('#masterAdminModal').hide("fast")
+    $('#miniAdminsModal').hide("fast")
 
+    $('#masterAdminList').click(function () {
+        $('#masterAdminList').hide('fast')
+        $('#miniAdminsList').hide('fast')
+        $('#guestsList').hide('fast')
+        $('#showUsersList').hide('fast')
+        $('#showBooksList').hide('fast')
+        $('#visitorsCard').hide("fast")
+        $('#booksdownloads').hide("fast")
+        $('#masterAdminModal').toggle("fast")
+    })
+    $('#miniAdminsList').click(function () {
+        $('#masterAdminList').hide('fast')
+        $('#miniAdminsList').hide('fast')
+        $('#guestsList').hide('fast')
+        $('#showUsersList').hide('fast')
+        $('#showBooksList').hide('fast')
+        $('#visitorsCard').hide("fast")
+        $('#booksdownloads').hide("fast")
+        $('#miniAdminsModal').toggle("fast")
+    })
     $('#showUsersList').click(function () {
+        $('#masterAdminList').hide('fast')
+        $('#miniAdminsList').hide('fast')
         $('#guestsList').hide('fast')
         $('#showUsersList').hide('fast')
         $('#showBooksList').hide('fast')
@@ -60,6 +83,8 @@ $(document).ready(function () {
         $('#usersListModal').toggle("fast")
     })
     $('#showBooksList').click(function () {
+        $('#masterAdminList').hide('fast')
+        $('#miniAdminsList').hide('fast')
         $('#guestsList').hide('fast')
         $('#showUsersList').hide('fast')
         $('#showBooksList').hide('fast')
@@ -76,9 +101,6 @@ $(document).ready(function () {
     //     $('#booksdownloads').hide("fast")
     //     $('#guestsListModal').toggle("fast")
     // })
-    $('.doneloadBtn').click(function () {
-        alert("done");
-    });
 
     $('.deleteUserConfirm').click(function () {
         swal({

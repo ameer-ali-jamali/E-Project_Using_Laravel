@@ -215,7 +215,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h2 class="py-3 text-center font-bold font-up blue-text"><i
-                                        class="fa-solid fa-album-circle-user fa-lg"></i> &nbsp; Users Info</h2>
+                                        class="fas fa-users fa-lg"></i> &nbsp; Users Info</h2>
                             </div>
                         </div>
                         <table class="table table-hover table-responsive mb-0">
@@ -288,6 +288,168 @@
 
 
 
+
+
+        {{-- Master Admin Loop--}}
+
+        <div class="position-relative " id="masterAdminModal">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="data-table-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fas fa-user-shield"></i>
+                                &nbsp;Master
+                                Admin Info</h2>
+                        </div>
+                    </div>
+                    <table class="table table-hover table-responsive mb-0">
+                        <div class="d-flex justify-content-between">
+                            <span>
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                        class="fas fa-user"></i></a>
+                            </span>
+                            <span>
+                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                    data-bs-target="#registerNewUser">Register
+                                    &nbsp;<i class="fas fa-user-plus"></i></button>
+
+                            </span>
+                        </div>
+
+                        <tr>
+                            <th scope='col'>#</th>
+                            <th scope='col'>Fist Name</th>
+                            <th scope='col'>Last Name</th>
+                            <th scope='col'>Email</th>
+                            <th scope='col'>Created_At</th>
+                            <th scope='col'>Update</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                @foreach ($getMasterAdmins as $getMasterAdmin)
+                                <td>{{ $loop->index+1  }}</td>
+                                <td>{{ $getMasterAdmin->firstName }}</td>
+                                <td>{{ $getMasterAdmin->lastName }}</td>
+                                <td>{{ $getMasterAdmin->email }}</td>
+                                <td>{{ $getMasterAdmin->created_at }}</td>
+                                <td>
+                                    <button class="btn btn-primary getUserId btn-sm" value="{{ $getMasterAdmin->id }}"
+                                        data-bs-toggle="modal" data-bs-target="#masterAdminUpdate"><i
+                                            class="fal fa-edit"></i></button>
+                                </td>
+                                @endforeach
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {{--Admins List Modal--}}
+
+        <div class="position-relative " id="miniAdminsModal">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="data-table-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fas fa-users fa-lg"></i>
+                                &nbsp;Mini Admins Info</h2>
+                        </div>
+                    </div>
+                    <table class="table table-hover table-responsive mb-0">
+                        <div class="d-flex justify-content-between">
+                            <span>
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                        class="fas fa-user"></i></a>
+                            </span>
+                            <span>
+                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                    data-bs-target="#registerNewUser">Register
+                                    &nbsp;<i class="fas fa-user-plus"></i></button>
+
+                            </span>
+                        </div>
+
+                        <tr>
+                            <th scope='col'>#</th>
+                            <th scope='col'>Fist Name</th>
+                            <th scope='col'>Last Name</th>
+                            <th scope='col'>Email</th>
+                            <th scope='col'>Created_At</th>
+                            <th scope='col'>Update</th>
+                            <th scope='col'>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @if ($getMiniAdmins->count())
+                            @foreach ($getMiniAdmins as $getMiniAdmin)
+                            <tr @if ($loop->even) class="bg-info" @endif>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $getMiniAdmin->firstName }}</td>
+                                <td>{{ $getMiniAdmin->lastName }}</td>
+                                <td>{{ $getMiniAdmin->email }}</td>
+                                <td>{{ $getMiniAdmin->created_at }}</td>
+                                <td>
+                                    <button class="btn btn-primary getUserId btn-sm" value="{{ $getMiniAdmin->id }}"
+                                        data-bs-toggle="modal" data-bs-target="#miniAdminUpdate"><i
+                                            class="fal fa-edit"></i></button>
+                                </td>
+                                <td>
+                                    <a class=" btn btn-danger btn-sm deleteUserConfirm"><i class="fa fa-trash fa-lg"
+                                            aria-hidden="true"></i></a>
+                                    <form action="{{ URL::to('/deleteUser') }}" hidden>
+                                        <input type="text" name="userId" value="{{ $user->id }}">
+                                        <input type="submit" name="submit" class="deleteMiniAdminById">
+                                    </form>
+                                </td>
+
+                            </tr>
+                            @endforeach
+                            @else
+                            <tr>
+                                <td colspan="8" class="bg-danger user-table">No Admin Found</td>
+                            </tr>
+
+                            @endif
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+
+
+
+
+
+        {{-- Count All --}}
+
+
         <div class="position-absolute container-fluid">
 
             <div class="container-fluid position-relative" style="margin-top: -55px;">
@@ -295,41 +457,47 @@
 
                     <div class="row row-cols-3 row-cols-md-3 g-4 object-fit mt-5 col-sm-1">
                         <div class="" id="showUsersList">
-                            @php
-                            $userCount = 0;
-                            @endphp
-                            @foreach ($users as $userRecord)
-                            <p hidden disabled>{{ $userRecord->id }}</p>
-                            @php
-                            $userCount++;
-                            @endphp
-                            @endforeach
                             <div class="col ">
                                 <div class="card card-item1">
                                     <div class="card-body">
                                         <h3 class="card-title">Registered Users</h3>
-                                        <h1 class="card-text"><i class="fa-duotone fa-user"
-                                                aria-hidden="true"></i>&nbsp;{{ $userCount }}</h1>
+                                        <h1 class="card-text"><i class="fas fa-users"
+                                                aria-hidden="true"></i>&nbsp;{{ $usersCount }}</h1>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div id="showBooksList">
-                            @php
-                            $bookCount = 0;
-                            @endphp
-                            @foreach ($books as $bookRecord)
-                            <p hidden disabled>{{ $bookRecord->id }}</p>
-                            @php
-                            $bookCount++;
-                            @endphp
-                            @endforeach
                             <div class="col ">
                                 <div class="card card-item1">
                                     <div class="card-body">
                                         <h3 class="card-title">Books Available</h3>
-                                        <h1 class="card-text"><i class="fa-duotone fa-book "></i>&nbsp;{{ $bookCount }}
+                                        <h1 class="card-text"><i class="fas fa-books "></i>&nbsp;{{ $booksCount }}
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="masterAdminList">
+                            <div class="col ">
+                                <div class="card card-item1">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Master Admin</h3>
+                                        <h1 class="card-text"><i
+                                                class="fas fa-user-shield"></i>&nbsp;{{ $masterAdminCount }}
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="miniAdminsList">
+                            <div class="col ">
+                                <div class="card card-item1">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Mini Admins List</h3>
+                                        <h1 class="card-text"><i class="fas fa-users"></i>&nbsp;{{ $miniAdminsCount }}
                                         </h1>
                                     </div>
                                 </div>

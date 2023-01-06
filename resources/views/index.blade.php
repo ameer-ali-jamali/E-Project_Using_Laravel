@@ -70,9 +70,8 @@
                     <form action="{{ URL::to('/download_pdf') }}" method="post">
                         @csrf
                         <input type="text" hidden name="fileLocation" value="{{ $book->file }}">
-
-                        <button class="btn btn-danger doneloadBtn object-width-fit" id="downloadTriggerBtn"><i
-                                class="fa fa-download"></i>
+                        <input type="text" name="userInfo" value="{{ $book->id }}">
+                        <button class="btn btn-danger object-width-fit"><i class="fa fa-download"></i>
                             &nbsp; Download
                         </button>
 
