@@ -1,3 +1,5 @@
+@auth
+
 <!doctype html>
 <html lang="en">
 
@@ -237,7 +239,7 @@
                                 <th scope='col'>Fist Name</th>
                                 <th scope='col'>Last Name</th>
                                 <th scope='col'>Email</th>
-                                <th scope='col'>Created_At</th>
+                                <th scope='col'>Role</th>
                                 <th scope='col'>Update</th>
                                 <th scope='col'>Delete</th>
                             </tr>
@@ -250,19 +252,24 @@
                                     <td>{{ $user->firstName }}</td>
                                     <td>{{ $user->lastName }}</td>
                                     <td>{{ $user->email }}</td>
-                                    <td>{{ $user->created_at }}</td>
+                                    <td>{{ $user->role }}</td>
                                     <td>
                                         <button class="btn btn-primary getUserId btn-sm" value="{{ $user->id }}"
                                             data-bs-toggle="modal" data-bs-target="#userUpdateModal"><i
                                                 class="fal fa-edit"></i></button>
+
                                     </td>
                                     <td>
+                                        @if ($user->role=="master_admin")
+
+                                        @else
                                         <a class=" btn btn-danger btn-sm deleteUserConfirm"><i class="fa fa-trash fa-lg"
                                                 aria-hidden="true"></i></a>
                                         <form action="{{ URL::to('/deleteUser') }}" hidden>
                                             <input type="text" name="userId" value="{{ $user->id }}">
                                             <input type="submit" name="submit" class="deleteUserByadmin">
                                         </form>
+                                        @endif
                                     </td>
 
                                 </tr>
@@ -286,161 +293,6 @@
         {{-- Loop End --}}
 
 
-
-
-
-
-        {{-- Master Admin Loop--}}
-
-        <div class="position-relative " id="masterAdminModal">
-            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                <div class="data-table-container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fas fa-user-shield"></i>
-                                &nbsp;Master
-                                Admin Info</h2>
-                        </div>
-                    </div>
-                    <table class="table table-hover table-responsive mb-0">
-                        <div class="d-flex justify-content-between">
-                            <span>
-                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
-                                        class="fas fa-user"></i></a>
-                            </span>
-                            <span>
-                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
-                                    data-bs-target="#registerNewUser">Register
-                                    &nbsp;<i class="fas fa-user-plus"></i></button>
-
-                            </span>
-                        </div>
-
-                        <tr>
-                            <th scope='col'>#</th>
-                            <th scope='col'>Fist Name</th>
-                            <th scope='col'>Last Name</th>
-                            <th scope='col'>Email</th>
-                            <th scope='col'>Created_At</th>
-                            <th scope='col'>Update</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-
-                            <tr>
-                                @foreach ($getMasterAdmins as $getMasterAdmin)
-                                <td>{{ $loop->index+1  }}</td>
-                                <td>{{ $getMasterAdmin->firstName }}</td>
-                                <td>{{ $getMasterAdmin->lastName }}</td>
-                                <td>{{ $getMasterAdmin->email }}</td>
-                                <td>{{ $getMasterAdmin->created_at }}</td>
-                                <td>
-                                    <button class="btn btn-primary getUserId btn-sm" value="{{ $getMasterAdmin->id }}"
-                                        data-bs-toggle="modal" data-bs-target="#masterAdminUpdate"><i
-                                            class="fal fa-edit"></i></button>
-                                </td>
-                                @endforeach
-                            </tr>
-
-
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {{--Admins List Modal--}}
-
-        <div class="position-relative " id="miniAdminsModal">
-            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                <div class="data-table-container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fas fa-users fa-lg"></i>
-                                &nbsp;Mini Admins Info</h2>
-                        </div>
-                    </div>
-                    <table class="table table-hover table-responsive mb-0">
-                        <div class="d-flex justify-content-between">
-                            <span>
-                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
-                                        class="fas fa-user"></i></a>
-                            </span>
-                            <span>
-                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
-                                    data-bs-target="#registerNewUser">Register
-                                    &nbsp;<i class="fas fa-user-plus"></i></button>
-
-                            </span>
-                        </div>
-
-                        <tr>
-                            <th scope='col'>#</th>
-                            <th scope='col'>Fist Name</th>
-                            <th scope='col'>Last Name</th>
-                            <th scope='col'>Email</th>
-                            <th scope='col'>Created_At</th>
-                            <th scope='col'>Update</th>
-                            <th scope='col'>Delete</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                            @if ($getMiniAdmins->count())
-                            @foreach ($getMiniAdmins as $getMiniAdmin)
-                            <tr @if ($loop->even) class="bg-info" @endif>
-                                <td>{{ $loop->index + 1 }}</td>
-                                <td>{{ $getMiniAdmin->firstName }}</td>
-                                <td>{{ $getMiniAdmin->lastName }}</td>
-                                <td>{{ $getMiniAdmin->email }}</td>
-                                <td>{{ $getMiniAdmin->created_at }}</td>
-                                <td>
-                                    <button class="btn btn-primary getUserId btn-sm" value="{{ $getMiniAdmin->id }}"
-                                        data-bs-toggle="modal" data-bs-target="#miniAdminUpdate"><i
-                                            class="fal fa-edit"></i></button>
-                                </td>
-                                <td>
-                                    <a class=" btn btn-danger btn-sm deleteUserConfirm"><i class="fa fa-trash fa-lg"
-                                            aria-hidden="true"></i></a>
-                                    <form action="{{ URL::to('/deleteUser') }}" hidden>
-                                        <input type="text" name="userId" value="{{ $user->id }}">
-                                        <input type="submit" name="submit" class="deleteMiniAdminById">
-                                    </form>
-                                </td>
-
-                            </tr>
-                            @endforeach
-                            @else
-                            <tr>
-                                <td colspan="8" class="bg-danger user-table">No Admin Found</td>
-                            </tr>
-
-                            @endif
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-
-        </div>
 
 
 
@@ -480,84 +332,41 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="masterAdminList">
+                        <div id="guestsList">
                             <div class="col ">
                                 <div class="card card-item1">
                                     <div class="card-body">
-                                        <h3 class="card-title">Master Admin</h3>
-                                        <h1 class="card-text"><i
-                                                class="fas fa-user-shield"></i>&nbsp;{{ $masterAdminCount }}
-                                        </h1>
+                                        <h3 class="card-title">Guests Accounts</h3>
+                                        <h1 class="card-text"><i class="fal fa-user"></i>&nbsp; 120</h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="miniAdminsList">
+
+                        <div id="visitorsCard">
                             <div class="col ">
                                 <div class="card card-item1">
                                     <div class="card-body">
-                                        <h3 class="card-title">Mini Admins List</h3>
-                                        <h1 class="card-text"><i class="fas fa-users"></i>&nbsp;{{ $miniAdminsCount }}
-                                        </h1>
+                                        <h3 class="card-title">Visitors</h3>
+                                        <h1 class="card-text"><i class="fal fa-globe "></i>&nbsp; 34</h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {{-- <div id="guestsList">
-                        @php
-                            $guestCount = 0;
-                        @endphp
-                        @foreach ($guests as $guest)
-                            <p hidden disabled>{{ $guest->id }}</p>
-                        @php
-                        $guestCount++;
-                        @endphp
-                        @endforeach
-                        <div class="col ">
-                            <div class="card card-item1">
-                                <div class="card-body">
-                                    <h3 class="card-title">Guest Accounts</h3>
-                                    <h1 class="card-text"><i class="fa-duotone fa-book "></i>&nbsp;{{ $guestCount }}
-                                    </h1>
+                        <div id="booksdownloads">
+                            <div class="col ">
+                                <div class="card card-item1">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Downloads</h3>
+                                        <h1 class="card-text"><i class="fal fa-download "></i>&nbsp; 2999</h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div> --}}
-                    <div id="guestsList">
-                        <div class="col ">
-                            <div class="card card-item1">
-                                <div class="card-body">
-                                    <h3 class="card-title">Guests Accounts</h3>
-                                    <h1 class="card-text"><i class="fal fa-user"></i>&nbsp; 120</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div id="visitorsCard">
-                        <div class="col ">
-                            <div class="card card-item1">
-                                <div class="card-body">
-                                    <h3 class="card-title">Visitors</h3>
-                                    <h1 class="card-text"><i class="fal fa-globe "></i>&nbsp; 34</h1>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div id="booksdownloads">
-                        <div class="col ">
-                            <div class="card card-item1">
-                                <div class="card-body">
-                                    <h3 class="card-title">Downloads</h3>
-                                    <h1 class="card-text"><i class="fal fa-download "></i>&nbsp; 2999</h1>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
 
 
         </div>
@@ -963,3 +772,30 @@
     </body>
 
 </html>
+
+@endauth
+
+@guest
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Logout Error</title>
+    </head>
+
+    <body>
+        <center>
+            <h1>403 Error Please Login </h1>
+        </center>
+    </body>
+
+</html>
+
+<button class="nav-link" href="/adminlogout" id="adminLogoutHiddenBtn" hidden><i class="fal fa-sign-in"></i>&nbsp;
+    Logout</button>
+
+@endguest

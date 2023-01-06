@@ -93,18 +93,6 @@
 
 </div>
 
-<style>
-    .img-hover:hover {
-        transition-duration: 2s;
-        transform: scale3d(1.3, 1.3, 1.3);
-    }
-
-    .object-width-fit {
-        object-fit: contain;
-        width: 100%;
-        font-size: smaller;
-    }
-</style>
 
 
 

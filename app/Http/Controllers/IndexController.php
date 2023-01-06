@@ -14,15 +14,11 @@ class IndexController extends Controller
 {
     public function get_all()
     {
-        $usersCount = User::where('role', 'user')->count();
-        $masterAdminCount = User::where('role', 'master_admin')->count();
-        $miniAdminsCount = User::where('role', 'mini_admin')->count();
-        $getMasterAdmins = User::all()->where('role', 'master_admin');
-        $getMiniAdmins = User::all()->where('role', 'mini_admin');
-        $booksCount = Book::where('id', '>', '0')->count();
-        $users = User::all()->where('role', 'user');
+        $usersCount = User::all()->count();
+        $booksCount = Book::all()->count();
+        $users = User::all();
         $books = Book::all();
-        return view('admin', compact('users', 'books', 'usersCount', 'booksCount', 'masterAdminCount', 'miniAdminsCount', 'getMasterAdmins', 'getMiniAdmins'));
+        return view('admin', compact('users', 'books', 'usersCount', 'booksCount'));
     }
     public function login(Request $request)
     {

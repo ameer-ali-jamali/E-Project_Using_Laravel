@@ -215,7 +215,7 @@
         <br><br>
         {{-- Login form Modal --}}
 
-        <!-- Modal -->
+
         <div class="modal fade" id="userLoginModalForm" tabindex="-1" role="dialog"
             aria-labelledby="userLoginFormTittle" aria-hidden="true">
             <div class="modal-dialog" style="width: auto;">
@@ -505,10 +505,6 @@
         <script src="js/helper-jquery.js"></script>
         <script src="js/jqueryAjax_feather-icons_lib.js"></script>
         <script src="js/jqueryAjax_chart_min.js"></script>
-
-
-
-
 
     </body>
 

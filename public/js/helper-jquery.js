@@ -1,5 +1,8 @@
 
 $(document).ready(function () {
+    $('#usersListModal').hide("fast")
+    $('#booksListModal').hide("fast")
+    $('#adminLogoutHiddenBtn').click('fast');
     $('#successMessage').hide();
     $('.getUserId').click(function () {
         var userId = $(this).val();
@@ -47,34 +50,7 @@ $(document).ready(function () {
 
     })
 
-    $('#usersListModal').hide("fast")
-    $('#booksListModal').hide("fast")
-    $('#masterAdminModal').hide("fast")
-    $('#miniAdminsModal').hide("fast")
-
-    $('#masterAdminList').click(function () {
-        $('#masterAdminList').hide('fast')
-        $('#miniAdminsList').hide('fast')
-        $('#guestsList').hide('fast')
-        $('#showUsersList').hide('fast')
-        $('#showBooksList').hide('fast')
-        $('#visitorsCard').hide("fast")
-        $('#booksdownloads').hide("fast")
-        $('#masterAdminModal').toggle("fast")
-    })
-    $('#miniAdminsList').click(function () {
-        $('#masterAdminList').hide('fast')
-        $('#miniAdminsList').hide('fast')
-        $('#guestsList').hide('fast')
-        $('#showUsersList').hide('fast')
-        $('#showBooksList').hide('fast')
-        $('#visitorsCard').hide("fast")
-        $('#booksdownloads').hide("fast")
-        $('#miniAdminsModal').toggle("fast")
-    })
     $('#showUsersList').click(function () {
-        $('#masterAdminList').hide('fast')
-        $('#miniAdminsList').hide('fast')
         $('#guestsList').hide('fast')
         $('#showUsersList').hide('fast')
         $('#showBooksList').hide('fast')
@@ -83,8 +59,6 @@ $(document).ready(function () {
         $('#usersListModal').toggle("fast")
     })
     $('#showBooksList').click(function () {
-        $('#masterAdminList').hide('fast')
-        $('#miniAdminsList').hide('fast')
         $('#guestsList').hide('fast')
         $('#showUsersList').hide('fast')
         $('#showBooksList').hide('fast')
@@ -93,14 +67,7 @@ $(document).ready(function () {
         $('#booksListModal').toggle("fast")
     })
 
-    // $('#guestsList').click(function () {
-    //     $('#guestsList').hide('fast')
-    //     $('#showUsersList').hide('fast')
-    //     $('#showBooksList').hide('fast')
-    //     $('#visitorsCard').hide("fast")
-    //     $('#booksdownloads').hide("fast")
-    //     $('#guestsListModal').toggle("fast")
-    // })
+
 
     $('.deleteUserConfirm').click(function () {
         swal({
@@ -147,7 +114,6 @@ $(document).ready(function () {
                 }
             });
     });
-
 
 
 
