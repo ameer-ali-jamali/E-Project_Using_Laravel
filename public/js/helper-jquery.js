@@ -76,7 +76,9 @@ $(document).ready(function () {
     //     $('#booksdownloads').hide("fast")
     //     $('#guestsListModal').toggle("fast")
     // })
-
+    $('.doneloadBtn').click(function () {
+        alert("done");
+    });
 
     $('.deleteUserConfirm').click(function () {
         swal({

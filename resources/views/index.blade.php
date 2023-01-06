@@ -63,32 +63,32 @@
     <div class="row row-cols-6">
         @foreach ($books as $book)
         <div class="col" id="btn-1">
-            <div class="card pdfDownload">
+            <div class="card ">
                 <img src="{{ $book->image }}" class="img-hover">
-                <div class="card-footer " style="display: contents;">
+                <div class="card-footer ">
                     @auth
                     <form action="{{ URL::to('/download_pdf') }}" method="post">
                         @csrf
                         <input type="text" hidden name="fileLocation" value="{{ $book->file }}">
 
-                        <div class="container position-absolute ">
-                            <div class="position-relative">
-                                <button class="btn btn-danger" id="downloadTriggerBtn"><i class="fa fa-download"></i>
-                                    &nbsp; Download
-                                </button>
-                            </div>
-                        </div>
+                        <button class="btn btn-danger doneloadBtn" id="downloadTriggerBtn"><i
+                                class="fa fa-download"></i>
+                            &nbsp; Download
+                        </button>
+
                     </form>
                     @endauth
-                    @guest
+                </div>
+                @guest
+                <div style="display: contents">
 
-                    <span data-bs-toggle="modal" data-bs-target="#userRegistrationModal"
-                        class="btn btn-danger pdfDownload" id="btnover"><i class="fa fa-download"></i>&nbsp;
+                    <span data-bs-toggle="modal" data-bs-target="#userRegistrationModal" class="btn btn-danger"><i
+                            class="fa fa-download"></i>&nbsp;
                         Download
                     </span>
-
                 </div>
                 @endguest
+
 
             </div>
         </div>

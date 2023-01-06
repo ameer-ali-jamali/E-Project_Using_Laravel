@@ -131,4 +131,25 @@ a:hover {
     place-items: center;
 }
 
-@media only screen and (max-width:768px) {}
+@media only screen and (min-width:768px) and (max-width:1440px) {
+    .row-cols-6>* {
+        flex: 0 0 auto;
+        width: 23.666667%;
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:767px) {
+    .row-cols-6>* {
+        flex: 0 0 auto;
+        width: 48.666667%;
+    }
+
+    .navbar-nav {
+        gap: 5px !important;
+        font-size: smaller !important;
+    }
+
+    .login-btns {
+        font-size: smaller !important;
+    }
+}
