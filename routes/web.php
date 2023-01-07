@@ -23,12 +23,12 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/userlogout', function () {
-    \session_abort();
+    session_abort();
     Auth::logout();
     return redirect('/');
 });
 Route::get('/adminlogout', function () {
-    \session_abort();
+    session_abort();
     Auth::logout();
     return redirect('/');
 });
@@ -43,6 +43,7 @@ Route::post('/registerUser', [UsersController::class, 'registerUser']);
 Route::post('/uploadBook', [BooksController::class, 'upload_book']);
 Route::get('/deleteBook', [BooksController::class, 'delete_book']);
 Route::get('/deleteUser', [UsersController::class, 'delete_user']);
+Route::get('/deleteDownloadsUsersInfo', [indexController::class, 'delete_downloads_info']);
 Route::get('/getUserInfoById/{id}', [UsersController::class, 'get_user_info_by_id']);
 Route::get('/getBookInfoById/{id}', [BooksController::class, 'get_book_info_by_id']);
 Route::post('/updateUser', [UsersController::class, 'update_user']);

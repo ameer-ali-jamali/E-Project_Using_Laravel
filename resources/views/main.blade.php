@@ -35,6 +35,12 @@
                 <span> <i class="fas fa-phone"></i> &nbsp;+92487985745909</span>
             </div>
 
+            @if(session('errorMessage'))
+            <div class="alert alert-danger" role="alert">
+                {{session('errorMessage')}}
+            </div>
+            @endif
+
         </header>
 
 

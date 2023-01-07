@@ -44,18 +44,6 @@
 </div>
 
 
-
-
-<!-- Marketing messaging and featurettes
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             Wrap the rest of the page in another container to center all the content. -->
-
-
-
-
-
-
-
-
 <div class="container">
     <div>
         <h2>Latest Popular Books</h2>
@@ -93,23 +81,5 @@
     </div>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @endsection

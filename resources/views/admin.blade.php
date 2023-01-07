@@ -1,5 +1,4 @@
 @auth
-@if (Auth::user()->role == 'master_admin')
 <!doctype html>
 <html lang="en">
 
@@ -574,7 +573,7 @@
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <input type="submit" class="btn btn-success" name="submit" id="updateUser" value="Update">
                         </div>
-                        <p class="alert alert-success" id="updateUserSuccessMessage"></p>
+
                     </form>
                 </div>
             </div>
@@ -586,7 +585,7 @@
 
         {{-- Users List Table --}}
 
-        <div class="position-relative " id="usersListModal">
+        <div class="position-relative " id="usersListModal" style="display: none;">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <div class="data-table-container">
                     <div class="row">
@@ -669,100 +668,101 @@
         {{-- Books List  Table --}}
 
 
-            <div class="position-relative" id="booksListModal">
-                <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+        <div class="position-relative" id="booksListModal" style="display: none;">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
 
-                    <div class="data-table-container">
-                        <div class="row">
-                            <h2 class="py-3 text-center font-bold font-up blue-text"><i
-                                    class="fa-duotone fa-books fa-lg"></i>
-                                &nbsp;Books Info</h2>
-                        </div>
-                        <table class="table table-hover table-responsive mb-0">
-                            <div class="d-flex justify-content-between">
-                                <span>
-                                    <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
-                                            class="fas fa-user"></i></a>
-                                </span>
-                                <span>
-                                    <button class="btn btn-primary mb-3" data-bs-toggle="modal"
-                                        data-bs-target="#uploadBookModal">Upload
-                                        Book &nbsp;<i class="fa-duotone fa-book"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            <tr>
-                                <th scope='col'>#</th>
-                                <th scope='col'>Name</th>
-                                <th scope='col'>IssueDate</th>
-                                <th scope='col'>AuthorName</th>
-                                <th scope='col'>AuthorEmail</th>
-                                <th scope='col'>Description</th>
-                                <th scope='col'>File</th>
-                                <th scope='col'>Image</th>
-                                <th scope='col'>Created_at</th>
-                                <th scope='col'>Updated_at</th>
-                                <th scope='col'>Update</th>
-                                <th scope='col'>Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                @if ($books->count())
-                                @foreach ($books as $book)
-                                <tr @if ($loop->even) class="bg-info" @endif>
-                                    <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $book->name }}</td>
-                                    <td>{{ $book->issueDate }}</td>
-                                    <td>{{ $book->authorName }}</td>
-                                    <td>{{ $book->authorEmail }}</td>
-                                    <td>{{ $book->description }}</td>
-                                    <td><a href="/downlaod">
-                                            <i class="fa-solid fa-download fa-lg text-danger"></i></a></td>
-                                    <td class="d-grid justify-center img_td"><img class="img_width"
-                                            src="{{ $book->image }}">
-                                    </td>
-                                    <td>{{ $book->created_at }}</td>
-                                    <td>{{ $book->updated_at }}</td>
-                                    <td>
-                                        <button type="submit" class="btn btn-primary btn-sm getBookId"
-                                            value="{{ $book->id }}" data-bs-toggle="modal"
-                                            data-bs-target="#updateBookModal"><i class="fal fa-edit"></i></button>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-danger btn-sm deleteBookConfirm"><i class="fa fa-trash fa-lg"
-                                                aria-hidden="true"></i></a>
-                                        <form action="{{ URL::to('/deleteBook') }}" hidden>
-                                            <input type="text" name="bookId" value="{{ $book->id }}">
-                                            <input type="submit" name="submit" class="deleteBookByadmin">
-                                        </form>
-                                    </td>
-
-                                </tr>
-                                @endforeach
-                                @else
-                                <tr>
-                                    <td colspan="12" class="bg-danger user-table">No Book Found</td>
-                                </tr>
-
-                                @endif
-                            </tbody>
-                        </table>
+                <div class="data-table-container">
+                    <div class="row">
+                        <h2 class="py-3 text-center font-bold font-up blue-text"><i
+                                class="fa-duotone fa-books fa-lg"></i>
+                            &nbsp;Books Info</h2>
                     </div>
-                </div>
+                    <table class="table table-hover table-responsive mb-0">
+                        <div class="d-flex justify-content-between">
+                            <span>
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                        class="fas fa-user"></i></a>
+                            </span>
+                            <span>
+                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                    data-bs-target="#uploadBookModal">Upload
+                                    Book &nbsp;<i class="fa-duotone fa-book"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <tr>
+                            <th scope='col'>#</th>
+                            <th scope='col'>Name</th>
+                            <th scope='col'>IssueDate</th>
+                            <th scope='col'>AuthorName</th>
+                            <th scope='col'>AuthorEmail</th>
+                            <th scope='col'>Description</th>
+                            <th scope='col'>File</th>
+                            <th scope='col'>Image</th>
+                            <th scope='col'>Created_at</th>
+                            <th scope='col'>Updated_at</th>
+                            <th scope='col'>Update</th>
+                            <th scope='col'>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @if ($books->count())
+                            @foreach ($books as $book)
+                            <tr @if ($loop->even) class="bg-info" @endif>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $book->name }}</td>
+                                <td>{{ $book->issueDate }}</td>
+                                <td>{{ $book->authorName }}</td>
+                                <td>{{ $book->authorEmail }}</td>
+                                <td>{{ $book->description }}</td>
+                                <td><a href="/downlaod">
+                                        <i class="fa-solid fa-download fa-lg text-danger"></i></a></td>
+                                <td class="d-grid justify-center img_td"><img class="img_width"
+                                        src="{{ $book->image }}">
+                                </td>
+                                <td>{{ $book->created_at }}</td>
+                                <td>{{ $book->updated_at }}</td>
+                                <td>
+                                    <button type="submit" class="btn btn-primary btn-sm getBookId"
+                                        value="{{ $book->id }}" data-bs-toggle="modal"
+                                        data-bs-target="#updateBookModal"><i class="fal fa-edit"></i></button>
+                                </td>
+                                <td>
+                                    <a class="btn btn-danger btn-sm deleteBookConfirm"><i class="fa fa-trash fa-lg"
+                                            aria-hidden="true"></i></a>
+                                    <form action="{{ URL::to('/deleteBook') }}" hidden>
+                                        <input type="text" name="bookId" value="{{ $book->id }}">
+                                        <input type="submit" name="submit" class="deleteBookByadmin">
+                                    </form>
+                                </td>
 
+                            </tr>
+                            @endforeach
+                            @else
+                            <tr>
+                                <td colspan="12" class="bg-danger user-table">No Book Found</td>
+                            </tr>
+
+                            @endif
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+        </div>
 
 
 
 
         {{-- Downloads List Table --}}
 
-        <div class="position-relative" id="downloadsList">
+        <div class="position-relative" id="downloadsList" style="display: none;">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
                 <div class="data-table-container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fad fa-download fa-lg"></i>
+                            <h2 class="py-3 text-center font-bold font-up blue-text"><i
+                                    class="fad fa-download fa-lg"></i>
                                 &nbsp; Downlaods Information</h2>
                         </div>
                     </div>
@@ -779,27 +779,16 @@
                             <th scope='col'>User Id</th>
                             <th scope='col'>Book Id</th>
                             <th scope='col'>Timestap</th>
-                            <th scope='col'>Delete</th>
                         </tr>
                         </thead>
                         <tbody>
                             @if ($downloadsInfo->count())
-                            @foreach ($downloadsInfo as $downloadInfo)
+                            @foreach ($downloadsInfo as $Info)
                             <tr @if ($loop->even) class="bg-info" @endif>
                                 <td>{{ $loop->index + 1 }}</td>
-                                <td>{{ $downloadInfo->userId }}</td>
-                                <td>{{ $downloadInfo->bookId }}</td>
-                                <td>{{ $downloadInfo->timeStamp }}</td>
-
-                                <td>
-                                     <a class=" btn btn-danger btn-sm deleteUserConfirm"><i class="fa fa-trash fa-lg"
-                                            aria-hidden="true"></i></a>
-                                    <form action="{{ URL::to('/deleteUser') }}" hidden>
-                                        <input type="text" name="userId" value="{{ $user->id }}">
-                                        <input type="submit" name="submit" class="deleteUserByadmin">
-                                    </form>
-                                </td>
-
+                                <td>{{ $Info->userId }}</td>
+                                <td>{{ $Info->bookId }}</td>
+                                <td>{{ $Info->timeStamp }}</td>
                             </tr>
                             @endforeach
                             @else
@@ -838,29 +827,9 @@
     </body>
 
 </html>
-
-@else
-<!DOCTYPE html>
-<html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Document</title>
-    </head>
-
-    <body>
-        <h1>403 Error Unusual Activety</h1>
-        <a href="/">Home</a>
-    </body>
-
-</html>
-@endif
 @endauth
 
 @guest
-
 <!DOCTYPE html>
 <html lang="en">
 

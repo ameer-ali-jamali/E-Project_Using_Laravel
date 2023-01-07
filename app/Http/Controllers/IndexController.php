@@ -17,13 +17,17 @@ class IndexController extends Controller
 {
     public function get_all()
     {
-        $downloadBooksCount = Download::all()->count();
-        $usersCount = User::all()->count();
-        $booksCount = Book::all()->count();
-        $downloadsInfo = Download::all();
-        $users = User::all();
-        $books = Book::all();
-        return view('admin', compact('users', 'books', 'downloadsInfo', 'usersCount', 'booksCount', 'downloadBooksCount'));
+
+        if (Auth::user()->role == 'master_admin') {
+            $downloadBooksCount = Download::all()->count();
+            $usersCount = User::all()->count();
+            $booksCount = Book::all()->count();
+            $downloadsInfo = Download::all();
+            $users = User::all();
+            $books = Book::all();
+            return view('admin', compact('users', 'books', 'downloadsInfo', 'usersCount', 'booksCount', 'downloadBooksCount'));
+        }
+        return redirect('/')->with('errorMessage', 'Forbidden! you do not have admin rights');
     }
     public function login(Request $request)
     {
@@ -43,6 +47,14 @@ class IndexController extends Controller
     }
     public function contactUs(Request $request)
     {
+        return $request;
+    }
+    public function delete_downloads_info(Request $request)
+    {
+        $getId = $request->tableId;
+        // $userId = Download::find($getId);
+        // $userId->delete();
+        // return redirect()->back();
         return $request;
     }
 }

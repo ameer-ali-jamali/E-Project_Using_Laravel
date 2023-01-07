@@ -1,8 +1,4 @@
 $(document).ready(function () {
-    $('#usersListModal').hide("fast")
-    $('#booksListModal').hide("fast")
-    $('#downloadsList').hide("fast")
-    $('#successMessage').hide();
     $('.getUserId').click(function () {
         var userId = $(this).val();
         $.ajax({
@@ -122,7 +118,28 @@ $(document).ready(function () {
             });
     });
 
-
+    $('.deleteDownloadsUserInfoConfirm').click(function () {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file !",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Book Deleted SuccessFully", {
+                        icon: "success",
+                    }).then((willdelete) => {
+                        if (willdelete) {
+                            $('.deleteDownloadsInfo').click();
+                        }
+                    })
+                } else {
+                    swal("Your imaginary files is safe!");
+                }
+            });
+    });
 
 
 

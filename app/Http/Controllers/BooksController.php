@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BooksController extends Controller
 {
@@ -43,7 +44,7 @@ class BooksController extends Controller
 
     public function all_books_home_page()
     {
-        $books = Book::all();
+        $books = DB::table('books')->orderBy("id", "DESC")->get();
         return view('index', compact('books'));
     }
     public function delete_book(Request $request)
