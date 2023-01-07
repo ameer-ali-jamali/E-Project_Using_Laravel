@@ -584,7 +584,7 @@
         {{-- Users and Books List--}}
 
 
-        {{-- Users List loop --}}
+        {{-- Users List Table --}}
 
         <div class="position-relative " id="usersListModal">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
@@ -666,10 +666,7 @@
 
 
 
-        {{-- Books List  --}}
-
-        <div class="container-fluid position-absolute" id="usersBooksListConatiner">
-
+        {{-- Books List  Table --}}
 
 
             <div class="position-relative" id="booksListModal">
@@ -758,6 +755,65 @@
 
 
 
+        {{-- Downloads List Table --}}
+
+        <div class="position-relative" id="downloadsList">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="data-table-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fad fa-download fa-lg"></i>
+                                &nbsp; Downlaods Information</h2>
+                        </div>
+                    </div>
+                    <table class="table table-hover table-responsive mb-0">
+                        <div class="d-flex justify-content-between">
+                            <span>
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                        class="fas fa-user"></i></a>
+                            </span>
+                        </div>
+
+                        <tr>
+                            <th scope='col'>#</th>
+                            <th scope='col'>User Id</th>
+                            <th scope='col'>Book Id</th>
+                            <th scope='col'>Timestap</th>
+                            <th scope='col'>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @if ($downloadsInfo->count())
+                            @foreach ($downloadsInfo as $downloadInfo)
+                            <tr @if ($loop->even) class="bg-info" @endif>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $downloadInfo->userId }}</td>
+                                <td>{{ $downloadInfo->bookId }}</td>
+                                <td>{{ $downloadInfo->timeStamp }}</td>
+
+                                <td>
+                                     <a class=" btn btn-danger btn-sm deleteUserConfirm"><i class="fa fa-trash fa-lg"
+                                            aria-hidden="true"></i></a>
+                                    <form action="{{ URL::to('/deleteUser') }}" hidden>
+                                        <input type="text" name="userId" value="{{ $user->id }}">
+                                        <input type="submit" name="submit" class="deleteUserByadmin">
+                                    </form>
+                                </td>
+
+                            </tr>
+                            @endforeach
+                            @else
+                            <tr>
+                                <td colspan="8" class="bg-danger user-table">No Data Found</td>
+                            </tr>
+
+                            @endif
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
 
 
 
@@ -773,12 +829,11 @@
 
 
 
-
-            <script src="js/bootstrap_bundle.js"></script>
-            <script src="js/jquery_min.js"></script>
-            <script src="js/helper-jquery.js"></script>
-            <script src="js/jqueryAjax_feather-icons_lib.js"></script>
-            <script src="js/jqueryAjax_chart_min.js"></script>
+        <script src="js/bootstrap_bundle.js"></script>
+        <script src="js/jquery_min.js"></script>
+        <script src="js/helper-jquery.js"></script>
+        <script src="js/jqueryAjax_feather-icons_lib.js"></script>
+        <script src="js/jqueryAjax_chart_min.js"></script>
 
     </body>
 

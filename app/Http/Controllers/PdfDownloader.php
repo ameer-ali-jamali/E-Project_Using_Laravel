@@ -14,17 +14,15 @@ class PdfDownloader extends Controller
 {
     public function download_pdf_funciton(Request $request)
     {
-        // db call, add 1 row into table
 
-        $get_file_path = $request->fileLocation;
-        $userId = $request->userInfo;
-        $getAll = User::find($userId);
+        $userId = $request->userId;
+        $bookId = $request->bookId;
         $table = new Download();
         $table->userId = $userId;
-        $table->name = $getAll->firstName;
-        $table->bookName = $get_file_path;
+        $table->bookId = $bookId;
         $table->save();
-        $downlaodBook = response()->download(public_path($get_file_path));
-        return $downlaodBook;
+        $get_file_path = $request->fileLocation;
+        $downlaod = response()->download(public_path($get_file_path));
+        return $downlaod;
     }
 }

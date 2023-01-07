@@ -1,7 +1,7 @@
-
 $(document).ready(function () {
     $('#usersListModal').hide("fast")
     $('#booksListModal').hide("fast")
+    $('#downloadsList').hide("fast")
     $('#successMessage').hide();
     $('.getUserId').click(function () {
         var userId = $(this).val();
@@ -71,7 +71,7 @@ $(document).ready(function () {
         $('#showBooksList').hide('fast')
         $('#visitorsCard').hide("fast")
         $('#booksdownloads').hide("fast")
-        $('#downloadsListModal').toggle("fast")
+        $('#downloadsList').toggle("fast")
     })
 
 

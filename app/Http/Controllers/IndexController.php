@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Psy\VersionUpdater\Downloader;
 use Symfony\Component\Console\Helper\TableRows;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -19,9 +20,10 @@ class IndexController extends Controller
         $downloadBooksCount = Download::all()->count();
         $usersCount = User::all()->count();
         $booksCount = Book::all()->count();
+        $downloadsInfo = Download::all();
         $users = User::all();
         $books = Book::all();
-        return view('admin', compact('users', 'books', 'usersCount', 'booksCount', 'downloadBooksCount'));
+        return view('admin', compact('users', 'books', 'downloadsInfo', 'usersCount', 'booksCount', 'downloadBooksCount'));
     }
     public function login(Request $request)
     {
