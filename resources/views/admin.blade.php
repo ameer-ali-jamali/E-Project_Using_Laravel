@@ -116,190 +116,8 @@
         </div>
 
 
-        {{-- Books List Loop  --}}
 
-        <div class="container-fluid position-absolute" id="usersBooksListConatiner">
-
-
-
-            <div class="position-relative" id="booksListModal">
-                <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-
-                    <div class="data-table-container">
-                        <div class="row">
-                            <h2 class="py-3 text-center font-bold font-up blue-text"><i
-                                    class="fa-duotone fa-books fa-lg"></i>
-                                &nbsp;Books Info</h2>
-                        </div>
-                        <table class="table table-hover table-responsive mb-0">
-                            <div class="d-flex justify-content-between">
-                                <span>
-                                    <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
-                                            class="fas fa-user"></i></a>
-                                </span>
-                                <span>
-                                    <button class="btn btn-primary mb-3" data-bs-toggle="modal"
-                                        data-bs-target="#uploadBookModal">Upload
-                                        Book &nbsp;<i class="fa-duotone fa-book"></i>
-                                    </button>
-                                </span>
-                            </div>
-                            <tr>
-                                <th scope='col'>#</th>
-                                <th scope='col'>Name</th>
-                                <th scope='col'>IssueDate</th>
-                                <th scope='col'>AuthorName</th>
-                                <th scope='col'>AuthorEmail</th>
-                                <th scope='col'>Description</th>
-                                <th scope='col'>File</th>
-                                <th scope='col'>Image</th>
-                                <th scope='col'>Created_at</th>
-                                <th scope='col'>Updated_at</th>
-                                <th scope='col'>Update</th>
-                                <th scope='col'>Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                @if ($books->count())
-                                @foreach ($books as $book)
-                                <tr @if ($loop->even) class="bg-info" @endif>
-                                    <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $book->name }}</td>
-                                    <td>{{ $book->issueDate }}</td>
-                                    <td>{{ $book->authorName }}</td>
-                                    <td>{{ $book->authorEmail }}</td>
-                                    <td>{{ $book->description }}</td>
-                                    <td><a href="/downlaod">
-                                            <i class="fa-solid fa-download fa-lg text-danger"></i></a></td>
-                                    <td class="d-grid justify-center img_td"><img class="img_width"
-                                            src="{{ $book->image }}">
-                                    </td>
-                                    <td>{{ $book->created_at }}</td>
-                                    <td>{{ $book->updated_at }}</td>
-                                    <td>
-                                        <button type="submit" class="btn btn-primary btn-sm getBookId"
-                                            value="{{ $book->id }}" data-bs-toggle="modal"
-                                            data-bs-target="#updateBookModal"><i class="fal fa-edit"></i></button>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-danger btn-sm deleteBookConfirm"><i class="fa fa-trash fa-lg"
-                                                aria-hidden="true"></i></a>
-                                        <form action="{{ URL::to('/deleteBook') }}" hidden>
-                                            <input type="text" name="bookId" value="{{ $book->id }}">
-                                            <input type="submit" name="submit" class="deleteBookByadmin">
-                                        </form>
-                                    </td>
-
-                                </tr>
-                                @endforeach
-                                @else
-                                <tr>
-                                    <td colspan="12" class="bg-danger user-table">No Book Found</td>
-                                </tr>
-
-                                @endif
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
-
-            {{-- Loop end --}}
-
-
-
-            {{-- Users List loop --}}
-
-            <div class="position-relative " id="usersListModal">
-                <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
-                    <div class="data-table-container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="py-3 text-center font-bold font-up blue-text"><i
-                                        class="fas fa-users fa-lg"></i> &nbsp; Users Info</h2>
-                            </div>
-                        </div>
-                        <table class="table table-hover table-responsive mb-0">
-                            <div class="d-flex justify-content-between">
-                                <span>
-                                    <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
-                                            class="fas fa-user"></i></a>
-                                </span>
-                                <span>
-                                    <button class="btn btn-primary mb-3" data-bs-toggle="modal"
-                                        data-bs-target="#registerNewUser">Register
-                                        &nbsp;<i class="fas fa-user-plus"></i></button>
-
-                                </span>
-                            </div>
-
-                            <tr>
-                                <th scope='col'>#</th>
-                                <th scope='col'>Fist Name</th>
-                                <th scope='col'>Last Name</th>
-                                <th scope='col'>Email</th>
-                                <th scope='col'>Role</th>
-                                <th scope='col'>Update</th>
-                                <th scope='col'>Delete</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                @if ($users->count())
-                                @foreach ($users as $user)
-                                <tr @if ($loop->even) class="bg-info" @endif>
-                                    <td>{{ $loop->index + 1 }}</td>
-                                    <td>{{ $user->firstName }}</td>
-                                    <td>{{ $user->lastName }}</td>
-                                    <td>{{ $user->email }}</td>
-                                    <td>{{ $user->role }}</td>
-                                    <td>
-                                        <button class="btn btn-primary getUserId btn-sm" value="{{ $user->id }}"
-                                            data-bs-toggle="modal" data-bs-target="#userUpdateModal"><i
-                                                class="fal fa-edit"></i></button>
-
-                                    </td>
-                                    <td>
-                                        @if ($user->role=="master_admin")
-
-                                        @else
-                                        <a class=" btn btn-danger btn-sm deleteUserConfirm"><i class="fa fa-trash fa-lg"
-                                                aria-hidden="true"></i></a>
-                                        <form action="{{ URL::to('/deleteUser') }}" hidden>
-                                            <input type="text" name="userId" value="{{ $user->id }}">
-                                            <input type="submit" name="submit" class="deleteUserByadmin">
-                                        </form>
-                                        @endif
-                                    </td>
-
-                                </tr>
-                                @endforeach
-                                @else
-                                <tr>
-                                    <td colspan="8" class="bg-danger user-table">No User Found</td>
-                                </tr>
-
-                                @endif
-                            </tbody>
-                        </table>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        {{-- Loop End --}}
-
-
-
-
-
-
-
-
-        {{-- Count All --}}
+        {{-- Users Books And Downloads Counts Cards --}}
 
 
         <div class="position-absolute container-fluid">
@@ -369,7 +187,6 @@
                             </div>
                         </div>
 
-
                     </div>
                 </div>
             </div>
@@ -378,115 +195,18 @@
         </div>
 
 
-        {{-- Book Update Modal --}}
-
-        <div class="modal fade" id="updateBookModal" tabindex="-1" role="dialog" aria-labelledby="updateBookInfoTittle"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <p id="booksErrorMessage"></p>
-                        <h5 class="modal-title" id="updateBookInfoTittle">Update Book Information</h5>
-                        <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
-                            aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form action="{{ URL::to('/updateBook') }}" method="POST" enctype="multipart/form-data">
-                        <div class="modal-body">
-                            @csrf
-                            <div class="container">
-                                <div class="container-fluid modal-container">
-                                    <p class="modal-p">Book Id</p>
-                                    <input type="text" disabled name="bookId" id="bookId" class="modal-user-id">
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="name">Book Name :</label>
-                                            <input type="text" name="name" id="updateBookName" class="form-control" />
-                                            <span class="text-danger">
-                                                @error('name')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="issueDate">Book Issue Date
-                                                :</label>
-                                            <input type="datetime-local" name="issueDate" id="updateBookIssueDate"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('issueDate')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="authorName">Author Name
-                                                :</label>
-                                            <input type="text" name="authorName" id="updateBookAuthorName"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('authorName')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 mb-4">
-                                        <div class="form-outline">
-                                            <label class="form-label font-family" for="authorEmail">Author Email
-                                                :</label>
-                                            <input type="email" name="authorEmail" id="updateBookAuthorEmail"
-                                                class="form-control" />
-                                            <span class="text-danger">
-                                                @error('authorEmail')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="form-outline">
-                                        <label class="form-label font-family" for="description">Book Description
-                                            :</label>
-                                        <input type="text" name="description" id="updateBookDescription"
-                                            class="form-control" />
-                                        <span class="text-danger">
-                                            @error('description')
-                                            {{ $message }}
-                                            @enderror
-                                        </span>
-                                    </div>
-                                </div>
-                                <input type="text" aria-disabled="true" hidden name="bookIdForUpdate"
-                                    id="bookIdForUpdate">
-                            </div>
-                        </div>
-                        <!-- Modal Footer -->
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-success" name="submit" value="Update">
-                        </div>
-
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        {{-- Modal End --}}
 
 
-        {{-- New Book Upload Modal --}}
+
+
+
+        {{-- All Models --}}
+
+
+
+
+
+        {{-- Book Upload Modal --}}
 
         <div class="modal fade" id="uploadBookModal" tabindex="-1" role="dialog" aria-labelledby="uploadBookTittle"
             aria-hidden="true">
@@ -612,69 +332,112 @@
             </div>
         </div>
 
-        {{-- Modal End --}}
 
 
+        {{-- Book Update Modal --}}
 
-        {{-- User Update Modal Form --}}
-
-        <div class="modal fade" id="userUpdateModal" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
+        <div class="modal fade" id="updateBookModal" tabindex="-1" role="dialog" aria-labelledby="updateBookInfoTittle"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalLongTitle">Update User</h5>
+                        <p id="booksErrorMessage"></p>
+                        <h5 class="modal-title" id="updateBookInfoTittle">Update Book Information</h5>
                         <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                             aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ URL::to('/updateUser') }}" method="POST">
+                    <form action="{{ URL::to('/updateBook') }}" method="POST" enctype="multipart/form-data">
                         <div class="modal-body">
                             @csrf
-                            <div class="mb-0 container-fluid modal-container">
-                                <p class="modal-p">User Id</p>
-                                <input type="text" disabled name="userId" id="updateFormUserId" class="modal-user-id">
-                            </div>
-                            <div class="mb-1">
-                                <label for="firstName" class="form-label font-family">First Name</label>
-                                <input type="text" class="form-control" name="firstName" id="updateUserFirstName">
-                                <span class="text-danger">
-                                    @error('firstName')
-                                    {{ $message }}
-                                    @enderror
-                                </span>
-                            </div>
-                            <div class="mb-1">
-                                <label for="lastName" class="form-label font-family">Last Name</label>
-                                <input type="text" class="form-control" name="lastName" id="updateUserLastName">
-                                <span class="text-danger">
-                                    @error('lastName')
-                                    {{ $message }}
-                                    @enderror
-                                </span>
-                            </div>
-                            <div class="mb-1">
-                                <label for="email" class="form-label font-family">Email address</label>
-                                <input type="email" disabled class="form-control" name="email" id="updateUserEmail">
-                            </div>
-                            <input type="text" aria-disabled="true" hidden name="userIdForUpdate" id="userIdForUpdate">
-                        </div>
+                            <div class="container">
+                                <div class="container-fluid modal-container">
+                                    <p class="modal-p">Book Id</p>
+                                    <input type="text" disabled name="bookId" id="bookId" class="modal-user-id">
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="name">Book Name :</label>
+                                            <input type="text" name="name" id="updateBookName" class="form-control" />
+                                            <span class="text-danger">
+                                                @error('name')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="issueDate">Book Issue Date
+                                                :</label>
+                                            <input type="datetime-local" name="issueDate" id="updateBookIssueDate"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('issueDate')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
 
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="authorName">Author Name
+                                                :</label>
+                                            <input type="text" name="authorName" id="updateBookAuthorName"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('authorName')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="authorEmail">Author Email
+                                                :</label>
+                                            <input type="email" name="authorEmail" id="updateBookAuthorEmail"
+                                                class="form-control" />
+                                            <span class="text-danger">
+                                                @error('authorEmail')
+                                                {{ $message }}
+                                                @enderror
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-outline">
+                                        <label class="form-label font-family" for="description">Book Description
+                                            :</label>
+                                        <input type="text" name="description" id="updateBookDescription"
+                                            class="form-control" />
+                                        <span class="text-danger">
+                                            @error('description')
+                                            {{ $message }}
+                                            @enderror
+                                        </span>
+                                    </div>
+                                </div>
+                                <input type="text" aria-disabled="true" hidden name="bookIdForUpdate"
+                                    id="bookIdForUpdate">
+                            </div>
+                        </div>
+                        <!-- Modal Footer -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <input type="submit" class="btn btn-success" name="submit" id="updateUser" value="Update">
+                            <input type="submit" class="btn btn-success" name="submit" value="Update">
                         </div>
-                        <p class="alert alert-success" id="updateUserSuccessMessage"></p>
+
                     </form>
                 </div>
             </div>
         </div>
-
-
-        {{-- Update User Modal --}}
-
-
 
 
         {{-- Register New User Modal --}}
@@ -762,6 +525,235 @@
         </div>
 
 
+        {{-- User Update Modal Form --}}
+
+        <div class="modal fade" id="userUpdateModal" tabindex="-1" role="dialog" aria-labelledby="ModalLongTitle"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLongTitle">Update User</h5>
+                        <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{ URL::to('/updateUser') }}" method="POST">
+                        <div class="modal-body">
+                            @csrf
+                            <div class="mb-0 container-fluid modal-container">
+                                <p class="modal-p">User Id</p>
+                                <input type="text" disabled name="userId" id="updateFormUserId" class="modal-user-id">
+                            </div>
+                            <div class="mb-1">
+                                <label for="firstName" class="form-label font-family">First Name</label>
+                                <input type="text" class="form-control" name="firstName" id="updateUserFirstName">
+                                <span class="text-danger">
+                                    @error('firstName')
+                                    {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                            <div class="mb-1">
+                                <label for="lastName" class="form-label font-family">Last Name</label>
+                                <input type="text" class="form-control" name="lastName" id="updateUserLastName">
+                                <span class="text-danger">
+                                    @error('lastName')
+                                    {{ $message }}
+                                    @enderror
+                                </span>
+                            </div>
+                            <div class="mb-1">
+                                <label for="email" class="form-label font-family">Email address</label>
+                                <input type="email" disabled class="form-control" name="email" id="updateUserEmail">
+                            </div>
+                            <input type="text" aria-disabled="true" hidden name="userIdForUpdate" id="userIdForUpdate">
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input type="submit" class="btn btn-success" name="submit" id="updateUser" value="Update">
+                        </div>
+                        <p class="alert alert-success" id="updateUserSuccessMessage"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        {{-- Users and Books List--}}
+
+
+        {{-- Users List loop --}}
+
+        <div class="position-relative " id="usersListModal">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="data-table-container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fas fa-users fa-lg"></i>
+                                &nbsp; Users Info</h2>
+                        </div>
+                    </div>
+                    <table class="table table-hover table-responsive mb-0">
+                        <div class="d-flex justify-content-between">
+                            <span>
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                        class="fas fa-user"></i></a>
+                            </span>
+                            <span>
+                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                    data-bs-target="#registerNewUser">Register
+                                    &nbsp;<i class="fas fa-user-plus"></i></button>
+
+                            </span>
+                        </div>
+
+                        <tr>
+                            <th scope='col'>#</th>
+                            <th scope='col'>Fist Name</th>
+                            <th scope='col'>Last Name</th>
+                            <th scope='col'>Email</th>
+                            <th scope='col'>Role</th>
+                            <th scope='col'>Update</th>
+                            <th scope='col'>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @if ($users->count())
+                            @foreach ($users as $user)
+                            <tr @if ($loop->even) class="bg-info" @endif>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $user->firstName }}</td>
+                                <td>{{ $user->lastName }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->role }}</td>
+                                <td>
+                                    <button class="btn btn-primary getUserId btn-sm" value="{{ $user->id }}"
+                                        data-bs-toggle="modal" data-bs-target="#userUpdateModal"><i
+                                            class="fal fa-edit"></i></button>
+
+                                </td>
+                                <td>
+                                    @if ($user->role=="master_admin")
+
+                                    @else
+                                    <a class=" btn btn-danger btn-sm deleteUserConfirm"><i class="fa fa-trash fa-lg"
+                                            aria-hidden="true"></i></a>
+                                    <form action="{{ URL::to('/deleteUser') }}" hidden>
+                                        <input type="text" name="userId" value="{{ $user->id }}">
+                                        <input type="submit" name="submit" class="deleteUserByadmin">
+                                    </form>
+                                    @endif
+                                </td>
+
+                            </tr>
+                            @endforeach
+                            @else
+                            <tr>
+                                <td colspan="8" class="bg-danger user-table">No User Found</td>
+                            </tr>
+
+                            @endif
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        {{-- Books List  --}}
+
+        <div class="container-fluid position-absolute" id="usersBooksListConatiner">
+
+
+
+            <div class="position-relative" id="booksListModal">
+                <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+
+                    <div class="data-table-container">
+                        <div class="row">
+                            <h2 class="py-3 text-center font-bold font-up blue-text"><i
+                                    class="fa-duotone fa-books fa-lg"></i>
+                                &nbsp;Books Info</h2>
+                        </div>
+                        <table class="table table-hover table-responsive mb-0">
+                            <div class="d-flex justify-content-between">
+                                <span>
+                                    <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                            class="fas fa-user"></i></a>
+                                </span>
+                                <span>
+                                    <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                        data-bs-target="#uploadBookModal">Upload
+                                        Book &nbsp;<i class="fa-duotone fa-book"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <tr>
+                                <th scope='col'>#</th>
+                                <th scope='col'>Name</th>
+                                <th scope='col'>IssueDate</th>
+                                <th scope='col'>AuthorName</th>
+                                <th scope='col'>AuthorEmail</th>
+                                <th scope='col'>Description</th>
+                                <th scope='col'>File</th>
+                                <th scope='col'>Image</th>
+                                <th scope='col'>Created_at</th>
+                                <th scope='col'>Updated_at</th>
+                                <th scope='col'>Update</th>
+                                <th scope='col'>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                @if ($books->count())
+                                @foreach ($books as $book)
+                                <tr @if ($loop->even) class="bg-info" @endif>
+                                    <td>{{ $loop->index + 1 }}</td>
+                                    <td>{{ $book->name }}</td>
+                                    <td>{{ $book->issueDate }}</td>
+                                    <td>{{ $book->authorName }}</td>
+                                    <td>{{ $book->authorEmail }}</td>
+                                    <td>{{ $book->description }}</td>
+                                    <td><a href="/downlaod">
+                                            <i class="fa-solid fa-download fa-lg text-danger"></i></a></td>
+                                    <td class="d-grid justify-center img_td"><img class="img_width"
+                                            src="{{ $book->image }}">
+                                    </td>
+                                    <td>{{ $book->created_at }}</td>
+                                    <td>{{ $book->updated_at }}</td>
+                                    <td>
+                                        <button type="submit" class="btn btn-primary btn-sm getBookId"
+                                            value="{{ $book->id }}" data-bs-toggle="modal"
+                                            data-bs-target="#updateBookModal"><i class="fal fa-edit"></i></button>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm deleteBookConfirm"><i class="fa fa-trash fa-lg"
+                                                aria-hidden="true"></i></a>
+                                        <form action="{{ URL::to('/deleteBook') }}" hidden>
+                                            <input type="text" name="bookId" value="{{ $book->id }}">
+                                            <input type="submit" name="submit" class="deleteBookByadmin">
+                                        </form>
+                                    </td>
+
+                                </tr>
+                                @endforeach
+                                @else
+                                <tr>
+                                    <td colspan="12" class="bg-danger user-table">No Book Found</td>
+                                </tr>
+
+                                @endif
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
 
 
 
@@ -769,11 +761,24 @@
 
 
 
-        <script src="js/bootstrap_bundle.js"></script>
-        <script src="js/jquery_min.js"></script>
-        <script src="js/helper-jquery.js"></script>
-        <script src="js/jqueryAjax_feather-icons_lib.js"></script>
-        <script src="js/jqueryAjax_chart_min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <script src="js/bootstrap_bundle.js"></script>
+            <script src="js/jquery_min.js"></script>
+            <script src="js/helper-jquery.js"></script>
+            <script src="js/jqueryAjax_feather-icons_lib.js"></script>
+            <script src="js/jqueryAjax_chart_min.js"></script>
 
     </body>
 
@@ -792,8 +797,8 @@
 
     <body>
         <h1>403 Error Unusual Activety</h1>
+        <a href="/">Home</a>
     </body>
-    <a href="/">Home</a>
 
 </html>
 @endif
@@ -815,6 +820,7 @@
         <center>
             <h1>403 Page Expired Please Login Again</h1>
         </center>
+        <a href="/">Home</a>
     </body>
 
 </html>
