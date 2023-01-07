@@ -34,13 +34,11 @@
                 <span><i class="fas fa-envelope"></i> &nbsp;E_books*3423@gmial.com</span>
                 <span> <i class="fas fa-phone"></i> &nbsp;+92487985745909</span>
             </div>
-
             @if(session('errorMessage'))
             <div class="alert alert-danger" role="alert">
                 {{session('errorMessage')}}
             </div>
             @endif
-
         </header>
 
 
@@ -86,9 +84,11 @@
                             {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a>
                         <a href="/adminlogout" style="color: red"><i class="fas fa-sign-in"></i>&nbsp; Logout</a>
                         @else
-                        <a href="/userProfile"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#userProfileModal"><i
+                                class="fa-solid fa-user-plus"></i>&nbsp;
                             Profile</a>
-                        <a href="/userProfile">
+
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#userProfileModal">
                             {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a>
                         <a href="/userlogout" style="color: red"><i class="fas fa-sign-in"></i>&nbsp; Log out</a>
                         @endif
@@ -216,8 +216,6 @@
         </div>
 
 
-
-
         <br><br>
         {{-- Login form Modal --}}
 
@@ -281,10 +279,6 @@
         </div>
 
 
-
-
-
-
         {{-- ContactUs Model --}}
 
 
@@ -346,9 +340,64 @@
         </div>
 
 
+        {{-- User Profile Modal --}}
 
+        <!-- Modal -->
+        <div class="modal fade" id="userProfileModal" tabindex="-1" role="dialog" aria-labelledby="userProfileTittle"
+            aria-hidden="true">
+            <div class="modal-dialog" style="width: auto;">
+                <div class="modal-content">
+                    <div class="modal-header" style="height: 45px">
+                        <h5 class="modal-title font-family" id="userProfileTittle" style="font-size: large;
+                     color: #6a6060;">
+                            {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}
+                        </h5>
+                        <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="{{ URL::to('#') }}" method="post">
+                            @csrf
+                            <div class="container">
 
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="registerFirstName">First
+                                                name</label>
+                                            <input type="text" name="firstName" class="form-control"
+                                                value="{{ Auth::user()->firstName }}" disabled />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <label class="form-label font-family" for="registerLastName">Last
+                                                name</label>
+                                            <input type="text" name="lastName" class="form-control"
+                                                value="{{ Auth::user()->lastName }}" disabled />
 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label font-family" for="registerEmail">Email address</label>
+                                    <input type="email" name="email" class="form-control"
+                                        value="{{ Auth::user()->email }}" disabled />
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label font-family" for="registerPassword">Password</label>
+                                    <input type="text" name="password" class="form-control"
+                                        value="{{ "*************" }}" disabled />
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
