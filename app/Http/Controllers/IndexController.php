@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\download;
+use App\Models\Download as ModelsDownload;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -14,11 +16,12 @@ class IndexController extends Controller
 {
     public function get_all()
     {
+        $downloadBooksCount = Download::all()->count();
         $usersCount = User::all()->count();
         $booksCount = Book::all()->count();
         $users = User::all();
         $books = Book::all();
-        return view('admin', compact('users', 'books', 'usersCount', 'booksCount'));
+        return view('admin', compact('users', 'books', 'usersCount', 'booksCount', 'downloadBooksCount'));
     }
     public function login(Request $request)
     {

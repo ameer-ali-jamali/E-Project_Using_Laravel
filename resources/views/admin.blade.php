@@ -313,7 +313,7 @@
                                 <div class="card card-item1">
                                     <div class="card-body">
                                         <h3 class="card-title">Registered Users</h3>
-                                        <h1 class="card-text"><i class="fas fa-users"
+                                        <h1 class="card-text"><i class="fas fa-users" style="color: orange"
                                                 aria-hidden="true"></i>&nbsp;{{ $usersCount }}</h1>
 
                                     </div>
@@ -326,7 +326,20 @@
                                 <div class="card card-item1">
                                     <div class="card-body">
                                         <h3 class="card-title">Books Available</h3>
-                                        <h1 class="card-text"><i class="fas fa-books "></i>&nbsp;{{ $booksCount }}
+                                        <h1 class="card-text"><i class="fas fa-books "
+                                                style="color: blue"></i>&nbsp;{{ $booksCount }}
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="booksdownloads">
+                            <div class="col ">
+                                <div class="card card-item1">
+                                    <div class="card-body">
+                                        <h3 class="card-title">Downloads</h3>
+                                        <h1 class="card-text"><i class="fas fa-download " style="color: red"></i>&nbsp;
+                                            {{ $downloadBooksCount }}
                                         </h1>
                                     </div>
                                 </div>
@@ -337,7 +350,8 @@
                                 <div class="card card-item1">
                                     <div class="card-body">
                                         <h3 class="card-title">Guests Accounts</h3>
-                                        <h1 class="card-text"><i class="fal fa-user"></i>&nbsp; 120</h1>
+                                        <h1 class="card-text"><i class="fad fa-user" style="color: aqua"></i>&nbsp; 55
+                                        </h1>
                                     </div>
                                 </div>
                             </div>
@@ -348,21 +362,13 @@
                                 <div class="card card-item1">
                                     <div class="card-body">
                                         <h3 class="card-title">Visitors</h3>
-                                        <h1 class="card-text"><i class="fal fa-globe "></i>&nbsp; 34</h1>
+                                        <h1 class="card-text"><i class="fad fa-globe "
+                                                style="color:chocolate"></i>&nbsp; 34</h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div id="booksdownloads">
-                            <div class="col ">
-                                <div class="card card-item1">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Downloads</h3>
-                                        <h1 class="card-text"><i class="fal fa-download "></i>&nbsp; 2999</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
 
                     </div>
                 </div>

@@ -65,6 +65,14 @@ $(document).ready(function () {
         $('#booksdownloads').hide("fast")
         $('#booksListModal').toggle("fast")
     })
+    $('#booksdownloads').click(function () {
+        $('#guestsList').hide('fast')
+        $('#showUsersList').hide('fast')
+        $('#showBooksList').hide('fast')
+        $('#visitorsCard').hide("fast")
+        $('#booksdownloads').hide("fast")
+        $('#downloadsListModal').toggle("fast")
+    })
 
 
 
@@ -113,8 +121,6 @@ $(document).ready(function () {
                 }
             });
     });
-
-
 
 
 

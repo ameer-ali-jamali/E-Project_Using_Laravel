@@ -70,8 +70,9 @@
                     <form action="{{ URL::to('/download_pdf') }}" method="post">
                         @csrf
                         <input type="text" hidden name="fileLocation" value="{{ $book->file }}">
-                        <input type="text" name="userInfo" value="{{ $book->id }}">
-                        <button class="btn btn-danger object-width-fit"><i class="fa fa-download"></i>
+                        <input type="text" name="userInfo" hidden value="{{ $book->id }}">
+                        <input type="text" name="userInfo" hidden value="{{ Auth::user()->id }}">
+                        <button class="btn btn-danger object-width-fit donwloadCount"><i class="fa fa-download"></i>
                             &nbsp; Download
                         </button>
 
@@ -89,6 +90,7 @@
             </div>
         </div>
         @endforeach
+
     </div>
 
 </div>
