@@ -12,34 +12,34 @@ class BooksController extends Controller
     {
         $formData->validate(
             [
-                'name' => 'required',
-                'issueDate' => 'required|date',
-                'authorName' => 'required',
-                'authorEmail' => 'required|email',
-                'description' => 'required',
-                'img' => 'required',
-                'file' => 'required',
+                'bookName' => 'required',
+                'bookIssueDate' => 'required|date',
+                'bookAuthorName' => 'required',
+                'bookAuthorEmail' => 'required|email',
+                'bookDescription' => 'required',
+                'bookImg' => 'required',
+                'bookFile' => 'required',
 
             ]
         );
         $book = new Book();
-        $book->name = $formData->name;
-        $book->issueDate  = $formData->issueDate;
-        $book->authorName  = $formData->authorName;
-        $book->authorEmail  = $formData->authorEmail;
-        $book->description  = $formData->description;
-        $img_name  = $formData->file('img')->getClientOriginalName();
-        $formData->file('img')->move(public_path('book/images/'), $img_name);
+        $book->name = $formData->bookName;
+        $book->issueDate  = $formData->bookIssueDate;
+        $book->authorName  = $formData->bookAuthorName;
+        $book->authorEmail  = $formData->bookAuthorEmail;
+        $book->description  = $formData->bookDescription;
+        $img_name  = $formData->file('bookImg')->getClientOriginalName();
+        $formData->file('bookImg')->move(public_path('book/images/'), $img_name);
         $book->image =  'book/images/' . $img_name;
-        $file  = $formData->file('file')->getClientOriginalName();
-        $formData->file('file')->move(public_path('assests/booksPdf/'), $file);
+        $file  = $formData->file('bookFile')->getClientOriginalName();
+        $formData->file('bookFile')->move(public_path('assests/booksPdf/'), $file);
         $book->file =  'assests/booksPdf/' . $file;
         try {
             $book->save();
         } catch (\Throwable $th) {
-            return redirect('/')->with('errorMessage', 'Something Missing Please Check It Again !')->with('className', 'danger');
+            return redirect()->back()->with('errorMessage', 'Something Missing Please Check It Again !')->with('className', 'danger');
         }
-        return redirect('/')->back();
+        return redirect()->back();
     }
 
     public function all_books_home_page()

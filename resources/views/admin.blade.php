@@ -249,25 +249,17 @@
                                         <div class="form-outline">
                                             <label class="form-label font-family" for="uploadBookName">Book Name
                                                 :</label>
-                                            <input type="text" name="name" id="uploadBookName" class="form-control" />
-                                            <span class="text-danger">
-                                                @error('name')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
+                                            <input type="text" name="bookName" id="uploadBookName"
+                                                class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label font-family" for="uploadBookIssueDate">Book Issue
                                                 Date :</label>
-                                            <input type="datetime-local" name="issueDate" id="uploadBookIssueDate"
+                                            <input type="datetime-local" name="bookIssueDate" id="uploadBookIssueDate"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('issueDate')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
+
                                         </div>
                                     </div>
 
@@ -277,13 +269,8 @@
                                         <div class="form-outline">
                                             <label class="form-label font-family" for="uploadBookAuthorName">Author Name
                                                 :</label>
-                                            <input type="text" name="authorName" id="uploadBookAuthorName"
+                                            <input type="text" name="bookAuthorName" id="uploadBookAuthorName"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('authorName')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
@@ -291,13 +278,8 @@
                                             <label class="form-label font-family" for="uploadBookAuthorEmail">Author
                                                 Email
                                                 :</label>
-                                            <input type="email" name="authorEmail" id="uploadBookAuthorEmail"
+                                            <input type="email" name="bookAuthorEmail" id="uploadBookAuthorEmail"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('authorEmail')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
                                         </div>
                                     </div>
                                 </div>
@@ -307,37 +289,24 @@
                                             <label class="form-label font-family" for="uploadBookDescription">Book
                                                 Description
                                                 :</label>
-                                            <input type="text" name="description" id="uploadBookDescription"
+                                            <input type="text" name="bookDescription" id="uploadBookDescription"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('description')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label font-family" for="uploadBookimage">Book Image
                                                 :</label>
-                                            <input type="file" name="img" id="uploadBookimage" class="form-control" />
-                                            <span class="text-danger">
-                                                @error('img')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
+                                            <input type="file" name="bookImg" id="uploadBookimage"
+                                                class="form-control" />
+
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="uploadBookFile">Book File :</label>
-                                    <input type="file" name="file" id="uploadBookFile" class="form-control" />
-                                    <span class="text-danger">
-                                        @error('file')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
+                                    <input type="file" name="bookFile" id="uploadBookFile" class="form-control" />
                                 </div>
 
                             </div>
