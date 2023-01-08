@@ -35,12 +35,12 @@
                 <span> <i class="fas fa-phone"></i> &nbsp;+92487985745909</span>
             </div>
             @if(session('errorMessage'))
-            <div class="alert alert-{{session('className')}} error_message" role="alert">
+            <div class="alert alert-{{session('className')}} error_message" role="alert" id="authAlert">
                 {{session('errorMessage')}}
             </div>
             @endif
             @if ($errors->any())
-            <div class="alert alert-danger error_message" role="alert">
+            <div class="alert alert-danger error_message" role="alert" id="alertDanger">
                 <ul>
                     @foreach ($errors->all() as $error)
                     <ul><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;{{ $error }}</ul>
@@ -48,6 +48,7 @@
                 </ul>
             </div>
             @endif
+
         </header>
 
 

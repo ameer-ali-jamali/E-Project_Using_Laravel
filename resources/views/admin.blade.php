@@ -201,13 +201,13 @@
         <div class="container position-relative">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4" style="display: grid; place-items: center">
                 @if(session('errorMessage'))
-                <div class="alert alert-{{session('className')}} error_message" role="alert">
+                <div class="alert alert-{{session('className')}} error_message" role="alert" id="authAlert">
                     {{session('errorMessage')}}
                 </div>
                 @endif
                 <div>
                     @if ($errors->any())
-                    <div class="alert alert-danger error_message" role="alert">
+                    <div class="alert alert-danger error_message" role="alert" id="alertDanger">
                         <ul>
                             @foreach ($errors->all() as $error)
                             <ul><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;{{ $error }}</ul>
