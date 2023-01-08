@@ -348,27 +348,19 @@
                                 <div class="row mt-3">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family">Book Name :</label>
+                                            <label class="form-label font-family" for="updateBookName">Book Name
+                                                :</label>
                                             <input type="text" name="updateBookName" id="updateBookName"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('updateBookName')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family">Book Issue Date
+                                            <label class="form-label font-family" for="updateBookIssueDate">Book Issue
+                                                Date
                                                 :</label>
                                             <input type="datetime-local" name="updateIssueDate" id="updateBookIssueDate"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('updateIssueDate')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
                                         </div>
                                     </div>
 
@@ -376,42 +368,29 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family">Author Name
+                                            <label class="form-label font-family" for="updateBookAuthorName">Author Name
                                                 :</label>
                                             <input type="text" name="updateAuthorName" id="updateBookAuthorName"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('updateAuthorName')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family">Author Email
+                                            <label class="form-label font-family" for="updateBookAuthorEmail">Author
+                                                Email
                                                 :</label>
-                                            <input type="email" name="authorEmail" id="updateBookAuthorEmail"
+                                            <input type="email" name="updateAuthorEmail" id="updateBookAuthorEmail"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('updateAuthorEmail')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-outline">
-                                        <label class="form-label font-family">Book Description
+                                        <label class="form-label font-family" for="updateBookDescription">Book
+                                            Description
                                             :</label>
-                                        <input type="text" name="description" id="updateBookDescription"
+                                        <input type="text" name="updateDescription" id="updateBookDescription"
                                             class="form-control" />
-                                        <span class="text-danger">
-                                            @error('updateDescription')
-                                            {{ $message }}
-                                            @enderror
-                                        </span>
                                     </div>
                                 </div>
                                 <input type="text" aria-disabled="true" hidden name="bookIdForUpdate"
@@ -443,7 +422,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ URL::to('/registerUser') }}" method="post">
+                    <form action="{{ URL::to('/registerUserByAdmin') }}" method="post">
                         <div class="modal-body">
                             @csrf
                             <div class="container mt-2 mb-1">

@@ -39,6 +39,15 @@
                 {{session('errorMessage')}}
             </div>
             @endif
+            @if ($errors->any())
+            <div class="alert alert-danger error_message" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <ul><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;{{ $error }}</ul>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
         </header>
 
 
@@ -148,57 +157,35 @@
                                         <div class="form-outline">
                                             <label class="form-label font-family" for="registerFirstName">First
                                                 name</label>
-                                            <input type="text" name="firstName" id="registerFirsttName"
+                                            <input type="text" name="userFirstName" id="registerFirsttName"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('firstName')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
+
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                             <label class="form-label font-family" for="registerLastName">Last
                                                 name</label>
-                                            <input type="text" name="lastName" id="registerLastName"
+                                            <input type="text" name="userLastName" id="registerLastName"
                                                 class="form-control" />
-                                            <span class="text-danger">
-                                                @error('lastName')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
+
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="registerEmail">Email address</label>
-                                    <input type="email" name="email" id="registerEmail" class="form-control" />
-                                    <span class="text-danger">
-                                        @error('email')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
+                                    <input type="email" name="userEmail" id="registerEmail" class="form-control" />
+
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="registerPassword">Password</label>
                                     <input type="password" name="password" id="registerPassword" class="form-control" />
-                                    <span class="text-danger">
-                                        @error('password')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="registerPasswordConfirmation">Conform
                                         Password</label>
                                     <input type="password" name="password_confirmation"
                                         id="registerPasswordConfirmation" class="form-control" />
-                                    <span class="text-danger">
-                                        @error('password_confirmation')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
                                 </div>
                             </div>
                             <p style="color: black">Already Have Account <a href="#" data-bs-toggle="modal"
@@ -218,8 +205,8 @@
 
 
         <br><br>
-        {{-- Login form Modal --}}
 
+        {{-- Login form Modal --}}
 
         <div class="modal fade" id="userLoginModalForm" tabindex="-1" role="dialog"
             aria-labelledby="userLoginFormTittle" aria-hidden="true">
@@ -244,11 +231,6 @@
                                     <label class="form-label font-family" for="userEmail">Email</label>
                                     <input type="email" name="email" id="userEmail" class="form-control"
                                         placeholder="Input Your Email" />
-                                    <span class="text-danger">
-                                        @error('email')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
                                 </div>
                             </div>
                             <div class="col mt-3">
@@ -257,11 +239,6 @@
                                     </label>
                                     <input type="password" name="password" id="userPassword" class="form-control"
                                         placeholder="Input Your Password" />
-                                    <span class="text-danger">
-                                        @error('password')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
                                 </div>
                             </div>
 

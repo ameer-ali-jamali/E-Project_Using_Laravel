@@ -39,6 +39,7 @@ Route::get('/topAuthors', function () {
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/adminDashBoard', [indexController::class, 'get_all']);
 Route::post('/userLogin', [indexController::class, 'login']);
+Route::post('/registerUserByAdmin', [UsersController::class, 'registerUserByAdmin']);
 Route::post('/registerUser', [UsersController::class, 'registerUser']);
 Route::post('/uploadBook', [BooksController::class, 'upload_book']);
 Route::get('/deleteBook', [BooksController::class, 'delete_book']);

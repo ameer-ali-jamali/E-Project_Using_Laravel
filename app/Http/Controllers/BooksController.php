@@ -44,7 +44,11 @@ class BooksController extends Controller
 
     public function all_books_home_page()
     {
-        $books = DB::table('books')->orderBy("id", "DESC")->get();
+        try {
+            $books = DB::table('books')->orderBy("id", "DESC")->get();
+        } catch (\Throwable $th) {
+            return  $th;
+        }
         return view('index', compact('books'));
     }
     public function delete_book(Request $request)
@@ -92,8 +96,8 @@ class BooksController extends Controller
         try {
             $book->update();
         } catch (\Throwable $th) {
-            return redirect('/')->with('errorMessage', 'SomeThing Missing Please Check It Again !')->with('className', 'secondery');
+            return redirect()->back()->with('errorMessage', 'DataBase Error! Please Wait Our Team Working on It')->with('className', 'secondery');
         }
-        return redirect('/')->back();
+        return redirect()->back();
     }
 }

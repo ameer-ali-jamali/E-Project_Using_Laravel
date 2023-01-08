@@ -144,8 +144,9 @@ a:hover {
 
 .error_message {
     margin-bottom: auto;
-    color: red;
     font-weight: 600;
+    text-align: center;
+    z-index: 20;
 }
 
 @media only screen and (min-width:768px) and (max-width:1024px) {
