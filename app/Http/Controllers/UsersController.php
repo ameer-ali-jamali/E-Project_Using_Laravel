@@ -28,9 +28,9 @@ class UsersController extends Controller
         try {
             $user->save();
         } catch (\Throwable $th) {
-            return "<script>alert('Email Already Exist Please Change Email')</script>" . redirect()->back();
+            return redirect('/')->with('errorMessage', 'Email Already Used Please Change Email')->with('className', 'danger');;
         }
-        return  "<script>alert('Your Data Submited')</script>" . redirect()->back();
+        return redirect('/')->back();
     }
     public function delete_user(Request $request)
     {
@@ -70,8 +70,8 @@ class UsersController extends Controller
         try {
             $updateUser->update();
         } catch (\Throwable $th) {
-            return "<script>alert('Please Insert Name Correctly')</script>" . redirect()->back();
+            return redirect('/')->with('errorMessage', 'Database Error ! Please Wait Our Team Working On it')->with('className', 'danger');
         }
-        return "<script>alert('Your Data Updated Successfully')</script>" . redirect()->back();
+        return redirect('/')->back();
     }
 }

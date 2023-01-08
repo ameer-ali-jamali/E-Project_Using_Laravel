@@ -37,9 +37,9 @@ class BooksController extends Controller
         try {
             $book->save();
         } catch (\Throwable $th) {
-            return "<script>alert('Something Missing')</script>" . redirect()->back();
+            return redirect('/')->with('errorMessage', 'Something Missing Please Check It Again !')->with('className', 'danger');
         }
-        return "<script>alert('Your Data Submited Successfully')</script>" . redirect()->back();
+        return redirect('/')->back();
     }
 
     public function all_books_home_page()
@@ -74,26 +74,26 @@ class BooksController extends Controller
     {
         $request->validate(
             [
-                'name' => 'required',
-                'issueDate' => 'required|date',
-                'authorName' => 'required',
-                'authorEmail' => 'required|email',
-                'description' => 'required'
+                'updateBookName' => 'required',
+                'updateIssueDate' => 'required|date',
+                'updateAuthorName' => 'required',
+                'updateAuthorEmail' => 'required|email',
+                'updateDescription' => 'required'
 
             ]
         );
         $bookId = $request->bookIdForUpdate;
         $book = Book::find($bookId);
-        $book->name = $request->name;
-        $book->issueDate  = $request->issueDate;
-        $book->authorName  = $request->authorName;
-        $book->authorEmail  = $request->authorEmail;
-        $book->description  = $request->description;
+        $book->name = $request->updateBookName;
+        $book->issueDate  = $request->updateIssueDate;
+        $book->authorName  = $request->updateAuthorName;
+        $book->authorEmail  = $request->updateAuthorEmail;
+        $book->description  = $request->updateDescription;
         try {
             $book->update();
         } catch (\Throwable $th) {
-            return "<script>alert('Something Missing')</script>" . redirect()->back();
+            return redirect('/')->with('errorMessage', 'SomeThing Missing Please Check It Again !')->with('className', 'secondery');
         }
-        return "<script>alert('Book Updated Successfully')</script>" . redirect()->back();
+        return redirect('/')->back();
     }
 }

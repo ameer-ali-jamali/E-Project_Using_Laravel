@@ -5,10 +5,9 @@
 
 {{-- Carousel --}}
 
-<div id="homePageCarousel" class="carousel carousel-dark slide" style="margin-top:-60px;">
-
+<div id="homePageCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel" style="margin-top:-60px;">
     <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
+        <div class="carousel-item active" data-bs-interval="5000">
             <img src="images/carousel_images/image-1.jpg" class="d-block w-100 carousel-image" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>FREE AND DISCOUNTED BESTSELLERS</h5>
@@ -16,7 +15,7 @@
                     your inbox with the ManyBooks eBook deals newsletter. </p>
             </div>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
+        <div class="carousel-item" data-bs-interval="6000">
             <img src="images/carousel_images/poster-image.jpg" class="d-block w-100 carousel-image" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>The Ultimate Guide to Free eBooks</h5>
@@ -24,7 +23,7 @@
                     editors. Some real gems are hidden in our library.</p>
             </div>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
+        <div class="carousel-item" data-bs-interval="7000">
             <img src="images/carousel_images/image-3.jpg" class="d-block w-100 carousel-image" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <h5>LOTS OF EBOOKS. 100 % FREE</h5>

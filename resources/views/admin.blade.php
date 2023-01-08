@@ -38,7 +38,8 @@
             <ul class="navbar-nav px-3">
                 <li class="nav-item text-nowrap">
                     @auth
-                    <a class="nav-link" href="/adminlogout"><i class="fal fa-sign-in"></i>&nbsp; Logout</a>
+                    <a class="nav-link" href="/adminlogout"><i class="fal fa-sign-in"></i>&nbsp;
+                        Logout</a>
                     @endauth
                 </li>
             </ul>
@@ -358,10 +359,11 @@
                                 <div class="row mt-3">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="name">Book Name :</label>
-                                            <input type="text" name="name" id="updateBookName" class="form-control" />
+                                            <label class="form-label font-family">Book Name :</label>
+                                            <input type="text" name="updateBookName" id="updateBookName"
+                                                class="form-control" />
                                             <span class="text-danger">
-                                                @error('name')
+                                                @error('updateBookName')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
@@ -371,10 +373,10 @@
                                         <div class="form-outline">
                                             <label class="form-label font-family" for="issueDate">Book Issue Date
                                                 :</label>
-                                            <input type="datetime-local" name="issueDate" id="updateBookIssueDate"
+                                            <input type="datetime-local" name="updateIssueDate" id="updateBookIssueDate"
                                                 class="form-control" />
                                             <span class="text-danger">
-                                                @error('issueDate')
+                                                @error('updateIssueDate')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
@@ -387,10 +389,10 @@
                                         <div class="form-outline">
                                             <label class="form-label font-family" for="authorName">Author Name
                                                 :</label>
-                                            <input type="text" name="authorName" id="updateBookAuthorName"
+                                            <input type="text" name="updateAuthorName" id="updateBookAuthorName"
                                                 class="form-control" />
                                             <span class="text-danger">
-                                                @error('authorName')
+                                                @error('updateAuthorName')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
@@ -403,7 +405,7 @@
                                             <input type="email" name="authorEmail" id="updateBookAuthorEmail"
                                                 class="form-control" />
                                             <span class="text-danger">
-                                                @error('authorEmail')
+                                                @error('updateAuthorEmail')
                                                 {{ $message }}
                                                 @enderror
                                             </span>
@@ -417,7 +419,7 @@
                                         <input type="text" name="description" id="updateBookDescription"
                                             class="form-control" />
                                         <span class="text-danger">
-                                            @error('description')
+                                            @error('updateDescription')
                                             {{ $message }}
                                             @enderror
                                         </span>
@@ -546,18 +548,20 @@
                             </div>
                             <div class="mb-1">
                                 <label for="firstName" class="form-label font-family">First Name</label>
-                                <input type="text" class="form-control" name="firstName" id="updateUserFirstName">
+                                <input type="text" class="form-control" name="updateUserFirstName"
+                                    id="updateUserFirstName">
                                 <span class="text-danger">
-                                    @error('firstName')
+                                    @error('updateUserFirstName')
                                     {{ $message }}
                                     @enderror
                                 </span>
                             </div>
                             <div class="mb-1">
                                 <label for="lastName" class="form-label font-family">Last Name</label>
-                                <input type="text" class="form-control" name="lastName" id="updateUserLastName">
+                                <input type="text" class="form-control" name="updateUserFirstName"
+                                    id="updateUserLastName">
                                 <span class="text-danger">
-                                    @error('lastName')
+                                    @error('updateUserLastName')
                                     {{ $message }}
                                     @enderror
                                 </span>
@@ -650,6 +654,7 @@
 
 
         {{-- Users List Table --}}
+
 
         <div class="position-relative " id="usersListModal" style="display: none;">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
@@ -821,6 +826,12 @@
 
 
         {{-- Downloads List Table --}}
+
+        @if(session('errorMessage'))
+        <div class="alert alert-{{session('className')}}" role="alert">
+            {{session('errorMessage')}}
+        </div>
+        @endif
 
         <div class="position-relative" id="downloadsList" style="display: none;">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">

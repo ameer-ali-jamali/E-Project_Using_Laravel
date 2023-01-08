@@ -35,7 +35,10 @@
                 <span> <i class="fas fa-phone"></i> &nbsp;+92487985745909</span>
             </div>
             @if(session('errorMessage'))
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-{{session('className')}}" role="alert" style="margin-bottom: auto;
+            text-align: center;
+            color: red;
+            font-weight: 600;">
                 {{session('errorMessage')}}
             </div>
             @endif
@@ -48,9 +51,8 @@
             <div class="container-fluid">
                 <div class="nav navbar-brand">
                     <li class="active">
-                        <a class="nav-link" href="/">
-                            <i class="fa-solid fa-book fa-sm"></i>
-                            &nbsp;
+                        <a class="nav-link" href="/" style="color: white ;font-weight: bold">
+                            <i class="fa-solid fa-books" style="color: darkcyan"></i>&nbsp;
                             E-BOOKS</a>
                     </li>
                 </div>
@@ -61,52 +63,54 @@
                 <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                     <ul class="navbar-nav d-flex justify-content-between " style="margin-inline: auto; gap:50px;">
                         <li class="active"> <a class="nav-link" href="/">
-                                <i class="fa-thin fa-house"></i>
+                                <i class="fa-thin fa-house" style="color: gold"></i>
                                 &nbsp;
                                 Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/topAuthors"><i
-                                    class="fal solid fa-user"></i>&nbsp;Top
+                        <li class="nav-item"><a class="nav-link" href="/topAuthors"><i class="fal solid fa-user"
+                                    style="color: turquoise"></i>&nbsp;Top
                                 Authors</a></li>
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactUsModal"><i
-                                    class="fal fa-address-book"></i>
+                                    class="fal fa-address-book" style="color: darkorchid"></i>
                                 &nbsp;Conatact Us</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="/aboutUs"><i class="fas fa-info"></i> &nbsp;About
+                        <li class="nav-item"><a class="nav-link" href="/aboutUs"><i class="fas fa-info"
+                                    style="color: goldenrod"></i> &nbsp;About
                                 Us</a></li>
                     </ul>
                     <span class="conainer login-btns">
                         @auth
                         @if (Auth::user()->role == 'master_admin')
-                        <a href="/adminDashBoard"><i class="fa-solid fa-user-plus"></i>&nbsp;
+                        <a href="/adminDashBoard"><i class="fa-solid fa-user-plus" style="color: turquoise"></i>&nbsp;
                             DashBoard</a>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#adminProfileModal">
                             {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a>
-                        <a href="/adminlogout" style="color: red"><i class="fas fa-sign-in"></i>&nbsp; Logout</a>
+                        <a href="/adminlogout"><i class="fas fa-sign-in" style="color: red">></i>&nbsp; Logout</a>
                         @else
                         <a href="#" data-bs-toggle="modal" data-bs-target="#userProfileModal"><i
-                                class="fa-solid fa-user-plus"></i>&nbsp;
+                                class="fa-solid fa-user-plus" style="color: darkgray"></i>&nbsp;
                             Profile</a>
 
                         <a href="#" data-bs-toggle="modal" data-bs-target="#userProfileModal">
                             {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a>
-                        <a href="/userlogout" style="color: red"><i class="fas fa-sign-in"></i>&nbsp; Log out</a>
+                        <a href="/userlogout"><i class="fas fa-sign-in" style="color: red"></i>&nbsp; Log out</a>
                         @endif
                         @endauth
 
                         @guest
                         <a href="#" data-bs-toggle="modal" data-bs-target="#userRegistrationModal"><i
-                                class="fa-solid fa-user-plus"></i>&nbsp;
+                                class="fa-solid fa-user-plus" style="color:aqua"></i>&nbsp;
                             Register</a>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#userLoginModalForm"><i
-                                class="fas fa-sign-in"></i>&nbsp;
+                                class="fas fa-sign-in" style="color:aqua"></i>&nbsp;
                             Login</a>
                         @endguest
 
                     </span>
-
                 </div>
             </div>
+
+
 
             <!-- Progress Bar -->
 
@@ -263,6 +267,7 @@
                                     </span>
                                 </div>
                             </div>
+
 
                             <p style="color: black; padding: 3px">Dont Have Account<a href="#" data-bs-toggle="modal"
                                     data-bs-target="#userRegistrationModal" style="color: red"><i
