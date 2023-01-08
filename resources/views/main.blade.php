@@ -35,10 +35,7 @@
                 <span> <i class="fas fa-phone"></i> &nbsp;+92487985745909</span>
             </div>
             @if(session('errorMessage'))
-            <div class="alert alert-{{session('className')}}" role="alert" style="margin-bottom: auto;
-            text-align: center;
-            color: red;
-            font-weight: 600;">
+            <div class="alert alert-{{session('className')}} error_message" role="alert">
                 {{session('errorMessage')}}
             </div>
             @endif

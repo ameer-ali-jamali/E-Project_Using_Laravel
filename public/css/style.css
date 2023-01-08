@@ -142,6 +142,12 @@ a:hover {
     font-size: smaller;
 }
 
+.error_message {
+    margin-bottom: auto;
+    color: red;
+    font-weight: 600;
+}
+
 @media only screen and (min-width:768px) and (max-width:1024px) {
     .row-cols-6>* {
         flex: 0 0 auto;

@@ -196,14 +196,34 @@
 
 
 
+        {{-- Error Messages --}}
+
+        <div class="container position-relative">
+            <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4" style="display: grid; place-items: center">
+                @if(session('errorMessage'))
+                <div class="alert alert-{{session('className')}} error_message" role="alert">
+                    {{session('errorMessage')}}
+                </div>
+                @endif
+                <div>
+                    @if ($errors->any())
+                    <div class="alert alert-danger error_message" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                            <ul><i class="fa-solid fa-triangle-exclamation"></i>&nbsp;{{ $error }}</ul>
+                            @endforeach
+                        </ul>
+                    </div>
+                    @endif
+                </div>
+
+            </div>
+        </div>
 
 
 
 
         {{-- All Models --}}
-
-
-
 
 
         {{-- Book Upload Modal --}}
@@ -461,55 +481,32 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="firstName">First name</label>
-                                            <input type="text" name="firstName" class="form-control" />
-                                            <span class="text-danger">
-                                                @error('firstName')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
+                                            <label class="form-label font-family" for="userFirstName">First name</label>
+                                            <input type="text" name="userFirstName" class="form-control"
+                                                id="userFirstName" />
                                         </div>
                                     </div>
                                     <div class="col-md-6 mb-3">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="lastName">Last name</label>
-                                            <input type="text" name="lastName" class="form-control" />
-                                            <span class="text-danger">
-                                                @error('lastName')
-                                                {{ $message }}
-                                                @enderror
-                                            </span>
+                                            <label class="form-label font-family" for="userLastName">Last name</label>
+                                            <input type="text" name="userLastName" id="userLastName"
+                                                class="form-control" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-outline mb-3">
-                                    <label class="form-label font-family" for="email">Email</label>
-                                    <input type="email" name="email" class="form-control" />
-                                    <span class="text-danger">
-                                        @error('email')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
+                                    <label class="form-label font-family" for="userEmail">Email</label>
+                                    <input type="email" name="userEmail" class="form-control" id="userEmail" />
                                 </div>
                                 <div class="form-outline mb-3">
                                     <label class="form-label font-family" for="password">Password</label>
                                     <input type="password" name="password" class="form-control" />
-                                    <span class="text-danger">
-                                        @error('password')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
                                 </div>
                                 <div class="form-outline mb-3">
                                     <label class="form-label font-family" for="password_confirmation">Conform
                                         Password</label>
                                     <input type="password" name="password_confirmation" id="password_confirmation"
                                         class="form-control" />
-                                    <span class="text-danger">
-                                        @error('password_confirmation')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
                                 </div>
 
                             </div>
@@ -550,21 +547,11 @@
                                 <label for="firstName" class="form-label font-family">First Name</label>
                                 <input type="text" class="form-control" name="updateUserFirstName"
                                     id="updateUserFirstName">
-                                <span class="text-danger">
-                                    @error('updateUserFirstName')
-                                    {{ $message }}
-                                    @enderror
-                                </span>
                             </div>
                             <div class="mb-1">
                                 <label for="lastName" class="form-label font-family">Last Name</label>
-                                <input type="text" class="form-control" name="updateUserFirstName"
+                                <input type="text" class="form-control" name="updateUserLastName"
                                     id="updateUserLastName">
-                                <span class="text-danger">
-                                    @error('updateUserLastName')
-                                    {{ $message }}
-                                    @enderror
-                                </span>
                             </div>
                             <div class="mb-1">
                                 <label for="email" class="form-label font-family">Email address</label>
@@ -826,12 +813,6 @@
 
 
         {{-- Downloads List Table --}}
-
-        @if(session('errorMessage'))
-        <div class="alert alert-{{session('className')}}" role="alert">
-            {{session('errorMessage')}}
-        </div>
-        @endif
 
         <div class="position-relative" id="downloadsList" style="display: none;">
             <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">

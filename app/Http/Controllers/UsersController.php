@@ -13,24 +13,24 @@ class UsersController extends Controller
 
         $signupUser->validate(
             [
-                'firstName' => 'required',
-                'lastName' => 'required',
-                'email' => 'required|email',
+                'userFirstName' => 'required',
+                'userLastName' => 'required',
+                'userEmail' => 'required|email',
                 'password' => 'required|confirmed',
                 'password_confirmation' => 'required'
             ]
         );
         $user = new User();
-        $user->firstName = $signupUser->firstName;
-        $user->lastName = $signupUser->lastName;
-        $user->email = $signupUser->email;
+        $user->firstName = $signupUser->userFirstName;
+        $user->lastName = $signupUser->userLastName;
+        $user->email = $signupUser->userEmail;
         $user->password = $signupUser->password;
         try {
             $user->save();
         } catch (\Throwable $th) {
             return redirect('/')->with('errorMessage', 'Email Already Used Please Change Email')->with('className', 'danger');;
         }
-        return redirect('/')->back();
+        return redirect()->back();
     }
     public function delete_user(Request $request)
     {
@@ -58,20 +58,20 @@ class UsersController extends Controller
     {
         $request->validate(
             [
-                'firstName' => 'required',
-                'lastName' => 'required'
+                'updateUserFirstName' => 'required',
+                'updateUserLastName' => 'required',
             ]
         );
 
         $userid = $request->userIdForUpdate;
         $updateUser = User::find($userid);
-        $updateUser->firstName = $request->firstName;
-        $updateUser->lastName = $request->lastName;
+        $updateUser->firstName = $request->updateUserFirstName;
+        $updateUser->lastName = $request->updateUserLastName;
         try {
             $updateUser->update();
         } catch (\Throwable $th) {
-            return redirect('/')->with('errorMessage', 'Database Error ! Please Wait Our Team Working On it')->with('className', 'danger');
+            return redirect('/adminDashBoard')->with('errorMessage', 'Error ! Please Wait Our Team Working On it')->with('className', 'danger');
         }
-        return redirect('/')->back();
+        return redirect()->back();
     }
 }
