@@ -371,7 +371,7 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="issueDate">Book Issue Date
+                                            <label class="form-label font-family">Book Issue Date
                                                 :</label>
                                             <input type="datetime-local" name="updateIssueDate" id="updateBookIssueDate"
                                                 class="form-control" />
@@ -387,7 +387,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="authorName">Author Name
+                                            <label class="form-label font-family">Author Name
                                                 :</label>
                                             <input type="text" name="updateAuthorName" id="updateBookAuthorName"
                                                 class="form-control" />
@@ -400,7 +400,7 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="authorEmail">Author Email
+                                            <label class="form-label font-family">Author Email
                                                 :</label>
                                             <input type="email" name="authorEmail" id="updateBookAuthorEmail"
                                                 class="form-control" />
@@ -414,7 +414,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <div class="form-outline">
-                                        <label class="form-label font-family" for="description">Book Description
+                                        <label class="form-label font-family">Book Description
                                             :</label>
                                         <input type="text" name="description" id="updateBookDescription"
                                             class="form-control" />

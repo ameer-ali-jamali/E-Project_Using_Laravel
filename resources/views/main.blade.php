@@ -85,7 +85,7 @@
                             DashBoard</a>
                         <a href="#" data-bs-toggle="modal" data-bs-target="#adminProfileModal">
                             {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}</a>
-                        <a href="/adminlogout"><i class="fas fa-sign-in" style="color: red">></i>&nbsp; Logout</a>
+                        <a href="/adminlogout"><i class="fas fa-sign-in" style="color: red"></i>&nbsp; Logout</a>
                         @else
                         <a href="#" data-bs-toggle="modal" data-bs-target="#userProfileModal"><i
                                 class="fa-solid fa-user-plus" style="color: darkgray"></i>&nbsp;
