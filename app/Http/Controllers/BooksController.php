@@ -47,7 +47,12 @@ class BooksController extends Controller
         try {
             $books = DB::table('books')->orderBy("id", "DESC")->get();
         } catch (\Throwable $th) {
-            return  $th;
+            try {
+                return view('serverErrorMessage');
+            } catch (\Throwable $th) {
+                return $th;
+            }
+            return view('index');
         }
         return view('index', compact('books'));
     }
