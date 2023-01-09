@@ -19,7 +19,7 @@ return new class extends Migration
             $table->id()->autoIncrement()->unique();
             $table->string('name');
             $table->string('email');
-            $table->string('messageBox', 1000);
+            $table->string('messageBox');
             $table->timestamp('timeStamp')->useCurrent();
         });
     }

@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('image')->default('empty');
             $table->string('role')->default('user');
             $table->timestamp('timeStamp')->useCurrent();
+            // $table->rememberToken();
+            $table->timestamps();
         });
     }
 
