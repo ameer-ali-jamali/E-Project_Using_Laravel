@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
-use App\Models\download;
-use App\Models\Download as ModelsDownload;
 use App\Models\User;
+use App\Models\Download;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
 use Psy\VersionUpdater\Downloader;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Download as ModelsDownload;
 use Symfony\Component\Console\Helper\TableRows;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -35,16 +36,19 @@ class IndexController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            $userEmail = $request->email;
-            $data = User::firstOrNew(['email' => $userEmail]);
-            $role = $data->role;
-            if ($role == "user") {
-                return redirect()->back();
-            } else {
-                return redirect("/adminDashBoard");
-            }
-        }
-        return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
+        dd(Auth::attempt($credentials));
+
+        // if (Auth::attempt($credentials)) {
+        //     $userEmail = $request->email;
+        //     $data = User::firstOrNew(['email' => $userEmail]);
+        //     $role = $data->role;
+        //     if ($role == "user") {
+        //         return redirect()->back();
+        //     } else {
+        //         return redirect("/adminDashBoard");
+        //     }
+        // }
+        // return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
+
     }
 }
