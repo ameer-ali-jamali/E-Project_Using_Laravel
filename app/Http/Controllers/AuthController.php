@@ -14,7 +14,8 @@ use App\Models\Download as ModelsDownload;
 use Symfony\Component\Console\Helper\TableRows;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
-class IndexController extends Controller
+
+class AuthController extends Controller
 {
     public function get_all()
     {
@@ -36,19 +37,16 @@ class IndexController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        dd(Auth::attempt($credentials));
-
-        // if (Auth::attempt($credentials)) {
-        //     $userEmail = $request->email;
-        //     $data = User::firstOrNew(['email' => $userEmail]);
-        //     $role = $data->role;
-        //     if ($role == "user") {
-        //         return redirect()->back();
-        //     } else {
-        //         return redirect("/adminDashBoard");
-        //     }
-        // }
-        // return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
-
+        if (Auth::attempt($credentials)) {
+            $userEmail = $request->email;
+            $data = User::firstOrNew(['email' => $userEmail]);
+            $role = $data->role;
+            if ($role == "user") {
+                return redirect()->back();
+            } else {
+                return redirect("/adminDashBoard");
+            }
+        }
+        return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
     }
 }

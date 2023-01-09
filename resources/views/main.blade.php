@@ -294,7 +294,7 @@
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="contactUsUserEmail">Email</label>
-                                    <input type="email" name="email" id="userEmail" class="form-control"
+                                    <input type="email" name="email" id="contactUsUserEmail" class="form-control"
                                         placeholder="Please Input Your Email" />
                                     <span class="text-danger">
                                         @error('email')

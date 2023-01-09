@@ -23,8 +23,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('image')->default('empty');
             $table->string('role')->default('user');
-            $table->timestamp('timeStamp')->useCurrent();
-            // $table->rememberToken();
+            $table->rememberToken();
             $table->timestamps();
         });
     }
