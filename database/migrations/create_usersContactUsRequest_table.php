@@ -15,14 +15,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_contact_us_requests', function (Blueprint $table) {
             $table->id()->autoIncrement()->unique();
-            $table->string('firstName');
-            $table->string('lastName');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->string('image')->default('empty');
-            $table->string('role')->default('user');
+            $table->integer('userId');
+            $table->string('messageBox', 1000);
             $table->timestamp('timeStamp')->useCurrent();
         });
     }
@@ -34,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user_contact_us_requests');
     }
 };

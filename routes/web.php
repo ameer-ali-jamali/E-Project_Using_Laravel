@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\test;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PdfDownloader;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\PdfDownloader;
 use App\Http\Controllers\UsersController;
 
 
@@ -35,6 +37,9 @@ Route::get('/adminlogout', function () {
 Route::get('/topAuthors', function () {
     return view('topAuthors');
 });
+Route::get('/mail', function () {
+    return view('mail');
+});
 
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/adminDashBoard', [indexController::class, 'get_all']);
@@ -49,4 +54,4 @@ Route::get('/getBookInfoById/{id}', [BooksController::class, 'get_book_info_by_i
 Route::post('/updateUser', [UsersController::class, 'update_user']);
 Route::post('/updateBook', [BooksController::class, 'update_book']);
 Route::post('/download_pdf', [PdfDownloader::class, 'download_pdf_funciton']);
-Route::post('/contactUs', [IndexController::class, 'contactUs']);
+Route::post('/contactUsRequest', [MailController::class, 'sendRequestToAdmin']);

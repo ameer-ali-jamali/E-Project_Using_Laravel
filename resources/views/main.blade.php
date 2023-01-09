@@ -278,7 +278,7 @@
                     </div>
 
                     <div class="modal-body">
-                        <form action="{{ URL::to('/contactUs') }}" method="post">
+                        <form action="{{ URL::to('/contactUsRequest') }}" method="post">
                             @csrf
                             <div class="container">
 
@@ -294,7 +294,7 @@
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="contactUsUserEmail">Email</label>
-                                    <input type="email" name="email" id="contactUsUserEmail" class="form-control"
+                                    <input type="email" name="email" id="userEmail" class="form-control"
                                         placeholder="Please Input Your Email" />
                                     <span class="text-danger">
                                         @error('email')
@@ -304,7 +304,7 @@
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="messageBox">Message</label>
-                                    <textarea class="form-control" name="textarea" id="messageBox" rows="4"
+                                    <textarea class="form-control" name="messageBox" id="messageBox" rows="4"
                                         placeholder="Message Box"></textarea>
                                 </div>
                                 <div class="modal-footer">

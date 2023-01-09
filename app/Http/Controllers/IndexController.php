@@ -34,7 +34,6 @@ class IndexController extends Controller
     }
     public function login(Request $request)
     {
-
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
             $userEmail = $request->email;
@@ -47,9 +46,5 @@ class IndexController extends Controller
             }
         }
         return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
-    }
-    public function contactUs(Request $request)
-    {
-        return $request;
     }
 }

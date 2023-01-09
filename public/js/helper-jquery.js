@@ -146,6 +146,6 @@ $(document).ready(function () {
 
 setTimeout(function () {
     // Closing the alert
-    $('#authAlert').slideUp(1000);
-    $('#alertDanger').slideUp(1000);
+    $('#authAlert').slideUp(600);
+    $('#alertDanger').slideUp(600);
 }, 2000);
