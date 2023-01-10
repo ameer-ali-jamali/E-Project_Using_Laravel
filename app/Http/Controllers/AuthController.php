@@ -32,21 +32,23 @@ class AuthController extends Controller
         } catch (\Throwable $th) {
             return redirect('/')->with('errorMessage', 'Admin Logged out')->with('className', 'danger');
         }
-        return redirect('/')->with('errorMessage', 'Forbidden! you do not have admin rights')->with('className', 'danger');
     }
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
-        if (Auth::attempt($credentials)) {
-            $userEmail = $request->email;
-            $data = User::firstOrNew(['email' => $userEmail]);
-            $role = $data->role;
-            if ($role == "user") {
-                return redirect()->back();
-            } else {
-                return redirect("/adminDashBoard");
-            }
-        }
-        return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
+        $email = $request->email;
+        $pass = $request->pass;
+        dd(Auth::attempt(['email' => $request->email]));
+        // if (Auth::attempt($credentials)) {
+        //     $userEmail = $request->email;
+        //     $data = User::firstOrNew(['email' => $userEmail]);
+        //     $role = $data->role;
+        //     if ($role == "user") {
+        //         return redirect()->back();
+        //     } else {
+        //         return redirect("/adminDashBoard");
+        //     }
+        // }
+        // return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
+
     }
 }

@@ -236,9 +236,9 @@
                             </div>
                             <div class="col mt-3">
                                 <div class="form-outline">
-                                    <label class="form-label font-family" for="userPasswrod">Password
+                                    <label class="form-label font-family">Password
                                     </label>
-                                    <input type="password" name="password" id="userPassword" class="form-control"
+                                    <input type="password" name="password" class="form-control"
                                         placeholder="Input Your Password" />
                                 </div>
                             </div>
