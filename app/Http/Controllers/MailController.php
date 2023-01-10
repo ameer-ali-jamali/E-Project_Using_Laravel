@@ -25,14 +25,14 @@ class MailController extends Controller
             $user->save();
             $name = $request->name;
             $email = $request->email;
-            $messageBox = $request->messageBox;
-            $adminEmail = "ameer.ali.jamali886@gmail.com";
+            $messageBox = "<h4 style='color:red;'>Contact Us Request From User .</h4>" . "<hr>" . $request->messageBox;
+            $adminEmail = env('MAIL_ADMIN_EMAIL_ADDRESS');
             $mail = new PHPMailer(true);
             $mail->IsSMTP();
             $mail->Host       = "smtp.gmail.com";
             $mail->SMTPAuth   = TRUE;
-            $mail->Username   = "jamesjann12@gmail.com";
-            $mail->Password   = "qvsnioqrvymfmhxg";
+            $mail->Username   = env("MAIL_USERNAME");
+            $mail->Password   = env("MAIL_PASSWORD");
             $mail->SMTPSecure = 'ssl';
             $mail->Port       = 465;
             $mail->setFrom($mail->Username);
@@ -55,7 +55,7 @@ class MailController extends Controller
             $guest->save();
             $name = $request->name;
             $email = $request->email;
-            $messagebox = "<h4 style='color:red;'>Contact Us Request From User .</h4>" . "<hr>" . $request->messageBox;
+            $messageBox = "<h4 style='color:red;'>Contact Us Request From User .</h4>" . "<hr>" . $request->messageBox;
             $adminEmail = env('MAIL_ADMIN_EMAIL_ADDRESS');
             $mail = new PHPMailer(true);
             $mail->IsSMTP();
@@ -70,7 +70,7 @@ class MailController extends Controller
             $mail->AddAddress($adminEmail);
             $mail->IsHTML(true);
             $mail->Subject = "Conatact Us Request";
-            $mail->Body = $messagebox;
+            $mail->Body = $messageBox;
             try {
                 $mail->send();
             } catch (Exception $ex) {

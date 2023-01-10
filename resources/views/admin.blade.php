@@ -422,9 +422,9 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form action="{{ URL::to('/registerUserByAdmin') }}" method="post">
+                    <form action="{{ URL::to('/registerUser') }}" method="post">
+                        @csrf
                         <div class="modal-body">
-                            @csrf
                             <div class="container mt-2 mb-1">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
