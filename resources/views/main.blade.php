@@ -81,7 +81,7 @@
                                     class="fal fa-address-book" style="color: darkorchid"></i>
                                 &nbsp;Conatact Us</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="/aboutUs"><i class="fas fa-info"
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-info"
                                     style="color: goldenrod"></i> &nbsp;About
                                 Us</a></li>
                     </ul>
