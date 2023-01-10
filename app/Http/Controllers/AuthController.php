@@ -35,20 +35,17 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
-        $email = $request->email;
-        $pass = $request->pass;
-        dd(Auth::attempt(['email' => $request->email]));
-        // if (Auth::attempt($credentials)) {
-        //     $userEmail = $request->email;
-        //     $data = User::firstOrNew(['email' => $userEmail]);
-        //     $role = $data->role;
-        //     if ($role == "user") {
-        //         return redirect()->back();
-        //     } else {
-        //         return redirect("/adminDashBoard");
-        //     }
-        // }
-        // return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
-
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+            $userEmail = $request->email;
+            $data = User::firstOrNew(['email' => $userEmail]);
+            $role = $data->role;
+            if ($role == "user") {
+                return redirect()->back();
+            } else {
+                return redirect("/adminDashBoard");
+            }
+        }
+        return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
     }
 }

@@ -19,13 +19,21 @@ class UsersController extends Controller
                 'password_confirmation' => 'required'
             ]
         );
-        $user = new User();
-        $user->firstName = $signupUser->userFirstName;
-        $user->lastName = $signupUser->userLastName;
-        $user->email = $signupUser->userEmail;
-        $user->password = $signupUser->password;
+
+        // $user = new User();
+        // $user->firstName = $signupUser->userFirstName;
+        // $user->lastName = $signupUser->userLastName;
+        // $user->email = $signupUser->userEmail;
+        // $user->password = $signupUser->password;
         try {
-            $user->save();
+            $user = User::create([
+                "firstName" => $signupUser->userFirstName,
+                "lastName" => $signupUser->userLastName,
+                "email" => $signupUser->userEmail,
+                "password" =>  $signupUser->password
+            ]);
+            auth()->login($user);
+            //$user->save();
         } catch (\Throwable $th) {
             return redirect('/adminDashBoard')->with('errorMessage', 'Email Already Used Please Change Email')->with('className', 'danger');;
         }
