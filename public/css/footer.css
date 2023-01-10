@@ -28,6 +28,12 @@ hr {
     border-bottom: 2px solid #38404D;
 }
 
+.hr-navbar {
+    margin: -1px !important;
+    border-top: 1px solid #1C1E26 !important;
+    border-bottom: 2px solid #38404D !important;
+}
+
 .list-unstyled {
     padding-left: 0;
     list-style: none;

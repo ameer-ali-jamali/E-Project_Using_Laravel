@@ -6,8 +6,9 @@
 }
 
 .banner2 {
-    background: whitesmoke;
-    color: black;
+    background: #222222 !important;
+    color: white !important;
+    /* color: black; */
     font-weight: bold;
     font-size: 0.7rem;
 }

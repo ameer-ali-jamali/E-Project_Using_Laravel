@@ -28,7 +28,7 @@
 
         <!-- Header-->
 
-        <header>
+        <header class="header-item">
 
             <div class="banner2 d-flex justify-content-around p-2">
                 <span><i class="fas fa-envelope"></i> &nbsp;E_books*3423@gmial.com</span>
@@ -49,8 +49,8 @@
             </div>
             @endif
 
+            <hr class="hr-navbar">
         </header>
-
 
         <!--Navigation Bar-->
 
@@ -141,7 +141,7 @@
                 <div class="modal-content">
                     <div class="modal-header" style="height: 45px">
                         <h5 class="modal-title font-family" id="registrationTittle" style="font-size: large;
-                     color: #6a6060;">
+                        color: #6a6060;">
                             Registartion</h5>
                         <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                             aria-label="Close">
@@ -215,7 +215,7 @@
                 <div class="modal-content">
                     <div class="modal-header" style="height: 45px">
                         <h5 class="modal-title" id="userLoginFormTittle" style="font-size: large;
-                    color: #6a6060;">
+                        color: #6a6060;">
                             Login</h5>
                         <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                             aria-label="Close">
@@ -269,7 +269,7 @@
                 <div class="modal-content">
                     <div class="modal-header" style="height: 45px">
                         <h5 class="modal-title" id="contactUsTittle" style="font-size: large;
-                         color: #6a6060;">
+                            color: #6a6060;">
                             Contact Us</h5>
                         <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
                             aria-label="Close">
@@ -330,7 +330,7 @@
                 <div class="modal-content">
                     <div class="modal-header" style="height: 45px">
                         <h5 class="modal-title font-family" id="userProfileTittle" style="font-size: large;
-                                 color: #6a6060;">
+                                    color: #6a6060;">
                             {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}
                         </h5>
                         <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
@@ -388,7 +388,7 @@
                 <div class="modal-content">
                     <div class="modal-header" style="height: 45px">
                         <h5 class="modal-title font-family" id="userProfileTittle" style="font-size: large;
-                                 color: #6a6060;">
+                                    color: #6a6060;">
                             {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}
                         </h5>
                         <button type="button" class="close btn btn-danger btn-sm" data-bs-dismiss="modal"
@@ -477,7 +477,7 @@
             <div class="container">
                 <div class="row">
                     <!-- <div class="col-sm-12">
-                                    </div> -->
+                                        </div> -->
                     <div class="col-md-3 col-sm-6 txt-align-sm">
                         <div class="footer-info-single">
                             <h2 class="title">Help Center</h2>

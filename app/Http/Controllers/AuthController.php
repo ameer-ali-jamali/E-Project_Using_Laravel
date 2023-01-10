@@ -19,18 +19,16 @@ class AuthController extends Controller
 {
     public function get_all()
     {
-        try {
-            if (Auth::user()->role == 'master_admin') {
-                $downloadBooksCount = Download::all()->count();
-                $usersCount = User::all()->count();
-                $booksCount = Book::all()->count();
-                $downloadsInfo = Download::all();
-                $users = User::all();
-                $books = Book::all();
-                return view('admin', compact('users', 'books', 'downloadsInfo', 'usersCount', 'booksCount', 'downloadBooksCount'));
-            }
-        } catch (\Throwable $th) {
-            return redirect('/')->with('errorMessage', 'Admin Logged out')->with('className', 'danger');
+        if (Auth::user()->role == 'master_admin') {
+            $downloadBooksCount = Download::all()->count();
+            $usersCount = User::all()->count();
+            $booksCount = Book::all()->count();
+            $downloadsInfo = Download::all();
+            $users = User::all();
+            $books = Book::all();
+            return view('admin', compact('users', 'books', 'downloadsInfo', 'usersCount', 'booksCount', 'downloadBooksCount'));
+        } else {
+            return redirect('/')->with('errorMessage', 'Forbidden Error! Security Alert You havenot Admin Authorities')->with('className', 'danger');
         }
     }
     public function login(Request $request)
@@ -46,6 +44,6 @@ class AuthController extends Controller
                 return redirect("/adminDashBoard");
             }
         }
-        return redirect()->back()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
+        return redirect()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
     }
 }
