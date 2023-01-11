@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Faker\Factory as Random;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class User extends Seeder
 {
@@ -17,8 +17,16 @@ class User extends Seeder
     public function run()
     {
         $random = Random::create();
-
-        for ($count = 1; $count <= 1500; $count++) {
+        DB::table('users')->insert(
+            [
+                'firstName' => "Ameer",
+                'lastName' => "Ali",
+                'email'  => "admin@gmail.com",
+                'password'  => bcrypt('admin'),
+                'role'  => ('master_admin'),
+            ]
+        );
+        for ($count = 1; $count <= 500; $count++) {
             DB::table('users')->insert([
                 'firstName' => $random->firstName(),
                 'lastName' => $random->lastName(),
