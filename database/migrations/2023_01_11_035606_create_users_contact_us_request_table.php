@@ -18,7 +18,8 @@ return new class extends Migration
             $table->integer('userId');
             $table->string('messageBox', 1000);
             $table->timestamp('timeStamp')->useCurrent();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

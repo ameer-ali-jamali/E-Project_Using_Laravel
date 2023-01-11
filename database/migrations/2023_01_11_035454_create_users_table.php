@@ -25,7 +25,8 @@ return new class extends Migration
             $table->string('image')->default('null');
             $table->string('role')->default('user');
             $table->timestamp('timeStamp')->useCurrent();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 
