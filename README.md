@@ -1,8 +1,6 @@
-#First must installed local host serevr wamp32 or wamp64 or xamp ..
+First must installed local host serevr wamp32 or wamp64 or xamp and after
 open project in vsCode or phpstrom and after in the last you can see one (.env.example) file
-
 first you have to rename it to (.env) file and after open editor terminal and run some cmds..
-
 and must create database with name ( std ).
 
 1.Composer Update
@@ -26,6 +24,7 @@ If you Need to use contact us email function you can open (.env) file and
 inside it there is 3 variables that is by default empty ..
 
 MAIL_USERNAME="Your Email";
+
 MAIL_PASSWORD="password"; //in this password you will not insert your gmail pasword
 first go to gmail account and after you see (security) then click that and after scroll down
 and first open ( 2 step verification ) and after one option will come down (2 step verifiation )
