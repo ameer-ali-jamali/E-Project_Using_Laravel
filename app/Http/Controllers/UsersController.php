@@ -20,6 +20,7 @@ class UsersController extends Controller
                 'password_confirmation' => 'required'
             ]
         );
+
         $user = new User();
         $user->firstName = $signupUser->userFirstName;
         $user->lastName = $signupUser->userLastName;
