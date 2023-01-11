@@ -1,8 +1,8 @@
 First must installed local host serevr wamp32 or wamp64 or xamp and after
 open project in vsCode or phpstrom and after in the last you can see one (.env.example) file
-first you have to rename it
+first you have to rename it to (.env) file 
 ![Screenshot (74)](https://user-images.githubusercontent.com/99552615/211910332-9a336f22-6b80-4adc-8c78-bfb607e1b546.png)
- to (.env) file 
+
 
 and after open editor terminal and run some cmds..
 and must create database with name ( std ).
