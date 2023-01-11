@@ -183,7 +183,7 @@
                                     <input type="password" name="password" id="registerPassword" class="form-control" />
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="registerPasswordConfirmation">Conform
+                                    <label class="form-label font-family" for="registerPasswordConfirmation">Confirm
                                         Password</label>
                                     <input type="password" name="password_confirmation"
                                         id="registerPasswordConfirmation" class="form-control" />

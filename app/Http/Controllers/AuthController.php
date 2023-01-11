@@ -44,6 +44,6 @@ class AuthController extends Controller
                 return redirect("/adminDashBoard");
             }
         }
-        return redirect()->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
+        return redirect('/')->with('errorMessage', 'Encorrect Email Or Password')->with('className', 'danger');
     }
 }

@@ -7,6 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class GuestContactUsRequest extends Model
 {
-    public $timestamps = false;
     use HasFactory;
 }
