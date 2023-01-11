@@ -144,8 +144,8 @@ $(document).ready(function () {
 
 })
 
-// setTimeout(function () {
-//     // Closing the alert
-//     $('#authAlert').slideUp(600);
-//     $('#alertDanger').slideUp(600);
-// }, 2000);
+setTimeout(function () {
+    // Closing the alert
+    $('#authAlert').alert('close');
+    $('#alertDanger').alert('close');
+}, 4000);
