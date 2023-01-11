@@ -4,7 +4,10 @@ first you have to rename it to (.env) file
 ![Screenshot (74)](https://user-images.githubusercontent.com/99552615/211910332-9a336f22-6b80-4adc-8c78-bfb607e1b546.png)
 
 
-and after open editor terminal and run some cmds..
+and after open editor
+![Screenshot (75)](https://user-images.githubusercontent.com/99552615/211910880-69ac274b-b261-4096-a93a-7c7990b73400.png)
+terminal and run some cmds..
+
 and must create database with name ( std ).
 
 1.Composer Update
