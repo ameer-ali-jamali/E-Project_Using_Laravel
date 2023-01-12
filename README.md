@@ -31,13 +31,16 @@ And First Open ( 2 step verification ) And After One Option Will Come Down (2 st
 That Is (App passwords) If It Comes Then Click It And After There Is 2 Colums One (select app ) and (select device)
 In Select App You Must Select Mail (mail) And In Select Device Must Select (windows computer) After This One Password
 Will Generate And That Password You Will Insert This.
+(ma![Screenshot (77)](https://user-images.githubusercontent.com/99552615/211995405-93c1e7de-8dba-4678-ba12-7bbf54918de0.png)
+![Screenshot (78)](https://user-images.githubusercontent.com/99552615/211995480-b62c4481-1ec2-4c68-9a6a-a489a7ef421e.png)
 ![Screenshot (73)](https://user-images.githubusercontent.com/99552615/211910410-07f26f2a-6c77-4fda-b7f7-7c4ae328f271.png)
 # MAIL_ADMIN_EMAIL_ADDRESS="email adress where you want to semd email";
 
 
 
+
 # My Project All Images.
-# This is Home Pge.
+# This is Home Page.
 ![Screenshot (36)](https://user-images.githubusercontent.com/99552615/211908721-74cedd3c-699c-4d6e-9ae4-4482b7bd73ad.png)
 ![Screenshot (37)](https://user-images.githubusercontent.com/99552615/211908823-f904948c-762e-498e-8281-c18b51a29f80.png)
 ![Screenshot (38)](https://user-images.githubusercontent.com/99552615/211908877-bdf04135-0e93-4438-a92a-83a61241bf97.png)
