@@ -3,7 +3,7 @@
 # First You Have To Rename It To (.env) File .
 ![Screenshot (74)](https://user-images.githubusercontent.com/99552615/211910332-9a336f22-6b80-4adc-8c78-bfb607e1b546.png)
 # Create Database With Name ( std ).
-# And after open editorterminal and run some Cmds.
+# And After Open Editor Terminal Run Some Cmds.
 # 1.composer update
 # 2.php artisan migrate:fresh
 # 3.php artisan db:seed 
