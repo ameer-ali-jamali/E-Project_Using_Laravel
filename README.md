@@ -3,11 +3,12 @@
 # First You Have To Rename It To (.env) File .
 ![Screenshot (74)](https://user-images.githubusercontent.com/99552615/211910332-9a336f22-6b80-4adc-8c78-bfb607e1b546.png)
 # Create Database With Name ( std ).
-# And after open editorterminal and run some Cds.
-![Screenshot (75)](https://user-images.githubusercontent.com/99552615/211910880-69ac274b-b261-4096-a93a-7c7990b73400.png)
+# And after open editorterminal and run some Cmds.
 # 1.composer update
 # 2.php artisan migrate:fresh
 # 3.php artisan db:seed 
+![Screenshot (75)](https://user-images.githubusercontent.com/99552615/211910880-69ac274b-b261-4096-a93a-7c7990b73400.png)
+
 
 # After 3 Cmds Input This Cmd For Run Project ..
 # 1.php artisan serve
