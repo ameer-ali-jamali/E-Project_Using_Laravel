@@ -14,23 +14,23 @@
 # 1.php artisan serve
 
 # After This You Can Enjoy And You See In Database Random Users Created
-And 20 Books Uploaded In Home Page .
+# And 20 Books Uploaded In Home Page .
 
 # One Master_Admin Profile Also ..
-The Admin Email Is (admin@gmail.com) And Password Is (admin).
+# The Admin Email Is (admin@gmail.com) And Password Is (admin).
 # All Users Password Is ( user );
 
 # If You Need to Use Contact Us Email Function You Can Open (.env) File And 
-Inside It There Is 3 Variables That Is Empty By Default.
+# Inside It There Is 3 Variables That Is Empty By Default.
 
 # Variables
 # MAIL_USERNAME="Your Email";
 # MAIL_PASSWORD="password"; //in this password you will not insert your gmail pasword
-first go to gmail account and after you see (security) then click that and after scroll down
-and first open ( 2 step verification ) and after one option will come down (2 step verifiation )
-tha is (App passwords) if it comes then click it and after there is 2 colums one (select app ) and (select device)
-in select app you must select mail (mail) and in select device must select (windows computer) after this one password
-will generate and that password you will insert this .
+First Go To Gmail Account And After You See (security) Then Click That And After Scroll Down
+And First Open ( 2 step verification ) And After One Option Will Come Down (2 step verifiation )
+That Is (App passwords) If It Comes Then Click It And After There Is 2 Colums One (select app ) and (select device)
+In Select App You Must Select Mail (mail) And In Select Device Must Select (windows computer) After This One Password
+Will Generate And That Password You Will Insert This.
 ![Screenshot (73)](https://user-images.githubusercontent.com/99552615/211910410-07f26f2a-6c77-4fda-b7f7-7c4ae328f271.png)
 # MAIL_ADMIN_EMAIL_ADDRESS="email adress where you want to semd email";
 
