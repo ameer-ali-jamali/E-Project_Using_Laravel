@@ -1,26 +1,19 @@
-First must installed local host serevr wamp32 or wamp64 or xamp and after
-open project in vsCode or phpstrom and after in the last you can see one (.env.example) file
-first you have to rename it to (.env) file 
+# First Must Installed Local Host Serevr Wamp32 or Wamp64 or Xamp and After .
+# Open Project In VsCode Or Phpstrom And After In The Last You Can See One (.env.example) File .
+# First You Have To Rename It To (.env) File .
 ![Screenshot (74)](https://user-images.githubusercontent.com/99552615/211910332-9a336f22-6b80-4adc-8c78-bfb607e1b546.png)
-
-
-and after open editorterminal and run some cmds..
+# Create Database With Name ( std ).
+# And after open editorterminal and run some Cds.
 ![Screenshot (75)](https://user-images.githubusercontent.com/99552615/211910880-69ac274b-b261-4096-a93a-7c7990b73400.png)
+# 1.composer update
+# 2.php artisan migrate:fresh
+# 3.php artisan db:seed 
 
+# After 3 Cmds Input This Cmd For Run Project ..
+# 1.php artisan serve
 
-and must create database with name ( std ).
-
-1.Composer Update
-2.php artisan migrate:fresh
-3.php artisan db:seed 
-
-
-after 3 cmds input this cmd for serve project ..
-
-1.php artisan serve
-
-after this you can enjoy and you see in database 500 random users
-and 20 books uploaded in home page ..
+# After This You Can Enjoy And You See In Database Random Users Created
+And 20 Books Uploaded In Home Page .
 
 One master admin profile also ..
 The admin profile email is (admin@gmail.com) password is (admin)
