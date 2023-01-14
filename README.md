@@ -26,11 +26,11 @@
 # Variables
 # MAIL_USERNAME="Your Email";
 # MAIL_PASSWORD="password"; //in this password you will not insert your gmail pasword
-First Go To Gmail Account And After You See (security) Then Click That And After Scroll Down
-And First Open ( 2 step verification ) And After One Option Will Come Down (2 step verifiation )
-That Is (App passwords) If It Comes Then Click It And After There Is 2 Colums One (select app ) and (select device)
-In Select App You Must Select Mail (mail) And In Select Device Must Select (windows computer) After This One Password
-Will Generate And That Password You Will Insert This.
+# First Go To Gmail Account And After You See (security) Then Click That And After Scroll Down
+# And First Open ( 2 step verification ) And After One Option Will Come Down (2 step verifiation )
+# That Is (App passwords) If It Comes Then Click It And After There Is 2 Colums One (select app ) and (select device)
+# In Select App You Must Select Mail (mail) And In Select Device Must Select (windows computer)
+# After This One Password Will Generate And That Password You Will Insert In This Variable.
 (ma![Screenshot (77)](https://user-images.githubusercontent.com/99552615/211995405-93c1e7de-8dba-4678-ba12-7bbf54918de0.png)
 ![Screenshot (78)](https://user-images.githubusercontent.com/99552615/211995480-b62c4481-1ec2-4c68-9a6a-a489a7ef421e.png)
 ![Screenshot (73)](https://user-images.githubusercontent.com/99552615/211910410-07f26f2a-6c77-4fda-b7f7-7c4ae328f271.png)
