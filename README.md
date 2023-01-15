@@ -1,4 +1,3 @@
-First You Must Installed Local Host Serevr Wamp32 or Wamp64 or Xamp and After . 
 Open Project In VsCode Or Phpstrom And After In The Last You Can See One (.env.example) File .
 First You Have To Rename It To (.env) File.
 ![Screenshot (74)](https://user-images.githubusercontent.com/99552615/211910332-9a336f22-6b80-4adc-8c78-bfb607e1b546.png)
