@@ -1,40 +1,33 @@
-# First You Must Installed Local Host Serevr Wamp32 or Wamp64 or Xamp and After .
-# Open Project In VsCode Or Phpstrom And After In The Last You Can See One (.env.example) File .
-# First You Have To Rename It To (.env) File .
+First You Must Installed Local Host Serevr Wamp32 or Wamp64 or Xamp and After . 
+Open Project In VsCode Or Phpstrom And After In The Last You Can See One (.env.example) File .
+First You Have To Rename It To (.env) File.
 ![Screenshot (74)](https://user-images.githubusercontent.com/99552615/211910332-9a336f22-6b80-4adc-8c78-bfb607e1b546.png)
-# Create Database With Name ( std ).
-# And After Open Editor Terminal Run Some Cmds.
-# 1.composer update
-# 2.php artisan migrate:fresh
-# 3.php artisan db:seed 
-![Screenshot (75)](https://user-images.githubusercontent.com/99552615/211910880-69ac274b-b261-4096-a93a-7c7990b73400.png)
 
+This Cmd For Run Website ..
+1.php artisan serve
 
-# After 3 Cmds Input This Cmd For Run Project ..
-# 1.php artisan serve
+After This You Can Enjoy And You See In Database Random Users Created
+And 20 Books Uploaded In Home Page .
 
-# After This You Can Enjoy And You See In Database Random Users Created
-# And 20 Books Uploaded In Home Page .
+One Master_Admin Profile Also ..
+The Admin Email Is (admin@gmail.com) And Password Is (admin).
+All Users Password Is ( user );
 
-# One Master_Admin Profile Also ..
-# The Admin Email Is (admin@gmail.com) And Password Is (admin).
-# All Users Password Is ( user );
+If You Need to Use Contact Us Email Function You Can Open (.env) File And 
+Inside It There Is 3 Variables That Is Empty By Default.
 
-# If You Need to Use Contact Us Email Function You Can Open (.env) File And 
-# Inside It There Is 3 Variables That Is Empty By Default.
-
-# Variables
-# MAIL_USERNAME="Your Email";
-# MAIL_PASSWORD="password"; //in this password you will not insert your gmail pasword
-# First Go To Gmail Account And After You See (security) Then Click That And After Scroll Down
-# And First Open ( 2 step verification ) And After One Option Will Come Down (2 step verifiation )
-# That Is (App passwords) If It Comes Then Click It And After There Is 2 Colums One (select app ) and (select device)
-# In Select App You Must Select Mail (mail) And In Select Device Must Select (windows computer)
-# After This One Password Will Generate And That Password You Will Insert In This Variable.
+Variables
+MAIL_USERNAME="Your Email";
+MAIL_PASSWORD="password"; //in this password you will not insert your gmail pasword
+First Go To Gmail Account And After You See (security) Then Click That And After Scroll Down
+And First Open ( 2 step verification ) And After One Option Will Come Down (2 step verifiation )
+That Is (App passwords) If It Comes Then Click It And After There Is 2 Colums One (select app ) and (select device)
+In Select App You Must Select Mail (mail) And In Select Device Must Select (windows computer)
+After This One Password Will Generate And That Password You Will Insert In This Variable.
 (ma![Screenshot (77)](https://user-images.githubusercontent.com/99552615/211995405-93c1e7de-8dba-4678-ba12-7bbf54918de0.png)
 ![Screenshot (78)](https://user-images.githubusercontent.com/99552615/211995480-b62c4481-1ec2-4c68-9a6a-a489a7ef421e.png)
 ![Screenshot (73)](https://user-images.githubusercontent.com/99552615/211910410-07f26f2a-6c77-4fda-b7f7-7c4ae328f271.png)
-# MAIL_ADMIN_EMAIL_ADDRESS="email adress where you want to semd email";
+MAIL_ADMIN_EMAIL_ADDRESS="email adress where you want to semd email";
 
 
 
