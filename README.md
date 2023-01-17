@@ -1,4 +1,9 @@
 (.env.example) Only Rename this file to (.env) and after run Cmd (Composer Update)
+
+Must Run This cmd ..
+1  (php artisan migrate:fresh)
+2  (php artisan db:seed)
+
 And after run website by using this Cmd (php artisan serve)
 
 After This You Can Enjoy And You See In Database Random Users Created
