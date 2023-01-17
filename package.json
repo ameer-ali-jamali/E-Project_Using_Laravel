@@ -1,6 +1,7 @@
 {
     "private": true,
     "scripts": {
+        "mian":"index.js",
         "dev": "vite",
         "build": "vite build"
     },
