@@ -1,11 +1,12 @@
 # First rename this file(.env.example) To (.env) and after run Cmd (Composer Update)
 ![Screenshot (100)](https://user-images.githubusercontent.com/99552615/213234665-bf454789-b045-4aa8-87fd-8c9bc1946272.png)
+# And after create database with name (std)
 
-# Must Run This cmd ..
+# Must run this cmd ..
 # 1  (php artisan migrate:fresh)
 # 2  (php artisan db:seed)
 # And after run website by using this Cmd (php artisan serve)
-# After This You Can Enjoy And You See In Database Random Users Created
+# After this you can enjoy and You See In Database Random Users Created
 # And 20 Books Uploaded In Home Page .
 
 # One Master_Admin Profile Also ..
@@ -23,6 +24,9 @@
 ![Screenshot (82)](https://user-images.githubusercontent.com/99552615/213222183-c44fe4a7-c285-4846-b937-ffe99c75eadd.png)
 ![Screenshot (83)](https://user-images.githubusercontent.com/99552615/213223353-863c3fe3-0414-44e1-9d89-cc5b40978873.png)
 
+# Error and success message for user in homepage.
+![Screenshot (99)](https://user-images.githubusercontent.com/99552615/213238049-c9bf72a9-b32a-41c9-a571-27cd3fcca3e2.png)
+
 # Contact Us Form.
 ![Screenshot (84)](https://user-images.githubusercontent.com/99552615/213226403-7c0ef399-5dc9-4006-9602-23598746e5cd.png)
 
@@ -38,36 +42,29 @@
 # Books Downloads View.
 ![Screenshot (88)](https://user-images.githubusercontent.com/99552615/213228123-5089b852-408b-4c07-9ad6-5607311c36db.png)
 
+# Admin Dashboard.
+![Screenshot (89)](https://user-images.githubusercontent.com/99552615/213235874-97e9b97b-1129-4da6-bbac-28885c5eca54.png)
 
+![Screenshot (90)](https://user-images.githubusercontent.com/99552615/213235996-1338bf96-00f2-451f-9dd0-01ab8a01f1e8.png)
 
+# User Info.
+![Screenshot (91)](https://user-images.githubusercontent.com/99552615/213236082-289e4a59-a3b1-4204-9d51-2e743c715330.png)
 
+# User Update.
+![Screenshot (92)](https://user-images.githubusercontent.com/99552615/213236296-a3b5019a-f21e-4922-9e23-b1a593a20cd1.png)
 
+# Books Info.
+![Screenshot (93)](https://user-images.githubusercontent.com/99552615/213236497-91310646-a301-459f-baf1-b7c0892a7818.png)
 
-![Screenshot (88)](https://user-images.githubusercontent.com/99552615/213228209-9e154aa2-366b-4676-a77c-3dc24dd34fd6.png)
+# Books Update.
+![Screenshot (94)](https://user-images.githubusercontent.com/99552615/213236644-f78f4439-a879-47c9-864b-bcc54aeddc6c.png)
 
+# Books Upload By Admin View.
+![Screenshot (95)](https://user-images.githubusercontent.com/99552615/213236918-9dd00937-5fae-4a86-9ed1-2ab89e63bac8.png)
 
+# Downloads Counts View.
+![Screenshot (96)](https://user-images.githubusercontent.com/99552615/213237155-b71cda85-736a-4d4f-860a-19c4e5af236d.png)
 
-![Screenshot (89)](https://user-images.githubusercontent.com/99552615/213228314-d8d11761-2f53-4fcc-a1f2-9d7cf488e30a.png)
-
-
-
-
-![Screenshot (90)](https://user-images.githubusercontent.com/99552615/213228335-e371a140-362f-4ab2-8ba7-624c82f36db8.png)
-
-
-
-![Screenshot (92)](https://user-images.githubusercontent.com/99552615/213228365-d8cfc0ce-70a2-421d-98c9-2b600048533b.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Error Message View In Admin Dashboard.
+![Screenshot (97)](https://user-images.githubusercontent.com/99552615/213237435-27388894-86d0-4f64-bae1-0c495063a111.png)
 
