@@ -1,26 +1,23 @@
-First Rename this file(.env.example) To (.env) and after run Cmd (Composer Update)
-
-Must Run This cmd ..
-1  (php artisan migrate:fresh)
-2  (php artisan db:seed)
-
-And after run website by using this Cmd (php artisan serve)
-
-After This You Can Enjoy And You See In Database Random Users Created
-And 20 Books Uploaded In Home Page .
-
-One Master_Admin Profile Also ..
-The Admin Email Is (admin@gmail.com) And Password Is (admin).
-All Users Password Is ( user );
-
-If You Need to Use Contact Us Email Function You Can Use Your Own Credentials On these Variables.
-
-MAIL_USERNAME="Your Email"
-
-MAIL_PASSWORD="password from google account"
-
-MAIL_ADMIN_EMAIL_ADDRESS="email adress where you want to semd email"
+# First rename this file(.env.example) To (.env) and after run Cmd (Composer Update)
 ![Screenshot (73)](https://user-images.githubusercontent.com/99552615/211910410-07f26f2a-6c77-4fda-b7f7-7c4ae328f271.png)
+
+# Must Run This cmd ..
+# 1  (php artisan migrate:fresh)
+# 2  (php artisan db:seed)
+# And after run website by using this Cmd (php artisan serve)
+# After This You Can Enjoy And You See In Database Random Users Created
+# And 20 Books Uploaded In Home Page .
+
+# One Master_Admin Profile Also ..
+# The Admin Email Is (admin@gmail.com) And Password Is (admin).
+# All Users Password Is ( user );
+
+# If You Need to Use Contact Us Email Function You Can Use Your Own Credentials On these Variables.
+
+# MAIL_USERNAME="Your Email"
+# MAIL_PASSWORD="password from google account"
+# MAIL_ADMIN_EMAIL_ADDRESS="email adress where you want to semd email"
+
 
 # Website Home Page with footer .
 ![Screenshot (82)](https://user-images.githubusercontent.com/99552615/213222183-c44fe4a7-c285-4846-b937-ffe99c75eadd.png)
