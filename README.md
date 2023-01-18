@@ -1,4 +1,4 @@
-(.env.example) Only Rename this file to (.env) and after run Cmd (Composer Update)
+First Rename this file(.env.example) To (.env) and after run Cmd (Composer Update)
 
 Must Run This cmd ..
 1  (php artisan migrate:fresh)
