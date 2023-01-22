@@ -25,12 +25,12 @@ Route::get('/', function () {
     return view('index');
 });
 Route::get('/userlogout', function () {
-    session_abort();
+    \session_abort();
     Auth::logout();
     return redirect('/');
 });
 Route::get('/adminlogout', function () {
-    session_abort();
+    \session_abort();
     Auth::logout();
     return redirect('/');
 });

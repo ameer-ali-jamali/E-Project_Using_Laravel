@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users_contact_us_request', function (Blueprint $table) {
+        Schema::create('user_contact_us_requests', function (Blueprint $table) {
             $table->id()->autoIncrement()->unique();
             $table->integer('userId');
             $table->string('messageBox', 1000);
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_contact_us_request');
+        Schema::dropIfExists('user_contact_us_requests');
     }
 };

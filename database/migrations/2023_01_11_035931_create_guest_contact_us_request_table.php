@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('guest_contact_us_request', function (Blueprint $table) {
+        Schema::create('guest_contact_us_requests', function (Blueprint $table) {
             $table->id()->autoIncrement()->unique();
             $table->string('name');
             $table->string('email');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guest_contact_us_request');
+        Schema::dropIfExists('guest_contact_us_requests');
     }
 };
