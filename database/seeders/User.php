@@ -26,7 +26,7 @@ class User extends Seeder
                 'role'  => ('master_admin'),
             ]
         );
-        for ($count = 1; $count <= 500; $count++) {
+        for ($count = 1; $count <=5; $count++) {
             DB::table('users')->insert([
                 'firstName' => $random->firstName(),
                 'lastName' => $random->lastName(),
