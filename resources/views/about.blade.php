@@ -57,7 +57,7 @@
     <h1>E-Books</h1>
 
     <div class="about-section">
-        <img class="logo" src="https://via.placeholder.com/200x200" alt="Company Logo">
+        <img class="logo" src="images/a.jpg" alt="Company Logo">
         <h2>Our Mission</h2>
         <p>Our mission is to provide access to a vast collection of books to individuals everywhere, enabling them to
             expand their
