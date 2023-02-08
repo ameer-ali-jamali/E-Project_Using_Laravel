@@ -7,12 +7,7 @@ use App\Models\User;
 use App\Models\UserContactUsRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\PHPMailer;
 
-require 'PHPMailer-master/src/Exception.php';
-require 'PHPMailer-master/src/PHPMailer.php';
-require 'PHPMailer-master/src/SMTP.php';
 
 class MailController extends Controller
 {

@@ -20,8 +20,6 @@
         <!-- Favicon -->
         <link rel="icon" href="images/client-image3.png">
 
-
-
     </head>
 
     <body>
@@ -81,7 +79,7 @@
                                     class="fal fa-address-book" style="color: darkorchid"></i>
                                 &nbsp;Conatact Us</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-info"
+                        <li class="nav-item"><a class="nav-link" href="/about"><i class="fas fa-info"
                                     style="color: goldenrod"></i> &nbsp;About
                                 Us</a></li>
                     </ul>
@@ -128,6 +126,7 @@
 
 
         @yield('content')
+
 
 
 
