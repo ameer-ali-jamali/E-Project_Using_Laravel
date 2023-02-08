@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-# Live [Live Website](https://e-boooks.000webhostapp.com/)
+# Website Live [Click Me](https://e-boooks.000webhostapp.com/)
 
 # E-Project [ Website Name E-Books ]
 E-books Website type free books downloads and admin dashboard admin have access of all of these   
