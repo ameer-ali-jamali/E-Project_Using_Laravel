@@ -34,9 +34,7 @@ Route::get('/adminlogout', function () {
     Auth::logout();
     return redirect('/');
 });
-Route::get('/topAuthors', function () {
-    return view('topAuthors');
-});
+
 Route::get('/about', function () {
     return view('about');
 });

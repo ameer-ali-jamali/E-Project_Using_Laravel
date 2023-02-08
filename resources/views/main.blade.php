@@ -71,7 +71,7 @@
                                 <i class="fa-thin fa-house" style="color: gold"></i>
                                 &nbsp;
                                 Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/topAuthors"><i class="fal solid fa-user"
+                        <li class="nav-item"><a class="nav-link" href="#"><i class="fal solid fa-user"
                                     style="color: turquoise"></i>&nbsp;Top
                                 Authors</a></li>
                         <li class="nav-item">

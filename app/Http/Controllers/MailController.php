@@ -6,6 +6,7 @@ use App\Models\GuestContactUsRequest;
 use App\Models\User;
 use App\Models\UserContactUsRequest;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Mailer;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -22,14 +23,8 @@ class MailController extends Controller
             $email = $request->email;
             $messageBox = "<h4 style='color:red;'>Contact Us Request From User .</h4>" . "<hr>" . $request->messageBox;
             $adminEmail = env('MAIL_ADMIN_EMAIL_ADDRESS');
-            $mail = new PHPMailer(true);
+            $mail = new Mailer();
             $mail->IsSMTP();
-            $mail->Host       = "smtp.gmail.com";
-            $mail->SMTPAuth   = TRUE;
-            $mail->Username   = env("MAIL_USERNAME");
-            $mail->Password   = env("MAIL_PASSWORD");
-            $mail->SMTPSecure = 'ssl';
-            $mail->Port       = 465;
             $mail->setFrom($mail->Username);
             $mail->AddReplyTo($email, $name);
             $mail->AddAddress($adminEmail);
