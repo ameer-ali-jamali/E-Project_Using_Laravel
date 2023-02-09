@@ -8,7 +8,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\BooksController;
 use App\Http\Controllers\UsersController;
-
+use App\Mail\contactRequest;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,9 +35,11 @@ Route::get('/adminlogout', function () {
     Auth::logout();
     return redirect('/');
 });
-
 Route::get('/about', function () {
     return view('about');
+});
+Route::any('/hi', function () {
+    return view('contactUs');
 });
 Route::any('/', [BooksController::class, 'all_books_home_page']);
 Route::get('/adminDashBoard', [AuthController::class, 'get_all']);
@@ -50,4 +53,4 @@ Route::get('/getBookInfoById/{id}', [BooksController::class, 'get_book_info_by_i
 Route::post('/updateUser', [UsersController::class, 'update_user']);
 Route::post('/updateBook', [BooksController::class, 'update_book']);
 Route::post('/download_pdf', [PdfDownloader::class, 'download_pdf_funciton']);
-Route::post('/contactUsRequest', [MailController::class, 'sendRequestToAdmin']);
+Route::get('/contactUsRequest', [MailController::class, 'sendRequestToAdmin']);

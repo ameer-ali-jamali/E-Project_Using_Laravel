@@ -260,7 +260,6 @@
 
         {{-- ContactUs Model --}}
 
-
         <!-- Modal -->
         <div class="modal fade" id="contactUsModal" tabindex="-1" role="dialog" aria-labelledby="contactUsTittle"
             aria-hidden="true">
@@ -303,7 +302,7 @@
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="messageBox">Message</label>
-                                    <textarea class="form-control" name="messageBox" id="messageBox" rows="4"
+                                    <textarea class="form-control" name="messageBox" id=" messageBox" rows="4"
                                         placeholder="Message Box"></textarea>
                                 </div>
                                 <div class="modal-footer">
