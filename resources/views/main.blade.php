@@ -575,20 +575,6 @@
         </footer>
 
 
-
-
-        <!-- Scroll Top Attach Files -->
-
-
-
-        <div class="fab fab-icon">
-            <a href="https://api.whatsapp.com/send?text=Hi&amp;phone=+923404889886" target="_blank"
-                class="things things1"><img class="img11" style="height: 47px; width:47px;"
-                    src="https://www.libertybooks.com/floatingchaticons/whats.png" alt="WhatsApp"></a>
-        </div>
-
-
-
         <!-- Scroll Top -->
         <button type="button" class="btn btn-floating " id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
 
