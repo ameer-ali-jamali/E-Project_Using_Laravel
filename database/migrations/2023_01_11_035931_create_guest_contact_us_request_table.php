@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id()->autoIncrement()->unique();
             $table->string('name');
             $table->string('email');
-            $table->string('messageBox');
+            $table->string('msgBox');
             $table->timestamp('timeStamp')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
