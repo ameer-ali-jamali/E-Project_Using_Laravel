@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('user_contact_us_requests', function (Blueprint $table) {
             $table->id()->autoIncrement()->unique();
             $table->integer('userId');
-            $table->string('messageBox', 1000);
+            $table->string('msgBox', 1000);
             $table->timestamp('timeStamp')->useCurrent();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();

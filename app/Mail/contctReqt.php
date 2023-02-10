@@ -31,6 +31,6 @@ class contctReqt extends Mailable
      */
     public function build()
     {
-        return $this->subject("this is subject")->view('contactUs');
+        return $this->subject("Contact Request")->view('contactUs');
     }
 }

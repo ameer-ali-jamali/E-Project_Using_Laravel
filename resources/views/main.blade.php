@@ -286,7 +286,7 @@
                                         placeholder="Input Your Complete Name" />
                                     <span class="text-danger">
                                         @error('name')
-                                        {{ $message }}
+                                        {{"Name :" . $message }}
                                         @enderror
                                     </span>
                                 </div>
@@ -296,14 +296,19 @@
                                         placeholder="Please Input Your Email" />
                                     <span class="text-danger">
                                         @error('email')
-                                        {{ $message }}
+                                        {{"Email :". $message }}
                                         @enderror
                                     </span>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label font-family" for="messageBox">Message</label>
-                                    <textarea class="form-control" name="messageBox" id=" messageBox" rows="4"
+                                    <textarea class="form-control" name="msgBox" id=" messageBox" rows="4"
                                         placeholder="Message Box"></textarea>
+                                    <span class="text-danger">
+                                        @error('msgBox')
+                                        {{"Message :". $message }}
+                                        @enderror
+                                    </span>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
