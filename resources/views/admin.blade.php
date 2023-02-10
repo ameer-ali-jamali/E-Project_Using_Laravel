@@ -45,6 +45,7 @@
             </ul>
         </nav>
 
+
         <div class="container-fluid">
             <div class="row">
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block nav_bg sidebar collapse">
@@ -123,14 +124,14 @@
         <div class="position-absolute container-fluid">
 
             <div class="container-fluid position-relative" style="margin-top: -55px;">
-                <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="col-md-9 ml-sm-auto col-lg-10 px-md-4 mt-3">
 
-                    <div class="row row-cols-3 row-cols-md-3 g-4 object-fit mt-5 col-sm-1">
+                    <div class="row display-sm-cols g-4 object-fit mt-5">
                         <div class="" id="showUsersList">
                             <div class="col ">
                                 <div class="card card-item1">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Registered Users</h3>
+                                    <div class="card-body card-body-pading">
+                                        <h3 class="card-title card-title-fonts">Registered Users</h3>
                                         <h1 class="card-text"><i class="fas fa-users" style="color: orange"
                                                 aria-hidden="true"></i>&nbsp;{{ $usersCount }}</h1>
 
@@ -142,8 +143,8 @@
                         <div id="showBooksList">
                             <div class="col ">
                                 <div class="card card-item1">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Books Available</h3>
+                                    <div class="card-body card-body-pading">
+                                        <h3 class="card-title card-title-fonts">Books Available</h3>
                                         <h1 class="card-text"><i class="fas fa-books "
                                                 style="color: blue"></i>&nbsp;{{ $booksCount }}
                                         </h1>
@@ -154,8 +155,8 @@
                         <div id="booksdownloads">
                             <div class="col ">
                                 <div class="card card-item1">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Downloads</h3>
+                                    <div class="card-body card-body-pading">
+                                        <h3 class="card-title card-title-fonts">Downloads</h3>
                                         <h1 class="card-text"><i class="fas fa-download " style="color: red"></i>&nbsp;
                                             {{ $downloadBooksCount }}
                                         </h1>
@@ -166,8 +167,8 @@
                         <div id="guestsList">
                             <div class="col ">
                                 <div class="card card-item1">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Guests Accounts</h3>
+                                    <div class="card-body card-body-pading">
+                                        <h3 class="card-title card-title-fonts">Guests Accounts</h3>
                                         <h1 class="card-text"><i class="fad fa-user" style="color: aqua"></i>&nbsp; 55
                                         </h1>
                                     </div>
@@ -178,15 +179,14 @@
                         <div id="visitorsCard">
                             <div class="col ">
                                 <div class="card card-item1">
-                                    <div class="card-body">
-                                        <h3 class="card-title">Visitors</h3>
+                                    <div class="card-body card-body-pading">
+                                        <h3 class="card-title card-title-fonts">Visitors</h3>
                                         <h1 class="card-text"><i class="fad fa-globe "
                                                 style="color:chocolate"></i>&nbsp; 34</h1>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

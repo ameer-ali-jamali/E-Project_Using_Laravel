@@ -69,9 +69,6 @@
     height: auto;
     margin-top: 60px;
 }
-
-
-
 @media all and (min-width: 979px) {
     .navbar .nav-item .dropdown-menu {
         display: inline;
@@ -98,7 +95,7 @@
     }
 }
 
-@media only screen and (max-width:991px) {
+@media only screen and (max-width: 991px) {
     .fab-icon {
         display: none;
     }
@@ -122,11 +119,9 @@
         background-color: black;
     }
 
-
     .carousel-item {
         height: 250px;
     }
-
 
     .carousel-image {
         object-fit: cover;
@@ -142,11 +137,9 @@
         height: auto;
         margin-top: 60px;
     }
-
-
 }
 
-@media only screen and (min-width:991px) and (max-width:1130px) {
+@media only screen and (min-width: 991px) and (max-width: 1130px) {
     .navbar-nav {
         gap: 15px !important;
     }
