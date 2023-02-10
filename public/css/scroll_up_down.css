@@ -30,62 +30,6 @@
     transition: 0.4s;
 }
 
-.things {
-    overflow: hidden;
-    border-radius: 50%;
-    display: block;
-    transition: 0.4s ease-in;
-}
-
-.things {
-    overflow: hidden;
-    border-radius: 50%;
-    transition: 0.4s ease-in;
-    width: 100px;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    /* box-shadow: 1px 1px 3px grey; */
-}
-
-.things1 {
-    transition-delay: 0.2s;
-    /* background: blue; */
-}
-
-.things2 {
-    transition-delay: 0.2s;
-    /* background: blue; */
-}
-
-.things3 {
-    transition-delay: 0.3s;
-    /* background: rgb(255, 0, 0); */
-}
-
-.things5 {
-    transition-delay: 0.4s;
-    /* background: rgb(255, 0, 0); */
-}
-
-.things4 {
-    transition-delay: 0.4s;
-    background: blue;
-    margin-bottom: 69px;
-}
-
-.things:hover {
-    cursor: pointer;
-}
-
-.things:hover img {
-    transform: rotate(360deg);
-    /*    -webkit-transform: scale(1.2);*/
-    transition: all 0.5s;
-}
-
 .chatbox-active {
     height: 242px;
     z-index: 100001;
