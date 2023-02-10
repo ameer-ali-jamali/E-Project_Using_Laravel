@@ -602,18 +602,19 @@
                 <div class="data-table-container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2 class="py-3 text-center font-bold font-up blue-text"><i class="fas fa-users fa-lg"></i>
+                            <h2 class="py-3 text-center font-bold font-up blue-text admin-books-title"><i
+                                    class="fas fa-users fa-lg"></i>
                                 &nbsp; Users Info</h2>
                         </div>
                     </div>
                     <table class="table table-hover table-responsive mb-0">
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between font-size">
                             <span>
-                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4 font-size">DashBoard &nbsp;<i
                                         class="fas fa-user"></i></a>
                             </span>
                             <span>
-                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                <button class="btn btn-primary mb-3 font-size" data-bs-toggle="modal"
                                     data-bs-target="#registerNewUser">Register
                                     &nbsp;<i class="fas fa-user-plus"></i></button>
 
@@ -623,9 +624,9 @@
                         <tr>
                             <th scope='col'>#</th>
                             <th scope='col'>Fist Name</th>
-                            <th scope='col'>Last Name</th>
+                            <th scope='col' class="sm-hide">Last Name</th>
                             <th scope='col'>Email</th>
-                            <th scope='col'>Role</th>
+                            <th scope='col' class="sm-hide">Role</th>
                             <th scope='col'>Update</th>
                             <th scope='col'>Delete</th>
                         </tr>
@@ -636,21 +637,20 @@
                             <tr @if ($loop->even) class="bg-info" @endif>
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>{{ $user->firstName }}</td>
-                                <td>{{ $user->lastName }}</td>
+                                <td class="sm-hide">{{ $user->lastName }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td>{{ $user->role }}</td>
+                                <td class="sm-hide">{{ $user->role }}</td>
                                 <td>
-                                    <button class="btn btn-primary getUserId btn-sm" value="{{ $user->id }}"
-                                        data-bs-toggle="modal" data-bs-target="#userUpdateModal"><i
-                                            class="fal fa-edit"></i></button>
+                                    <button class="btn btn-primary getUserId btn-sm btn-sm-screen"
+                                        value="{{ $user->id }}" data-bs-toggle="modal"
+                                        data-bs-target="#userUpdateModal"><i class="fal fa-edit"></i></button>
 
                                 </td>
                                 <td>
                                     @if ($user->role=="master_admin")
-
                                     @else
-                                    <a class=" btn btn-danger btn-sm deleteUserConfirm"><i class="fa fa-trash fa-lg"
-                                            aria-hidden="true"></i></a>
+                                    <a class=" btn btn-danger btn-sm deleteUserConfirm btn-sm-screen"><i
+                                            class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                                     <form action="{{ URL::to('/deleteUser') }}" hidden>
                                         <input type="text" name="userId" value="{{ $user->id }}">
                                         <input type="submit" name="submit" class="deleteUserByadmin">
@@ -685,18 +685,18 @@
 
                 <div class="data-table-container">
                     <div class="row">
-                        <h2 class="py-3 text-center font-bold font-up blue-text"><i
+                        <h2 class="py-3 text-center font-bold font-up blue-text admin-books-title"><i
                                 class="fa-duotone fa-books fa-lg"></i>
-                            &nbsp;Books Info</h2>
+                            Books Info</h2>
                     </div>
                     <table class="table table-hover table-responsive mb-0">
                         <div class="d-flex justify-content-between">
                             <span>
-                                <a href="/adminDashBoard" class="btn btn-danger mb-4">DashBoard &nbsp;<i
+                                <a href="/adminDashBoard" class="btn btn-danger mb-4 font-size">DashBoard <i
                                         class="fas fa-user"></i></a>
                             </span>
                             <span>
-                                <button class="btn btn-primary mb-3" data-bs-toggle="modal"
+                                <button class="btn btn-primary mb-3 font-size" data-bs-toggle="modal"
                                     data-bs-target="#uploadBookModal">Upload
                                     Book &nbsp;<i class="fa-duotone fa-book"></i>
                                 </button>
@@ -705,14 +705,14 @@
                         <tr>
                             <th scope='col'>#</th>
                             <th scope='col'>Name</th>
-                            <th scope='col'>IssueDate</th>
+                            <th scope='col' class="sm-hide">IssueDate</th>
                             <th scope='col'>AuthorName</th>
-                            <th scope='col'>AuthorEmail</th>
-                            <th scope='col'>Description</th>
+                            <th scope='col' class="sm-hide">AuthorEmail</th>
+                            <th scope='col' class="sm-hide">Description</th>
                             <th scope='col'>File</th>
-                            <th scope='col'>Image</th>
-                            <th scope='col'>Created_at</th>
-                            <th scope='col'>Updated_at</th>
+                            <th scope='col' class="sm-hide">Image</th>
+                            <th scope='col' class="sm-hide">Created_at</th>
+                            <th scope='col' class="sm-hide">Updated_at</th>
                             <th scope='col'>Update</th>
                             <th scope='col'>Delete</th>
                         </tr>
@@ -723,10 +723,10 @@
                             <tr @if ($loop->even) class="bg-info" @endif>
                                 <td>{{ $loop->index + 1 }}</td>
                                 <td>{{ $book->name }}</td>
-                                <td>{{ $book->issueDate }}</td>
+                                <td class="sm-hide">{{ $book->issueDate }}</td>
                                 <td>{{ $book->authorName }}</td>
-                                <td>{{ $book->authorEmail }}</td>
-                                <td>{{ $book->description }}</td>
+                                <td class="sm-hide">{{ $book->authorEmail }}</td>
+                                <td class="sm-hide">{{ $book->description }}</td>
                                 <td>
                                     <form action="{{ URL::to('/download_pdf') }}" method="post">
                                         @csrf
@@ -738,19 +738,19 @@
                                         </button>
                                     </form>
                                 </td>
-                                <td class="d-grid justify-center img_td"><img class="img_width"
-                                        src="{{ $book->image }}">
+                                <td class="justify-center img_td sm-hide">
+                                    <img class="img_width sm-hide" src="{{ $book->image }}">
                                 </td>
-                                <td>{{ $book->created_at }}</td>
-                                <td>{{ $book->updated_at }}</td>
+                                <td class="sm-hide">{{ $book->created_at }}</td>
+                                <td class="sm-hide">{{ $book->updated_at }}</td>
                                 <td>
-                                    <button type="submit" class="btn btn-primary btn-sm getBookId"
+                                    <button type="submit" class="btn btn-primary btn-sm getBookId btn-sm-screen"
                                         value="{{ $book->id }}" data-bs-toggle="modal"
                                         data-bs-target="#updateBookModal"><i class="fal fa-edit"></i></button>
                                 </td>
                                 <td>
-                                    <a class="btn btn-danger btn-sm deleteBookConfirm"><i class="fa fa-trash fa-lg"
-                                            aria-hidden="true"></i></a>
+                                    <a class="btn btn-danger btn-sm deleteBookConfirm btn-sm-screen"><i
+                                            class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
                                     <form action="{{ URL::to('/deleteBook') }}" hidden>
                                         <input type="text" name="bookId" value="{{ $book->id }}">
                                         <input type="submit" name="submit" class="deleteBookByadmin">

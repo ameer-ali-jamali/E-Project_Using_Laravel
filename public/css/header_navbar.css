@@ -105,8 +105,8 @@
     }
 
     .navbar-nav {
-        gap: 3px;
-        flex-direction: row;
+        gap: 4px !important;
+        flex-direction: column;
     }
 
     .login-btns {
