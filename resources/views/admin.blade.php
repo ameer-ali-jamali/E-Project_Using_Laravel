@@ -721,8 +721,17 @@
                                 <td>{{ $book->authorName }}</td>
                                 <td>{{ $book->authorEmail }}</td>
                                 <td>{{ $book->description }}</td>
-                                <td><a href="/downlaod">
-                                        <i class="fa-solid fa-download fa-lg text-danger"></i></a></td>
+                                <td>
+                                    <form action="{{ URL::to('/download_pdf') }}" method="post">
+                                        @csrf
+                                        <input type="text" hidden name="fileLocation" value="{{ $book->file }}">
+                                        <input type="text" name="bookId" hidden value="{{ $book->id }}">
+                                        <input type="text" name="userId" hidden value="{{ Auth::user()->id }}">
+                                        <button>
+                                            <i class="fa-solid fa-download fa-lg text-danger"></i>
+                                        </button>
+                                    </form>
+                                </td>
                                 <td class="d-grid justify-center img_td"><img class="img_width"
                                         src="{{ $book->image }}">
                                 </td>
