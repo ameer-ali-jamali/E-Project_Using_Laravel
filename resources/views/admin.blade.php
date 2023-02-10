@@ -57,8 +57,7 @@
                                     <span data-feather="bar-chart-2"></span>
                                     Profile
                                     <span class="nav-item sm-screen-show-btn">
-                                        <a class="nav-link display-none d-block" href="/adminlogout"
-                                            style="margin-right: 13px">
+                                        <a class="nav-link display-none" href="/adminlogout" style="margin-right: 13px">
                                             <i class="fas fa-sign-in" style="color: red"></i>&nbsp;
                                             Logout</a>
                                     </span>

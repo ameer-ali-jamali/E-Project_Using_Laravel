@@ -154,6 +154,22 @@ a:hover {
 .display-none {
     display: none;
 }
+
+@media only screen and (max-width: 319px) {
+    .row-cols-6 > * {
+        flex: 1 1 auto;
+        width: 40.666667%;
+    }
+    .sm-screen-d-none {
+        display: none;
+    }
+    .object-width-fit {
+        object-fit: contain;
+        width: 111%;
+        font-size: smaller;
+        height: 25px;
+    }
+}
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .row-cols-6 > * {
         flex: 0 0 auto;
@@ -213,7 +229,7 @@ a:hover {
         height: 56px;
     }
     .display-none {
-        display: grid;
+        display: block;
     }
     .sm-screen-flex-navitem {
         display: flex;
