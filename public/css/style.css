@@ -206,10 +206,17 @@ a:hover {
         grid-template-rows: 1fr;
     }
 }
-/* @media only screen and (min-width: 426px) and (max-width: 768px) {
+@media only screen and (min-width: 426px) and (max-width: 812px) {
     .display-sm-cols {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+@media only screen and (min-width: 813px) and (max-width: 1440px) {
+    .display-sm-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
 }
@@ -219,4 +226,4 @@ a:hover {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr;
     }
-} */
+}

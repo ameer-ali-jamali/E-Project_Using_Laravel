@@ -50,5 +50,5 @@ Route::get('/getUserInfoById/{id}', [UsersController::class, 'get_user_info_by_i
 Route::get('/getBookInfoById/{id}', [BooksController::class, 'get_book_info_by_id']);
 Route::post('/updateUser', [UsersController::class, 'update_user']);
 Route::post('/updateBook', [BooksController::class, 'update_book']);
-Route::any('/download_pdf', [PdfDownloader::class, 'download_pdf_funciton']);
+Route::post('/download_pdf', [PdfDownloader::class, 'download_pdf_funciton']);
 Route::post('/contactUsRequest', [MailController::class, 'sendRequestToAdmin']);
