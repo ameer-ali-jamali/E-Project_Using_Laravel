@@ -151,7 +151,9 @@ a:hover {
     font-size: x-large !important;
     margin-bottom: -30px !important;
 }
-
+.display-none {
+    display: none;
+}
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .row-cols-6 > * {
         flex: 0 0 auto;
@@ -209,6 +211,13 @@ a:hover {
     }
     .sm-screen-hight {
         height: 56px;
+    }
+    .display-none {
+        display: grid;
+    }
+    .sm-screen-flex-navitem {
+        display: flex;
+        justify-content: space-between;
     }
 }
 @media only screen and (max-width: 425px) {

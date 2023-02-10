@@ -52,15 +52,16 @@
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block nav_bg sidebar collapse">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="/adminlogout" style="margin-right: 13px">
-                                    <i class="fas fa-sign-in" style="color: red"></i>&nbsp;
-                                    Logout</a>
-                            </li>
-                            <li class="nav-item profile_btn_hover">
+                            <li class="nav-item profile_btn_hover sm-screen-flex-navitem">
                                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#adminProfileModal">
                                     <span data-feather="bar-chart-2"></span>
                                     Profile
+                                    <span class="nav-item sm-screen-show-btn">
+                                        <a class="nav-link display-none d-block" href="/adminlogout"
+                                            style="margin-right: 13px">
+                                            <i class="fas fa-sign-in" style="color: red"></i>&nbsp;
+                                            Logout</a>
+                                    </span>
                                 </a>
                             </li>
                             <li class="nav-item profile_btn_hover ">
