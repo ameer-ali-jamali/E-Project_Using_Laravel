@@ -199,6 +199,18 @@ a:hover {
         font-size: smaller !important;
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .sm-screen-hide-btn {
+        display: none;
+    }
+    .m-top {
+        margin-top: 4px;
+    }
+    .sm-screen-hight {
+        height: 56px;
+    }
+}
 @media only screen and (max-width: 425px) {
     .display-sm-cols {
         display: grid;

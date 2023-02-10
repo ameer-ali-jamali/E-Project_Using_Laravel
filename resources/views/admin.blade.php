@@ -20,29 +20,30 @@
 
     <body>
 
-        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow sm-screen-hight">
             <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">
                 @auth
                 &nbsp;
                 {{ Auth::user()->firstName }} &nbsp; {{ Auth::user()->lastName }}
                 @endauth
             </a>
-            <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <button class="navbar-toggler position-absolute d-md-none collapsed m-top" type="button"
+                data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu"
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <span>
 
             </span>
-            <ul class="navbar-nav px-3">
-                <li class="nav-item text-nowrap">
-                    @auth
-                    <a class="nav-link" href="/adminlogout"><i class="fal fa-sign-in"></i>&nbsp;
+            @auth
+            <ul class="navbar-nav px-3 sm-screen-hide-btn">
+                <li class="nav-item">
+                    <a class="nav-link" href="/adminlogout" style="margin-right: 13px">
+                        <i class="fas fa-sign-in" style="color: red"></i>&nbsp;
                         Logout</a>
-                    @endauth
                 </li>
             </ul>
+            @endauth
         </nav>
 
 
@@ -51,6 +52,11 @@
                 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block nav_bg sidebar collapse">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/adminlogout" style="margin-right: 13px">
+                                    <i class="fas fa-sign-in" style="color: red"></i>&nbsp;
+                                    Logout</a>
+                            </li>
                             <li class="nav-item profile_btn_hover">
                                 <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#adminProfileModal">
                                     <span data-feather="bar-chart-2"></span>
