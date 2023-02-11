@@ -155,7 +155,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="registerFirstName">First
+                                            <label class="form-label font-family">First
                                                 name</label>
                                             <input type="text" name="userFirstName" id="registerFirsttName"
                                                 class="form-control" />
@@ -164,7 +164,7 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="registerLastName">Last
+                                            <label class="form-label font-family">Last
                                                 name</label>
                                             <input type="text" name="userLastName" id="registerLastName"
                                                 class="form-control" />
@@ -173,16 +173,16 @@
                                     </div>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="registerEmail">Email address</label>
+                                    <label class="form-label font-family">Email address</label>
                                     <input type="email" name="userEmail" id="registerEmail" class="form-control" />
 
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="registerPassword">Password</label>
+                                    <label class="form-label font-family">Password</label>
                                     <input type="password" name="password" id="registerPassword" class="form-control" />
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="registerPasswordConfirmation">Confirm
+                                    <label class="form-label font-family">Confirm
                                         Password</label>
                                     <input type="password" name="password_confirmation"
                                         id="registerPasswordConfirmation" class="form-control" />
@@ -228,7 +228,7 @@
 
                             <div class="col mt-0">
                                 <div class="form-outline">
-                                    <label class="form-label font-family" for="userEmail">Email</label>
+                                    <label class="form-label font-family">Email</label>
                                     <input type="email" name="email" id="userEmail" class="form-control"
                                         placeholder="Input Your Email" />
                                 </div>
@@ -281,7 +281,7 @@
                             <div class="container">
 
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="userFullName">Full Name</label>
+                                    <label class="form-label font-family">Full Name</label>
                                     <input type="text" name="name" id="userFullName" class="form-control"
                                         placeholder="Input Your Complete Name" />
                                     <span class="text-danger">
@@ -291,7 +291,7 @@
                                     </span>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="contactUsUserEmail">Email</label>
+                                    <label class="form-label font-family">Email</label>
                                     <input type="email" name="email" id="contactUsUserEmail" class="form-control"
                                         placeholder="Please Input Your Email" />
                                     <span class="text-danger">
@@ -301,7 +301,7 @@
                                     </span>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="messageBox">Message</label>
+                                    <label class="form-label font-family">Message</label>
                                     <textarea class="form-control" name="msgBox" id=" messageBox" rows="4"
                                         placeholder="Message Box"></textarea>
                                     <span class="text-danger">
@@ -349,7 +349,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="registerFirstName">First
+                                            <label class="form-label font-family">First
                                                 name</label>
                                             <input type="text" name="firstName" class="form-control"
                                                 value="{{ Auth::user()->firstName }}" disabled />
@@ -357,7 +357,7 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="registerLastName">Last
+                                            <label class="form-label font-family">Last
                                                 name</label>
                                             <input type="text" name="lastName" class="form-control"
                                                 value="{{ Auth::user()->lastName }}" disabled />
@@ -366,12 +366,12 @@
                                     </div>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="registerEmail">Email address</label>
+                                    <label class="form-label font-family">Email address</label>
                                     <input type="email" name="email" class="form-control"
                                         value="{{ Auth::user()->email }}" disabled />
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="registerPassword">Password</label>
+                                    <label class="form-label font-family">Password</label>
                                     <input type="text" name="password" class="form-control"
                                         value="{{ "*************" }}" disabled />
                                 </div>
@@ -407,7 +407,7 @@
                                 <div class="row">
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="registerFirstName">First
+                                            <label class="form-label font-family">First
                                                 name</label>
                                             <input type="text" name="firstName" class="form-control"
                                                 value="{{ Auth::user()->firstName }}" disabled />
@@ -415,7 +415,7 @@
                                     </div>
                                     <div class="col-md-6 mb-4">
                                         <div class="form-outline">
-                                            <label class="form-label font-family" for="registerLastName">Last
+                                            <label class="form-label font-family">Last
                                                 name</label>
                                             <input type="text" name="lastName" class="form-control"
                                                 value="{{ Auth::user()->lastName }}" disabled />
@@ -424,12 +424,12 @@
                                     </div>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="registerEmail">Email address</label>
+                                    <label class="form-label font-family">Email address</label>
                                     <input type="email" name="email" class="form-control"
                                         value="{{ Auth::user()->email }}" disabled />
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label font-family" for="registerPassword">Password</label>
+                                    <label class="form-label font-family">Password</label>
                                     <input type="text" name="password" class="form-control"
                                         value="{{ "*************" }}" disabled />
                                 </div>
