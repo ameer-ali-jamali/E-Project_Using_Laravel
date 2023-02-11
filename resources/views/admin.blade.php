@@ -49,7 +49,7 @@
 
         <div class="container-fluid">
             <div class="row">
-                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block nav_bg sidebar collapse">
+                <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block nav_bg sidebar collapse sm-screen-height">
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item profile_btn_hover sm-screen-flex-navitem">
