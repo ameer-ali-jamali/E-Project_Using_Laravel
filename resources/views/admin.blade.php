@@ -1,6 +1,6 @@
 @auth
 <!doctype html>
-<html lang="en">
+<html lang="en" class="font-size-html">
 
     <head>
         <meta charset="UTF-8">

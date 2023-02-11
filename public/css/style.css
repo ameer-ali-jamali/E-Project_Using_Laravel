@@ -1,4 +1,4 @@
-html {
+.font-size-html {
     font-size: small;
 }
 .theme-background-color {
@@ -222,7 +222,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 767px) {
-    html {
+    .font-size-html {
         font-size: x-small !important;
     }
     .sm-screen-hide-btn {
